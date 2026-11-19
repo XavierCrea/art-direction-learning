@@ -1,0 +1,121 @@
+# 2026 新一代小米 SU7 × 舒淇「卡布里蓝」商圈巨幕 vs. 同行车企大屏正反对比拆解 (`C-xiaomi-su7-2026-mall-billboard-teardown`)
+
+> **[知识习得溯源 · Learning Origin]**：`co_dissected_teardown`（实战共创与街头实拍正反对比拆解 · Live Co-Dissected Field Teardown）
+> - **区别于静态投喂书籍（`book_canon`）与实验室基准（`benchmark_study`）**：本案例由用户与 Agent 在真实商业观察中通过**“三连追问 + 街头实拍正反举证”**共同推演生成：
+>   1. **第一问（反常识洞察）**：*“为什么核心商圈外围巨幅广告那么贵，小米却不谈参数细节，甚至有些地方只放了代言人舒淇？”*
+>   2. **第二问（横向反例举证）**：*“有没有其他车企同样投在商场外围的反例实拍图来佐证？”*
+>   3. **第三问（深层视觉微操）**：*“岚图泰山与小鹏 X9 其实也算不堆砌字数了，为什么看着还是没有小米舒服？”*
+> - **关联方法**：`M-028`（高噪商圈/展会巨幕的纯色场降噪、L屏景别递进与打卡背景板法则）、`M-024`（Krug 60 英里广告牌视觉法则）、`M-014`（冷退暖进与色质对比）
+> - **联动技能**：`copywriting-learning` $\rightarrow$ `M-027` / `C-xiaomi-su7-2026-capri-blue-billboard-copy`
+> - **核验反馈**：`F-002`（`verified: true`）
+
+---
+
+## 一、 触发症状 (`when_stuck`)
+
+- **中文症状**：
+  - 花重金包下核心商圈外立面巨幕或大型展会主通道背板，本能想塞满 8 个卖点、价格、补贴和二维码，结果沦为无人抬头看的“巨型传单”；
+  - 已经把户外大屏字数删到十几个字（如岚图、小鹏），但因为用了复杂的自然风景合成背景、顶天立地的紧绷大字或突兀的白底切块，画面依然显得闷、杂、紧绷，没有呼吸感；
+  - 面对商场 L 型转角屏或跨街双联屏，不知道两块屏该如何分工，要么左右屏重复同一句口号，要么把一块屏硬切成三截；
+  - 希望线下户外大牌或展位主墙能引发路人拍照发小红书/朋友圈二次传播，但不知道画面构图和文案怎么留出“打卡位”。
+- **English Symptoms**:
+  - `outdoor billboard visual noise`: Expensive shopping mall facade LED screens or trade-show hero backdrops get swallowed by surrounding neon restaurant signs because they are treated like spec-heavy flyers;
+  - `dirty landscape gradient on outdoor LED`: Even with few words, an outdoor billboard looks muddy and cramped because a complex landscape background (mountains, forests, dark roads) turns into grey visual noise on street-level LED panels and clashes with tight, top-heavy headlines;
+  - `split screen fragmentation`: L-shaped corner screens or dual street screens feel chopped into disconnected pieces (e.g., slapping a harsh white logo patch onto a dark photo or repeating the exact same headline on both screens);
+  - `zero social UGC sharing from outdoor ads`: Passersby never photograph or share the billboard because nobody poses in front of a discount price tag or a wall of fine-print disclaimers.
+
+---
+
+## 二、 客观画面观察与街头实拍正反矩阵 (`observations`)
+
+以下全部基于本轮逐张核验的 2025–2026 年真实街头实拍照片与官方画面：
+
+### 1. 正面标杆：2026 新一代小米 SU7「卡布里蓝」户外巨幕系列
+- **样本 P1（长沙五一广场跨街双屏实拍）**：
+  - **地面环境噪点**：屏幕正下方是密集的红黄高饱和餐饮灯箱（`季季红火锅`、`虾小龙`、`猛黄牛肉`、`坛宗剁椒鱼头`、`中国工商银行`）与十字路口斑马线人流。
+  - **左屏画面**：100% 铺满高纯度冷调“卡布里蓝”丝绸光影背景，画面中央仅放代言人舒淇穿白衬衫的松弛半身像 + 左下角手写签名 `小米汽车品牌代言人 舒淇` + 右上角白色 `MI` 标（**0 汽车图像、0 参数、0 价格**）。
+  - **右屏画面（马路对面）**：同样 100% 铺满纯粹的卡布里蓝丝绸背景，正中央仅一行纤细克制的白色无衬线体——`一种让时间变慢的蓝`（四周留白占比超 80%）。
+  - ![小米SU7长沙五一广场跨街双屏实拍](https://sc02.alicdn.com/kf/A7cb69c28f1cf41629349c6c4cee5c771d.png)
+- **样本 P2（重庆核心商圈商场外立面 L 型转角巨幕实拍）**：
+  - **左侧短屏（交待产品）**：浅蓝背景上，白衣舒淇倚靠在卡布里蓝新一代 SU7 实车旁，左上角仅 `新一代 SU7` 五个白字，右上角橙色 `MI` 标。
+  - **右侧百米长屏（立住情绪）**：顺着 90 度建筑转角无缝延展为整幅深邃卡布里蓝背景，中央为舒淇特写与签名，两块屏同色系过渡，无任何硬切白块或底部免责小字。
+  - ![小米SU7重庆商圈L型巨幕实拍](https://sc02.alicdn.com/kf/Aef9d55aed44942cabd3fe220dccaa790Y.png)
+- **样本 P3（2026 年 2 月机场与 7 城 Mall 店预热横幅大牌）**：
+  - 纯白盐湖与淡云背景上，正中央停放一辆卡布里蓝新一代 SU7，车顶上方仅 `新一代 SU7` 五个黑色粗体大字 + 小米 Logo，无任何副标题与参数。
+  - ![新一代小米SU7极简大牌](https://img1.mydrivers.com/img/20260204/27df3c7be9954f6199bc8acbac45c91d.jpg)
+
+### 2. 同行商圈外墙与促销海报反例实拍（为什么它们翻车或看着不舒服？）
+- **反例 N1（捷尼赛思 · 重庆观音桥大融城外墙 LED 屏夜景实拍）**：
+  - 商场外立面布满 `重百`、`大融城`、`天天尚街` 的紫粉色发光灯带；大屏采用暗蓝网格光效背景，塞入正面车头 + 左下角多行金融方案与价格数字（`¥25.xx万`、`¥35.xx万`）+ 底部密集小字。远距离仰视时，价格与小字糊成白斑，暗蓝背景被商场自身灯带彻底吞没。
+  - ![重庆观音桥大融城汽车大屏实拍](https://sc02.alicdn.com/kf/Aef7fe830772040caadaeb5d60026a101u.png)
+- **反例 N2（岚图泰山 · 深圳 Bo space 购物中心外墙大屏实拍）**：
+  - 紧邻左侧三层通亮的餐饮招牌（`湖南老饭铺`、`大同牛肉大王`、`蒲匠和牛烧肉`）与右侧彩色涂鸦霓虹灯。大屏直接投放“紫灰天空 + 金色雪山 + 深灰公路 + 紫红车身”的自然风景 KV，标题 `岚图泰山 / 新时代旗舰大六座SUV` 拘谨居中。虽然字数少，但复杂的风景明暗过渡在街头夜景中发灰发闷，主体存在感被旁边的餐饮白字压制。
+  - ![深圳购物中心外墙岚图泰山大屏实拍](https://sc02.alicdn.com/kf/Aeff09d9a2df244909240747f96fb1afb5.png)
+- **反例 N3（腾势 N9 × 高圆圆 · 广州商圈横幅巨幕实拍）**：
+  - 同样请国民女神代言，但把一块横屏硬切成三截：左段暗棕底写上市日期，中段放高圆圆与红车，右段硬切出一大块刺眼的**纯白底色块**放巨型腾势 Logo 与口号，画面像贴了一块白色膏药，割裂了电影感。
+  - ![广州商圈腾势N9高圆圆大屏实拍](https://sc02.alicdn.com/kf/A542897321f2743a49d073c377f1b22f5J.png)
+- **反例 N4（小鹏 X9 · 佛山商圈 L 型转角屏实拍）**：
+  - 楼下是 `广东华兴银行` 与 `老乡鸡`。左屏用刺眼的纯白底黑字写 `小鹏X9 下一代增程` + 底部三行小字；右屏换成蓝天与橙红树林背景，顶部用几乎撑满画幅的紧绷大字重复写 `小鹏X9下一代增程 / 综合续航1602公里`（`1602` 标黄），且第一行白字正好压在蓝天与红树林的交界线上，左下角还有一团免责小字。左右屏色彩一刀两断，大字压迫感极强。
+  - ![佛山商圈小鹏X9转角屏实拍](https://sc02.alicdn.com/kf/Aa519d6b990d445e2881b9a31987a2e2fK.png)
+- **反例 N5（把海报做成“超市传单/算术题”与“底部小字争议”）**：
+  - 别克昂科威 Plus（`限时一口价 16.99万元起` + 划掉原价 + `2.5万元置换补贴` + 底部两行小字）、吉利好车节（8 个车型价格方格 + 2 个抖音二维码 + 底部四行计算公式小字）、阿维塔 07L Max（9 大限时权益方格 + 左下角十余行密密麻麻的免责小字），以及 2025 年小米自身曾引发讨论的 `2200MPa 小米超强钢` 小字海报（后于 2026 年初全面取消底部小字，连 R-AEB 功能海报底部提示语也改为清晰大字）。
+
+---
+
+## 三、 六维深度解析：为什么小米敢这么做，且看着比同行舒服？ (`analysis`)
+
+### 1. 环境降噪账：「高纯度单色场（Color Field）」vs.「脏渐变风景图」
+商圈外立面和展会主通道本身就是三维高噪点环境（满街红黄霓虹灯、建筑窗格、树影）。岚图和小鹏把“有山有水有树林的电脑壁纸”投上外墙，复杂的明暗渐变在户外 LED 上会沦为灰暗杂色；小米直接扔掉具象风景，用 **≥75% 面积的高纯度单一冷色（卡布里蓝）+ 柔和丝绸光影**，在满街暖色火锅招牌中形成强烈的**冷暖色温反差（Cool/Warm Contrast）**，一秒把整条街的视觉噪音“拍平”。
+
+### 2. 排版呼吸感：「克制字重 + 80% 留白」vs.「顶天立地工业大字报」
+小鹏 X9 虽然只有十几个字，但字号撑满屏幕上沿、字距紧绷，且文字骑在“蓝天与红树林”的复杂交界线上，像拿大喇叭贴耳咆哮；小米长沙屏的 `一种让时间变慢的蓝` 仅占画幅横向 60%，字重纤细、字距舒展，且躺在 100% 纯净的蓝色色场中央——**字越克制，越显屏幕巨大与品牌从容**。
+
+### 3. 多屏/转角空间分镜：「同色系远近景递进」vs.「白底膏药一刀两断」
+面对 L 型转角屏或跨街双屏，腾势 N9 和小鹏 X9 用刺眼的纯白底块把屏幕切成两三截，且左右屏重复同一句车轱辘话；小米重庆 L 屏与长沙双屏坚持**“同色系无缝流淌 + 远近景情绪递进”**——左屏远景看车与人（交待 `新一代 SU7`），右屏近景看舒淇松弛眼神或纯色短句（立住情绪），形成电影分镜般的呼吸节奏。
+
+### 4. 认知阶梯与昂贵信号（Costly Signaling）：越贵的地段越敢留白
+按 Eugene Schwartz 市场认知五阶段，2026 年的新一代 SU7 已处于极高大众认知度（Stage 1），全网皆知其性能参数。此时在几百平米的黄金外墙上做到**“0 参数、0 价格、0 底部免责小字”**，向路人传递的是奢侈品级的昂贵信号——*“只有急着清库存的品牌才会在最贵的屏上塞满一口价和补贴；敢只放一抹蓝和舒淇，说明产品极度自信。”*
+
+### 5. 社交打卡背景板构图（UGC-Ready Backdrop Framing）：把媒介费变成免费流量池
+没有任何一个年轻人会站在“限时一口价 16.99 万”或“综合续航 1602 公里”的大屏下拍照发小红书。小米把大屏设计成**高审美纯色肖像画**，配上一句路人可以直接拿来当假期朋友圈文案的“嘴替台词”（`一种让时间变慢的蓝` / `五一假期 一起慢下来 享受好时光`），让线下广告牌直接变成城市打卡背景板。
+
+### 6. 全触点距离分工（100米 $\rightarrow$ 10米 $\rightarrow$ 1米）
+小米敢不在商场外墙写参数，是因为**商场一楼中庭或街区快闪店里就停着那台真正的卡布里蓝展车**：
+- **100 米（商场外墙巨幕）**：只负责用“卡布里蓝 + 舒淇”1 秒勾魂；
+- **10 米（上海张园蓝地毯 / 商场中庭入口）**：用实车与 Photobooth 承接好奇心；
+- **1 米（车旁立牌 / 销售顾问 / 手机详情页）**：再端出激光雷达、700 TOPS 算力、2200MPa 防滚架完成硬核说服。
+
+---
+
+## 四、 图字分工机制 (`copy_visual_synergy`)
+
+- **画面（Visual）**：承担 90% 的环境切割与情绪定调——用一整面无杂色的“卡布里蓝”切断商圈红黄霓虹灯，用舒淇松弛的眼神替代冰冷的机械参数。
+- **文字（Copy）**：全屏严格限制在 **5–9 个汉字以内**（左屏定锚主体 `新一代 SU7`，右屏转译色彩体感 `一种让时间变慢的蓝`），彻底取消底部蚂蚁免责小字、价格数字、金融政策与二维码。
+
+---
+
+## 五、 可迁移视觉动作 (`reusable_move` & `reusable_move_en`)
+
+- **中文可迁移法则**：
+  在设计高噪物理环境（核心商圈巨幕、行业展会主通道背板、展位门头）的视觉画面时：
+  1. **纯色场降噪**：砍掉复杂的山川树林合成背景，用 **≥75% 面积的高纯度单一品牌色场（Color Field）** 与周围环境形成冷暖或明暗强切割；
+  2. **L 屏/双屏同色递进**：禁止用刺眼白底块把屏幕切成多段；多屏联动时保持同色系延展，采用**“一屏远景交待产品 + 一屏近景特写/纯色短句立情绪”**的景别分工；
+  3. **克制字重与零小字**：主屏文案控制在 **≤8 个词/10 个字**，四周留出 **≥75% 纯色呼吸区**，严禁让文字骑在背景明暗交界线上，全面取消远距离无法辨认的底部免责小字与二维码；
+  4. **预留打卡背景与触点接力**：将 100 米外围大屏打造为无促销膏药的“打卡背景板”，把硬核参数表留给 1 米内的展台手册、选型表或详情页。
+- **English Reusable Move**:
+  When designing large-format visuals for high-noise physical environments (shopping mall facade LEDs, trade-show main-aisle backdrops, booth headers):
+  1. **Color-Field Denoising**: Strip out busy landscape backgrounds (mountains, forests, multi-tone roads) that turn muddy on outdoor LEDs; flood **`>= 75%` of the canvas with a single high-purity brand Color Field** that cuts through surrounding warm/neon street clutter;
+  2. **Same-Hue Multi-Screen Progression**: Never chop a wide or L-shaped corner screen with a jarring white logo patch; flow the same color field across the corner and assign **Wide Product Context (`<= 5 words`)** to one panel and **Close-Up Human/Mood Anchor (`<= 8 words`)** to the other;
+  3. **Restrained Type & Zero Fine Print**: Keep headline width to `<= 60%` of the canvas with `>= 75%` open color-field breathing room, never straddle text across background horizon lines, and purge all unreadable bottom fine print, price grids, and QR codes;
+  4. **100m-to-1m Touchpoint Relay**: Design the `100m` exterior screen as a clean, shareable social backdrop (`UGC-Ready Backdrop`), deferring dense engineering specs to the `1m` booth catalog, spec sheet, or PDP.
+
+---
+
+## 六、 素材前提与禁用红线 (`asset_prerequisites` & `transfer_limits`)
+
+- **素材前提 (`asset_prerequisites`)**：
+  1. 具备高辨识度的品牌专属色（如卡布里蓝、工业品牌主色）与高分辨率的主体/产品实拍大片；
+  2. 线下必须有承接实体的闭环（如商场一楼就有展车，或展会现场转身就是展位样品与技术工程师）。
+- **禁用红线 (`transfer_limits` —— 极重要防翻车护栏！)**：
+  1. **低知名度品牌严禁盲目去产品化**：小米敢在长沙单屏上“连车都不放只放舒淇”，是因为全网已认识小米 Logo 且知道“舒淇 = SU7”。如果是**低知名度新品牌或 B2B 陌生品牌**投放在泛流量渠道，**严禁照搬“只放人像/抽象口号不放产品”**——必须保留清晰可辨认的产品本体 + 一句话品类定义（参考 `M-004` / `M-026`），否则会沦为花钱打水漂的“谜语人概念牌”；
+  2. **无后续触点承接的直效广告禁用**：如果该画面是唯一的转化触点（如线上直接卖货的直投落地页或无展位承接的单张传单），不能砍掉全部产品功能证据。

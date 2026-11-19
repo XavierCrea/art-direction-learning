@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "catalog_revision": 9,
+  "updated_at": "2026-11-18",
+  "language": "en",
+  "verbatim_source_quotes_preserved": true,
+  "cases": {
+    "C-baymard-in-scale-reference": {
+      "title": "Baymard 比例参照实验：用已知尺寸参照物消除 42% 买家的体积误判",
+      "title_en": "Baymard In-Scale Image Benchmark: Eliminating Size Misjudgment for 42% of Shoppers with Familiar Scale Anchors",
+      "markdown_path": "library/cases/C-baymard-in-scale-reference.md",
+      "zh_sha256": "4cdef3ed34d68a5d650cd90dd37bee51baac28c7e2d460af96f03f341765795a",
+      "markdown_path_en": "library/cases/en/C-baymard-in-scale-reference.md",
+      "en_sha256": "db3b59358e1eb9e92d7665998cb4c6d49a52ae00127df499fd0d8369f37e1dab"
+    },
+    "C-baymard-descriptive-callouts": {
+      "title": "Baymard 图文引线标注实验：用图内结构引线与短标签弥合“只看图不读字”的断层",
+      "title_en": "Baymard Descriptive Callouts Study: Bridging Skipped Copy and Ambiguous Close-Ups with Leader Lines and Badges",
+      "markdown_path": "library/cases/C-baymard-descriptive-callouts.md",
+      "zh_sha256": "b2981c1b16ccc6eda239e1682cadbb908138422ab29f45246dc20fa232f896c5",
+      "markdown_path_en": "library/cases/en/C-baymard-descriptive-callouts.md",
+      "en_sha256": "fdf29d4f149dc9c0e9dd29b8d5b3f3cf211cdeb5f2d20be196316dbf975c2188"
+    },
+    "C-baymard-included-optional-accessories": {
+      "title": "Baymard 标配与选配附件图实验：用“标配全家福”与“单独出售”微文案消除价值误判",
+      "title_en": "Baymard Included & Optional Accessories Study: Preventing Lost Sales and Expectations Fallout with 'In the Box' & 'Sold Separately' Callouts",
+      "markdown_path": "library/cases/C-baymard-included-optional-accessories.md",
+      "zh_sha256": "9b32d02baf59ff822cbe1e20821085e6b0b088c55ce0f5d32ee581bd54121637",
+      "markdown_path_en": "library/cases/en/C-baymard-included-optional-accessories.md",
+      "en_sha256": "46f76f6132add4c302307975607f5b13f6bde531be8545b1d190d6da912ecc3b"
+    },
+    "C-baymard-spec-sheet-scannability": {
+      "title": "Baymard 参数表视觉扫描实验：用单栏语义分组与斑马纹底色取代“参数墙”",
+      "title_en": "Baymard Spec Sheet Eye-Tracking Benchmark: Replacing 'Walls of Specs' with Single-Column Semantic Groups & Alternating Row Shading",
+      "markdown_path": "library/cases/C-baymard-spec-sheet-scannability.md",
+      "zh_sha256": "9f87c3e20f9c6f00251c02eba97cb6656070ce2fa4b4a75a4360b7008bde3e13",
+      "markdown_path_en": "library/cases/en/C-baymard-spec-sheet-scannability.md",
+      "en_sha256": "22e67d63a14d08af2db007f04a7f192cf8b977b1c7ca8646b064d9deac7eae5d"
+    },
+    "C-baymard-avoid-horizontal-tabs": {
+      "title": "Baymard 详情页导航实验：弃用隐藏核心内容的“横向 Tab”，改用纵向展开分节与吸顶目录",
+      "title_en": "Baymard PDP Navigation Study: Why Horizontal Tabs Hide Critical B2B & B2C Content and How Expanded Sections + Sticky ToC Fix It",
+      "markdown_path": "library/cases/C-baymard-avoid-horizontal-tabs.md",
+      "zh_sha256": "078a3307d1325bf84a6d200da62e9906f90bb0663b1ec73a326c0f59a2a962a7",
+      "markdown_path_en": "library/cases/en/C-baymard-avoid-horizontal-tabs.md",
+      "en_sha256": "d917959c8d1ba3956bff3f9a4c18b06440cc6086c3b9a2c89e86f2b4783481d2"
+    },
+    "C-me-above-the-fold-visual": {
+      "title": "Marketing Examples 首屏五要素视觉架构：用“产品运转实景”取代抽象插画",
+      "title_en": "Marketing Examples Above-the-Fold Architecture: 'Don't Show Me Fancy Illustrations. Show Me Your Product in Action'",
+      "markdown_path": "library/cases/C-me-above-the-fold-visual.md",
+      "zh_sha256": "a66002b25e831c26961fb3f2a3f9aba2990f2b95e0fac2893e14c409300902e8",
+      "markdown_path_en": "library/cases/en/C-me-above-the-fold-visual.md",
+      "en_sha256": "0ad7c2bc1fcb57437cca152bc76e6893eedcf24e371ed3357da844b5e603d965"
+    },
+    "C-me-rows-live-product-hero": {
+      "title": "Rows 首屏实测与 Haako 视觉重塑：用“可直视/可交互的产品工作台”取代大段文字说明",
+      "title_en": "Rows' Homepage Test That Doubled Conversions & Haako's Hero Rewrite: Replacing Text Walls with Live Product Workbenches",
+      "markdown_path": "library/cases/C-me-rows-live-product-hero.md",
+      "zh_sha256": "9cd3d4840c9910a5d980e026287b8a641dc84380331851dc3473620040c54a1d",
+      "markdown_path_en": "library/cases/en/C-me-rows-live-product-hero.md",
+      "en_sha256": "7ffcc337d9ab76d72afbb22c73446b6b5d45069930657038d51ab6259ffca0d0"
+    },
+    "C-refactoring-ui-hierarchy-tactics": {
+      "title": "Refactoring UI 界面层级与降噪八法：用字重色阶、同色相浅字、粗重对比平衡与去边框重塑商业级质感",
+      "title_en": "Refactoring UI Interface Hierarchy Tactics: 7 Visual Adjustments That Fix Cluttered Layouts Without Changing Copy",
+      "markdown_path": "library/cases/C-refactoring-ui-hierarchy-tactics.md",
+      "zh_sha256": "321b528bb8e9435c69f9e33ad234d58c156e40ee41872b4bea4a5774245c1ec4",
+      "markdown_path_en": "library/cases/en/C-refactoring-ui-hierarchy-tactics.md",
+      "en_sha256": "56223e162a34088e23bea33d65cf4de216e274e0327ff329d14cdfcb8744291e"
+    },
+    "C-me-refactoring-ui-pricing-tier": {
+      "title": "Refactoring UI 与 Basecamp 定价视觉锚定：用版面面积、字号对比与交付物拆解重塑价格感知",
+      "title_en": "Refactoring UI & Basecamp Pricing Tier Framing: Reshaping Price Perception with Screen-Space Weight, Deliverable Bundling, and Cost Anchors",
+      "markdown_path": "library/cases/C-me-refactoring-ui-pricing-tier.md",
+      "zh_sha256": "479c774e799bc147c47c1030cb987c785f5517c5e0fcfc499e1f25cd08d755ee",
+      "markdown_path_en": "library/cases/en/C-me-refactoring-ui-pricing-tier.md",
+      "en_sha256": "45b1bdb70138cbd47d0dde914e6dea463fe38c98225cb68501d8624f9e582ff2"
+    },
+    "C-me-tropicana-angostura-visual-assets": {
+      "title": "Tropicana 5500 万美元改版教训与 Angostura 超大酒标：守住“零思考识别”的视觉锤",
+      "title_en": "Tropicana's $55M Rebrand Disaster & Angostura's Oversized Label: Guarding Zero-Thought Distinctive Visual Assets",
+      "markdown_path": "library/cases/C-me-tropicana-angostura-visual-assets.md",
+      "zh_sha256": "09b86fc040a46196a87cbc7a487e975060589e289d00414c5eaca5a924a8a63d",
+      "markdown_path_en": "library/cases/en/C-me-tropicana-angostura-visual-assets.md",
+      "en_sha256": "89f609f7d9dddded8f7f4f11453a042b00e1b1de4ee0e8b6a3db359438dbc1a4"
+    },
+    "C-williams-crap-layout-makeovers": {
+      "title": "Robin Williams 四大基本原则（CRAP）版式重构实录：从“视线停顿 5 次的业余名片与广告”到专业秩序感",
+      "title_en": "Robin Williams CRAP Layout Makeovers: From '5-Eye-Stop Amateur Cards & Ads' to Professional Visual Order",
+      "markdown_path": "library/cases/C-williams-crap-layout-makeovers.md",
+      "zh_sha256": "6086173dd3e04d28e65aa6abb439a9d0702a468a78fc5e6f5c8ed10655eadd3c",
+      "markdown_path_en": "library/cases/en/C-williams-crap-layout-makeovers.md",
+      "en_sha256": "e1677bbd52a3013c49828c5a0c6f20f853652c359fa322a932df8544429b99b9"
+    },
+    "C-williams-color-wheel-value-warmth": {
+      "title": "Robin Williams 色轮与视觉色感实验：用暗色/亮色、色质差与“冷退暖进”法则终结廉价配色",
+      "title_en": "Robin Williams Color Wheel & Tonal Value Experiments: Ending Garish Palettes with Tints/Shades, Value Separation, and 'Cool Recedes / Warm Advances'",
+      "markdown_path": "library/cases/C-williams-color-wheel-value-warmth.md",
+      "zh_sha256": "5567f172356c1d2fb9218307db6bd574ff90974fcda584fdf887e8fdce0dd0de",
+      "markdown_path_en": "library/cases/en/C-williams-color-wheel-value-warmth.md",
+      "en_sha256": "e3097cf626371e4d2cecabdfa17e9ba69b2daeffb426b5d783f246d62cd6e71c"
+    },
+    "C-williams-typography-conflict-vs-contrast": {
+      "title": "Robin Williams 字体冲突与六维对比实验：为什么“长得很像的两种字体”是版面大忌？",
+      "title_en": "Robin Williams Typography Conflict vs. 6-Dimension Contrast: Why Combining Two Similar Typefaces Breaks a Page",
+      "markdown_path": "library/cases/C-williams-typography-conflict-vs-contrast.md",
+      "zh_sha256": "f41186791447faacb628bf383fd5f3c48a503987ff29f43c508a80cd42c1b5e6",
+      "markdown_path_en": "library/cases/en/C-williams-typography-conflict-vs-contrast.md",
+      "en_sha256": "c28113295b04fe93d4d3ddedf3aeed39322e4163e4048ad215941a87a957fef1"
+    },
+    "C-muller-brockmann-modular-grid-construction": {
+      "title": "米勒-布罗克曼 8/20/32 格模数网格与基线对齐实验：以正文行高统领多图文版面",
+      "title_en": "Josef Müller-Brockmann's 8/20/32-Field Modular Grids & Baseline Alignment System",
+      "markdown_path": "library/cases/C-muller-brockmann-modular-grid-construction.md",
+      "zh_sha256": "fdbcac81d20977043db2d3fa075523fd0c1960b53590fbd2e0299aba0e1ea776",
+      "markdown_path_en": "library/cases/en/C-muller-brockmann-modular-grid-construction.md",
+      "en_sha256": "20dcd76b7476ff79e3acbc4ddef2646f474146f2a1668bbeb1257b03b85c469d"
+    },
+    "C-muller-brockmann-color-fields-and-posters": {
+      "title": "色块内边距四图实验与瑞士无产品构成海报：防贴边铁律与活动海报去单品化",
+      "title_en": "Josef Müller-Brockmann's Color-Field Padding Experiments & Product-Free Swiss Typographic Posters",
+      "markdown_path": "library/cases/C-muller-brockmann-color-fields-and-posters.md",
+      "zh_sha256": "186a2ba4594d09777bc6d119f9089f427c0c30ce2abc0351d45a5ec8f079e17e",
+      "markdown_path_en": "library/cases/en/C-muller-brockmann-color-fields-and-posters.md",
+      "en_sha256": "830ea1ae852241d49eb291d45993f154d49a8549b2579b15b4c0f99d889e5edb"
+    },
+    "C-muller-brockmann-industrial-catalog-exhibition": {
+      "title": "B2B 工业品 30 格技术手册与三维展位 170cm 视平线网格：从复杂图纸册到实体展台",
+      "title_en": "Josef Müller-Brockmann's 30-Field B2B Industrial Catalog & 170cm Trade-Show Booth Eye-Level Grid",
+      "markdown_path": "library/cases/C-muller-brockmann-industrial-catalog-exhibition.md",
+      "zh_sha256": "220c01e00e88a1657509c6c4ab047c7cd1d335691ec19df5ca34b4dc2d718590",
+      "markdown_path_en": "library/cases/en/C-muller-brockmann-industrial-catalog-exhibition.md",
+      "en_sha256": "9bc00073c55d70705dff4d0a8375a2cfffb213b6a6b070819449e9d833a99931"
+    },
+    "C-refactoring-ui-data-labels-and-tables": {
+      "title": "Refactoring UI 数据展示、参数表反强调与富表格重构：从呆板 Label: Value 到高密度可扫描界面",
+      "title_en": "Refactoring UI De-Labeling, Spec-Sheet Label Emphasis & Multi-Column Table Consolidation",
+      "markdown_path": "library/cases/C-refactoring-ui-data-labels-and-tables.md",
+      "zh_sha256": "050612fc1977bd7b05584d0a698843626dc93041c65f7ca65eec90e14f5fdbe4",
+      "markdown_path_en": "library/cases/en/C-refactoring-ui-data-labels-and-tables.md",
+      "en_sha256": "2c2de6931adb36722fe1dd9b53fc74f6ae30c0084ba20f4354778a43eed8fba9"
+    },
+    "C-refactoring-ui-spacing-grid-and-typography": {
+      "title": "Refactoring UI 间距系统、反 12 栏教条与排版微操实验：25% 非线性步进、45–75 字符行宽与基线/行高反比法则",
+      "title_en": "Refactoring UI Non-Linear Spacing Scale, Anti-12-Column Grid Dogma & Typographic Discipline",
+      "markdown_path": "library/cases/C-refactoring-ui-spacing-grid-and-typography.md",
+      "zh_sha256": "7e51b239a944f8a21939727d1912600b63d980df8bae91950f18f3d0f65dd70d",
+      "markdown_path_en": "library/cases/en/C-refactoring-ui-spacing-grid-and-typography.md",
+      "en_sha256": "c83c1278076cd80825d1c26cb12853f965ae1a8c6c17bbb6a0283a357120c934"
+    },
+    "C-refactoring-ui-hsl-color-depth-and-images": {
+      "title": "Refactoring UI 9 阶 HSL 色板、感知亮度色相旋转与双层阴影/背景图控对比实验",
+      "title_en": "Refactoring UI 9-Shade HSL Palettes, Perceived-Brightness Hue Rotation, Depth Layers & Hero Image Contrast",
+      "markdown_path": "library/cases/C-refactoring-ui-hsl-color-depth-and-images.md",
+      "zh_sha256": "1637ec5e3e0b74675f476227d21187bdbf40e0a5318254538da61603d4f2c079",
+      "markdown_path_en": "library/cases/en/C-refactoring-ui-hsl-color-depth-and-images.md",
+      "en_sha256": "aa985d5a54d42ec24c76b6425fe7d89218fd5227be022d975a856dae30032b15"
+    },
+    "C-krug-billboard-scanning-and-visual-noise": {
+      "title": "Krug 60mph 广告牌扫视模型、视觉层级嵌套反例与三大视觉噪音（Shouting/Disorganization/Clutter）拆解",
+      "title_en": "Steve Krug's 'Billboard Design 101': Why Users Don't Read Pages, How Visual Nesting Breaks, and How to Eliminate the 3 Types of Visual Noise",
+      "markdown_path": "library/cases/C-krug-billboard-scanning-and-visual-noise.md",
+      "zh_sha256": "4bc127e16769078911044a8e1c8529773dbf2ee093262abe63a313f3471e0bb6",
+      "markdown_path_en": "library/cases/en/C-krug-billboard-scanning-and-visual-noise.md",
+      "en_sha256": "cc90eb8834834db2c71403544cd1edd9d0d1705ec64e0491dc700765ec385ce7"
+    },
+    "C-krug-omit-words-and-trunk-test-navigation": {
+      "title": "Krug 第三定律（103 词→34 词双砍半实证）、路牌导航、物理连通 Tab 与 6 项后备箱测试（Trunk Test）",
+      "title_en": "Steve Krug's Third Law ('Cut Half, Then Half Again') & the 6-Item 'Trunk Test' for Page Navigation",
+      "markdown_path": "library/cases/C-krug-omit-words-and-trunk-test-navigation.md",
+      "zh_sha256": "886c8004eeecead0b7dcfae985aa719e08d59dde13be1795f3f154bfe699e891",
+      "markdown_path_en": "library/cases/en/C-krug-omit-words-and-trunk-test-navigation.md",
+      "en_sha256": "66a407663ce865172eb0c9e5e087fb62aa000b2f181308969d5098a0fb13286a"
+    },
+    "C-krug-homepage-big-bang-tagline-and-goodwill": {
+      "title": "Krug 首屏大爆炸（50ms 第一印象与 5 问）、Tagline vs. Motto 唯一性测试与买家善意储蓄罐水位计",
+      "title_en": "Steve Krug's 'Big Bang Theory of Web Design': The 50ms First Impression, 6–8 Word Taglines vs. Mottos, the Homepage Tragedy of the Commons, and the Reservoir of Goodwill",
+      "markdown_path": "library/cases/C-krug-homepage-big-bang-tagline-and-goodwill.md",
+      "zh_sha256": "60f131c28491e961d89c8f130726cb1ce28d33ff7450df3b6c46c084a553eeaf",
+      "markdown_path_en": "library/cases/en/C-krug-homepage-big-bang-tagline-and-goodwill.md",
+      "en_sha256": "8baddc7071e7ebb023835111b45a55f22b2ee1dc2357501f63504fa9fb86f4a8"
+    },
+    "C-xiaomi-su7-2026-mall-billboard-teardown": {
+      "zh_path": "library/cases/C-xiaomi-su7-2026-mall-billboard-teardown.md",
+      "en_path": "library/cases/en/C-xiaomi-su7-2026-mall-billboard-teardown.md",
+      "zh_sha256": "c73afa85e8e034a31a94d758b599945c0c0ebe5ee93e77adfb4b87014ad9b44b",
+      "en_sha256": "73bd11caeb8d7d70326b367a48316b8451fa123252ebd2533a99dcdcbd2695ac"
+    }
+  }
+}

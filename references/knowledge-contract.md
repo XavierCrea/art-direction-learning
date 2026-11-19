@@ -1,0 +1,54 @@
+# 视觉知识记录约定 (Bilingual Knowledge Contract v1.2)
+
+`catalog.json` 保存中英双语结构化索引与紧凑记录，`library/cases/*.md` 保存中文单篇深度案例拆解卡，`library/cases/en/*.md` 保存对应的英文完整案例拆解卡（保留原书英文原句引用），`library/translations.en.json` 保存全量中英案例对的 SHA-256 指纹与配对清单，`history/` 保存每次 `apply-patch` 变更前的快照。
+
+## 顶层结构
+- `schema_version = 1`
+- `revision`：正整数，每次更新递增 1。
+- `updated_at`：ISO 日期（`YYYY-MM-DD`）。
+- 四大记录数组：`sources`、`methods`、`cases`、`feedback`。所有记录 `id` 全库唯一且稳定，更新已有记录时保留 `id` 并递增其 `version`。
+
+## 1. sources（信源登记）
+必填字段：`id`、`kind`（`book` / `web` / `research_report` / `user_material`）、`title`、`version`、`reading_status`、`reviewed_locations`、`retrieved_at`，建议同时提供中英文核阅摘要 `coverage_note` 与 `coverage_note_en`。
+- `reading_status`：`registered`、`metadata_only`、`partial_review`、`full_review`。
+- **书籍防伪与跨环境便携约束**：`kind == "book"` 时必须记录 `pdf_pages`（正整数）。若为第三方摘要/拆书稿（如 Bookey、Blinkist 等无原书插图与原文的浓缩版），**严禁作为原书信源入库**。为保证技能包跨机器可移植，外部书籍统一设 `original_availability = "citation_only"` 并省略宿主机绝对路径；若将允许分发的原件归档在库内 `sources/` 下，则记录库内相对路径 `path` 与 `sha256`。
+
+## 2. methods（可复用视觉方法 `M-*`）
+必填字段：
+- `id`、`version`、`title`（中文标题）、`title_en`（英文标题）
+- `tags`（中文标签数组）、`tags_en`（英文标签数组）
+- `when_stuck`（中英双语结构化症状字典：`{"zh": ["中文症状..."], "en": ["English symptoms..."]}`）
+- `channels`（适用载体数组，如 `["pdp", "landing_page", "ad_banner", "spec_sheet", "catalog", "storefront"]`）
+- `status`（`reference` / `candidate` / `validated` / `retired`）
+- `source_refs`（至少一项，指向 `sources` 中的 `source_id` 及具体页码/段落定位）
+- `rule`（中文核心视觉法则）、`rule_en`（英文核心视觉法则，**如原书/原报告有经典英文原句，须在 `rule_en` 中保留原句引用**）
+- `applies_when`（适用前提）
+- `limits`（迁移边界与防造假禁区）
+- `steps`（可执行分步指令）
+- `checks`（交付前视觉体检项）
+- `validation_refs`（验证反馈引用列表，`status == "validated"` 时必填且须指向 `verified == true` 的反馈）
+
+## 3. cases（真实视觉案例与实验拆解 `C-*`）
+必填字段：
+- `id`、`version`、`title`、`title_en`
+- `tags`、`tags_en`、`when_stuck`（`{"zh": [...], "en": [...]}`）
+- `status`、`source_refs`
+- `case_type`
+- `markdown_path`（指向 `library/cases/<id>.md`）与 `markdown_path_en`（指向 `library/cases/en/<id>.md`，英文卡须保留原书/原报告中的原句引用）
+- `observations`（原材料/原画面中客观看到的物理元素、景别、版式对比或实验统计数据）
+- `copy_visual_synergy`（图字分工机制：画面演什么、文字说什么、标注引线/图注如何配合）
+- `analysis`（为什么这种视觉安排能解决读者的判断障碍）
+- `reusable_move`（中文可迁移视觉动作公式）、`reusable_move_en`（英文可迁移视觉动作公式，保留原书关键术语与原句）
+- `asset_prerequisites`（执行该视觉动作必须具备的真实素材前提）
+- `outcome_evidence`（含 `evidence_type`、`claim`、`verification_status`）
+- `transfer_limits`（迁移时的禁用边界）
+
+## 4. feedback（实战反馈记录 `F-*`）
+必填字段：`id`、`version`、`title`、`kind`（`"feedback"`）、`evidence_type`、`source_locator`、`observation`、`verified`（布尔值）、`task_id`；建议附带 `title_en` 与 `observation_en`。
+
+## 5. CLI 工具约定 (`scripts/library.py`)
+- `summary`：输出各分组数量、双语支持状态与信源阅读状态。
+- `search "<query>" [--kind ...] [--channel ...] [--limit 8]`：支持中英文与症状检索，同时返回中文与英文标题及摘要（`title_en`、`summary_en`、`markdown_path_en`）。
+- `get <ID1> [<ID2> ...]`：支持单次传入多个 ID 批量读取，自动校验并解析 `markdown_path` 与 `markdown_path_en`。
+- `validate [--check-files]`：校验 Schema、外键引用、页码范围、中英案例卡文件存在性以及 `library/translations.en.json` 的 SHA-256 指纹一致性。
+- `apply-patch --file <patch.json> [--check-files]`：原子化入库命令。

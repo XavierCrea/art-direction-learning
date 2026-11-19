@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Planning · 视觉策划与案例学习"
+  short_description: "Plan and diagnose layouts, PDPs, hero sections, and image-copy synergy from verified facts and visual cases."
+  default_prompt: "Use $visual-planning-learning to plan or diagnose the visual hierarchy, layout, and image-copy synergy for my page or ad using the product facts I provide."
