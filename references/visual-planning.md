@@ -40,6 +40,7 @@
 | **多图文画册高低错落、色块贴边憋屈、展会海报像传单或展板被挡** | `网格 基线 色块 展位` 或 `modular grid booth 170cm` | `M-016`–`M-019` · `C-muller-brockmann-modular-grid-construction` · `C-muller-brockmann-color-fields-and-posters` · `C-muller-brockmann-industrial-catalog-exhibition` |
 | **间距纠结、百字长行、HSL 调色发脏、深色徽章抢戏或背景图吃字** | `间距 行宽 HSL 阴影` 或 `spacing hsl shadow contrast` | `M-021`–`M-023` · `C-refactoring-ui-spacing-grid-and-typography` · `C-refactoring-ui-hsl-color-depth-and-images` |
 | **按钮名字费脑、扁平化看不出可点、说明文太长、内页迷路或首屏公地悲剧** | `广告牌 噪音 砍半 后备箱 口号` 或 `billboard trunk test tagline goodwill` | `M-024`–`M-027` · `C-krug-billboard-scanning-and-visual-noise` · `C-krug-omit-words-and-trunk-test-navigation` · `C-krug-homepage-big-bang-tagline-and-goodwill` |
+| **商圈外墙/展会停车场大牌被环境噪点吞没、少字风景图依然发灰紧绷、L屏被白底割裂或没人打卡** | `商圈 户外大屏 纯色场 L屏 打卡` 或 `mall billboard color field L-screen`（可加 `--origin co_dissected_teardown`） | `M-028` · `C-xiaomi-su7-2026-mall-billboard-teardown` |
 
 ---
 
@@ -65,3 +66,13 @@
   4. **适用条件与所需素材（Prerequisites）**。
 - **场景 B：完整详情页分镜（PDP Storyboard）或落地页全页改版**
   默认交付 **1 套完整连贯的分屏执行表**（从首屏 Hero `M-004`/`M-026` $\rightarrow$ 核心工作流/卖点引线图 `M-002` $\rightarrow$ 比例参照与标配清单 `M-001`/`M-003` $\rightarrow$ 单栏语义分组斑马纹参数表 `M-005`/`M-020` $\rightarrow$ 善意储蓄罐真 FAQ `M-027`）。
+- **场景 C：线下展会 / 商业空间 `100m → 10m → 1m` 全触点接力方案**
+  按观众移动距离与扫视时间切分视觉任务：
+  1. **`100m` 远距截停触点（展馆停车场海报 / 商圈外立面巨幕 `M-028` + `M-019`）**：1.5 秒扫视，采用 `≥75%` 单一高纯度品牌色场切开环境噪点，砍掉参数表、多宫格价格、底部小字与二维码，只保留**品类/情绪钩子短句 + 放大 6 倍的展位号（`BOOTH #XXXX`）或品牌视觉锤**；
+  2. **`10m` 中距引流触点（展位门楣 / `170cm` 视平线主背板 `M-019`）**：锁死与停车场海报完全一致的品牌主色形成跨空间认知识别，将核心主张与主推方案锚定在 `170cm` 站立视平线上下；
+  3. **`1m` 近距成交触点（展台实物陈列 / 桌面单页选型表 / PDP `M-001`–`M-005`、`M-020`）**：交付完整规格矩阵、接口引线标注与真实认证证据。
+- **四条下游落地通道选择（Downstream Channels）**：
+  1. **AI 生图/改图 Prompt（`image_generate` / `image_edit`）**：适合自然实景、人像光影、产品场景合成；
+  2. **代码级精确平面渲染（Python PIL / SVG 脚本直出 PNG/PDF）**：适合需要严格模数网格对齐、精确品牌 HEX 色值、锋利无误的文字排版与 100% 可扫描二维码（`zxingcpp` 核验）的几何海报、展会邀请函、停车场大牌与对比长图；
+  3. **响应式网页/组件代码（HTML / CSS / React / Widget）**：适合店铺装修、单页交互选型表、斑马纹参数表；
+  4. **实拍与美工执行单**：适合严禁 AI 伪造的车间测试、真实线束全家福与证书扫描件排版。

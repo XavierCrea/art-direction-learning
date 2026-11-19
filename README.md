@@ -1,14 +1,12 @@
 # visual-planning-learning
 
-[简体中文说明](README.zh-CN.md) · [See it in action](#see-it-in-action) · [Library index](library/README.en.md) · [Get started](#get-started)
+[简体中文说明](README.zh-CN.md) · [See it in action](#see-it-in-action) · [How it works](#how-it-works) · [Who is this for](#who-is-this-for) · [Library index](library/README.en.md) · [Get started](#get-started)
 
-## Stop playing prompt roulette with AI layouts. Design from verified facts, eye-tracking evidence, and classic grid manuals.
+## Stop playing prompt roulette with AI layouts. Give your agent an Art Director grounded in eye-tracking research and classic design books.
 
-When you ask an AI for *"a sleek, high-tech exhibition poster"* or *"a modern product page"*, you usually get glowing 3D clichés, dead-center text stacks, and invented product visuals. `visual-planning-learning` replaces vague aesthetic adjectives with **traceable layout reasoning**.
+`visual-planning-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
 
-Grounded in eye-tracking UX benchmarks, classic typography/grid books, and live comparative field teardowns, this skill helps your agent diagnose why a visual fails, map confirmed product facts into concrete visual elements, enforce image-copy synergy, and generate structured art direction or multi-archetype layout options.
-
-**v1.2.0 · `catalog.json` `r10` · 15 verified sources · 28 searchable visual methods (`M-001`–`M-028`) · 23 bilingual case cards (`en` + `zh`)**
+**v1.3.0 · `catalog.json` `r10` · 15 verified sources · 28 visual methods (`M-001`–`M-028`) · 23 bilingual case cards (`en` + `zh`)**
 
 [Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Searchable catalog](library/catalog.json) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
@@ -25,17 +23,17 @@ Grounded in eye-tracking UX benchmarks, classic typography/grid books, and live 
 | Before · Generic *"high-tech invitation"* prompt | After · Dual-skill primary deliverable (Option B · Brand-Aligned VIP Pass) |
 | :---: | :---: |
 | <img src="docs/assets/invite-before.jpg" alt="Before: Generic centered blue-and-gold invitation" width="380" /> | <img src="docs/assets/invite-after-brand-pass.jpg" alt="After: Brand-aligned layered VIP pass invitation" width="380" /> |
-| **6 diagnosed flaws:**<br>• Biggest type wasted on empty `"INVITATION / Letter of invitation"` (`M-012`)<br>• Weak all-center stacking with no left alignment axis (`M-012`)<br>• Mechanical `HALL B:` / `Time :` / `Address:` labels + underlines (`M-020`)<br>• Zero product/category signal — buyers can't tell what you sell (`M-001`)<br>• Vague `"Follow Us for More Info"` QR prompt (`M-019` / `M-023`)<br>• Glowing `"AI EV"` chip graphic competes with the QR code (`M-011` / `M-023`) | **What changed (every move traced to a method & page):**<br>• **1-second category hook:** Expo name + `99.1% Efficiency SiC Traction Inverters` + 3 spec pills above the fold<br>• **Strong left axis + 4 proximity groups:** Header → Headline & specs → Floating `Booth B-42` VIP pass → Dark QR card (`M-011`, `M-012`)<br>• **De-labeled hierarchy + dual-layer elevation:** Oversized `Booth B-42` + clean date/venue split (`M-020`, `M-023`)<br>• **Concrete QR incentive:** *"Can't wait until October? Get Our 2026 SiC Drive Catalog Now"*<br>• **Brand DNA preserved:** Inherits logo Navy/Cyan/Lime (`F-001`) |
+| **6 diagnosed flaws:**<br>• Biggest type wasted on empty `"INVITATION / Letter of invitation"` (`M-012`)<br>• Weak all-center stacking with no left alignment axis (`M-012`)<br>• Mechanical `HALL B:` / `Time :` / `Address:` labels + underlines (`M-020`)<br>• Zero product/category signal — buyers can't tell what you sell (`M-001`)<br>• Vague `"Follow Us for More Info"` QR prompt (`M-019` / `M-023`)<br>• Glowing `"AI EV"` chip graphic competes with the QR code (`M-011` / `M-023`) | **What changed (every move traced to a method & page):**<br>• **1-second category hook:** Expo name + `99.1% Efficiency SiC Traction Inverters` + 3 spec pills above the fold<br>• **Strong left axis + 4 proximity groups:** Header → Headline & specs → Floating `Booth B-42` VIP pass → Dark QR card (`M-011`, `M-012`)<br>• **De-labeled hierarchy + dual-layer elevation:** Oversized `Booth B-42` + clean date/venue split (`M-020`, `M-023`)<br>• **Concrete QR incentive:** *"Can't wait until October? Get Our 2026 SiC Drive Catalog Now"*<br>• **Brand DNA preserved:** Inherits logo Navy / Cyan / Lime (`F-001`) |
 
 #### 02 · The mid-task plot twist: Why *"add a product cutout + callout arrows"* was also wrong
 
 Early in the test, the agent's first instinct was to apply e-commerce PDP rules (`M-001` / `M-002`) and drop a white-background hardware cutout with spec arrows into the middle of the invitation.
 
-Comparing real-world Swiss exhibition posters (*Josef Müller-Brockmann*, *Grid Systems*, pp. 56–64) revealed the flaw: **a trade-show invitation is an event poster, not a product spec sheet.** Its primary visual protagonist is the **expo name, booth number (`B-42`), date, and venue** — not a product cutout. That insight produced **`M-019` (Genre Routing Firewall & `scope_layer`)**, separating `universal` layout principles from `genre_specific` PDP rules so the skill never misapplies e-commerce habits to event posters.
+Cross-checking Swiss exhibition posters (*Josef Müller-Brockmann*, *Grid Systems*, pp. 56–64) exposed the mistake: **a trade-show invitation is an event poster, not a product spec sheet.** Its primary visual protagonist is the **expo name, booth number (`B-42`), date, and venue** — not a product cutout. That insight produced **`M-019` (Genre Routing Firewall & `scope_layer`)**, separating `universal` layout principles from `genre_specific` PDP rules so the skill never misapplies e-commerce habits to event posters.
 
 #### 03 · One brief → Three visual archetypes (plus feedback lesson `F-001`)
 
-From the exact same dual-skill brief, `visual-planning-learning` explores **three distinct layout archetypes** so teams can choose intentionally instead of regenerating blindly:
+From the exact same dual-skill brief, `visual-planning-learning` explores **three distinct layout archetypes** so teams choose intentionally instead of regenerating blindly:
 
 | Option B · Brand-Aligned VIP Pass *(Primary)* | Option A · Swiss Asymmetric Grid | Option C · Dark Industrial Grid |
 | :---: | :---: | :---: |
@@ -45,13 +43,17 @@ From the exact same dual-skill brief, `visual-planning-learning` explores **thre
 > **Captured in `F-001` (`M-019 v2`):** User review noted that Option A's Swiss grid stood out sharply, yet Option B won overall because it respected the existing logo's colors. That feedback was written back into the library: *borrow classic grid skeletons and proportions, never blindly overwrite an existing brand palette with 1950s poster colors.*
 
 <details>
-<summary>View the full 3-part annotated case study walkthrough (Chinese visual breakdown)</summary>
+<summary>View the full 5-card HD annotated case study walkthrough (Chinese breakdown, 2560px Retina PNGs)</summary>
 
-![Stage 0 & 1: Input Brief & 6-Point Joint Diagnosis](docs/assets/case-study-01-diagnosis.jpg)
+![Card 1: Overview & Input Brief Contrast](docs/assets/showcase-01-overview.png)
 
-![Critical Insight & Stage 2: M-019 Genre Firewall & Dual-Skill Refactoring](docs/assets/case-study-02-refactoring.jpg)
+![Card 2: Stage 1 — 6-Point Joint Diagnosis](docs/assets/showcase-02-diagnosis.png)
 
-![Stage 3 & Traceability Wall: Three Archetypes, F-001 Review & 5 Source Books](docs/assets/case-study-03-deliverables.jpg)
+![Card 3: M-019 Genre Firewall & Stage 2 — Dual-Skill Refactoring](docs/assets/showcase-03-refactoring.png)
+
+![Card 4: Stage 3 — Three Archetypes & F-001 Review](docs/assets/showcase-04-deliverables.png)
+
+![Card 5: Knowledge Traceability Wall — 5 Source Books](docs/assets/showcase-05-traceability.png)
 
 </details>
 
@@ -71,19 +73,54 @@ Diagnose any draft flaws first, check genre routing (M-019), and propose 2–3 d
 
 ---
 
-## Five ways to put it to work
+## How it works
 
-1. **Product Detail Page (PDP) Storyboards** — Build screen-by-screen visual briefs anchored by real assets: In-Scale references (`M-001`), descriptive callouts (`M-002`), included vs. optional accessories (`M-003`), and zero unverified claims.
-2. **Landing Page Hero & Pricing Diagnosis** — Fix abstract hero illustrations (`M-004`), 60-mph billboard visual noise (`M-024`), weak hierarchy (`M-020`), and pricing anchor framing (`M-009`).
-3. **B2B Technical Spec Sheets & Catalogs** — Turn unreadable *"walls of specs"* into scannable modular grids (`M-005`, `M-018`, `M-021`) without hiding key sections behind horizontal tabs (`M-006`).
-4. **Trade-Show Invitations, Posters & Booths** — Apply genre-aware typographic composition (`M-019`), `170 cm` exhibition eye-level grids, and brand-DNA color decoupling (`F-001`).
-5. **Live Field Teardowns & Book Dissections** — Bring a real outdoor billboard photo, a competitor redesign, or a design book chapter; dissect it with the 5-step anatomy workflow, separate observation from conversion claims, and patch it into your bilingual library (`library.py apply-patch`).
+### 1. One Art Director Brain → Four Downstream Execution Channels
+
+```mermaid
+flowchart LR
+  A["copywriting-learning<br/>(What to say & in what order)"] --> C["visual-planning-learning<br/>(Art Director: Facts → Visual Proof, Grid & Color)"]
+  B["Verified Product Facts &<br/>Brand Assets"] --> C
+  C --> D1["Channel 1: AI Image Prompts<br/>Scenes, lighting, lifestyle & hero shots"]
+  C --> D2["Channel 2: Code-Level Rendering<br/>Python PIL / SVG → pixel-exact grids, HEX colors & QR"]
+  C --> D3["Channel 3: Web / UI Code<br/>HTML / CSS / React PDPs, zebra spec tables & Sticky ToC"]
+  C --> D4["Channel 4: Shoot & Print Briefs<br/>Anti-hallucination shot lists for real factory/cert proof"]
+```
+
+| Channel | Best For | Why This Channel Exists |
+| :--- | :--- | :--- |
+| **1. AI Image Gen / Edit Prompts** | Atmospheric scenes, lifestyle context, lighting & hero compositions | Pairs with `image-prompt-guide` once buyer proof, scale reference (`M-001`), and focal hierarchy are locked. |
+| **2. Precision Code Rendering (`Python PIL` / `SVG`)** | Trade-show invitations, Swiss geometric posters, parking-lot billboards, long comparison charts | Solves AI image generators' 4 classic failures: broken modular grids (`M-016`), drifting brand HEX codes, garbled small English text, and unscannable QR codes (supports hybrid *AI scene + code typography/QR* pipelines). |
+| **3. Interactive Web Code (`HTML` / `CSS` / `React`)** | B2B storefronts (e.g., Alibaba International), landing pages, interactive spec tables | Half of UX layout science — single-column zebra spec sheets (`M-005`), vertical expansion over hidden horizontal tabs (`M-006`), borderless spacing (`M-007`) — requires real code, not flat JPEGs. |
+| **4. Photography & Retouching Briefs** | Factory test benches, real UL/CE certificates, included wiring-harness flat-lays (`M-003`) | **Strict anti-hallucination guardrail:** never let AI fabricate hardware internals, lab curves, or certificates. Outputs adjective-free camera angles, scale props, and callout coordinates. |
+
+### 2. Cross-Distance Spatial Relay (`100m → 10m → 1m`)
+
+For offline exhibitions and commercial spaces, the skill orchestrates visual density across viewing distances (`M-019` + `M-028`):
+
+| Distance | Touchpoint | Visual Strategy | What Gets Ruthlessly Cut |
+| :--- | :--- | :--- | :--- |
+| **`100m`** | Parking-lot mega-poster / mall exterior LED (`M-028`) | 1.5-second glance: `≥75%` single high-chroma brand color field to slice through clutter + short category/emotion hook + 6× oversized booth number | Spec tables, multi-grid pricing, footnotes, QR codes |
+| **`10m`** | Booth fascia / `170 cm` eye-level main backdrop (`M-019`) | Locks the exact same brand color as the `100m` poster for instant cross-space recall; anchors core positioning at `170 cm` standing eye level | Low-placed copy blocked by crowds or counters |
+| **`1m`** | Tabletop selection sheet / online PDP (`M-001`–`M-005`, `M-020`) | Closes technical buyers with In-Scale photos, descriptive callouts, zebra-striped spec tables, and verified certification proof | Vague slogans without measurable engineering specs |
+
+---
+
+## Who is this for
+
+| Role | Real-World Pain Point | How You Use `visual-planning-learning` | Primary Channels |
+| :--- | :--- | :--- | :--- |
+| **Cross-Border & B2B E-Commerce Sellers / Operators** *(Alibaba, Amazon, DTC)* | PDPs look like an unreadable wall of specs, buyers misjudge product size or included accessories, and AI image tools keep hallucinating fake parts/certs. | Generate screen-by-screen PDP storyboards (`M-001`–`M-006`), real photography shot lists, and responsive single-column zebra spec tables. | Channels 1, 3, 4 |
+| **Brand & Trade-Show Marketers** | Invitations, parking-lot billboards, and booth backdrops look dated or disconnected — and get swallowed by surrounding visual noise. | Run *"One Brief → Three Archetypes"* for invitations (`M-019`, `F-001`) and coordinate `100m → 10m → 1m` exhibition relays (`M-028`). | Channels 2, 4 |
+| **Designers, Art Directors & Visual Planners** | Tired of vague revision feedback (*"make it more high-tech / premium"*) and endless subjective debates with stakeholders. | Back every layout proposal with Baymard eye-tracking benchmarks, Müller-Brockmann grid math, and *Refactoring UI* page citations; deliver 2–3 structured angles fast. | Channels 1, 2, 4 |
+| **Indie Makers, PMs & Growth Teams** | No dedicated designer on staff; landing page heroes, pricing tiers, and comparison tables feel cluttered or fail the 5-second clarity test. | Diagnose visual noise (*Don't Make Me Think* `M-024`–`M-027`), fix pricing anchors (`M-009`), and compile clean HTML/CSS/React layouts (`M-020`–`M-023`). | Channel 3 |
+| **AI Workflow & Agent Skill Builders** | Static mega-prompts bloat over time and can't evolve from real-world wins or mistakes. | Use the 4-tier `learning_origin` provenance schema + `apply-patch` atomic updates to turn live field teardowns and user feedback into a searchable bilingual library. | All + CLI |
 
 ---
 
 ## What's Inside the Library (`catalog.json` `r10`)
 
-Every record explicitly tags its `learning_origin` (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent teardowns are clearly separated from seeded books and UX studies.
+Every record explicitly tags its **`learning_origin`** (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent teardowns are clearly separated from seeded books and UX studies — and can be filtered directly via `--origin`.
 
 | Source Category (`learning_origin`) | Reviewed Works & Field Teardowns (`15` Sources, `100%` Full Review) | Methods (`28`) & Bilingual Cases (`23` `zh` + `23` `en`) |
 | :--- | :--- | :--- |
@@ -101,7 +138,7 @@ Every record explicitly tags its `learning_origin` (`book_canon`, `benchmark_stu
 
 ### Installation
 
-Clone or download this repository into your agent's skills directory (keep the entire folder intact so `SKILL.md`, `references/`, `library/`, and `scripts/` stay together):
+Clone or download this repository into your agent's skills directory (keep `SKILL.md`, `references/`, `library/`, and `scripts/` together):
 
 - **Antigravity (global):** `~/.gemini/config/skills/visual-planning-learning/`
 - **Project / Codex (workspace-scoped):** `.agents/skills/visual-planning-learning/`
@@ -116,23 +153,21 @@ Run commands from the skill root directory (`visual-planning-learning/`):
 # 1. Inspect library summary and source coverage
 python3 scripts/library.py summary
 
-# 2. Search by visual symptom or keyword (supports English & Chinese)
+# 2. Search by visual symptom, channel, or provenance origin (supports English & Chinese)
 python3 scripts/library.py search "wall of specs" --kind methods
 python3 scripts/library.py search "billboard visual noise" --kind cases
-python3 scripts/library.py search "in-scale size" --channel pdp
+python3 scripts/library.py search "mall billboard color field" --origin co_dissected_teardown
 
 # 3. Batch-get multiple methods and cases in one call (returns both zh and en markdown paths)
-python3 scripts/library.py get M-001 M-020 M-024 C-krug-billboard-scanning-and-visual-noise
+python3 scripts/library.py get M-001 M-019 M-028 C-xiaomi-su7-2026-mall-billboard-teardown
 
 # 4. Validate schema, cross-references, bilingual markdown files, and SHA-256 digests
 python3 scripts/library.py validate --check-files
 ```
 
----
-
-## Pairing with `copywriting-learning`
+### Pairing with `copywriting-learning`
 
 `visual-planning-learning` works standalone or in tandem with [`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning):
 
 - **[`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)** decides *what to say, in what sequence, and with what proof*;
-- **`visual-planning-learning`** decides *what physical evidence the camera or layout shows, how items are grouped and aligned on the grid, where leader lines/captions sit, and how hierarchy guides a 60-mph scanner*.
+- **`visual-planning-learning`** decides *what physical evidence the camera or layout shows, how items align on the grid, which of the 4 delivery channels to use, and how `100m → 10m → 1m` touchpoints hand off to each other*.

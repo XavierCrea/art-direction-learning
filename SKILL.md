@@ -5,12 +5,12 @@ description: >-
   基于产品事实、读者视线规律与真实案例，策划或诊断广告画面、落地页首屏（Hero）、电商详情页分镜（PDP Storyboard）、参数表版式及图文分工。支持与 copywriting-learning 组合联动，也可从设计书籍、UX 实验与品牌改版案例中提炼可检索的视觉方法。
 metadata:
   display_name: Visual Planning · 视觉策划与案例学习
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # 视觉策划与案例学习 (Visual Planning & Case-Based Layout Learning)
 
-将产品物理事实、文案主张与买家的视觉认知规律连接起来，用经过实证的构图、景别、比例参照、网格系统和版面层级完成视觉策划，拒绝空洞的设计形容词与无根据的画面造假，并持续从经典书籍与真实案例中沉淀可复用的中英双语视觉动作。
+将产品物理事实、文案主张与买家的视觉认知规律连接起来，用经过实证的构图、景别、比例参照、网格系统、版面层级与**跨距离触点分工（`100m → 10m → 1m`）**完成视觉策划，拒绝空洞的设计形容词与无根据的画面造假，并持续从经典书籍、UX 实验与**用户×Agent 街头正反实拍共创拆解（`co_dissected_teardown`）**中沉淀可复用的中英双语视觉动作。
 
 - English Overview: [README.md](README.md) · [English Case & Method Index](library/README.en.md)
 - 中文总览：[README.zh-CN.md](README.zh-CN.md) · [中文案例与方法索引](library/README.md)
@@ -18,7 +18,7 @@ metadata:
 ## 资料入口与检索工具 (Library & CLI)
 
 - 资料库默认位置见 [library-location.json](references/library-location.json)；用户本轮指定的资料库优先。
-- 使用 `python scripts/library.py search "关键词 / symptom"` 检索方法与案例（支持**中英双语标题/规则/标签、`when_stuck` 双语卡点症状匹配与字段加权排序**，可用 `--kind methods|cases|sources|feedback` 或 `--channel` 过滤）。
+- 使用 `python scripts/library.py search "关键词 / symptom"` 检索方法与案例（支持**中英双语标题/规则/标签、`when_stuck` 双语卡点症状匹配与字段加权排序**，可用 `--kind methods|cases|sources|feedback`、`--channel` 或 **`--origin co_dissected_teardown|book_canon|benchmark_study|task_feedback`** 过滤）。
 - 使用 `python scripts/library.py get ID1 ID2 ...` **批量读取**多条方法与案例记录（单次调用即可传入多个 ID，返回结果同时包含中文 `markdown_path` 与英文 `markdown_path_en` 详单路径，英文版完整保留原书原句引用）。
 - 使用 `python scripts/library.py summary` 查看资料库规模与已读范围；使用 `python scripts/library.py validate --check-files` 核对引用完整性、中英案例卡配对与 `translations.en.json` SHA-256 指纹。
 - 新增或修改知识库记录时，使用 `python scripts/library.py apply-patch --file patch.json --check-files` 执行**原子化更新**（自动备份旧版本至 `history/`、递增 `revision`、合并记录并执行校验，失败自动回滚）。
@@ -36,9 +36,14 @@ metadata:
    把当前卡住的视觉问题（如“尺寸没概念 `size perception`”、“特写看不懂 `ambiguous crop`”、“参数表像一堵墙 `wall of specs`”、“首屏插画太虚 `abstract hero`”、“高单价显得贵 `price framing`”、“元素乱飘对不齐 `alignment grid`”、“视觉噪音太大 `billboard visual noise`”、“迷路找不到层级 `trunk test navigation`”）传给 `library.py search`，批量 `get` 匹配的视觉方法（`M-*`）与案例（`C-*`）。
 3. **锁定图字分工（Image-Copy Synergy）与版面层级**：
    规定每一屏/每一张图的**画面演什么、文字说什么、图注（Caption）标哪里**，杜绝“图片机械重复标题文字”或“无标注的局部特写”。
-4. **按任务颗粒度交付**：
-   - **单张广告 / 首屏 Hero / 海报邀请函 / 视觉创意切口**：默认提供 **2–3 个由不同案例逻辑驱动的构图角度（Visual Angles）**（如：比例参照切口 vs. 微距工艺证据切口 vs. 瑞士网格纯字体构成切口），方便用户拍板；
-   - **完整详情页分镜（PDP Storyboard） / 落地页线框方案**：默认交付 **1 套结构完整的分屏执行单**，可按需同步输出给摄影师/美工的《分镜执行单》、给 `image-prompt-guide` 的生图提示词，或给前端/Widget 的结构化线框。
+4. **按任务颗粒度与四条下游落地通道交付**：
+   - **单张广告 / 首屏 Hero / 展会海报邀请函 / 停车场大牌**：默认提供 **2–3 个由不同案例逻辑驱动的构图角度（Visual Angles）**（如：比例参照切口 vs. 瑞士网格无单品构成切口 `M-019` vs. 高纯度品牌色场降噪切口 `M-028`），方便用户拍板；
+   - **跨距离全触点套件（`100m → 10m → 1m` Touchpoint Relay）**：当涉及线下展会或商圈活动时，主动按距离切分信息密度——**`100m`（停车场大牌/外墙巨幕 `M-028`）只放纯色场+记忆钩子+超大展位号/品牌锚点，砍掉参数与小字** $\rightarrow$ **`10m`（展位门楣/170cm 视平线主背板 `M-019`）同色系延展立住品类实力** $\rightarrow$ **`1m`（展台桌面选型表/PDP 参数表 `M-005`/`M-020`）承接硬核规格与成交证据**；
+   - **四条下游落地执行通道（Downstream Execution Channels）**：
+     1. **通道 1（AI 生图/改图 Prompt）**：需要真实场景合成、光影人像或局部特写时，结合 `image-prompt-guide` 编译为生图/改图指令；
+     2. **通道 2（代码级精确平面渲染 Python PIL / SVG）**：针对**需要严格网格对齐、精确品牌色值（如 `#00A0E0`）、零拼写错误的锋利文字排版与 100% 可扫码真实二维码（`zxingcpp` 校验）**的展会邀请函、几何构成海报、停车场纯色大牌与对比长图，直接编写 Python (PIL) / SVG 脚本像素级直出高清成品图（或采用“AI 生成底图 + 脚本精准压字/嵌码”混合管线）；
+     3. **通道 3（前端网页/交互组件 HTML/CSS/React）**：针对店铺装修、着陆页、可交互选型表与斑马纹参数表（`M-005`/`M-020`–`M-023`），直接落地为响应式代码；
+     4. **通道 4（摄影与美工执行单）**：针对严禁 AI 伪造的工厂车间实拍、真实线束全家福（`M-003`）与硬件微距证据，输出去形容词的拍摄与排版指令单。
 
 ### 2. 拆解书籍、UX 报告或品牌改版案例
 
