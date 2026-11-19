@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Inspect, search, batch-get, validate, and atomically patch the visual-planning-learning bilingual library."""
+"""Inspect, search, batch-get, validate, and atomically patch the art-direction-learning bilingual library."""
 
 from __future__ import annotations
 
@@ -121,7 +121,7 @@ def skill_root() -> Path:
 def resolve_library_root(cli_value: str | None) -> Path:
     if cli_value:
         return Path(cli_value).expanduser().resolve()
-    env_value = os.environ.get("VISUAL_PLANNING_LIBRARY_ROOT")
+    env_value = os.environ.get("ART_DIRECTION_LIBRARY_ROOT") or os.environ.get("VISUAL_PLANNING_LIBRARY_ROOT")
     if env_value:
         return Path(env_value).expanduser().resolve()
     config_path = skill_root() / "references" / "library-location.json"
@@ -585,7 +585,7 @@ def main() -> int:
         sys.stderr.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--library", help="Path to the visual planning library root")
+    parser.add_argument("--library", help="Path to the art direction library root")
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("summary", help="Show library counts and source status")

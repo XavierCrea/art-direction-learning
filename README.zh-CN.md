@@ -1,12 +1,12 @@
-# visual-planning-learning · 视觉策划与案例学习技能包
+# art-direction-learning · 实证美术指导与案例拆解技能包
 
 [English README](README.md) · [实战对比演示](#实战演示双技能重做一张-b2b-展会邀请函) · [工作原理与四通道](#工作原理一个美术指导大脑--四条落地通道) · [面向人群](#面向人群who-is-this-for) · [知识库全景](#知识库全景概览-catalogjson-r10) · [快速上手](#快速上手)
 
 ## 告别 AI 生图与排版的“抽盲盒”：给 Agent 装上一位有眼动实证与经典原著撑腰的美术指导
 
-`visual-planning-learning` **不是**一个帮生图模型扩写“高级感、科技感”的 Prompt 工具，而是一位上游**美术指导 / 视觉总导演（Art Director）**。它先基于已核实的产品事实与真实案例，决定**画面该演什么物理证据、网格和色阶怎么排、哪些视觉噪音必须砍掉**，再按交付物性质精准分流到 **4 条下游落地通道**（AI 生图 Prompt、Python/SVG 代码级像素直出、HTML/React 前端代码、或反 AI 造假的实拍执行单）。
+`art-direction-learning` **不是**一个帮生图模型扩写“高级感、科技感”的 Prompt 工具，而是一位上游**美术指导 / 视觉总导演（Art Director）**。它先基于已核实的产品事实与真实案例，决定**画面该演什么物理证据、网格和色阶怎么排、哪些视觉噪音必须砍掉**，再按交付物性质精准分流到 **4 条下游落地通道**（AI 生图 Prompt、Python/SVG 代码级像素直出、HTML/React 前端代码、或反 AI 造假的实拍执行单）。
 
-**v1.3.0 · `catalog.json` `r10` · 15 项全量核验信源 · 28 条可检索视觉方法（`M-001`–`M-028`） · 23 篇中英双语案例卡**
+**v1.3.1 · `catalog.json` `r10` · 15 项全量核验信源 · 28 条可检索视觉方法（`M-001`–`M-028`） · 23 篇中英双语案例卡**
 
 [浏览中文案例索引](library/README.md) · [English Library Index](library/README.en.md) · [结构化双语目录](library/catalog.json) · [搭配 `copywriting-learning` 联动](https://github.com/XavierCrea/copywriting-learning)
 
@@ -14,7 +14,7 @@
 
 ## 实战演示：双技能重做一张 B2B 展会邀请函
 
-以下展示同一份虚构 B2B 业务输入（*VoltCore Drive Systems GmbH* · 2026 瑞典哥德堡北欧电动车技术展 · 展位 `Booth B-42` · 48V–800V SiC 牵引逆变器），在 **“传统一句话 Prompt 抽盲盒”** 与 **“`copywriting-learning` × `visual-planning-learning` 双技能协同重构”** 下的真实产出对比：
+以下展示同一份虚构 B2B 业务输入（*VoltCore Drive Systems GmbH* · 2026 瑞典哥德堡北欧电动车技术展 · 展位 `Booth B-42` · 48V–800V SiC 牵引逆变器），在 **“传统一句话 Prompt 抽盲盒”** 与 **“`copywriting-learning` × `art-direction-learning` 双技能协同重构”** 下的真实产出对比：
 
 ### 首屏直观对比：Before vs. After（综合胜出主推稿）
 
@@ -45,7 +45,7 @@
 | <img src="docs/assets/invite-after-brand-pass.jpg" alt="方案 B：品牌蓝跨界叠层通行证" width="260" /> | <img src="docs/assets/invite-after-swiss-grid.jpg" alt="流派 A：瑞士非对称网格版" width="260" /> | <img src="docs/assets/invite-after-dark-industrial.jpg" alt="流派 C：工业暗黑建筑网格版" width="260" /> |
 
 ```text
-请联合调用 copywriting-learning 和 visual-planning-learning，帮我重构一张 2:3 竖版 B2B 展会邀请函：
+请联合调用 copywriting-learning 和 art-direction-learning，帮我重构一张 2:3 竖版 B2B 展会邀请函：
 - 已知产品与事实：[48V–800V SiC 牵引逆变器、99.1% 峰值效率、ISO 26262 ASIL-D]
 - 展会信息：[Nordic EV Tech Expo 2026，2026年10月14–16日，Hall B · Booth B-42，瑞典哥德堡 Svenska Mässan]
 - 品牌 Logo 既有色：[深海钴蓝 #0C224E、电弧青蓝 #00A3E0、高能脉冲绿 #84CC16]
@@ -63,7 +63,7 @@
 
 ```mermaid
 flowchart LR
-  A["copywriting-learning<br/>（说什么、按什么顺序说）"] --> C["visual-planning-learning<br/>（美术指导：事实→物理证据、网格与色阶）"]
+  A["copywriting-learning<br/>（说什么、按什么顺序说）"] --> C["art-direction-learning<br/>（美术指导：事实→物理证据、网格与色阶）"]
   B["已核实产品事实 &<br/>品牌色资产"] --> C
   C --> D1["通道 1：AI 生图/改图 Prompt<br/>场景合成、光影人像、主图/社媒海报"]
   C --> D2["通道 2：代码级精准图形渲染<br/>Python PIL / SVG 直出严格网格、品牌色与真二维码"]
@@ -92,7 +92,7 @@ flowchart LR
 
 ## 面向人群（Who Is This For）
 
-| 人群角色 | 常见真实痛点 | 怎么用 `visual-planning-learning` | 常用落地通道 |
+| 人群角色 | 常见真实痛点 | 怎么用 `art-direction-learning` | 常用落地通道 |
 | :--- | :--- | :--- | :--- |
 | **跨境电商 / B2B 外贸运营与老板**<br>*（阿里国际站 / Amazon / 独立站）* | 详情页密密麻麻像一堵墙、买家看不出尺寸和是否含配件、不知道该让摄影师拍什么，又怕 AI 瞎编产品结构与认证。 | 输出分屏 PDP 分镜脚本（`M-001`–`M-006`）、工厂实拍与配件全家福清单、单栏斑马纹参数表网页代码。 | 通道 1、3、4 |
 | **品牌市场 / 展会活动负责人** | 展会邀请函、户外巨幕、展位背板各做各的，发出去像十年前的模板，或者在展馆外 100 米根本抓不住视线。 | 用“一源三构”出多流派邀请函（品牌色锁定 vs 瑞士网格），并统筹 `100m → 10m → 1m` 跨视距触点接力。 | 通道 2、4 |
@@ -124,14 +124,14 @@ flowchart LR
 
 将整个仓库克隆或下载到你的 Agent 技能目录中（保持 `SKILL.md`、`references/`、`library/`、`scripts/` 在同一目录内）：
 
-- **Antigravity 全局安装：** `~/.gemini/config/skills/visual-planning-learning/`
-- **项目级 / Codex 安装：** `.agents/skills/visual-planning-learning/`
+- **Antigravity 全局安装：** `~/.gemini/config/skills/art-direction-learning/`
+- **项目级 / Codex 安装：** `.agents/skills/art-direction-learning/`
 
 内置检索脚本需要 Python 3.9+（仅依赖标准库，无需安装第三方包）。
 
 ### 快速检索与校验命令
 
-在技能根目录（`visual-planning-learning/`）下运行：
+在技能根目录（`art-direction-learning/`）下运行：
 
 ```bash
 # 1. 查看资料库规模与信源核阅状态
@@ -151,7 +151,7 @@ python3 scripts/library.py validate --check-files
 
 ### 与 `copywriting-learning` 组合联动
 
-`visual-planning-learning` 既可独立使用，也可与 [`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning) 深度联动：
+`art-direction-learning` 既可独立使用，也可与 [`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning) 深度联动：
 
 - **[`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)** 决定**“说什么、按什么顺序说、用什么事实证据说服人”**；
-- **`visual-planning-learning`** 决定**“画面演什么物理证据、元素如何在网格上分组对齐、该走哪条下游落地通道，以及 `100m → 10m → 1m` 线下到线上触点如何接力”**。
+- **`art-direction-learning`** 决定**“画面演什么物理证据、元素如何在网格上分组对齐、该走哪条下游落地通道，以及 `100m → 10m → 1m` 线下到线上触点如何接力”**。

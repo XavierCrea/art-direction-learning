@@ -1,12 +1,12 @@
-# visual-planning-learning
+# art-direction-learning
 
 [简体中文说明](README.zh-CN.md) · [See it in action](#see-it-in-action) · [How it works](#how-it-works) · [Who is this for](#who-is-this-for) · [Library index](library/README.en.md) · [Get started](#get-started)
 
 ## Stop playing prompt roulette with AI layouts. Give your agent an Art Director grounded in eye-tracking research and classic design books.
 
-`visual-planning-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
+`art-direction-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
 
-**v1.3.0 · `catalog.json` `r10` · 15 verified sources · 28 visual methods (`M-001`–`M-028`) · 23 bilingual case cards (`en` + `zh`)**
+**v1.3.1 · `catalog.json` `r10` · 15 verified sources · 28 visual methods (`M-001`–`M-028`) · 23 bilingual case cards (`en` + `zh`)**
 
 [Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Searchable catalog](library/catalog.json) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
@@ -14,7 +14,7 @@
 
 ## See it in action
 
-### Rebuilding a B2B trade-show invitation: `copywriting-learning` × `visual-planning-learning`
+### Rebuilding a B2B trade-show invitation: `copywriting-learning` × `art-direction-learning`
 
 **The brief (fictionalized B2B case):** *VoltCore Drive Systems GmbH* needs a 2:3 vertical exhibition invitation for **Nordic EV Tech Expo 2026** (Gothenburg, Oct 14–16, **Booth B-42**), targeting European commercial e-truck and autonomous shuttle engineers evaluating **48V–800V SiC traction inverters**. Existing brand DNA from the logo: Navy (`#0C224E`), Electric Cyan (`#00A3E0`), and Pulse Lime (`#84CC16`).
 
@@ -33,7 +33,7 @@ Cross-checking Swiss exhibition posters (*Josef Müller-Brockmann*, *Grid System
 
 #### 03 · One brief → Three visual archetypes (plus feedback lesson `F-001`)
 
-From the exact same dual-skill brief, `visual-planning-learning` explores **three distinct layout archetypes** so teams choose intentionally instead of regenerating blindly:
+From the exact same dual-skill brief, `art-direction-learning` explores **three distinct layout archetypes** so teams choose intentionally instead of regenerating blindly:
 
 | Option B · Brand-Aligned VIP Pass *(Primary)* | Option A · Swiss Asymmetric Grid | Option C · Dark Industrial Grid |
 | :---: | :---: | :---: |
@@ -61,7 +61,7 @@ From the exact same dual-skill brief, `visual-planning-learning` explores **thre
 <summary>Try a similar task yourself (copyable prompt)</summary>
 
 ```text
-Use visual-planning-learning (paired with copywriting-learning) to redesign this B2B trade-show invitation.
+Use art-direction-learning (paired with copywriting-learning) to redesign this B2B trade-show invitation.
 Product & confirmed facts: [48V–800V SiC traction inverters, 99.1% peak efficiency, ISO 26262 ASIL-D]
 Event details: [Nordic EV Tech Expo 2026, Oct 14–16, Hall B / Booth B-42, Svenska Mässan, Gothenburg]
 Brand colors from logo: [Navy #0C224E, Cyan #00A3E0, Lime #84CC16]
@@ -79,7 +79,7 @@ Diagnose any draft flaws first, check genre routing (M-019), and propose 2–3 d
 
 ```mermaid
 flowchart LR
-  A["copywriting-learning<br/>(What to say & in what order)"] --> C["visual-planning-learning<br/>(Art Director: Facts → Visual Proof, Grid & Color)"]
+  A["copywriting-learning<br/>(What to say & in what order)"] --> C["art-direction-learning<br/>(Art Director: Facts → Visual Proof, Grid & Color)"]
   B["Verified Product Facts &<br/>Brand Assets"] --> C
   C --> D1["Channel 1: AI Image Prompts<br/>Scenes, lighting, lifestyle & hero shots"]
   C --> D2["Channel 2: Code-Level Rendering<br/>Python PIL / SVG → pixel-exact grids, HEX colors & QR"]
@@ -108,7 +108,7 @@ For offline exhibitions and commercial spaces, the skill orchestrates visual den
 
 ## Who is this for
 
-| Role | Real-World Pain Point | How You Use `visual-planning-learning` | Primary Channels |
+| Role | Real-World Pain Point | How You Use `art-direction-learning` | Primary Channels |
 | :--- | :--- | :--- | :--- |
 | **Cross-Border & B2B E-Commerce Sellers / Operators** *(Alibaba, Amazon, DTC)* | PDPs look like an unreadable wall of specs, buyers misjudge product size or included accessories, and AI image tools keep hallucinating fake parts/certs. | Generate screen-by-screen PDP storyboards (`M-001`–`M-006`), real photography shot lists, and responsive single-column zebra spec tables. | Channels 1, 3, 4 |
 | **Brand & Trade-Show Marketers** | Invitations, parking-lot billboards, and booth backdrops look dated or disconnected — and get swallowed by surrounding visual noise. | Run *"One Brief → Three Archetypes"* for invitations (`M-019`, `F-001`) and coordinate `100m → 10m → 1m` exhibition relays (`M-028`). | Channels 2, 4 |
@@ -140,14 +140,14 @@ Every record explicitly tags its **`learning_origin`** (`book_canon`, `benchmark
 
 Clone or download this repository into your agent's skills directory (keep `SKILL.md`, `references/`, `library/`, and `scripts/` together):
 
-- **Antigravity (global):** `~/.gemini/config/skills/visual-planning-learning/`
-- **Project / Codex (workspace-scoped):** `.agents/skills/visual-planning-learning/`
+- **Antigravity (global):** `~/.gemini/config/skills/art-direction-learning/`
+- **Project / Codex (workspace-scoped):** `.agents/skills/art-direction-learning/`
 
 Python 3.9+ is required for `scripts/library.py` (standard library only — zero external dependencies).
 
 ### Quick Start & CLI Commands
 
-Run commands from the skill root directory (`visual-planning-learning/`):
+Run commands from the skill root directory (`art-direction-learning/`):
 
 ```bash
 # 1. Inspect library summary and source coverage
@@ -167,7 +167,7 @@ python3 scripts/library.py validate --check-files
 
 ### Pairing with `copywriting-learning`
 
-`visual-planning-learning` works standalone or in tandem with [`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning):
+`art-direction-learning` works standalone or in tandem with [`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning):
 
 - **[`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)** decides *what to say, in what sequence, and with what proof*;
-- **`visual-planning-learning`** decides *what physical evidence the camera or layout shows, how items align on the grid, which of the 4 delivery channels to use, and how `100m → 10m → 1m` touchpoints hand off to each other*.
+- **`art-direction-learning`** decides *what physical evidence the camera or layout shows, how items align on the grid, which of the 4 delivery channels to use, and how `100m → 10m → 1m` touchpoints hand off to each other*.

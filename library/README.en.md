@@ -1,4 +1,4 @@
-# Visual Planning Case & Method Library
+# Art Direction Case & Method Library
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [中文案例索引](README.md)
 

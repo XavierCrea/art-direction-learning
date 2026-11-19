@@ -1,4 +1,4 @@
-# 视觉策划案例与方法资料库 (Visual Planning Library)
+# 实证美术指导案例与方法资料库 (Art Direction Library)
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [English Case Index](README.en.md)
 

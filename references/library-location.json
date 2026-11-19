@@ -2,5 +2,5 @@
   "schema_version": 1,
   "default_library_root": "library",
   "catalog": "catalog.json",
-  "note": "默认目录相对于技能文件夹。可用 --library 或 VISUAL_PLANNING_LIBRARY_ROOT 指定自定义库，命令选项优先。随包资料提供视觉案例卡、视觉方法、症状路由与出处定位。"
+  "note": "默认目录相对于技能文件夹。可用 --library 或 ART_DIRECTION_LIBRARY_ROOT（兼容旧变量 VISUAL_PLANNING_LIBRARY_ROOT）指定自定义库，命令选项优先。随包资料提供美术指导案例卡、视觉方法、症状路由与出处定位。"
 }

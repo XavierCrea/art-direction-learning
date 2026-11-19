@@ -1,16 +1,16 @@
 ---
-name: visual-planning-learning
+name: art-direction-learning
 description: >-
-  Plan, diagnose, and structure visual layouts, ad compositions, product detail page (PDP) storyboards, hero sections, and image-copy synergy from verified product facts and documented visual cases. Extract reusable visual moves from design books, UX research, and high-converting campaigns.
-  基于产品事实、读者视线规律与真实案例，策划或诊断广告画面、落地页首屏（Hero）、电商详情页分镜（PDP Storyboard）、参数表版式及图文分工。支持与 copywriting-learning 组合联动，也可从设计书籍、UX 实验与品牌改版案例中提炼可检索的视觉方法。
+  Evidence-based art direction for ads, product detail page (PDP) storyboards, hero sections, trade-show invitations, cross-distance spatial touchpoints (100m→10m→1m), and image-copy synergy grounded in verified product facts and documented visual cases. Extract reusable art direction moves from design books, UX research, and live field teardowns.
+  基于产品事实、读者视线规律与真实案例的实证美术指导技能：统筹或诊断广告画面、落地页首屏（Hero）、电商详情页分镜（PDP Storyboard）、展会物料、跨视距触点（100m→10m→1m）、参数表版式及图文分工，并分流至四条下游落地通道。支持与 copywriting-learning 组合联动，也可从设计书籍、UX 实验与街头实拍案例中提炼可检索的美术指导动作。
 metadata:
-  display_name: Visual Planning · 视觉策划与案例学习
-  version: "1.3.0"
+  display_name: Art Direction · 实证美术指导与案例拆解
+  version: "1.3.1"
 ---
 
-# 视觉策划与案例学习 (Visual Planning & Case-Based Layout Learning)
+# 实证美术指导与案例拆解 (Evidence-Based Art Direction & Case Learning)
 
-将产品物理事实、文案主张与买家的视觉认知规律连接起来，用经过实证的构图、景别、比例参照、网格系统、版面层级与**跨距离触点分工（`100m → 10m → 1m`）**完成视觉策划，拒绝空洞的设计形容词与无根据的画面造假，并持续从经典书籍、UX 实验与**用户×Agent 街头正反实拍共创拆解（`co_dissected_teardown`）**中沉淀可复用的中英双语视觉动作。
+将产品物理事实、文案主张与买家的视觉认知规律连接起来，用经过实证的构图、景别、比例参照、网格系统、版面层级与**跨距离触点分工（`100m → 10m → 1m`）**完成美术指导与视觉决策，拒绝空洞的设计形容词与无根据的画面造假，并持续从经典书籍、UX 实验与**用户×Agent 街头正反实拍共创拆解（`co_dissected_teardown`）**中沉淀可复用的中英双语视觉动作。
 
 - English Overview: [README.md](README.md) · [English Case & Method Index](library/README.en.md)
 - 中文总览：[README.zh-CN.md](README.zh-CN.md) · [中文案例与方法索引](library/README.md)
@@ -26,9 +26,9 @@ metadata:
 
 ## 按当前任务工作 (Workflows)
 
-### 1. 视觉策划、分镜脚本与版面诊断（独立使用或搭配 `copywriting-learning`）
+### 1. 美术指导、分镜脚本与版面诊断（独立使用或搭配 `copywriting-learning`）
 
-读取 [视觉策划指南](references/visual-planning.md)。无论是从零策划广告/详情页分镜/展会海报，还是诊断现有页面为什么留不住人，都按以下四步推进：
+读取 [实证美术指导指南](references/art-direction.md)。无论是从零统筹广告/详情页分镜/展会海报，还是诊断现有页面为什么留不住人，都按以下四步推进：
 
 1. **建立“事实 $\rightarrow$ 画面元素 $\rightarrow$ 素材边界”三阶推导表（Fact-to-Visual Ladder）**：
    先把产品物理事实或 `copywriting-learning` 传过来的文案主张，转化为**可看见的物理结构、参照物或操作动作**，明确需要用户提供什么真实素材（实拍图、CAD 尺寸、测试截图），严禁凭空捏造不存在的内部构造或伪造认证/测试数据。
