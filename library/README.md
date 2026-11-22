@@ -2,13 +2,13 @@
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [English Case Index](README.en.md)
 
-这里收录经核验的电商 UX 实验、落地页改版案例、界面层级战术、经典平面设计/网格系统著作、可用性工程法则与**用户×Agent 街头实拍正反对比实战共创拆解**，以及从中提炼出的可检索视觉方法（`M-001`–`M-028`）与中英双语单篇案例拆解卡（`C-*`，共 23 篇）。
+这里收录经核验的电商 UX 实验、落地页改版案例、界面层级战术、经典平面设计/网格系统著作、可用性工程法则、现代认知心理学信息流与移动端基准以及**用户×Agent 街头实拍正反对比实战共创拆解**，以及从中提炼出的可检索视觉方法（`M-001`–`M-034`）与中英双语单篇案例拆解卡（`C-*`，共 29 篇）。
 
 - 检索脚本：`../scripts/library.py`（支持 `summary`、中英双语+症状加权+习得来源过滤 `search --origin <book_canon|benchmark_study|co_dissected_teardown|task_feedback>`、多 ID 批量 `get`、`validate --check-files` 与原子化入库 `apply-patch`）
 - 结构化双语索引：`catalog.json`（每条记录均显式标注 `learning_origin`，严格区分**静态原著典籍 `book_canon`**、**外部实验基准 `benchmark_study`**、**实战共创正反拆解 `co_dissected_teardown`** 与 **任务反馈 `task_feedback`**）
 - 英文译本与 SHA-256 校验表：`translations.en.json`
 
-## 核心视觉方法 (`M-001` – `M-028`)
+## 核心视觉方法 (`M-001` – `M-034`)
 
 | 编号 | 方法名称 | 解决的视觉卡点 (`when_stuck`) | 适用载体 |
 | :--- | :--- | :--- | :--- |
@@ -40,6 +40,12 @@
 | `M-026` | **首屏“大爆炸理论”：50ms 第一印象、6–8 词区分度口号与防公地悲剧 (Homepage Big Bang & Tagline)** | 访客 3 秒看不懂公司干什么、口号像大空话，或各部门往首页硬塞横幅沦为公地悲剧 | 独立站首页、国际站旺铺首屏 |
 | `M-027` | **“善意储蓄罐”视觉守护、真 FAQ 去伪与前缀关键词双模扫视法 (Goodwill Reservoir & Ear-Scanning)** | 故意隐藏价格/运费耗尽买家耐心、拿自吹自擂假 FAQ 充数，或标题/列表前半句雷同 | 询盘转化页、定价区、FAQ |
 | `M-028` | **[实战共创] 高噪商圈/展会巨幕的纯色场降噪、L屏景别递进与打卡背景板法则 (High-Noise Billboard Color-Field Denoising & L-Screen Progression)** | 商圈外墙或展会主背板被周围红黄霓虹灯吞没、少字风景图依然发灰紧绷，或 L 屏被白底膏药块割裂 | 商圈户外巨幕、L屏、展会主背板 |
+| `M-029` | **信息流破群孤立与美感可用性边界法 (Feed-Breaking Isolation & Aesthetic-Usability Guardrails)** | 小红书双列瀑布流封面与同行雷同无人停滑、全员高亮零焦点，或过度精修触发广告盲区 | 社媒信息流封面、广告主图、定价页 |
+| `M-030` | **首尾锚定与峰终分镜排布法 (Primacy-Recency Anchoring & Peak-End Storyboarding)** | 多图轮播或长详情页平均用力记不住重点、尾屏草草收尾，或导航核心入口埋在中间 | 滑动多图轮播、长详情页、移动导航 |
+| `M-031` | **滑屏悬念张力与进度梯度牵引法 (Unfinished-Loop Tension & Goal-Gradient Progress Cues)** | 多图笔记翻页率低、横滑卡片占满全宽看不出可滑，或多步骤选型中途跳出 | 滑动多图轮播、横滑画廊、多步表单 |
+| `M-032` | **移动端热区、渐进披露与心智顺应法 (Mobile Touch Targets, Progressive Disclosure & Native Conventions)** | 移动端主按钮够不到或易误触、9:16 竖屏字被遮挡、SKU 过多选择瘫痪，或反直觉 UI | 移动端 H5、PDP 选型、9:16 竖屏 |
+| `M-033` | **9:16 竖屏像素级安全区与前 2–3 秒视觉钩子法则 (9:16 Safe-Zone Pixel Grid & First 2–3s Visual Hook)** | 9:16 竖屏文字/价格被右侧互动栏或底部字幕遮挡，或慢前奏导致前 2 秒即被划走 | TikTok / 抖音 / Reels 9:16 竖屏 |
+| `M-034` | **信息流原生静态图、Us vs. Them 极化对比与停滑率诊断法 (Native Feed Statics, Us vs. Them & Thumbstop Diagnostics)** | 精修信息流海报 CTR < 1% 触发广告盲区、视频 TSR < 25%，或静态图塞成宣传单 | 社媒静态广告、对比长图、首帧分屏 |
 
 ## 视觉拆解案例卡 (`library/cases/*.md` & `library/cases/en/*.md`)
 
@@ -81,3 +87,13 @@
 - [Steve Krug 60 英里广告牌视觉法则：为什么用户从不阅读网页、视觉嵌套错位如何毁掉层级及三大视觉噪音治理](cases/C-krug-billboard-scanning-and-visual-noise.md) · [English](cases/en/C-krug-billboard-scanning-and-visual-noise.md)（`C-krug-billboard-scanning-and-visual-noise`）
 - [Steve Krug 第三定律（字数砍半再砍半）与“后备箱测试”：从 103 词减至 34 词的界面瘦身与防迷路路牌系统](cases/C-krug-omit-words-and-trunk-test-navigation.md) · [English](cases/en/C-krug-omit-words-and-trunk-test-navigation.md)（`C-krug-omit-words-and-trunk-test-navigation`）
 - [Steve Krug 首屏“大爆炸理论”：50 毫秒第一印象、6–8 词 Tagline 唯一性测试、首页公地悲剧与善意储蓄罐](cases/C-krug-homepage-big-bang-tagline-and-goodwill.md) · [English](cases/en/C-krug-homepage-big-bang-tagline-and-goodwill.md)（`C-krug-homepage-big-bang-tagline-and-goodwill`）
+
+### Jon Yablonski — Laws of UX 现代信息流与移动端认知基准（4 篇）
+- [Laws of UX 孤立效应与美感可用性边界：信息流破群突围与防“精修盲区”法则](cases/C-lawsofux-von-restorff-and-aesthetic-usability.md) · [English](cases/en/C-lawsofux-von-restorff-and-aesthetic-usability.md)（`C-lawsofux-von-restorff-and-aesthetic-usability` · 关联 `M-029`）
+- [Laws of UX 系列位置效应与峰终定律：多图轮播与长详情页的首尾锚定及峰值分镜](cases/C-lawsofux-serial-position-and-peak-end.md) · [English](cases/en/C-lawsofux-serial-position-and-peak-end.md)（`C-lawsofux-serial-position-and-peak-end` · 关联 `M-030`）
+- [Laws of UX 蔡格尼克效应与目标梯度效应：多图轮播翻页张力与进度牵引设计](cases/C-lawsofux-zeigarnik-and-goal-gradient.md) · [English](cases/en/C-lawsofux-zeigarnik-and-goal-gradient.md)（`C-lawsofux-zeigarnik-and-goal-gradient` · 关联 `M-031`）
+- [Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应](cases/C-lawsofux-fitts-hick-and-jakob.md) · [English](cases/en/C-lawsofux-fitts-hick-and-jakob.md)（`C-lawsofux-fitts-hick-and-jakob` · 关联 `M-032`）
+
+### TikTok Creative Center & Motion 现代信息流与效果创意基准（2 篇）
+- [TikTok Creative Center 9:16 竖屏安全区与前 2–3 秒视觉钩子：像素级避让红线与早期露品实证](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [English](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md)（`C-tiktok-9x16-safe-zones-and-2s-hook` · 关联 `M-033`）
+- [Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断](cases/C-motion-native-statics-and-us-vs-them.md) · [English](cases/en/C-motion-native-statics-and-us-vs-them.md)（`C-motion-native-statics-and-us-vs-them` · 关联 `M-034`）

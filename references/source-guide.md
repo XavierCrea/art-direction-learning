@@ -2,7 +2,7 @@
 
 以下公开来源与经典著作已提炼入库或适合进一步扩展美术指导、版面层级与电商详情页分镜方法。采用任何具体案例前，必须实际读取对应网页或原书页面并记录定位。
 
-## 一、 公开高价值视觉实证与拆解网站
+## 一、 公开高价值视觉实证与拆解网站（经典 Web / 电商 / 落地页）
 
 | 来源名称 | 核心价值与已提炼方向 | 典型入口 | 证据属性 |
 | :--- | :--- | :--- | :--- |
@@ -11,7 +11,22 @@
 | **Refactoring UI (Adam Wathan & Steve Schoger)** | 数字界面与详情页卡片的视觉层级技巧：用字重和色阶代替盲目放大字号、减少边框改用背景色差与留白间距、按钮主次金字塔、小图标容器化（`M-007`、`M-008`、`M-020`–`M-023`） | `https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886` | 界面重构战术指南与视觉对比演示（Tactical UI Guide） |
 | **GoodUI (Jakub Linowski)** | 落地页与电商界面的 A/B 测试版式模式库（单栏 vs. 多栏、对比锚点、留白分组、真实社交证据位置） | `https://goodui.org/` | 汇总 A/B 测试实验记录（Aggregated A/B Tests） |
 
-## 二、 已全书精读入库及推荐投喂的经典视觉与可用性著作（PDF 原件防伪核验表）
+## 二、 现代信息流、社媒创意与移动端实证网站（2021–2026 扩展）
+
+针对小红书双列瀑布流（3:4 封面与滑动多图）、TikTok / 抖音 9:16 竖屏信息流及 2020s 移动端产品，优先采用带留存曲线、长跑投放验证或认知拆解的实证站点（拒绝纯审美灵感图库）：
+
+| 来源名称 | 核心价值与补齐方向 | 典型入口 | 证据属性 |
+| :--- | :--- | :--- | :--- |
+| **TikTok Creative Center (Top Ads)** | 9:16 竖屏前 3 秒视觉钩子（Visual Hook）、原生 UGC 实拍结构、无声播放（Sound-Off）花字与画面分工、安全区（Safe Zones）避让 | `https://ads.tiktok.com/business/creativecenter` | 官方高转化广告库 + 逐秒留存/互动曲线（Second-by-Second Analytics） |
+| **巨量创意（Ocean Engine）** | 中文短视频信息流前 3 秒吸睛分帧、原生卖点演示、痛点反差开场与完播流失节点拆解 | `https://cc.oceanengine.com` | 官方行业爆款创意库与分帧吸睛率曲线 |
+| **Motion (Creative Strategy Reports) & Foreplay.co** | 海外 DTC 品牌效果创意（Performance Creative）实证：Us vs. Them 静态对比图、原生贴纸/手写标注图、反精致“丑广告（Ugly Ads）”停滑机制 | `https://motionapp.com`<br>`https://foreplay.co` | 效果广告年度数据报告 + 高转化 Swipe File 拆解 |
+| **Meta Ad Library** | 检索竞品在投静态图文与滑屏轮播（Carousel）；**实证门槛：优先筛选持续投放 >30 天的长跑广告**，过滤短期试错素材 | `https://www.facebook.com/ads/library` | 真实在投商业广告数据库（以投放时长为实证过滤条件） |
+| **Growth.Design** | 漫画分镜式移动端 App 体验拆解（含 TikTok、Duolingo、Airbnb 等），逐屏拆解视觉层级、认知负荷、首屏引导与心理触发点 | `https://growth.design/case-studies` | 真实产品逐屏 UX 与视觉心理拆解（Visual Teardown） |
+| **Laws of UX (Jon Yablonski)** | 现代移动端与信息流底层认知规律速查：Von Restorff 孤立效应、Hick 选择定律、Miller 分块、Jakob 习惯定律、Fitts 触控热区、美感可用性效应 | `https://lawsofux.com` | 认知心理学与交互法则速查库（官网适合提炼 `M-*` 规则与症状路由） |
+| **Mobbin** | 全球真实上线 App 全流程截图与 2020s 移动端 UI 模式（含小红书、TikTok、Linear 等），用于校验 Bento 布局、现代卡片层级与移动端安全区 | `https://mobbin.com` | 真实线上产品界面基准库（Real-World UI Benchmark） |
+| **小红书双列瀑布流正反实拍共创** | 补齐小红书 3:4 双列封面停滑、多图笔记滑动动量（Slide 1→N）与原生实拍 vs. 棚拍精修边界 | 本地用户截图 + `co_dissected_teardown` 流程 | 同赛道高互动爆文 vs. 低互动精修图正反对照（须附客观互动数据与画面观察） |
+
+## 三、 已全书精读入库及推荐投喂的视觉与可用性著作（PDF 原件防伪核验表）
 
 当用户提供 PDF 书籍时，按以下特征核验真伪，严防将 Bookey / Blinkist 等引流摘要册当作原书入库：
 
@@ -21,5 +36,8 @@
 | **《平面设计中的网格系统》**<br>(*Grid systems in graphic design*, Josef Müller-Brockmann) | **【已全书核阅入库 `S-muller-brockmann-grid-systems`，PDF 85页跨页扫描件】** Niggli 出版。含 8/20/32 格系统推导、色块内边距四图对照、瑞士海报、30 格燃烧器工业手册与 170cm 三维展台立面图（对应 `M-016`–`M-019`）。 | 无网格线比例图与原版海报图例的纯文字摘录。 |
 | **《Refactoring UI》**<br>(Adam Wathan & Steve Schoger, 2018) | **【已全书核阅入库 `S-wathan-schoger-refactoring-ui-2018`，PDF 252页】** 英文全彩原版 PDF，每节均配有带红色 ❌ 与绿色 ✅ 的 UI 组件、参数表、HSL 色板、阴影海拔与背景照片对比图（对应 `M-007`–`M-008`、`M-020`–`M-023`）。 | 仅摘录文字标题的第三方博客或笔记。 |
 | **《Don't Make Me Think, Revisited (3rd Ed.)》**<br>(Steve Krug, 2014) | **【已全书核阅入库 `S-krug-dmmt-3e-2014`，PDF 257页】** New Riders / Peachpit 出版。含 Krug 三大可用性定律、60 英里广告牌法则、103→34 词删减、6 项后备箱测试（Trunk Test）、首屏大爆炸与善意储蓄罐全彩插图（对应 `M-024`–`M-027`）。 | 缺少原书漫画、网页标注截图或第 10 章移动端章节的浓缩书摘。 |
+| **《Practical UI》**<br>(Adham Dannaway, 2022–2023) | **【现代推荐】** `Refactoring UI` 的 2020s 移动端升级补丁。英文全彩原版 PDF，同样以大量 ❌ 错误 vs. ✅ 正确对比图讲解现代移动端触控目标、WCAG 无障碍对比度、间距系统、表单与卡片层级。 | 仅截取官网免费样章或无对比图的纯文字清单。 |
+| **《Laws of UX (2nd Edition)》**<br>(Jon Yablonski, O'Reilly, 2024) | **【现代推荐】** O'Reilly 2024 年第 2 版（约 150+ 页），可补足《Don't Make Me Think》的年代差。含真实 App 界面视觉拆解、选择悖论（Paradox of Choice）、心流（Flow）及现代移动端交互应用。 | 仅搬运官网 `lawsofux.com` 简短摘要、无真实产品案例拆解图的合集。 |
+| **《Hook Point: How to Stand Out in a 3-Second World》**<br>(Brendan Kane, 2020) | **【现代推荐·按需提炼】** 聚焦社媒/短视频时代的 3 秒注意力争夺与开场反差钩子。**入库边界**：仅用“五把解剖刀”提炼可观测的视觉/图字反差结构，剔除泛营销叙述。 | Bookey/Blinkist 浓缩摘要册。 |
 | **《Hey, Whipple, Squeeze This》**<br>（中译《文案发烧》，Luke Sullivan） | Wiley 出版（英文原版 320–430 页），内含大量真实平面广告印刷图与版面拆解，核心讲“图文配合：不要在标题里重复画面已经展示的内容”。 | 封面或页脚带 `Bookey` 二维码、内文标题为 `Chapter X Summary`、含 `Install Bookey App to Unlock Full Text` 截断提示（如 149 页的 Bookey 摘要版）。 |
 | **《Envisioning Information》**<br>(Edward Tufte) | Graphics Press 出版。讲解复杂工程参数、多维数据、爆炸拆解图与微距/宏距同屏展示（Micro/Macro Readings）的信息设计经典。 | 无原书高精度图表插图的简报。 |

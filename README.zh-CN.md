@@ -1,12 +1,12 @@
 # art-direction-learning · 实证美术指导与案例拆解技能包
 
-[English README](README.md) · [实战对比演示](#实战演示双技能重做一张-b2b-展会邀请函) · [工作原理与四通道](#工作原理一个美术指导大脑--四条落地通道) · [面向人群](#面向人群who-is-this-for) · [知识库全景](#知识库全景概览-catalogjson-r10) · [快速上手](#快速上手)
+[English README](README.md) · [实战对比演示](#实战演示双技能重做一张-b2b-展会邀请函) · [工作原理与四通道](#工作原理一个美术指导大脑--四条落地通道) · [面向人群](#面向人群who-is-this-for) · [知识库全景](#知识库全景概览-catalogjson-r12) · [快速上手](#快速上手)
 
 ## 告别 AI 生图与排版的“抽盲盒”：给 Agent 装上一位有眼动实证与经典原著撑腰的美术指导
 
 `art-direction-learning` **不是**一个帮生图模型扩写“高级感、科技感”的 Prompt 工具，而是一位上游**美术指导 / 视觉总导演（Art Director）**。它先基于已核实的产品事实与真实案例，决定**画面该演什么物理证据、网格和色阶怎么排、哪些视觉噪音必须砍掉**，再按交付物性质精准分流到 **4 条下游落地通道**（AI 生图 Prompt、Python/SVG 代码级像素直出、HTML/React 前端代码、或反 AI 造假的实拍执行单）。
 
-**v1.3.1 · `catalog.json` `r10` · 15 项全量核验信源 · 28 条可检索视觉方法（`M-001`–`M-028`） · 23 篇中英双语案例卡**
+**v1.4.0 · `catalog.json` `r12` · 18 项核验信源 · 34 条可检索视觉方法（`M-001`–`M-034`） · 29 篇中英双语案例卡**
 
 [浏览中文案例索引](library/README.md) · [English Library Index](library/README.en.md) · [结构化双语目录](library/catalog.json) · [搭配 `copywriting-learning` 联动](https://github.com/XavierCrea/copywriting-learning)
 
@@ -102,13 +102,14 @@ flowchart LR
 
 ---
 
-## 知识库全景概览 (`catalog.json` `r10`)
+## 知识库全景概览 (`catalog.json` `r12`)
 
 所有条目均通过 `learning_origin` 字段严格区分**经典原著典籍（`book_canon`）**、**外部实证基准（`benchmark_study`）**、**实战共创正反对比拆解（`co_dissected_teardown`）**与**任务实战反馈（`task_feedback`）**，检索时可通过 `--origin` 精准过滤：
 
-| 信源类别 (`learning_origin`) | 已完整核阅的原始著作、实验与实战拆解（共 `15` 项，`100%` 全文/原图核验） | 提炼的视觉方法（`28` 条）与双语案例卡（`23` 中 + `23` 英） |
+| 信源类别 (`learning_origin`) | 已核阅的原始著作、实验与实战拆解（共 `18` 项） | 提炼的视觉方法（`34` 条）与双语案例卡（`29` 中 + `29` 英） |
 | :--- | :--- | :--- |
 | **[实战共创] 街头实拍正反对比拆解 (`co_dissected_teardown`)** | **2026 新一代小米 SU7 × 舒淇「卡布里蓝」核心商圈巨幕 vs. 同行车企大屏（捷尼赛思/岚图泰山/腾势 N9/小鹏 X9/别克/吉利/阿维塔）**：由“三连追问”驱动的 6 维视觉与传播拆解 | `M-028`（`validated`）· `1` 篇中英双语案例卡（`C-xiaomi-su7-2026-mall-billboard-teardown`）+ `F-002` |
+| **现代社媒信息流、滑动多图与移动端人因基准 (`benchmark_study`)** | **Laws of UX**（`lawsofux.com` 9 条净增量认知定律）、**TikTok Creative Center**（`1080×1920` 像素级安全区与前 2–3 秒视觉钩子）、**Motion 效果创意基准**（TSR 停滑率诊断阶梯、*Us vs. Them* 与原生静态图母版） | `M-029`–`M-034` · `6` 篇中英双语案例卡（`C-lawsofux-*`、`C-tiktok-*`、`C-motion-*`） |
 | **Baymard Institute 电商 UX 基准 (`benchmark_study`)** | `5` 篇大规模眼动与可用性报告：比例参照图（In-Scale）、图文引线标注（Descriptive Callouts）、标配与选配附件图、参数表可扫描性、弃用横向 Tab 导航 | `M-001`–`M-003`、`M-005`–`M-006` · `5` 篇中英双语案例卡（`C-baymard-*`） |
 | **Marketing Examples (Harry Dry)** | `4` 组着陆页、定价与品牌改版拆解：Above the Fold 五要素、Rows 实时表格首屏翻倍实验与 Haako 改写、Refactoring UI `$149` 高配锚定与 Basecamp 比价、Tropicana 5500 万美元改版教训与 Angostura 超大酒标 | `M-004`、`M-009`–`M-010` · `4` 篇中英双语案例卡（`C-me-*`） |
 | **Robin Williams《写给大家看的设计书（第 4 版）》** | 258 页全书核阅：CRAP 四大原则（亲密性、对齐、重复、对比）、12 色轮（暗色/亮色、色质抖动、冷退暖进面积比）、字体设计（协调/冲突/对比、`giraffe` 词形海岸线） | `M-011`–`M-015` · `3` 篇中英双语案例卡（`C-williams-*`） |

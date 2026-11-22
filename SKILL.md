@@ -5,7 +5,7 @@ description: >-
   基于产品事实、读者视线规律与真实案例的实证美术指导技能：统筹或诊断广告画面、落地页首屏（Hero）、电商详情页分镜（PDP Storyboard）、展会物料、跨视距触点（100m→10m→1m）、参数表版式及图文分工，并分流至四条下游落地通道。支持与 copywriting-learning 组合联动，也可从设计书籍、UX 实验与街头实拍案例中提炼可检索的美术指导动作。
 metadata:
   display_name: Art Direction · 实证美术指导与案例拆解
-  version: "1.3.1"
+  version: "1.4.0"
 ---
 
 # 实证美术指导与案例拆解 (Evidence-Based Art Direction & Case Learning)
@@ -33,7 +33,7 @@ metadata:
 1. **建立“事实 $\rightarrow$ 画面元素 $\rightarrow$ 素材边界”三阶推导表（Fact-to-Visual Ladder）**：
    先把产品物理事实或 `copywriting-learning` 传过来的文案主张，转化为**可看见的物理结构、参照物或操作动作**，明确需要用户提供什么真实素材（实拍图、CAD 尺寸、测试截图），严禁凭空捏造不存在的内部构造或伪造认证/测试数据。
 2. **用“症状路由（Symptom Routing）”检索案例与方法**：
-   把当前卡住的视觉问题（如“尺寸没概念 `size perception`”、“特写看不懂 `ambiguous crop`”、“参数表像一堵墙 `wall of specs`”、“首屏插画太虚 `abstract hero`”、“高单价显得贵 `price framing`”、“元素乱飘对不齐 `alignment grid`”、“视觉噪音太大 `billboard visual noise`”、“迷路找不到层级 `trunk test navigation`”）传给 `library.py search`，批量 `get` 匹配的视觉方法（`M-*`）与案例（`C-*`）。
+   把当前卡住的视觉问题（如“尺寸没概念 `size perception`”、“特写看不懂 `ambiguous crop`”、“参数表像一堵墙 `wall of specs`”、“首屏插画太虚 `abstract hero`”、“高单价显得贵 `price framing`”、“元素乱飘对不齐 `alignment grid`”、“视觉噪音太大 `billboard visual noise`”、“迷路找不到层级 `trunk test navigation`”、“小红书封面没人停滑 `thumb-stop`”、“多图轮播翻页率低 `swipe carousel`”、“9:16 竖屏字被遮挡 `9:16 safe zones`”、“精修图 CTR 低 `us vs them`”）传给 `library.py search`，批量 `get` 匹配的视觉方法（`M-*`）与案例（`C-*`）。
 3. **锁定图字分工（Image-Copy Synergy）与版面层级**：
    规定每一屏/每一张图的**画面演什么、文字说什么、图注（Caption）标哪里**，杜绝“图片机械重复标题文字”或“无标注的局部特写”。
 4. **按任务颗粒度与四条下游落地通道交付**：

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "catalog_revision": 9,
-  "updated_at": "2026-11-18",
+  "catalog_revision": 12,
+  "updated_at": "2026-11-22",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
   "cases": {
@@ -186,6 +186,54 @@
       "en_path": "library/cases/en/C-xiaomi-su7-2026-mall-billboard-teardown.md",
       "zh_sha256": "c73afa85e8e034a31a94d758b599945c0c0ebe5ee93e77adfb4b87014ad9b44b",
       "en_sha256": "73bd11caeb8d7d70326b367a48316b8451fa123252ebd2533a99dcdcbd2695ac"
+    },
+    "C-lawsofux-von-restorff-and-aesthetic-usability": {
+      "title": "Laws of UX 孤立效应与美感可用性边界：信息流破群突围与防“精修盲区”法则",
+      "title_en": "Laws of UX Von Restorff Effect & Aesthetic-Usability Guardrails: Breaking Feed Homogeneity Without Triggering \"Polished Ad Blindness\"",
+      "markdown_path": "library/cases/C-lawsofux-von-restorff-and-aesthetic-usability.md",
+      "zh_sha256": "27836bfa7a4a38cf4963810942c0bfe2cbd3d6aa67e3d6ca9f84411c9fb57b5e",
+      "markdown_path_en": "library/cases/en/C-lawsofux-von-restorff-and-aesthetic-usability.md",
+      "en_sha256": "8e29860b5404ff84cacda8c1cdbc36d33179d350c1cb1b2192b71e2687a42f51"
+    },
+    "C-lawsofux-serial-position-and-peak-end": {
+      "title": "Laws of UX 系列位置效应与峰终定律：多图轮播与长详情页的首尾锚定及峰值分镜",
+      "title_en": "Laws of UX Serial Position Effect & Peak-End Rule: Primacy-Recency Anchoring & Peak-End Storyboarding for Carousels and Long PDPs",
+      "markdown_path": "library/cases/C-lawsofux-serial-position-and-peak-end.md",
+      "zh_sha256": "aae76f9ac6cc4ee3da367624319e7d4383a31f834fea90d2b05b27c383494c88",
+      "markdown_path_en": "library/cases/en/C-lawsofux-serial-position-and-peak-end.md",
+      "en_sha256": "e3fda29f71b3345f676587220651525cd1121f081dbf8e6b0ad38dfc8650434e"
+    },
+    "C-lawsofux-zeigarnik-and-goal-gradient": {
+      "title": "Laws of UX 蔡格尼克效应与目标梯度效应：多图轮播翻页张力与进度牵引设计",
+      "title_en": "Laws of UX Zeigarnik Effect & Goal-Gradient Effect: Unfinished-Loop Swipe Tension & Progress-Cue Momentum",
+      "markdown_path": "library/cases/C-lawsofux-zeigarnik-and-goal-gradient.md",
+      "zh_sha256": "2a0ee64f2665b732ea0f188ba467c9eb1a5e72c67fc9136abd7c5a804adc9970",
+      "markdown_path_en": "library/cases/en/C-lawsofux-zeigarnik-and-goal-gradient.md",
+      "en_sha256": "80a825aeb5e2d9f2d7fe1b89791e32ac91ea280f23d7e1426af8e0d6bbe9dba8"
+    },
+    "C-lawsofux-fitts-hick-and-jakob": {
+      "title": "Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应",
+      "title_en": "Laws of UX Fitts's Law, Hick's Law & Jakob's Law: Mobile Thumb Targets, Progressive Disclosure & Native Platform Conventions",
+      "markdown_path": "library/cases/C-lawsofux-fitts-hick-and-jakob.md",
+      "zh_sha256": "b6af0af578e3af8b5b87eb3d89c8bb85b67146a1a941e3d15421bc150161649b",
+      "markdown_path_en": "library/cases/en/C-lawsofux-fitts-hick-and-jakob.md",
+      "en_sha256": "f81c6f0f7f48f94d027770d7b31809a83462dc0f8b3e852c65c57333e725bf1e"
+    },
+    "C-tiktok-9x16-safe-zones-and-2s-hook": {
+      "title": "TikTok Creative Center 9:16 竖屏安全区与前 2–3 秒视觉钩子：像素级避让红线与早期露品实证",
+      "title_en": "TikTok Creative Center 9:16 Safe Zones & First 2–3s Visual Hook: Pixel-Exact UI Margins & Early Product Visibility Benchmarks",
+      "markdown_path": "library/cases/C-tiktok-9x16-safe-zones-and-2s-hook.md",
+      "zh_sha256": "2955d297f38305b86d52f85d9c98df58b6455d8125b962926dc175fc0fc2c97b",
+      "markdown_path_en": "library/cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md",
+      "en_sha256": "926e415a7c8d8b254451deb72591e38d49d4a6f085bf62608d86d59ea079bd54"
+    },
+    "C-motion-native-statics-and-us-vs-them": {
+      "title": "Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断",
+      "title_en": "Motion Performance Creative Benchmarks: Native Static Ads, \"Us vs. Them\" Contrast & Thumbstop Ratio Diagnostics",
+      "markdown_path": "library/cases/C-motion-native-statics-and-us-vs-them.md",
+      "zh_sha256": "5b1b37b9d340aa19326f4c122a1041f872891523fdc04dc433b5976731b3006e",
+      "markdown_path_en": "library/cases/en/C-motion-native-statics-and-us-vs-them.md",
+      "en_sha256": "6e3c40003da145ffbc8850880dc5c1ba20b70e3afde8e68dd1252ef8aca2bfae"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 10,
-  "updated_at": "2026-11-18",
+  "revision": 12,
+  "updated_at": "2026-11-22",
   "sources": [
     {
       "id": "S-baymard-in-scale-2017",
@@ -348,6 +348,73 @@
       ],
       "coverage_note": "对话共创实战拆解（co_dissected_teardown）：全部正反街拍原图均在本轮逐张打开视觉核验，完整覆盖三连追问推导链与6维视觉/传播拆解。",
       "coverage_note_en": "Live co-dissected field teardown (co_dissected_teardown): all street-level positive and negative billboard photographs were visually inspected in-session across the 3-step inquiry chain and 6 analysis dimensions."
+    },
+    {
+      "id": "S-yablonski-lawsofux-web",
+      "kind": "web",
+      "version": 1,
+      "title": "Laws of UX: An Index of Cognitive Psychology Principles for Designers",
+      "author": "Jon Yablonski",
+      "publisher": "Laws of UX",
+      "retrieved_at": "2026-11-22",
+      "url": "https://lawsofux.com",
+      "reading_status": "partial_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已逐页核阅官网 26 条定律中与现代信息流、滑动多图及移动端排版高度相关且对本库形成净增量的 9 条定律（Von Restorff、Aesthetic-Usability、Serial Position、Peak-End、Zeigarnik、Goal-Gradient、Fitts、Hick/Choice Overload、Jakob），其余与现有 M-001–M-028 重叠或偏工程流程的条目未重复入库。",
+      "coverage_note_en": "Reviewed 9 high-leverage net-new principles from lawsofux.com (out of 26) directly targeting modern social feeds, swipe carousels, and mobile ergonomics: Von Restorff Effect, Aesthetic-Usability Effect, Serial Position Effect, Peak-End Rule, Zeigarnik Effect, Goal-Gradient Effect, Fitts's Law, Hick's Law & Choice Overload, and Jakob's Law.",
+      "reviewed_locations": [
+        "https://lawsofux.com/von-restorff-effect/",
+        "https://lawsofux.com/aesthetic-usability-effect/",
+        "https://lawsofux.com/serial-position-effect/",
+        "https://lawsofux.com/peak-end-rule/",
+        "https://lawsofux.com/zeigarnik-effect/",
+        "https://lawsofux.com/goal-gradient-effect/",
+        "https://lawsofux.com/fittss-law/",
+        "https://lawsofux.com/hicks-law/",
+        "https://lawsofux.com/choice-overload/",
+        "https://lawsofux.com/jakobs-law/"
+      ]
+    },
+    {
+      "id": "S-tiktok-creative-center-guidelines",
+      "kind": "web",
+      "version": 1,
+      "title": "TikTok Creative Center & TikTok for Business: 9:16 Safe Zones & Creative Codes Benchmarks",
+      "author": "TikTok for Business",
+      "publisher": "TikTok Creative Center",
+      "retrieved_at": "2026-11-22",
+      "url": "https://ads.tiktok.com/business/creativecenter",
+      "reading_status": "partial_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已核阅 9:16（1080×1920）标准信息流安全区像素规格（顶 240px / 底 660px / 左 120px / 右下 180–300px）、前 2–3 秒视觉钩子要求与官方早期露品好感度（+65%）、开场回忆占比（90%）及音频依赖度（88%）基准。",
+      "coverage_note_en": "Reviewed TikTok 9:16 (1080x1920) in-feed safe zone margins (top 240px, bottom 660px, left 120px, lower-right 180-300px), first 2-3s visual hook rules, and published lift stats (+65% brand affinity for early product visibility, up to 90% ad recall in the opening window, 88% audio importance).",
+      "reviewed_locations": [
+        "9:16 In-Feed Safe Zones (1080x1920 pixel margins)",
+        "First 2-3 Seconds Visual Hook & Creative Codes",
+        "Early Product Visibility (+65% affinity) & Ad Recall (90%) Benchmarks"
+      ]
+    },
+    {
+      "id": "S-motion-performance-creative-benchmarks",
+      "kind": "web",
+      "version": 1,
+      "title": "Motion Creative Strategy Frameworks & DTC Paid Social Benchmarks (Thumbstop Ratio, Us vs. Them & Native Statics)",
+      "author": "Motion Creative Strategy",
+      "publisher": "Motion",
+      "retrieved_at": "2026-11-22",
+      "url": "https://motionapp.com",
+      "reading_status": "partial_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已核阅海外 DTC 效果广告 3 秒停滑率（Thumbstop Ratio 四档基准：<25% / 25–30% / 30–40% / 40%+）、静态图 Link CTR 基准（>1.0%–1.5%），以及 Us vs. Them 极化对比、原生界面/备忘录/评论拼接与一图一主张实拍指认三大静态母版。",
+      "coverage_note_en": "Reviewed DTC performance creative diagnostic ladder (Thumbstop Ratio <25% / 25-30% / 30-40% / 40%+, Static Link CTR >1.0%-1.5%) and 3 winning native static ad architectures: Us vs. Them contrast statics, native UI/notes/social-proof mashups, and single-idea product-first pointouts.",
+      "reviewed_locations": [
+        "Thumbstop Ratio (TSR) & Static Link CTR Diagnostic Benchmarks",
+        "Us vs. Them Polarization & Split-Screen / Table / Venn Formats",
+        "Native Lo-Fi / Notes App / Social Proof Mashup & Single-Idea Static Rules"
+      ]
     }
   ],
   "methods": [
@@ -2642,6 +2709,410 @@
       "validation_refs": [
         "F-002"
       ]
+    },
+    {
+      "id": "M-029",
+      "version": 1,
+      "title": "信息流破群孤立与美感可用性边界法",
+      "title_en": "Feed-Breaking Isolation (Von Restorff) & Aesthetic-Usability Guardrails",
+      "tags": [
+        "孤立效应",
+        "信息流停滑",
+        "小红书封面",
+        "反广告盲区",
+        "美感可用性边界",
+        "非色觉对比",
+        "单点高亮"
+      ],
+      "tags_en": [
+        "von restorff effect",
+        "isolation effect",
+        "thumb-stop",
+        "social feed cover",
+        "aesthetic-usability effect",
+        "ad blindness",
+        "color-independent contrast"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书双列瀑布流或电商搜索页里封面和同行高度雷同，没人停滑点击",
+          "页面或套餐卡里每个卖点都在加粗高亮，结果全场没有视觉焦点",
+          "棚拍精修图很漂亮但点击率/转化率低，怀疑触发精修广告盲区或掩盖了关键产品事实"
+        ],
+        "en": [
+          "Social feed cover or search thumbnail blends into lookalike competitors and fails to stop the scroll",
+          "Every badge or card is highlighted at once so nothing stands out",
+          "Over-polished visuals hide missing facts or trigger feed ad blindness"
+        ]
+      },
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "landing_page",
+        "pdp"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Von Restorff Effect & Aesthetic-Usability Effect (lawsofux.com)"
+        }
+      ],
+      "rule": "在同质化信息流或同屏多选项中，克制地制造『唯一视觉孤立点（Von Restorff）』抢下 0.5 秒停滑，且严禁只靠颜色孤立（须叠加尺寸、留白、景别或边框形态差异）；同时守住『美感可用性边界』——美观能提升第一印象信任，但绝不能用来掩盖缺失的尺寸、价格或真实使用事实，更不能因过度精修触发信息流广告盲区。",
+      "rule_en": "Apply the Von Restorff Effect ('When multiple similar objects are present, the one that differs from the rest is most likely to be remembered') with strict restraint: audit neighboring feed cards first, isolate only ONE key focal element per viewport using multi-cue contrast (shape, size, whitespace, framing—never color alone), and enforce the Aesthetic-Usability guardrail ('Users often perceive aesthetically pleasing design as design that’s more usable'—never let visual polish mask missing product facts or trigger feed ad blindness).",
+      "applies_when": "设计小红书 3:4 双列封面、信息流广告主图、多档位套餐卡或搜索结果主图，需要从同屏竞品中脱颖而出时。",
+      "limits": "严禁一屏同时高亮多个元素导致『全员高亮 = 零焦点』；严禁使用假系统通知、假播放键或与内容无关的猎奇元素制造虚假孤立。",
+      "steps": [
+        "先截取目标平台/类目同屏前 8 张竞品封面或页面，找出群体视觉基线（如全员白底棚拍、全员暖黄滤镜或全员满屏大字报）。",
+        "选定 1–2 个物理反差变量制造孤立（如高纯度底色场、极近手持实拍、强烈留白或左右实测分屏），而非全盘胡乱堆料。",
+        "确保孤立焦点同时具备非色觉差异（尺寸、位置、形状或边框），在灰度图下依然一眼可辨。",
+        "做『美感遮蔽体检』：检查精修画面是否盖住了买家最关心的尺寸比例、价格或真实使用证据。"
+      ],
+      "checks": [
+        "把成品放回真实竞品 4–8 图网格截图里缩略观察 0.5 秒，第一眼是否立刻落在本图上？",
+        "转为黑白灰度后，唯一孤立焦点是否依然清晰（不依赖单一色相）？",
+        "画面的视觉反差是否直接指向真实产品差异，而非空壳噱头？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-030",
+      "version": 1,
+      "title": "首尾锚定与峰终分镜排布法",
+      "title_en": "Primacy-Recency Anchoring & Peak-End Storyboarding",
+      "tags": [
+        "系列位置效应",
+        "首因近因",
+        "峰终定律",
+        "多图轮播分镜",
+        "小红书多图",
+        "详情页节奏",
+        "尾屏收口"
+      ],
+      "tags_en": [
+        "serial position effect",
+        "primacy recency",
+        "peak-end rule",
+        "carousel storyboarding",
+        "pdp pacing",
+        "ending cta",
+        "frustration peak"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书多图笔记（Slide 1→N）或电商长详情页每屏平均用力，读者滑完记不住核心卖点",
+          "多图最后一页只放空白致谢页或杂乱二维码，尾屏没有收藏/转化收口",
+          "移动端底部导航或横向菜单把最重要入口藏在中间位置"
+        ],
+        "en": [
+          "Swipe carousel or long PDP gives every slide flat equal weight so readers forget the core message",
+          "Final slide trails off weakly with no memorable summary or clear CTA",
+          "Core navigation items are buried in the middle of a mobile tab bar"
+        ]
+      },
+      "channels": [
+        "social_carousel",
+        "pdp",
+        "landing_page",
+        "mobile_ui"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Serial Position Effect & Peak-End Rule (lawsofux.com)"
+        }
+      ],
+      "rule": "按系列位置 U 型记忆曲线与峰终定律编排多图轮播与长详情页：将最强结果锚点与核心入口锁死在『首屏（Primacy）』和『尾屏（Recency + End）』，次要背景信息放入中段；全篇绝不平均用力，必须集中打造 1 个硬核实证『峰值屏（Peak）』与 1 个高价值总结/零摩擦 CTA『收尾屏（End）』，并优先清除一切负面挫败峰值。",
+      "rule_en": "Structure carousels, long PDPs, and navigation around the Serial Position Effect ('Users have a propensity to best remember the first and last items in a series') and the Peak-End Rule ('People judge an experience largely based on how they felt at its peak and at its end'): anchor core hooks and actions at the start and finish, engineer ONE unmistakable evidence Peak mid-sequence, close with a save-worthy summary/CTA End, and eliminate negative frustration peaks first.",
+      "applies_when": "规划小红书/IG 多图轮播（3–9 张）、长图文电商详情页分镜（PDP Storyboard）或移动端底部导航栏排布时。",
+      "limits": "严禁伪造夸张对比图制造假『峰值』；不要把唯一的核心卖点孤立埋在中段第 4–6 屏而不做首尾呼应。",
+      "steps": [
+        "锁定 Slide 1 / 首屏（Primacy）：直接给结果画面或核心痛点反差，砍掉品牌自嗨扉页。",
+        "在中段指定 1 屏作为全篇唯一『实证峰值（Peak）』：集中投放最硬核的实拍拆解、前后对比或实测数据。",
+        "设计尾屏（Recency + End）：放『一图看懂选型清单 / 避坑速查卡』+ 单一低摩擦行动指令（收藏/选型/领样）。",
+        "检查移动端导航栏与流程：核心入口置最左/最右，优先修复模糊参数图、死链或遮挡弹窗等负面峰值。"
+      ],
+      "checks": [
+        "如果读者只看第 1 张和最后 1 张，是否依然能完整复述核心卖点与下一步动作？",
+        "全篇是否能一眼指出哪 1 屏是视觉与实证『峰值』，而不是所有页面一样平淡？",
+        "是否存在任何让用户瞬间皱眉的负面峰值（糊图、看不清字、强行遮挡）？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-031",
+      "version": 1,
+      "title": "滑屏悬念张力与进度梯度牵引法",
+      "title_en": "Unfinished-Loop Tension (Zeigarnik) & Goal-Gradient Progress Cues",
+      "tags": [
+        "蔡格尼克效应",
+        "目标梯度效应",
+        "滑屏动量",
+        "多图翻页率",
+        "卡片露边",
+        "进度锚点",
+        "起步领先感"
+      ],
+      "tags_en": [
+        "zeigarnik effect",
+        "goal-gradient effect",
+        "swipe momentum",
+        "carousel retention",
+        "card peek",
+        "progress indicator",
+        "head start effect"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书多图笔记或 IG 轮播封面有人点进来，但大部分人看完第 1 张就划走，翻页率低",
+          "横向卡片画廊严丝合缝占满屏宽，用户根本不知道还能向右滑",
+          "多步骤选型器或留资表单中途跳出率高，用户不知道后面还有多少步"
+        ],
+        "en": [
+          "Carousel readers drop off after Slide 1 with low swipe-through rate",
+          "Horizontal gallery cards fill 100% width so users fail to notice more slides exist",
+          "Users abandon multi-step product pickers or forms midway due to unclear progress"
+        ]
+      },
+      "channels": [
+        "social_carousel",
+        "pdp",
+        "landing_page",
+        "mobile_ui"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Zeigarnik Effect & Goal-Gradient Effect (lawsofux.com)"
+        }
+      ],
+      "rule": "用蔡格尼克未完成张力与目标梯度进度感共同拉升翻页与完读率：在多图首屏/横滑卡片右边缘制造物理未闭合线索（跨页延续线、半露元素或 15%–25% 下一张卡片露边 Card Peek）配合开环问题；全程挂载轻量可见进度尺（如 1/5、Step 2 of 4）并把最轻松的一步置前制造『起步领先感（Head Start）』。",
+      "rule_en": "Combine the Zeigarnik Effect ('People remember uncompleted or interrupted tasks better than completed tasks') with the Goal-Gradient Effect ('The tendency to approach a goal increases with proximity to the goal'): create physical open-loop cues at the right frame edge (cross-slide bleeds, directional cues, or 15%–25% horizontal Card Peek), mount compact visible step counters (e.g., 1/5), and front-load an effortless Step 1 to trigger head-start momentum.",
+      "applies_when": "设计小红书/IG/TikTok 多图滑动内容、电商横向配件/案例画廊、多步骤选型工具或引导式表单时。",
+      "limits": "严禁用空洞标题党悬念欺骗滑动（后页无干货会直接摧毁信任）；严禁将无限信息流伪装成有限进度条。",
+      "steps": [
+        "在 Slide 1 设置真实可兑现的开环问题或编号承诺（如『3 个必查实测项，第 2 个最容易踩坑』）。",
+        "在画幅右边缘加入跨页半露构图、指向箭头或让横滑画廊下一张卡片露出 15%–25% 宽度（Card Peek）。",
+        "在固定角落叠加轻量页码与进度标签（如 `01/05`、`Step 2/4`），消除总长度焦虑。",
+        "多步骤交互把最轻量的单选放在第一步，让用户点一下立刻看到进度条前进（Head Start）。"
+      ],
+      "checks": [
+        "不看文字说明，单凭第 1 屏右边缘的构图是否能直觉感到『右边还有内容』？",
+        "读者在任意一屏是否一眼知道自己处于总进度的第几步？",
+        "第 1 屏抛出的悬念是否在后续页面给出了硬核实证兑现？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-032",
+      "version": 1,
+      "title": "移动端热区、渐进披露与心智顺应法",
+      "title_en": "Mobile Touch Targets (Fitts), Progressive Disclosure (Hick) & Native Conventions (Jakob)",
+      "tags": [
+        "菲茨定律",
+        "席克定律",
+        "选择过载",
+        "雅各布定律",
+        "拇指热区",
+        "渐进式披露",
+        "竖屏安全区"
+      ],
+      "tags_en": [
+        "fitts law",
+        "hicks law",
+        "choice overload",
+        "jakobs law",
+        "thumb zone",
+        "progressive disclosure",
+        "safe zones"
+      ],
+      "when_stuck": {
+        "zh": [
+          "移动端按钮太小、塞在单手够不到的屏幕角落或间距过密容易误触",
+          "9:16 竖屏广告/海报的核心文字被抖音/TikTok 右侧互动栏或底部字幕区遮挡",
+          "SKU、规格或筛选标签一次性平权铺出 6–10 个，买家选择瘫痪直接离开",
+          "为了追求创意发明非主流图标或反直觉交互，强迫用户重新学习"
+        ],
+        "en": [
+          "Mobile CTAs are too small, out of thumb reach, or cramped enough to cause mis-taps",
+          "9:16 vertical video/feed headlines collide with right-rail icons or bottom caption safe zones",
+          "Displaying 6–10 equal-weight SKUs or filters at once triggers choice paralysis",
+          "Custom non-standard UI patterns violate user mental models learned from mainstream apps"
+        ]
+      },
+      "channels": [
+        "mobile_ui",
+        "pdp",
+        "landing_page",
+        "social_feed",
+        "ad_banner"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Fitts's Law, Hick's Law, Choice Overload & Jakob's Law (lawsofux.com)"
+        }
+      ],
+      "rule": "移动端与社媒竖屏版式须同时满足三大底层人因法则：1) 菲茨定律——主 CTA 落入单手拇指舒适区或底部吸顶栏，触控尺寸 ≥ 44×44px 且相邻间距 ≥ 8–12px；2) 席克定律与防选择过载——超过 3–4 个选项时强制按场景分组、视觉高亮 1 个推荐项并用『渐进式披露』折叠高阶参数；3) 雅各布定律——顺应目标平台成熟心智模型与 9:16 UI 安全区（Safe Zones），把认知带宽留给产品本身。",
+      "rule_en": "Enforce three mobile ergonomics laws simultaneously: (1) Fitts's Law ('The time to acquire a target is a function of the distance to and size of the target')—keep primary CTAs ≥ 44×44px with ≥ 8–12px spacing inside thumb-friendly zones; (2) Hick's Law & Choice Overload ('The time it takes to make a decision increases with the number and complexity of choices')—group >3–4 options by scenario, highlight 1 recommended choice, and apply progressive disclosure; (3) Jakob's Law ('Users spend most of their time on other sites')—respect native platform conventions and 9:16 Safe Zones.",
+      "applies_when": "设计移动端落地页/H5、电商 SKU 选型器、9:16 竖屏信息流物料（TikTok/抖音/Reels）或微信小程序/App 界面时。",
+      "limits": "推荐项高亮必须基于真实销量或清晰适用场景；B2B/专业参数选型不可一刀切删掉必要规格，须用分组与渐进展开减负。",
+      "steps": [
+        "核查移动端主操作区：确保主 CTA 位于中下部拇指热区或底部固定栏，目标尺寸 ≥ 44×44px，相邻控件间距 ≥ 8–12px。",
+        "若为 9:16 竖屏社媒物料，先套用平台 Safe Zone 蒙版，将主标题、价格与产品主体完全移出右侧互动栏与底部字幕遮挡区。",
+        "盘点同屏选项数：SKU、套餐或筛选词 > 4 个时，按使用场景分块并标出 1 个『推荐/热销』锚点，高阶选项折入『展开更多』。",
+        "对照目标生态主流 App（小红书/抖音/淘宝/Shopify）校验图标、价格位与滑动手势，铲除无意义的反常规设计。"
+      ],
+      "checks": [
+        "单手持握手机时，大拇指能否无需换手直接按到首要 CTA 且不误触旁边按钮？",
+        "套上 TikTok/抖音/小红书真实 UI 遮挡框后，核心标题和产品卖点是否 100% 未被挡住？",
+        "买家面对多档位/多 SKU 时，能否在 3 秒内看清『哪个最适合我』？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-033",
+      "version": 1,
+      "title": "9:16 竖屏像素级安全区与前 2–3 秒视觉钩子法则",
+      "title_en": "9:16 Vertical Safe-Zone Pixel Grid & First 2–3s Visual Hook Rule",
+      "tags": [
+        "9:16竖屏",
+        "安全区像素",
+        "前3秒视觉钩子",
+        "TikTok规范",
+        "抖音安全区",
+        "早期露品",
+        "声画同步"
+      ],
+      "tags_en": [
+        "9:16 vertical",
+        "safe zones",
+        "first 2 seconds hook",
+        "tiktok creative center",
+        "early product visibility",
+        "sound-on captions",
+        "1080x1920 grid"
+      ],
+      "when_stuck": {
+        "zh": [
+          "9:16 竖屏海报或短视频投到抖音/TikTok/Reels 后，核心标题、价格或产品被右侧点赞评论栏或底部字幕/CTA 遮挡",
+          "沿用传统 TVC 慢热片头导致前 2 秒即被划走，完播与品牌回忆度极低",
+          "静音刷屏和开声用户两端顾此失彼，前 3 秒没看懂讲什么"
+        ],
+        "en": [
+          "9:16 vertical ad text or prices collide with TikTok/Reels right-side engagement rail or bottom caption overlay",
+          "Slow TV-style intro causes viewers to swipe away within 2 seconds with near-zero recall",
+          "Opening 3 seconds fail to communicate clearly across sound-on and sound-off viewing"
+        ]
+      },
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "mobile_ui"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-tiktok-creative-center-guidelines",
+          "section": "9:16 In-Feed Safe Zones & First 2-3 Seconds Creative Codes"
+        }
+      ],
+      "rule": "所有 9:16（1080×1920）竖屏信息流素材出图/剪辑前必须锁定像素安全区：顶留 ≥240px、底留 ≥660px（约 35% 避让文案与原生 CTA）、左留 ≥120px、右上留 ≥120px 且右下扩至 180–300px（避让互动纵列），背景满屏出血但核心字与主体绝不越界；开场砍掉慢片头，前 2–3 秒内必须亮出动态视觉冲突与产品本体（早期清晰露品最高 +65% 好感度，开场承载最高 90% 广告回忆），并同步安全区大号短字幕兼顾声画双轨。",
+      "rule_en": "Lock every 9:16 (1080x1920) vertical creative to pixel-exact Safe Zones—Top >=240px, Bottom >=660px (~35%), Left >=120px, Upper-Right >=120px and Lower-Right 180-300px—letting backgrounds bleed full-frame while keeping critical text and subjects strictly clear of UI rails. Eliminate slow TV intros: land dynamic visual contrast and clear product visibility within the first 2-3 seconds (+65% brand affinity lift, up to 90% of total ad recall value) with synchronized audio (88% user importance) and safe-zone captions.",
+      "applies_when": "制作 TikTok、抖音、Instagram Reels、YouTube Shorts 的 9:16 竖屏信息流视频、封面贴片或程序化 PIL/SVG 竖屏素材时。",
+      "limits": "不要把底部 660px 留成突兀空白条（背景应自然延展满屏）；TopView 开屏等特殊广告位前 3 秒有独立缩放边界，不可盲套普通信息流尺寸。",
+      "steps": [
+        "在 1080×1920 画布中先叠加 Safe Zone 线框：核心标题、价格与主体锁在 x: 120–780px（下半区避右 300px）、y: 240–1260px 内。",
+        "删除所有 3 秒品牌片头与黑屏渐变，第 1 帧直接给动态动作、问题反差或产品运转近景。",
+        "确保产品本体或核心结果在前 2–3 秒内清晰可见，不等到结尾揭晓。",
+        "在安全区中上部配置 6–10 字高对比同步花字，与前 3 秒语音/音效钩子双轨对齐。"
+      ],
+      "checks": [
+        "叠加 TikTok/抖音真实 UI 遮挡框后，主标题、卖点词与产品主体是否 100% 未被顶/底/右下控件遮挡？",
+        "静音状态下仅看前 2 秒画面与花字，能否立刻看懂痛点冲突和卖的是什么？",
+        "背景画面是否自然铺满 1080×1920 全画幅而没有生硬的黑边或底白条？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-034",
+      "version": 1,
+      "title": "信息流原生静态图、Us vs. Them 极化对比与停滑率诊断法",
+      "title_en": "Native Feed Static Formats, \"Us vs. Them\" Contrast & Thumbstop Diagnostics",
+      "tags": [
+        "原生静态图",
+        "Us vs Them对比",
+        "停滑率TSR",
+        "反精修广告盲区",
+        "备忘录风格",
+        "评论拼接",
+        "一图一主张"
+      ],
+      "tags_en": [
+        "native static ads",
+        "us vs them",
+        "thumbstop ratio",
+        "ugly ads",
+        "notes app static",
+        "social proof mashup",
+        "single-idea focus"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书/IG/Meta 信息流里的棚拍精修海报点击率低于 1%，怀疑画风太像企业广告触发横幅盲区",
+          "信息流视频 3 秒停滑率（TSR）低于 25%，不知道该改文案还是彻底重构首帧构图",
+          "静态广告图塞满了 5 个卖点和一堆徽章，沦为没人看的缩微宣传单"
+        ],
+        "en": [
+          "Polished studio feed banners get <1% Link CTR due to corporate ad blindness",
+          "Video 3-second Thumbstop Ratio (TSR) falls below 25% and team does not know what to fix first",
+          "Static social ad tries to cram 5 features like a cluttered brochure instead of 1 instant idea"
+        ]
+      },
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "social_carousel",
+        "pdp"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-motion-performance-creative-benchmarks",
+          "section": "Thumbstop Ratio Benchmarks, Us vs. Them & Native Static Formats"
+        }
+      ],
+      "rule": "用前端指标先定位问题（视频 3 秒停滑率 TSR <25% 弱 / 25–30% 及格 / 30–40% 优秀 / 40%+ 顶尖；静态图 Link CTR 优秀线 >1.0%–1.5%），一旦低于基准立即重构构图形态而非微调配色；信息流静态图坚持『一图一主张（Single-Idea Focus）』，优先选用三大绕过广告盲区的原生母版：1) Us vs. Them 左右分屏/对比表/韦恩图（2 秒制造认知反差）；2) 原生界面/备忘录/真实评价拼接（去企业精修感）；3) 产品微距实拍单点指认图，且点击后落地页必须立刻兑现对比实证。",
+      "rule_en": "Diagnose front-end scroll-stopping first (Video Thumbstop Ratio <25% weak, 25-30% baseline, 30-40% strong, 40%+ elite; Static Link CTR strong benchmark >1.0%-1.5%). When below baseline, rebuild the visual architecture rather than tweaking fonts: commit each static frame to Single-Idea Focus using one of 3 native feed formats—(1) Us vs. Them split-screen/table/Venn contrast, (2) Native UI / Notes-app / real comment mashup bypassing glossy banner blindness, or (3) Product-first macro pointout—and substantiate the contrast immediately on the landing page.",
+      "applies_when": "设计小红书、Meta、Instagram、TikTok 图文信息流拉新静态图、对比长图，或诊断低点击率/低停滑率广告素材时。",
+      "limits": "严禁捏造虚假竞品缺陷或伪造素人评论截图；Us vs. Them 避免点名诋毁具体竞争商标（改用『传统方案 / 常见痛点』客观对照）。",
+      "steps": [
+        "先看前端数据诊断：若视频 TSR <25% 或静态 Link CTR <1.0%，直接判为『视觉钩子/画风失效』，推倒重做构图。",
+        "强制执行『一图一主张』：砍掉所有次要卖点与装饰渐变，只留 1 个 1 秒可读懂的核心反差或证据。",
+        "从三大原生母版中选定 1 种落地：Us vs. Them 两列/分屏对比（适合通道 2 Python PIL/SVG 精准出图）、原生备忘录/真实用户评价拼接、或产品微距指认。",
+        "核对落地页/详情页首屏：确保点击后 3 秒内看到对应对比项的客观实证，防止高 CTR 低转化。"
+      ],
+      "checks": [
+        "把静态图缩到手机信息流实际宽度扫视 1 秒，能否只靠 1 个视觉中心读懂唯一主张？",
+        "是否摆脱了『企业棚拍精修宣传单』的塑料感，在信息流里具备原生内容亲和力？",
+        "Us vs. Them 的每一条对比行是否均有真实物理/参数证据，且落地页首屏无缝承接？"
+      ],
+      "validation_refs": []
     }
   ],
   "cases": [
@@ -4335,6 +4806,361 @@
         "低知名度新品牌或冷启动 B2B 产品在泛流量渠道严禁照搬“只放人像/情绪短句不放产品”——陌生品牌无产品与品类定义会沦为无人看懂的谜语人",
         "无后续展厅/展位承接的单页直效转化物料（如独立传单或直投落地页）不可砍掉核心参数证据"
       ]
+    },
+    {
+      "id": "C-lawsofux-von-restorff-and-aesthetic-usability",
+      "version": 1,
+      "title": "Laws of UX 孤立效应与美感可用性边界：信息流破群突围与防“精修盲区”法则",
+      "title_en": "Laws of UX Von Restorff Effect & Aesthetic-Usability Guardrails: Breaking Feed Homogeneity Without Triggering \"Polished Ad Blindness\"",
+      "tags": [
+        "孤立效应",
+        "美感可用性效应",
+        "信息流停滑",
+        "小红书封面",
+        "反广告盲区"
+      ],
+      "tags_en": [
+        "von restorff effect",
+        "aesthetic-usability effect",
+        "thumb-stop",
+        "social feed cover",
+        "ad blindness"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书双列瀑布流封面和竞品长得一模一样没人停滑",
+          "页面里全员高亮导致没有重点",
+          "过度精修的广告图反而点击率低或掩盖了关键信息"
+        ],
+        "en": [
+          "Feed cover blends into lookalike competitors",
+          "Overusing emphasis eliminates visual hierarchy",
+          "Over-polished visuals mask missing product facts or trigger ad blindness"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Von Restorff Effect & Aesthetic-Usability Effect"
+        }
+      ],
+      "case_type": "cognitive_benchmark",
+      "markdown_path": "library/cases/C-lawsofux-von-restorff-and-aesthetic-usability.md",
+      "markdown_path_en": "library/cases/en/C-lawsofux-von-restorff-and-aesthetic-usability.md",
+      "observations": [
+        "1. Hedwig von Restorff (1933) 记忆实验证明：在一组同类项中放入唯一视觉孤立项时，该项的注意与回忆率显著高于群体项；lawsofux.com 强调克制使用、不可仅靠颜色孤立（需兼顾色觉无障碍）及警惕过度抢眼被误判为广告。",
+        "2. Kurosu & Kashimura (1995) 对 252 名受试者测试 26 套 ATM 界面发现：视觉美感与感知易用性高度相关，但 lawsofux.com 明确警示美感会在测试与评审中掩盖真实可用性或信息缺失问题。"
+      ],
+      "copy_visual_synergy": "视觉孤立负责在同质化信息流里赢得 0.5 秒停滑；短标题与真实物理事实微文案在视线停住后 1 秒内接住信任，打破『只有精修皮囊』的广告防备。",
+      "analysis": "现代双列瀑布流和电商搜索页的核心瓶颈不是『不够精致』，而是『与左右邻居视觉同质』或『因过度精修像广告而被大脑自动跳过』。",
+      "reusable_move": "先截同屏前 8 个竞品定群体基线 → 仅在 1–2 个物理维度制造唯一孤立反差（且叠加非色觉差异） → 自检精修美感是否掩盖了尺寸/价格/实拍证据。",
+      "reusable_move_en": "Audit the top 8 neighboring feed cards to find the crowd baseline -> isolate ONE focal element on 1–2 concrete physical variables using color-independent cues -> verify that polish never masks essential buying facts ('When multiple similar objects are present, the one that differs from the rest is most likely to be remembered').",
+      "asset_prerequisites": "需有目标平台/类目的真实同屏竞品截图作为对比基线，以及支撑差异化主张的真实产品事实。",
+      "outcome_evidence": {
+        "evidence_type": "usability_benchmark",
+        "claim": "源自 von Restorff (1933) 记忆实验与 Kurosu & Kashimura (1995) 252 人 ATM 界面研究，经 Jon Yablonski 归纳为现代数字产品基础视觉准则。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁一屏同时高亮多个卖点导致焦点抵消，严禁用虚假系统提示或误导性视觉噱头博取点击。"
+    },
+    {
+      "id": "C-lawsofux-serial-position-and-peak-end",
+      "version": 1,
+      "title": "Laws of UX 系列位置效应与峰终定律：多图轮播与长详情页的首尾锚定及峰值分镜",
+      "title_en": "Laws of UX Serial Position Effect & Peak-End Rule: Primacy-Recency Anchoring & Peak-End Storyboarding for Carousels and Long PDPs",
+      "tags": [
+        "系列位置效应",
+        "峰终定律",
+        "多图轮播",
+        "详情页分镜",
+        "尾屏转化"
+      ],
+      "tags_en": [
+        "serial position effect",
+        "peak-end rule",
+        "swipe carousel",
+        "pdp storyboard",
+        "ending cta"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书多图轮播或长详情页平均用力，读者滑完记不住重点",
+          "尾屏草草结束没有总结或行动转化",
+          "移动端底部导航把最重要入口藏在中间"
+        ],
+        "en": [
+          "Carousel or long PDP spreads weight flatly so readers forget key points",
+          "Final slide trails off with no summary or CTA",
+          "Key mobile navigation actions are buried in the middle"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Serial Position Effect & Peak-End Rule"
+        }
+      ],
+      "case_type": "cognitive_benchmark",
+      "markdown_path": "library/cases/C-lawsofux-serial-position-and-peak-end.md",
+      "markdown_path_en": "library/cases/en/C-lawsofux-serial-position-and-peak-end.md",
+      "observations": [
+        "1. Ebbinghaus (1885) 与 Murdock (1962) 的 U 型记忆曲线证明：人们对序列的首项（首因）与末项（近因）记忆最牢，中间项最易遗忘；lawsofux.com 建议将核心导航/信息置首尾、次要项放中间。",
+        "2. Kahneman et al. (1993) 峰终定律实验证明：整体体验评价由最强烈的情绪高峰（Peak）与结束时刻（End）主导，而非全程均值，且负面峰值破坏力远高于正面补偿。"
+      ],
+      "copy_visual_synergy": "首屏定结果锚点，中段集中 1 屏硬核实拍/数据作唯一视觉峰值，尾屏用一图看懂清单 + 单一低摩擦 CTA 完成掌控感收口。",
+      "analysis": "多图笔记和长详情页最常见的通病是『每张图都想说一点，结果全程平淡且结尾泄气』，违背人类 U 型记忆与峰终评价机制。",
+      "reusable_move": "按『首因锚 + 唯一实证峰值屏 + 总结收口尾屏』三点骨架编排多图/长页 → 导航核心入口置最左/最右 → 优先铲除糊图、死链与弹窗等负面峰值。",
+      "reusable_move_en": "Build carousels and long PDPs around a First-Peak-End skeleton: anchor the primary promise on Slide 1, concentrate hard visual proof into ONE Peak slide, close with a save-worthy checklist + single CTA on the End slide, and eliminate frustration peaks before polishing ('Users have a propensity to best remember the first and last items in a series').",
+      "asset_prerequisites": "至少具备 1 组可验证的硬核实证素材撑起峰值屏（实测对比/拆解实拍），以及可落地的尾屏选型总结清单。",
+      "outcome_evidence": {
+        "evidence_type": "usability_benchmark",
+        "claim": "源自 Ebbinghaus (1885)、Murdock (1962) U 型回忆实验与 Kahneman et al. (1993) 峰终定律研究，经 lawsofux.com 整理为序列体验设计基准。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁伪造夸大测试图制造虚假峰值；不可把核心卖点孤立埋在中段而不做首尾呼应。"
+    },
+    {
+      "id": "C-lawsofux-zeigarnik-and-goal-gradient",
+      "version": 1,
+      "title": "Laws of UX 蔡格尼克效应与目标梯度效应：多图轮播翻页张力与进度牵引设计",
+      "title_en": "Laws of UX Zeigarnik Effect & Goal-Gradient Effect: Unfinished-Loop Swipe Tension & Progress-Cue Momentum",
+      "tags": [
+        "蔡格尼克效应",
+        "目标梯度效应",
+        "多图翻页率",
+        "卡片露边",
+        "进度条"
+      ],
+      "tags_en": [
+        "zeigarnik effect",
+        "goal-gradient effect",
+        "swipe momentum",
+        "card peek",
+        "progress cues"
+      ],
+      "when_stuck": {
+        "zh": [
+          "小红书/IG 多图轮播只看封面就划走，翻页率低",
+          "横滑卡片占满全宽看不出右边还有内容",
+          "多步骤选型或表单中途跳出率高"
+        ],
+        "en": [
+          "Carousel readers drop off after Slide 1",
+          "Horizontal cards fill 100% width hiding swipe affordance",
+          "Multi-step selectors or forms suffer mid-flow abandonment"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Zeigarnik Effect & Goal-Gradient Effect"
+        }
+      ],
+      "case_type": "cognitive_benchmark",
+      "markdown_path": "library/cases/C-lawsofux-zeigarnik-and-goal-gradient.md",
+      "markdown_path_en": "library/cases/en/C-lawsofux-zeigarnik-and-goal-gradient.md",
+      "observations": [
+        "1. Bluma Zeigarnik (1920s) 实验发现：未完成或被打断的任务会在工作记忆中保留持续认知张力，显著优于已完成任务的记忆留存。",
+        "2. Clark Hull (1932) 与 Kivetz, Urminsky & Zheng (2006) 证实目标梯度效应：用户离可见终点越近动力越强，给予起步领先感（Head Start）可大幅提升完成率。"
+      ],
+      "copy_visual_synergy": "画幅右边缘的跨页延续/卡片露边提供物理未完结线索，角落页码与步数进度尺提供终点临近感，共同驱动持续滑动与完成。",
+      "analysis": "当每张图在视觉上显得『已经结束』且看不到总步数时，大脑没有闭合张力也没有终点预期，自然在 Slide 1 后直接划走。",
+      "reusable_move": "在 Slide 1 抛出可兑现开环 + 右缘半露/15%–25% 卡片露边 → 全程角落挂载轻量页码进度（如 1/5） → 多步骤流程前置最轻单选制造 Head Start。",
+      "reusable_move_en": "Pair an honest open-loop hook on Slide 1 with a right-edge visual bleed or 15%–25% horizontal Card Peek, mount compact corner step counters (e.g., 1/5), and front-load an effortless Step 1 to trigger Head-Start momentum ('The tendency to approach a goal increases with proximity to the goal').",
+      "asset_prerequisites": "后续每一屏必须真实兑现首屏悬念，且总步数有限、清晰可预期（建议 4–7 屏）。",
+      "outcome_evidence": {
+        "evidence_type": "usability_benchmark",
+        "claim": "源自 Bluma Zeigarnik (1920s) 记忆研究、Clark Hull (1932) 及 Kivetz et al. (2006) 消费行为实验，经 lawsofux.com 归纳为流程留存基准。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁滥用无干货的虚假标题党悬念透支善意，严禁将无限信息流伪装成有限进度条。"
+    },
+    {
+      "id": "C-lawsofux-fitts-hick-and-jakob",
+      "version": 1,
+      "title": "Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应",
+      "title_en": "Laws of UX Fitts's Law, Hick's Law & Jakob's Law: Mobile Thumb Targets, Progressive Disclosure & Native Platform Conventions",
+      "tags": [
+        "菲茨定律",
+        "席克定律",
+        "选择过载",
+        "雅各布定律",
+        "移动端热区",
+        "渐进式披露",
+        "9:16安全区"
+      ],
+      "tags_en": [
+        "fitts law",
+        "hicks law",
+        "choice overload",
+        "jakobs law",
+        "mobile thumb zone",
+        "progressive disclosure",
+        "safe zones"
+      ],
+      "when_stuck": {
+        "zh": [
+          "移动端主 CTA 按钮太小、够不到或间距太挤易误触",
+          "9:16 竖屏信息流文字被右侧按钮栏或底部字幕区遮挡",
+          "多 SKU/多参数一屏平权铺开引发选择瘫痪",
+          "生造非标准交互或图标迫使买家重新学习"
+        ],
+        "en": [
+          "Mobile CTA too small, out of thumb reach, or cramped",
+          "9:16 social overlays collide with right-rail or bottom safe zones",
+          "Too many equal-weight SKUs trigger choice overload",
+          "Non-standard UI patterns break familiar platform mental models"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-yablonski-lawsofux-web",
+          "section": "Fitts's Law, Hick's Law, Choice Overload & Jakob's Law"
+        }
+      ],
+      "case_type": "cognitive_benchmark",
+      "markdown_path": "library/cases/C-lawsofux-fitts-hick-and-jakob.md",
+      "markdown_path_en": "library/cases/en/C-lawsofux-fitts-hick-and-jakob.md",
+      "observations": [
+        "1. Paul Fitts (1954) 人因实验证明：目标越大、距离越近，触达越快且误触越低；移动端要求触控目标 ≥ 44×44px、留足间距并落入拇指热区。",
+        "2. Hick & Hyman (1952–1953) 与 Alvin Toffler (1970) 证明选项过多导致决策时间对数上升甚至瘫痪，需通过高亮推荐项、分步与渐进式披露降负。",
+        "3. Jakob Nielsen 指出用户绝大多数时间花在别的 App/网站上，顺应平台成熟惯例（含 9:16 安全区）可大幅降低学习摩擦。"
+      ],
+      "copy_visual_synergy": "空间尺寸、安全区避让与视觉推荐锚点承担『零摩擦操作』，短场景标签（如『90% 家庭首选』）替买家完成第一轮筛选。",
+      "analysis": "移动端转化流失往往不是产品不行，而是拇指按不到、字被平台控件挡住、或在 8 个平权选项前瞬间选择瘫痪。",
+      "reusable_move": "主 CTA ≥ 44×44px 落入拇指热区且留 8–12px 间距 → 9:16 物料严格避让右侧与底部 Safe Zones → 超 3–4 项选项时分组高亮 1 个推荐项并渐进披露高阶参数 → 遵循目标平台原生图标与手势惯例。",
+      "reusable_move_en": "Keep primary mobile CTAs ≥ 44×44px with ≥ 8–12px spacing in thumb zones -> clear 9:16 right-rail and bottom Safe Zones -> group >3–4 options, highlight 1 recommended choice, and apply progressive disclosure -> follow native platform conventions ('Users spend most of their time on other sites').",
+      "asset_prerequisites": "推荐项高亮须有真实热销或场景依据；竖屏物料须对照目标平台最新 Safe Zone 规范。",
+      "outcome_evidence": {
+        "evidence_type": "usability_benchmark",
+        "claim": "源自 Paul Fitts (1954)、Hick & Hyman (1952–1953)、Alvin Toffler (1970) 及 Jakob Nielsen 研究，经 lawsofux.com 汇总为现代移动端人因交互基准。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "不可为追求极简而删掉专业/B2B 买家决策必需的关键参数，应改用分组、筛选器与渐进披露减负。"
+    },
+    {
+      "id": "C-tiktok-9x16-safe-zones-and-2s-hook",
+      "version": 1,
+      "title": "TikTok Creative Center 9:16 竖屏安全区与前 2–3 秒视觉钩子：像素级避让红线与早期露品实证",
+      "title_en": "TikTok Creative Center 9:16 Safe Zones & First 2–3s Visual Hook: Pixel-Exact UI Margins & Early Product Visibility Benchmarks",
+      "tags": [
+        "9:16安全区",
+        "前2秒视觉钩子",
+        "TikTok规范",
+        "早期露品",
+        "竖屏信息流"
+      ],
+      "tags_en": [
+        "9:16 safe zones",
+        "first 2 seconds hook",
+        "tiktok creative center",
+        "early product visibility",
+        "vertical feed"
+      ],
+      "when_stuck": {
+        "zh": [
+          "9:16 竖屏文字或价格被右侧点赞评论栏或底部字幕/CTA 遮挡",
+          "传统慢片头导致前 2 秒被划走且品牌回忆极低",
+          "静音与开声场景前 3 秒没说清卖点"
+        ],
+        "en": [
+          "9:16 headlines or prices get blocked by right engagement rail or bottom captions",
+          "Slow intros cause instant skips and low recall",
+          "Opening 3 seconds fail across sound-on and sound-off feeds"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-tiktok-creative-center-guidelines",
+          "section": "9:16 Safe Zones & First 2-3 Seconds Benchmarks"
+        }
+      ],
+      "case_type": "platform_benchmark",
+      "markdown_path": "library/cases/C-tiktok-9x16-safe-zones-and-2s-hook.md",
+      "markdown_path_en": "library/cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md",
+      "observations": [
+        "1. 标准 1080×1920（9:16）信息流 UI 安全区像素红线：顶留 ≥240px（12.5%–14%）、底留 ≥660px（约 35%）、左留 ≥120px、右上 ≥120px 且右下扩大至 180–300px 避让互动纵列。",
+        "2. TikTok 官方创意规范与平台研究数据：前 2 秒必须给动态视觉钩子打破刷屏惯性，前 2–3 秒清晰露品最高带来 +65% 品牌好感度提升，开场窗口承载最高 90% 广告回忆价值，88% 用户视音频为核心体验。"
+      ],
+      "copy_visual_synergy": "中上安全框（y: 240–1260px，避右下 300px）同时承载动态产品动作与 6–10 字高对比同步花字，实现声画双轨 0 遮挡传达。",
+      "analysis": "竖屏信息流素材翻车最常见的两大机械失误是『文字压进系统 UI 遮挡区』与『沿用 TVC 慢热前奏导致还没露品就被划走』。",
+      "reusable_move": "1080×1920 出图前强制套用顶 240 / 底 660 / 左 120 / 右下 300px 安全区网格 → 砍掉慢片头实现第 1 帧见冲突与产品本体 → 前 3 秒语音与安全区短花字同步。",
+      "reusable_move_en": "Lock 1080x1920 assets to Top >=240px / Bottom >=660px / Left >=120px / Lower-Right 180-300px Safe Zones -> cut slow intros and show product + visual contrast in seconds 0-2 (+65% affinity lift, up to 90% ad recall) -> sync audio with safe-zone captions.",
+      "asset_prerequisites": "需明确目标平台（TikTok / 抖音 / Reels / TopView）最新安全区蒙版及前 2 秒真实动态产品画面。",
+      "outcome_evidence": {
+        "evidence_type": "usability_benchmark",
+        "claim": "TikTok Creative Center 官方安全区规范及平台研究基准：早期清晰露品最高 +65% 品牌好感度，开场承载最高 90% 广告回忆价值，88% 用户依赖音频。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "背景画面仍需自然出血满 1080×1920 全屏，严禁把底部 660px 留成突兀死白条；TopView 开屏前 3 秒有独立缩放边界。"
+    },
+    {
+      "id": "C-motion-native-statics-and-us-vs-them",
+      "version": 1,
+      "title": "Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断",
+      "title_en": "Motion Performance Creative Benchmarks: Native Static Ads, \"Us vs. Them\" Contrast & Thumbstop Ratio Diagnostics",
+      "tags": [
+        "原生静态图",
+        "Us vs Them",
+        "停滑率TSR",
+        "反广告盲区",
+        "一图一主张"
+      ],
+      "tags_en": [
+        "native static ads",
+        "us vs them",
+        "thumbstop ratio",
+        "ad blindness",
+        "single-idea focus"
+      ],
+      "when_stuck": {
+        "zh": [
+          "精修信息流海报 Link CTR 低于 1% 疑似触发广告盲区",
+          "视频 3 秒停滑率 TSR 低于 25% 找不到诊断抓手",
+          "静态图塞满多个卖点沦为无人阅读的缩微宣传单"
+        ],
+        "en": [
+          "Polished feed banners suffer <1% Link CTR from banner blindness",
+          "Video 3-second Thumbstop Ratio falls below 25%",
+          "Static ad crowds too many features instead of 1 instant visual message"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-motion-performance-creative-benchmarks",
+          "section": "Thumbstop Ratio, Us vs. Them & Native Static Formats"
+        }
+      ],
+      "case_type": "performance_benchmark",
+      "markdown_path": "library/cases/C-motion-native-statics-and-us-vs-them.md",
+      "markdown_path_en": "library/cases/en/C-motion-native-statics-and-us-vs-them.md",
+      "observations": [
+        "1. 停滑率（TSR = 3s Views ÷ Impressions）四档基准：<25% 弱（首帧失败）、25%–30% 及格、30%–40% 优秀、40%+ 顶尖；静态图强效拉新 Link CTR 基准 >1.0%–1.5%。",
+        "2. 三大高频胜出原生静态母版：Us vs. Them 分屏/对比表/韦恩图（2 秒制造认知反差）、原生备忘录/评论回复/真实晒单拼接（绕过精修广告盲区）、一图一主张的产品微距指认图。"
+      ],
+      "copy_visual_synergy": "原生构图形态负责 1 秒去广告防备，3–6 字极简对比行或真实口语评价负责瞬间传递差异。",
+      "analysis": "高度精修的企业风海报在现代信息流中容易被大脑毫秒级归类为广告而跳过；具备真实对比或原生社交语境的单主张静态图能显著压低认知防备。",
+      "reusable_move": "按 TSR <25% / CTR <1.0% 判定首帧重构 → 严格锁定『一图一主张』 → 在 Us vs. Them 对比图、原生备忘录/评论拼接、产品微距指认中三选一落地，并在落地页首屏承接实证。",
+      "reusable_move_en": "Use TSR (<25% weak) & Static Link CTR (>1.0%-1.5% strong) to diagnose front-end hooks -> enforce Single-Idea Focus -> deploy Us vs. Them split/table contrast, Native Notes/Comment mashups, or Product-first pointouts, backed by immediate landing-page proof.",
+      "asset_prerequisites": "Us vs. Them 对比项须基于可验证的真实规格/测试差异；评论拼接须来自真实客户反馈。",
+      "outcome_evidence": {
+        "evidence_type": "usability_benchmark",
+        "claim": "海外 DTC 效果广告行业与 Motion 创意策略基准：视频 TSR 25–30% 及格、30–40% 优秀、40%+ 顶尖；静态图强效 Link CTR >1.0%–1.5%。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁捏造虚假竞品缺陷或伪造用户评价；避免点名诋毁竞品商标，改用客观品类通病对照。"
     }
   ],
   "feedback": [

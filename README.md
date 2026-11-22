@@ -6,7 +6,7 @@
 
 `art-direction-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
 
-**v1.3.1 · `catalog.json` `r10` · 15 verified sources · 28 visual methods (`M-001`–`M-028`) · 23 bilingual case cards (`en` + `zh`)**
+**v1.4.0 · `catalog.json` `r12` · 18 verified sources · 34 visual methods (`M-001`–`M-034`) · 29 bilingual case cards (`en` + `zh`)**
 
 [Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Searchable catalog](library/catalog.json) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
@@ -118,13 +118,14 @@ For offline exhibitions and commercial spaces, the skill orchestrates visual den
 
 ---
 
-## What's Inside the Library (`catalog.json` `r10`)
+## What's Inside the Library (`catalog.json` `r12`)
 
 Every record explicitly tags its **`learning_origin`** (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent teardowns are clearly separated from seeded books and UX studies — and can be filtered directly via `--origin`.
 
-| Source Category (`learning_origin`) | Reviewed Works & Field Teardowns (`15` Sources, `100%` Full Review) | Methods (`28`) & Bilingual Cases (`23` `zh` + `23` `en`) |
+| Source Category (`learning_origin`) | Reviewed Works & Field Teardowns (`18` Sources) | Methods (`34`) & Bilingual Cases (`29` `zh` + `29` `en`) |
 | :--- | :--- | :--- |
 | **[Live Co-Dissected] Comparative Field Teardowns (`co_dissected_teardown`)** | **2026 New Xiaomi SU7 × Shu Qi "Capri Blue" Mall Billboards vs. Competitor Outdoor LEDs (Genesis, Voyah Taishan, Denza N9, XPeng X9, Buick, Geely, Avatr)**: 3-question inquiry chain + 6-dimensional street-photo teardown | `M-028` (`validated`) · `1` bilingual case card (`C-xiaomi-su7-2026-mall-billboard-teardown`) + `F-002` |
+| **Modern Social Feeds, Carousels & Mobile Ergonomics (`benchmark_study`)** | **Laws of UX** (`lawsofux.com`, 9 net-new cognitive principles), **TikTok Creative Center** (`1080×1920` pixel Safe Zones & 2–3s visual hooks), and **Motion Performance Creative Benchmarks** (TSR diagnostic ladder, *Us vs. Them* & native static ads) | `M-029`–`M-034` · `6` bilingual case cards (`C-lawsofux-*`, `C-tiktok-*`, `C-motion-*`) |
 | **Baymard Institute UX Benchmarks (`benchmark_study`)** | `5` large-scale eye-tracking & usability studies on In-Scale images, Descriptive Callouts, Included/Optional Accessories, Spec Sheet Scannability, and Horizontal Tabs | `M-001`–`M-003`, `M-005`–`M-006` · `5` bilingual case cards (`C-baymard-*`) |
 | **Marketing Examples (Harry Dry)** | `4` landing page, pricing & brand teardowns (Above-the-Fold Guide, Rows' Live Spreadsheet A/B Test & Haako Rewrite, Refactoring UI `$149` Tier & Basecamp `$99` Anchor, Tropicana `$55M` Rebrand Loss & Angostura Bitters) | `M-004`, `M-009`–`M-010` · `4` bilingual case cards (`C-me-*`) |
 | **Robin Williams — *The Non-Designer's Design Book (4th Ed.)*** | Complete 258-page review: CRAP principles (*Proximity*, *Alignment*, *Repetition*, *Contrast*), 12-Part Color Wheel (*Shades/Tints*, *Value*, *Cool Recedes / Warm Advances*), and Typography (*Concord, Conflict, and Contrast*, `giraffe` vs. `GIRAFFE` word coastlines) | `M-011`–`M-015` · `3` bilingual case cards (`C-williams-*`) |
