@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 15,
+  "revision": 16,
   "updated_at": "2026-11-25",
   "sources": [
     {
@@ -1384,7 +1384,7 @@
     },
     {
       "id": "M-014",
-      "version": 2,
+      "version": 3,
       "title": "12 色轮取色、色质拉开与冷退暖进面积比：用亮暗调去幼稚化，用冷色铺底衬托小面积暖色焦点",
       "tags": [
         "12色轮",
@@ -1450,9 +1450,9 @@
           ]
         }
       ],
-      "rule": "依据 12 色轮的 4 种结构关系（互补色、三色组/分裂互补色、类似色、单色）或直接用滴管从核心产品照片吸取配色；拒绝直接使用高饱和纯色调（Hue），通过加黑生成暗色（Shade）或加白生成亮色（Tint）提升质感；强制拉开相邻前景与背景的『色质（Value，明暗深浅）』防止边缘抖动，并遵循『暖色（红/黄）前进只做小面积焦点、冷色（蓝/绿）后退做大面积铺底』的面积铁律。",
+      "rule": "【原作观察】Robin Williams 第 7 章示范了依 12 色轮或产品图取色、用加黑暗色（Shade）与加白亮色（Tint）柔和纯色、拉开前景背景色质（Value）防边缘抖动，并演示了 80%–90% 冷色铺底 + 10%–20% 暖色前进的配色平衡。【可迁移用法】当你希望一个小元素（主按钮、关键数字或徽章）在冷调版面中第一时间被看到时，采用“大面积后退冷色 + 小面积前进暖色”并做黑白灰度色质核验；若品牌识别本身靠大面积高饱和暖色建立（如可口可乐 M-039 全红海报），全幅暖色铺底配高反差纯白主角同样成立。",
       "applies_when": "为店铺首页、详情页、广告海报或工业品手册制定色彩方案，或诊断现有页面为什么颜色刺眼、字看不清、缺乏高级感。",
-      "limits": "严禁在相邻区域叠放色质（明暗度）相近的两种颜色（如黑底放深红字、深紫底放深蓝字）；严禁让暖色与冷色按 1:1 均分画面；屏幕显示必须用 RGB，印刷品最终交付必须用 CMYK（且大面积深黑底印刷需用 C20 M20 Y20 K100 浓郁黑）。",
+      "limits": "核心客观底线是不把色质（明暗度）相近的两种颜色直接叠放导致文字边缘发抖难认；冷暖 8:2 比例适用于需要小焦点在冷色界面跳出的场景，当大面积暖色本身是品牌核心识别色（如 M-039）或情绪主题时应灵活换招；屏幕交付用 RGB，印刷大面积深黑底需配浓郁黑（C20 M20 Y20 K100）。",
       "steps": [
         "定色相关系：从品牌主色或核心摄影图（用吸管工具吸取）出发，在 12 色轮上选定『分裂互补色（主色 + 互补色两侧的邻色）』或『类似色（相邻 2–3 色）』。",
         "去纯色幼稚感：在纯色中加入黑色得到沉稳的暗色（Shade，用于背景或主标题），或加入白色得到柔和的亮色（Tint，用于浅底色块或次级分区）。",
@@ -1466,12 +1466,13 @@
       ],
       "validation_refs": [],
       "title_en": "12-Color Wheel Harmonies, Tonal Value Separation & Cool-Recedes / Warm-Advances Ratio",
-      "rule_en": "Per Robin Williams' Chapter 7 Color rules (Book p.87–104 / PDF p.100–117), soften pure outer-ring hues into Shades (+black) and Tints (+white), separate foreground/background tonal Value to prevent 'The Wildflower Theory' edge vibration, allocate 80%–90% of area to receding cool colors (blue/slate) and 10%–20% to advancing warm accents (red/amber), and use Rich Black (C20 M20 Y20 K100) for print solids.",
-      "learning_origin": "book_canon"
+      "rule_en": "[Original Observation] Per Robin Williams Ch. 7 (Book p.87–104 / PDF p.100–117), soften harsh primaries into Shades (+black) and Tints (+white), separate foreground/background tonal Value to stop edge vibration ('The Wildflower Theory'), and balance 80%–90% receding cool ground against 10%–20% advancing warm focal accents. [Reusable Application] Use the cool-ground / small-warm-accent ratio when you want a small element (CTA, key metric, badge) to pop first; when brand recognition itself relies on a saturated warm field (e.g., Coca-Cola M-039 full-red posters), a full warm field paired with crisp high-value-contrast white subjects works equally well.",
+      "learning_origin": "book_canon",
+      "evidence_stage": "source_verified"
     },
     {
       "id": "M-015",
-      "version": 2,
+      "version": 3,
       "title": "字体禁同门冲突与六维叠加对比法：严禁同类别字体混排，用大小写混排与多维极值拉开层级",
       "tags": [
         "字体对比",
@@ -1546,9 +1547,9 @@
           ]
         }
       ],
-      "rule": "严禁在同一页面混用属于同一结构类别的两种不同字体（绝对不要同时用两种无衬线体、两种旧式体、两种现代体、两种手写体，或将手写体与斜体混排）；若搭配不同字体，必须跨类别选不同结构（如笔划有粗细过渡的衬线体 + 粗细一致的无衬线体）并叠加『大小、粗细、结构、形状、方向、颜色（版面黑白灰度）』中的至少 2–3 维对比；需要放大标题时优先改用『大小写混排』而非全大写（All Caps），释放横向空间并保留单词上下轮廓识别度。",
+      "rule": "【原作观察】Robin Williams 第 10–12 章警示“长得很像但又不一样”的字体混排会产生视觉冲突，并演示长串全大写（All Caps）会抹平小写词形轮廓并迫使字号缩小。【可迁移用法】核心是避免结构相近、功能无分工的同门字体冲突；需要拉开层级时，可跨类别搭配（如衬线体 + 无衬线体）或在单一多字重家族内叠加大小、粗细、形状、方向、颜色等多维对比；需要放大长标题时优先用大小写混排保留词形轮廓。",
       "applies_when": "为海报、详情页首屏、技术白皮书或纯文字说明页选择主副标题与正文字体搭配，或修复『两个标题互相抢镜』与『纯文字页灰蒙蒙一片』的问题。",
-      "limits": "现代体（Modern，粗细反差极大且横衬线极细）只适合大号标题，严禁用于小字号长正文以免产生眩目感；手写体（Script）与花体（Decorative）必须像奶酪蛋糕一样极少量点缀，绝对禁止全大写或排成大段正文。",
+      "limits": "禁止的是外观接近且无分工的字体冲突；当两款无衬线体具备清晰结构差异与明确角色分工时（例如超窄展示无衬线标题配宽松高可读无衬线正文），同页搭配完全成立；短于 2–3 词的标识、导航或标签可使用全大写加字距。现代体（Modern）与花体/手写体仍不适合小字号长正文。",
       "steps": [
         "盘点页面字体类别：将页面字体收敛为『1 个多字重超级无衬线家族（如 Inter / Avenir Next / 思源黑体，内部调取 Heavy 800 配 Regular 400）』或『1 个衬线体 + 1 个无衬线体』，立即清除同门重复的第二种字体。",
         "解除全大写（All Caps）封印：将超过 3 个单词的全大写标题改为首字母大写（Title Case）或句首大写（Sentence Case），利用省出的一半横向宽度将字号直接放大 30%–50%。",
@@ -1563,8 +1564,9 @@
       ],
       "validation_refs": [],
       "title_en": "Typography Anti-Conflict & 6-Dimension Contrast: Preserve Word Coastlines and Stack Contrasts",
-      "rule_en": "Per Robin Williams' Typography rules ('Concord, Conflict, and Contrast', Book p.159–210 / PDF p.172–223), never mix two fonts from the same structural category or pair Script with Italic; stack 2–3 contrast dimensions (Size + Weight + Structure/Form/Direction/Color); and avoid ALL-CAPS long headlines (which destroy the ascender/descender word 'coastline' of 'giraffe' vs 'GIRAFFE' and shrink fit from 30pt to 20pt).",
-      "learning_origin": "book_canon"
+      "rule_en": "[Original Observation] Per Robin Williams Ch. 10–12 ('Concord, Conflict, and Contrast', Book p.159–210 / PDF p.172–223), pairing two look-alike typefaces causes visual conflict, and long ALL-CAPS headlines destroy lowercase word coastlines ('giraffe' vs 'GIRAFFE', shrinking fit from 30pt to 20pt). [Reusable Application] Avoid pairing structurally similar typefaces with overlapping roles; create clear hierarchy via cross-category contrast or multi-weight contrast within one family, and prefer mixed-case for multi-word display headlines.",
+      "learning_origin": "book_canon",
+      "evidence_stage": "source_verified"
     },
     {
       "id": "M-016",
@@ -2712,7 +2714,7 @@
     },
     {
       "id": "M-028",
-      "version": 1,
+      "version": 2,
       "learning_origin": "co_dissected_teardown",
       "title": "高噪商圈/展会巨幕的纯色场降噪、L屏景别递进与打卡背景板法则",
       "title_en": "High-Noise Mall/Expo Billboard Color-Field Denoising, L-Screen Scale Progression & UGC Backdrop Framing",
@@ -2782,7 +2784,7 @@
       "rule": "在核心商圈外立面、繁忙街道或大型展会主通道等高噪三维环境中，大屏本身处于满街霓虹灯与建筑线条的包围下：① 弃用“山川树林公路”等多色阶自然风景合成背景（在街头 LED 上会发灰发脏），改用 ≥75% 面积的高纯度单一品牌色场（Color Field，如冷调卡布里蓝切开满街红黄餐饮招牌）实现 1 秒环境降噪；② 字重纤细克制、横向占宽 ≤60%、留出 ≥75% 纯色呼吸区，严禁让大字顶天立地撑满上沿或骑在背景明暗交界线上，并彻底取消远距离糊成白斑的底部免责小字、多宫格价格与二维码；③ L 型转角屏或跨街双屏严禁切出刺眼白底“膏药块”或左右屏重复同一句话，须保持同色系无缝延展，按“一屏中远景交待产品+一屏近景眼神/纯色短句立情绪”做电影分镜递进；④ 将 100 米外墙设计成无促销贴纸的“高审美打卡背景板 + 朋友圈嘴替短句”，把硬核参数表留给 1 米内的展厅实车或详情页承接。",
       "rule_en": "In high-noise 3D physical environments (shopping mall facades surrounded by neon restaurant signs, or busy trade-show main aisles): (1) Replace multi-tone landscape KVs (mountains, forests, dark roads that turn muddy on street LEDs) with a >=75% single-hue high-purity Brand Color Field (e.g., receding cool Capri Blue slicing through warm red/yellow street clutter); (2) Keep headline measure <=60% of canvas width with >=75% pure color-field breathing room, never cram oversized type against the top edge or across horizon lines, and eliminate all microscopic bottom fine print, price grids, and QR codes; (3) On L-shaped corner or dual screens, never amputate the frame with a glaring white logo patch or repeat the same verbal claim on both wings—flow one unified color palette across both screens using a Wide Product Context + Close-Up Mood/Portrait shot progression; (4) Frame the 100m exterior screen as a clean UGC-ready photo backdrop with a borrowable mood caption, handing off dense technical specs to the 1m ground-floor showroom or PDP.",
       "applies_when": "品牌或核心单品已具备高公众认知度（Schwartz Stage 1–2）或处于垂直行业展会内（受众已知晓品牌主业），且线下步行圈内有实体展厅/展位承接后续参数咨询。",
-      "limits": "【严禁滥用红线】低知名度新品牌、新创品类或在泛流量冷启动渠道投放时，严禁照搬“只放代言人/只放纯色短句不放产品”的极简谜语人打法——陌生品牌在无产品画面与品类定义时做纯留白，会导致受众完全看不懂卖什么（须保留清晰产品本体+一句话品类定义）。若单张海报无后续展厅/落地页承接，亦不可砍光核心功能证据。",
+      "limits": "【证据层级说明】本方法来自小米 SU7 街头正反实拍共创拆解，已获用户认可收录指导后续项目（user_endorsed），尚未包含迁移至其他品牌后的受众实测或投放验证（需由后续项目反馈升级至 field_validated）。【适用与换招边界】高纯度 ≥75% 单色场是高噪远距大牌的候选强招之一，而非唯一户外公式；低知名度新品牌在泛流量冷启动投放时切忌照搬“只放人像/抽象短句不放产品”，须保留清晰产品本体或明确品类定义；行人会停步走近的通道、候车亭或展位内，亦可采用叙事照片、长文或可扫二维码。",
       "steps": [
         "先拍摄或调取投放点位的真实街景/展馆环境底图，识别周围最强的环境色噪点（如满街红黄餐饮霓虹灯或杂乱展位灯箱）",
         "扔掉复杂的多层风景合成背景，选取与环境噪点形成强色温/明度反差的单一高纯度品牌色场铺满 ≥75% 画幅",
@@ -2799,7 +2801,8 @@
       ],
       "validation_refs": [
         "F-002"
-      ]
+      ],
+      "evidence_stage": "user_endorsed"
     },
     {
       "id": "M-029",
@@ -3140,7 +3143,7 @@
     },
     {
       "id": "M-034",
-      "version": 1,
+      "version": 2,
       "title": "信息流原生静态图、Us vs. Them 极化对比与停滑率诊断法",
       "title_en": "Native Feed Static Formats, \"Us vs. Them\" Contrast & Thumbstop Diagnostics",
       "tags": [
@@ -3188,10 +3191,10 @@
           "section": "Thumbstop Ratio Benchmarks, Us vs. Them & Native Static Formats"
         }
       ],
-      "rule": "用前端指标先定位问题（视频 3 秒停滑率 TSR <25% 弱 / 25–30% 及格 / 30–40% 优秀 / 40%+ 顶尖；静态图 Link CTR 优秀线 >1.0%–1.5%），一旦低于基准立即重构构图形态而非微调配色；信息流静态图坚持『一图一主张（Single-Idea Focus）』，优先选用三大绕过广告盲区的原生母版：1) Us vs. Them 左右分屏/对比表/韦恩图（2 秒制造认知反差）；2) 原生界面/备忘录/真实评价拼接（去企业精修感）；3) 产品微距实拍单点指认图，且点击后落地页必须立刻兑现对比实证。",
-      "rule_en": "Diagnose front-end scroll-stopping first (Video Thumbstop Ratio <25% weak, 25-30% baseline, 30-40% strong, 40%+ elite; Static Link CTR strong benchmark >1.0%-1.5%). When below baseline, rebuild the visual architecture rather than tweaking fonts: commit each static frame to Single-Idea Focus using one of 3 native feed formats—(1) Us vs. Them split-screen/table/Venn contrast, (2) Native UI / Notes-app / real comment mashup bypassing glossy banner blindness, or (3) Product-first macro pointout—and substantiate the contrast immediately on the landing page.",
+      "rule": "【原报告基准与样本】Motion 海外 DTC 付费社媒报告给出的经验参考区间为：视频 3 秒停滑率 TSR（<25% 偏弱 / 25–30% 及格 / 30–40% 优秀 / 40%+ 顶尖）与静态图 Link CTR（>1.0%–1.5%）。【可迁移用法】上述指标仅作为前端异常的排查预警信号，不能单凭过线就断定必须重做构图——出现偏低时，先与同账号、同平台、相近受众及投放目标的历史表现对照，再判断优先测试首帧构图、钩子文案还是受众定向；若确诊为信息流广告盲区，可选用三大原生静态思路（Us vs. Them 公平对比、原生界面/备忘录/真实评价拼接、一图一主张产品微距指认）并在落地页兑现对应实证。",
+      "rule_en": "[Source Benchmark & Sample] Motion's US DTC paid-social creative benchmarks cite Video 3-second Thumbstop Ratio (<25% weak, 25–30% baseline, 30–40% strong, 40%+ elite) and Static Link CTR (>1.0%–1.5%). [Reusable Application] Treat these figures strictly as diagnostic warning signals—never auto-blame layout from a single threshold. Compare first against the same account, platform, objective, and comparable audience history before deciding whether to test visual framing, hook copy, or targeting. When ad blindness is confirmed, test one of 3 native static formats (fair Us vs. Them contrast, native UI/notes/real-comment mashups, or single-idea product pointouts) backed by immediate landing-page proof.",
       "applies_when": "设计小红书、Meta、Instagram、TikTok 图文信息流拉新静态图、对比长图，或诊断低点击率/低停滑率广告素材时。",
-      "limits": "严禁捏造虚假竞品缺陷或伪造素人评论截图；Us vs. Them 避免点名诋毁具体竞争商标（改用『传统方案 / 常见痛点』客观对照）。",
+      "limits": "不同行业、客单价、平台与冷热流量池的点击率基线差异极大，严禁拿海外 DTC 快消基准硬套 B2B 高客单或私域投放；严禁捏造虚假竞品缺陷或伪造素人评论截图，Us vs. Them 对比须保持同口径公平对照。",
       "steps": [
         "先看前端数据诊断：若视频 TSR <25% 或静态 Link CTR <1.0%，直接判为『视觉钩子/画风失效』，推倒重做构图。",
         "强制执行『一图一主张』：砍掉所有次要卖点与装饰渐变，只留 1 个 1 秒可读懂的核心反差或证据。",
@@ -3203,7 +3206,8 @@
         "是否摆脱了『企业棚拍精修宣传单』的塑料感，在信息流里具备原生内容亲和力？",
         "Us vs. Them 的每一条对比行是否均有真实物理/参数证据，且落地页首屏无缝承接？"
       ],
-      "validation_refs": []
+      "validation_refs": [],
+      "evidence_stage": "source_verified"
     },
     {
       "id": "M-035",
@@ -5516,7 +5520,7 @@
     },
     {
       "id": "C-motion-native-statics-and-us-vs-them",
-      "version": 1,
+      "version": 2,
       "title": "Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断",
       "title_en": "Motion Performance Creative Benchmarks: Native Static Ads, \"Us vs. Them\" Contrast & Thumbstop Ratio Diagnostics",
       "tags": [
@@ -5562,15 +5566,16 @@
       ],
       "copy_visual_synergy": "原生构图形态负责 1 秒去广告防备，3–6 字极简对比行或真实口语评价负责瞬间传递差异。",
       "analysis": "高度精修的企业风海报在现代信息流中容易被大脑毫秒级归类为广告而跳过；具备真实对比或原生社交语境的单主张静态图能显著压低认知防备。",
-      "reusable_move": "按 TSR <25% / CTR <1.0% 判定首帧重构 → 严格锁定『一图一主张』 → 在 Us vs. Them 对比图、原生备忘录/评论拼接、产品微距指认中三选一落地，并在落地页首屏承接实证。",
-      "reusable_move_en": "Use TSR (<25% weak) & Static Link CTR (>1.0%-1.5% strong) to diagnose front-end hooks -> enforce Single-Idea Focus -> deploy Us vs. Them split/table contrast, Native Notes/Comment mashups, or Product-first pointouts, backed by immediate landing-page proof.",
+      "reusable_move": "将 Motion 海外 DTC 报告的 TSR/CTR 基准用作排查预警信号（先对照同账号、同平台、相近受众与目标的历史表现再决定测构图、文案还是受众）→ 确认存在广告盲区时，以“一图一主张”测试三大原生静态母版（公平 Us vs. Them 对比 / 原生备忘录与真实评论拼接 / 产品微距指认）并在落地页首屏兑现实证。",
+      "reusable_move_en": "Use Motion's DTC paid-social TSR/CTR benchmarks strictly as diagnostic warning signals (benchmarking against same-account, same-platform, comparable-audience history before deciding whether to test framing, copy, or targeting) -> when ad blindness is confirmed, test Single-Idea Focus via fair Us vs. Them contrast, native UI/comment mashups, or product-first macro pointouts backed by immediate landing-page proof.",
       "asset_prerequisites": "Us vs. Them 对比项须基于可验证的真实规格/测试差异；评论拼接须来自真实客户反馈。",
       "outcome_evidence": {
         "evidence_type": "usability_benchmark",
         "claim": "海外 DTC 效果广告行业与 Motion 创意策略基准：视频 TSR 25–30% 及格、30–40% 优秀、40%+ 顶尖；静态图强效 Link CTR >1.0%–1.5%。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁捏造虚假竞品缺陷或伪造用户评价；避免点名诋毁竞品商标，改用客观品类通病对照。"
+      "transfer_limits": "严禁捏造虚假竞品缺陷或伪造用户评价；避免点名诋毁竞品商标，改用客观品类通病对照。",
+      "evidence_stage": "source_verified"
     },
     {
       "id": "C-aotw-three-seven-paris-price-scale",
@@ -5897,17 +5902,18 @@
     },
     {
       "id": "F-002",
-      "version": 1,
+      "version": 2,
       "kind": "feedback",
       "learning_origin": "task_feedback",
       "title": "用户确认将 2026 新一代小米 SU7 商圈巨幕与同行车企（捷尼赛思/岚图/腾势/小鹏）街拍正反对比及 6 维拆解作为实战共创习得（co_dissected_teardown）入库",
       "title_en": "User validated the 6-dimension live field teardown of 2026 Xiaomi SU7 Capri Blue mall billboards vs. competitor outdoor screens (Genesis, Voyah, Denza, XPeng) as a co-dissected learning entry",
       "evidence_type": "editorial_feedback",
       "source_locator": "2026-11-18 会话：围绕 2026 新一代小米 SU7 商场外围广告的三连追问（为何敢零参数只放舒淇 → 同行商圈反例实拍对比 → 为何同样少字的岚图/小鹏不如小米舒服）与 6 维总结确认",
-      "observation": "用户明确认可 6 维拆解框架（①纯色场对抗街景红黄噪点 vs 脏渐变风景图、②克制字重与80%留白 vs 顶天立地紧绷大字、③L屏/双屏同色系远近景递进 vs 白底膏药三段切割、④高认知度昂贵信号与零小字铁律、⑤UGC社交打卡背景板构图、⑥100米外墙勾魂→1米展厅成交全触点分工及低认知度品牌禁用边界），并要求将其与静态投喂书籍区分标记。",
-      "observation_en": "User endorsed the 6-dimension visual teardown (Color-Field denoising vs. muddy landscape KVs, restrained typography with >80% breathing room, unified L-screen scale progression vs. white-patch amputation, Stage-1 costly signaling & zero fine print, UGC-ready backdrop framing, and 100m-to-1m touchpoint relay with strict low-awareness guardrails) and requested explicit provenance differentiation from static book feeds.",
+      "observation": "用户明确认可 6 维拆解框架（①纯色场对抗街景红黄噪点 vs 脏渐变风景图、②克制字重与大留白 vs 顶天立地紧绷大字、③L屏/双屏同色系远近景递进 vs 白底膏药三段切割、④高认知度昂贵信号与零小字、⑤UGC社交打卡背景板构图、⑥远近视距触点分工及低认知度品牌边界），同意将其作为 co_dissected_teardown 收录以指导后续项目判断。注：本条反馈证明的是“用户认可该拆解并用于项目参考（user_endorsed）”，尚不包含迁移至其他品牌后的受众测试或真实投放数据（field_validated）。",
+      "observation_en": "User endorsed the 6-dimension visual teardown (Color-Field denoising, restrained type & breathing room, unified L-screen progression, high-awareness costly signaling, UGC-ready backdrop framing, and distance-based touchpoint relay with low-awareness guardrails) and approved ingesting it to guide future projects. Provenance note: this feedback establishes 'user_endorsed' judgment alignment, not 'field_validated' audience/campaign results on a new brand.",
       "verified": true,
-      "task_id": "co-dissected-xiaomi-su7-2026-mall-billboards"
+      "task_id": "co-dissected-xiaomi-su7-2026-mall-billboards",
+      "evidence_stage": "user_endorsed"
     }
   ]
 }

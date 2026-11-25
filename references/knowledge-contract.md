@@ -11,7 +11,13 @@
 ## 1. sources（信源登记）
 必填字段：`id`、`kind`（`book` / `web` / `research_report` / `user_material`）、`title`、`version`、`reading_status`、`reviewed_locations`、`retrieved_at`，建议同时提供中英文核阅摘要 `coverage_note` 与 `coverage_note_en`。
 - `reading_status`：`registered`、`metadata_only`、`partial_review`、`full_review`。
-- **书籍防伪与跨环境便携约束**：`kind == "book"` 时必须记录 `pdf_pages`（正整数）。若为第三方摘要/拆书稿（如 Bookey、Blinkist 等无原书插图与原文的浓缩版），**严禁作为原书信源入库**。为保证技能包跨机器可移植，外部书籍统一设 `original_availability = "citation_only"` 并省略宿主机绝对路径；若将允许分发的原件归档在库内 `sources/` 下，则记录库内相对路径 `path` 与 `sha256`。
+- **书籍核验与跨环境便携约束**：`kind == "book"` 时必须记录 `pdf_pages`（正整数）。采用出版社、版权页、目录与图文完整度的复合核验：拒收 Bookey / Blinkist 等剔除原书排版图例的纯文字商业书摘，但不凭单一字眼（如正版书章节 `Summary`）误杀可用资料；仅读译本时英文提炼须标明为转述。为保证技能包跨机器可移植，外部书籍统一设 `original_availability = "citation_only"` 并省略宿主机绝对路径；若将允许分发的原件归档在库内 `sources/` 下，则记录库内相对路径 `path` 与 `sha256`。
+
+## 三层证据状态约定 (`evidence_stage`)
+为防止把“来源已核对”或“用户认可拆解”误当成“已获真实市场验证”，方法、案例与反馈记录统一区分三层证据状态（`scripts/library.py search` 首层检索会自动返回）：
+- `source_verified`：**来源已核对**（原著、公开研究或可追溯设计作品已实看核验；无公开投放数据时效果栏如实标注“作品观察，效果未公开”）；
+- `user_endorsed`：**用户认可或项目采用**（如用户在对话中认可该拆解逻辑，或已选用于本团队项目方案，但尚未获得外部受众测试或真实投放数据）；
+- `field_validated`：**市场或受众已验证**（具备明确的受众可用性测试、A/B 测试或真实投放结果反馈支撑）。
 
 ## 2. methods（可复用视觉方法 `M-*`）
 必填字段：
@@ -48,7 +54,7 @@
 
 ## 5. CLI 工具约定 (`scripts/library.py`)
 - `summary`：输出各分组数量、双语支持状态与信源阅读状态。
-- `search "<query>" [--kind ...] [--channel ...] [--limit 8]`：支持中英文与症状检索，同时返回中文与英文标题及摘要（`title_en`、`summary_en`、`markdown_path_en`）。
+- `search "<query>" [--kind ...] [--channel ...] [--origin ...] [--limit 8]`：支持中英文与口语化症状检索，首层结果同时返回标题摘要、`applies_when`（适用条件）、`limits`/`transfer_limits`（失效边界）、`evidence_stage`（三层证据状态）与 `evidence_type`（证据类型），让调用者在选用前先看到边界。
 - `get <ID1> [<ID2> ...]`：支持单次传入多个 ID 批量读取，自动校验并解析 `markdown_path` 与 `markdown_path_en`。
 - `validate [--check-files]`：校验 Schema、外键引用、页码范围、中英案例卡文件存在性以及 `library/translations.en.json` 的 SHA-256 指纹一致性。
 - `apply-patch --file <patch.json> [--check-files]`：原子化入库命令。

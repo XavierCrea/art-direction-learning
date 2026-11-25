@@ -16,6 +16,7 @@ from typing import Any
 
 GROUPS = ("sources", "methods", "cases", "feedback")
 STATUS_VALUES = {"reference", "candidate", "validated", "retired"}
+EVIDENCE_STAGES = {"source_verified", "user_endorsed", "field_validated"}
 READING_STATUS_VALUES = {"registered", "metadata_only", "partial_review", "full_review"}
 LEARNING_ORIGINS = {"book_canon", "benchmark_study", "co_dissected_teardown", "task_feedback"}
 EVIDENCE_TYPES = {
@@ -232,6 +233,9 @@ def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False
             status = item.get("status")
             if status not in STATUS_VALUES:
                 errors.append(f"{item_id} has invalid status {status!r}")
+            ev_stage = item.get("evidence_stage")
+            if ev_stage is not None and ev_stage not in EVIDENCE_STAGES:
+                errors.append(f"{item_id} has invalid evidence_stage {ev_stage!r}")
             if not _valid_when_stuck(item.get("when_stuck")):
                 errors.append(f"{item_id} has invalid when_stuck (expected bilingual dict {{'zh': [...], 'en': [...]}})")
             refs = item.get("source_refs")
@@ -400,10 +404,66 @@ def cmd_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def infer_evidence_stage(
+    item: dict[str, Any],
+    group: str,
+    feedback_by_id: dict[str, dict[str, Any]],
+) -> str:
+    explicit = item.get("evidence_stage")
+    if isinstance(explicit, str) and explicit in EVIDENCE_STAGES:
+        return explicit
+    if group == "feedback":
+        ev_type = item.get("evidence_type")
+        if ev_type in {"ab_test_result", "market_result"} and item.get("verified") is True:
+            return "field_validated"
+        return "user_endorsed" if item.get("verified") is True else "source_verified"
+    if group == "methods":
+        val_refs = item.get("validation_refs", [])
+        if isinstance(val_refs, list) and val_refs:
+            for fid in val_refs:
+                fb = feedback_by_id.get(fid)
+                if fb and fb.get("verified") is True and fb.get("evidence_type") in {"ab_test_result", "market_result"}:
+                    return "field_validated"
+            for fid in val_refs:
+                fb = feedback_by_id.get(fid)
+                if fb and fb.get("verified") is True:
+                    return "user_endorsed"
+        return "source_verified"
+    if group == "cases":
+        outcome = item.get("outcome_evidence")
+        if isinstance(outcome, dict) and outcome.get("evidence_type") in {"ab_test_result", "market_result"}:
+            return "field_validated"
+        return "source_verified"
+    return "source_verified"
+
+
+def infer_evidence_type(
+    item: dict[str, Any],
+    group: str,
+    origin: str,
+    feedback_by_id: dict[str, dict[str, Any]],
+) -> str:
+    if group == "cases":
+        outcome = item.get("outcome_evidence")
+        if isinstance(outcome, dict) and outcome.get("evidence_type"):
+            return str(outcome["evidence_type"])
+    if group == "feedback" and item.get("evidence_type"):
+        return str(item["evidence_type"])
+    if group == "methods":
+        if item.get("evidence_type"):
+            return str(item["evidence_type"])
+        for fid in item.get("validation_refs", []):
+            fb = feedback_by_id.get(fid)
+            if fb and fb.get("evidence_type"):
+                return str(fb["evidence_type"])
+    return origin
+
+
 def cmd_search(args: argparse.Namespace) -> int:
     root = resolve_library_root(args.library)
     data, _ = load_catalog(root)
     sources_by_id = {s.get("id"): s for s in data.get("sources", []) if isinstance(s, dict) and s.get("id")}
+    feedback_by_id = {f.get("id"): f for f in data.get("feedback", []) if isinstance(f, dict) and f.get("id")}
     full_query = args.query.strip().lower()
     terms = [t for t in full_query.split() if t]
     groups = [args.kind] if args.kind != "all" else list(GROUPS)
@@ -425,6 +485,8 @@ def cmd_search(args: argparse.Namespace) -> int:
                     "id": item.get("id"),
                     "version": item.get("version"),
                     "learning_origin": origin,
+                    "evidence_stage": infer_evidence_stage(item, group, feedback_by_id),
+                    "evidence_type": infer_evidence_type(item, group, origin, feedback_by_id),
                     "title": item.get("title"),
                     "title_en": item.get("title_en"),
                     "status": item.get("status", item.get("reading_status")),
@@ -435,10 +497,15 @@ def cmd_search(args: argparse.Namespace) -> int:
                     "summary": item.get("rule") or item.get("reusable_move") or item.get("observation") or item.get("coverage_note"),
                     "summary_en": item.get("rule_en") or item.get("reusable_move_en") or item.get("observation_en") or item.get("coverage_note_en"),
                 }
+                if group == "methods":
+                    entry["applies_when"] = item.get("applies_when")
+                    entry["limits"] = item.get("limits")
                 if group == "cases":
                     entry["markdown_path"] = item.get("markdown_path")
                     entry["markdown_path_en"] = item.get("markdown_path_en")
                     entry["copy_visual_synergy"] = item.get("copy_visual_synergy")
+                    entry["asset_prerequisites"] = item.get("asset_prerequisites")
+                    entry["transfer_limits"] = item.get("transfer_limits")
                 matches.append(entry)
 
     matches.sort(key=lambda row: (-row["score"], row["id"] or ""))

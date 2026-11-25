@@ -1,12 +1,12 @@
 # art-direction-learning · 实证美术指导与案例拆解技能包
 
-[English README](README.md) · [实战对比演示](#实战演示双技能重做一张-b2b-展会邀请函) · [工作原理与四通道](#工作原理一个美术指导大脑--四条落地通道) · [面向人群](#面向人群who-is-this-for) · [知识库全景](#知识库全景概览-catalogjson-r15) · [快速上手](#快速上手)
+[English README](README.md) · [实战对比演示](#实战演示双技能重做一张-b2b-展会邀请函) · [工作原理与四通道](#工作原理一个美术指导大脑--四条落地通道) · [面向人群](#面向人群who-is-this-for) · [知识库全景](#知识库全景概览-catalogjson-r16) · [快速上手](#快速上手)
 
 ## 告别 AI 生图与排版的“抽盲盒”：给 Agent 装上一位有眼动实证与经典原著撑腰的美术指导
 
 `art-direction-learning` **不是**一个帮生图模型扩写“高级感、科技感”的 Prompt 工具，而是一位上游**美术指导 / 视觉总导演（Art Director）**。它先基于已核实的产品事实与真实案例，决定**画面该演什么物理证据、网格和色阶怎么排、哪些视觉噪音必须砍掉**，再按交付物性质精准分流到 **4 条下游落地通道**（AI 生图 Prompt、Python/SVG 代码级像素直出、HTML/React 前端代码、或反 AI 造假的实拍执行单）。
 
-**v1.5.0 · `catalog.json` `r15` · 23 项核验信源 · 39 条可检索视觉方法（`M-001`–`M-039`） · 34 篇中英双语案例卡 · 7 套跨行业实证风格母版 + 6 套海报构图骨架 + 出图审美门禁**
+**v1.5.0 · `catalog.json` `r16` · 23 项核验信源 · 39 条可检索视觉方法（`M-001`–`M-039`） · 34 篇中英双语案例卡 · 7 套跨行业实证风格母版 + 6 组构图参考骨架 + 客观验收门禁**
 
 [浏览中文案例索引](library/README.md) · [English Library Index](library/README.en.md) · [实证风格库](library/styles/README.md) · [海报构图骨架](references/poster-patterns.md) · [出图审美门禁](references/output-qa-gate.md) · [搭配 `copywriting-learning` 联动](https://github.com/XavierCrea/copywriting-learning)
 
@@ -102,7 +102,7 @@ flowchart LR
 
 ---
 
-## 知识库全景概览 (`catalog.json` `r15`)
+## 知识库全景概览 (`catalog.json` `r16`)
 
 所有条目均通过 `learning_origin` 字段严格区分**经典原著典籍（`book_canon`）**、**外部实证基准（`benchmark_study`）**、**实战共创正反对比拆解（`co_dissected_teardown`）**与**任务实战反馈（`task_feedback`）**，检索时可通过 `--origin` 精准过滤：
 

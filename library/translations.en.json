@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_revision": 15,
+  "catalog_revision": 16,
   "updated_at": "2026-11-25",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
@@ -231,9 +231,9 @@
       "title": "Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断",
       "title_en": "Motion Performance Creative Benchmarks: Native Static Ads, \"Us vs. Them\" Contrast & Thumbstop Ratio Diagnostics",
       "markdown_path": "library/cases/C-motion-native-statics-and-us-vs-them.md",
-      "zh_sha256": "5b1b37b9d340aa19326f4c122a1041f872891523fdc04dc433b5976731b3006e",
+      "zh_sha256": "af436557b8e0883612a27a53a91ab4da7189a624b8265d7f503bc1eeaaa5442c",
       "markdown_path_en": "library/cases/en/C-motion-native-statics-and-us-vs-them.md",
-      "en_sha256": "6e3c40003da145ffbc8850880dc5c1ba20b70e3afde8e68dd1252ef8aca2bfae"
+      "en_sha256": "9e707cd9bab60677f942b1cccf0bf9cd4e1fc8591c40cc648561361e7364a812"
     },
     "C-aotw-three-seven-paris-price-scale": {
       "title": "Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定",

@@ -6,7 +6,7 @@
 
 `art-direction-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
 
-**v1.5.0 · `catalog.json` `r15` · 23 verified sources · 39 visual methods (`M-001`–`M-039`) · 34 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 poster skeletons + Output QA Gate**
+**v1.5.0 · `catalog.json` `r16` · 23 verified sources · 39 visual methods (`M-001`–`M-039`) · 34 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 composable pattern groups + Objective Output QA Gate**
 
 [Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Style Archetypes](library/styles/README.md) · [Poster Patterns](references/poster-patterns.md) · [Output QA Gate](references/output-qa-gate.md) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
@@ -118,7 +118,7 @@ For offline exhibitions and commercial spaces, the skill orchestrates visual den
 
 ---
 
-## What's Inside the Library (`catalog.json` `r15`)
+## What's Inside the Library (`catalog.json` `r16`)
 
 Every record explicitly tags its **`learning_origin`** (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent teardowns are clearly separated from seeded books and UX studies — and can be filtered directly via `--origin`.
 

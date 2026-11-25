@@ -26,8 +26,8 @@
 
 ## Reusable Visual Move (`reusable_move`)
 
-1. **Diagnose Front-End Attention Before Tweaking Copy**:
-   - Whenever video `TSR < 25%` or static `Link CTR < 1.0%`, rebuild the visual architecture (switch to an Us vs. Them split-screen or native pointout) instead of making minor font/color tweaks.
+1. **Use TSR / CTR as Diagnostic Warning Signals (Never Auto-Blame Layout from One Number)**:
+   - Treat the Motion DTC paid-social figures (`< 25%` TSR / `< 1.0%` Link CTR) as reference warning signals—always benchmark first against the same account, platform, objective, and comparable audience history before deciding whether to test visual framing (e.g., Us vs. Them split-screen or native pointout), hook copy, or audience targeting.
 2. **Rebuild Feed Statics Around 1 of 3 Proven Native Templates ("Single-Idea Focus")**:
    - Strip secondary feature badges and commit the frame to ONE message via: (a) **Us vs. Them side-by-side table/split-screen** (ideal for Channel 2 Python PIL/SVG exact rendering), (b) **Native Notes / Real Comment Mashup**, or (c) **Product-First Macro Pointout**.
 3. **Close the Post-Click Proof Loop**:
