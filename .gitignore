@@ -3,3 +3,8 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+
+# Local third-party brand reference images (kept locally for visual anchoring, excluded from Git for copyright safety)
+library/style-refs/**/local/*
+!library/style-refs/**/local/.gitkeep
+

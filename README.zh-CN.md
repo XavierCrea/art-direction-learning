@@ -6,9 +6,9 @@
 
 `art-direction-learning` **不是**一个帮生图模型扩写“高级感、科技感”的 Prompt 工具，而是一位上游**美术指导 / 视觉总导演（Art Director）**。它先基于已核实的产品事实与真实案例，决定**画面该演什么物理证据、网格和色阶怎么排、哪些视觉噪音必须砍掉**，再按交付物性质精准分流到 **4 条下游落地通道**（AI 生图 Prompt、Python/SVG 代码级像素直出、HTML/React 前端代码、或反 AI 造假的实拍执行单）。
 
-**v1.4.2 · `catalog.json` `r14` · 22 项核验信源 · 38 条可检索视觉方法（`M-001`–`M-038`） · 33 篇中英双语案例卡**
+**v1.5.0 · `catalog.json` `r14` · 22 项核验信源 · 38 条可检索视觉方法（`M-001`–`M-038`） · 33 篇中英双语案例卡 · 7 套跨行业实证风格母版 + 6 套海报构图骨架 + 出图审美门禁**
 
-[浏览中文案例索引](library/README.md) · [English Library Index](library/README.en.md) · [结构化双语目录](library/catalog.json) · [搭配 `copywriting-learning` 联动](https://github.com/XavierCrea/copywriting-learning)
+[浏览中文案例索引](library/README.md) · [English Library Index](library/README.en.md) · [实证风格库](library/styles/README.md) · [海报构图骨架](references/poster-patterns.md) · [出图审美门禁](references/output-qa-gate.md) · [搭配 `copywriting-learning` 联动](https://github.com/XavierCrea/copywriting-learning)
 
 ---
 
@@ -74,7 +74,7 @@ flowchart LR
 | 下游落地通道 | 适用交付物 | 为什么必须走这条通道 |
 | :--- | :--- | :--- |
 | **通道 1 · AI 生图 / 改图 Prompt** | 真实场景合成、光影氛围、电商主图与社媒配图 | 先由本技能锁死买家决策证据、1:1 比例参照物（`M-001`）与构图重心，再交由生图提示词编译，告别盲抽。 |
-| **通道 2 · 代码级精准渲染（Python PIL / SVG）** | 展会邀请函、瑞士网格海报、停车场纯色大牌、对比长图 | **专治 AI 生图 4 大硬伤**：严格模数网格对齐（`M-016`）、锁死精确品牌 HEX 色值、零拼写错误小字排版、100% 可扫描真二维码（支持“AI 铺底图 + 脚本压字嵌码”混合管线）。 |
+| **通道 2 · 代码级精准渲染（Python PIL / SVG）与三层混合管线** | 纯平面展会邀请函、瑞士网格海报、停车场纯色大牌、参数对比长图；以及含实体产品海报的 Layer 3 矢量压字 | **专治 AI 生图 4 大硬伤**：严格模数网格对齐（`M-016`）、锁死精确品牌 HEX 色值、零拼写错误小字排版、100% 可扫描真二维码。**含实体产品且需光影融合时严禁纯代码硬抠拼贴**，强制按 [出图审美门禁](references/output-qa-gate.md) 走三层光影分流（光影反差大时由 Layer 1 AI 统一重构光影 + Layer 2 局部无损贴回铭牌 + Layer 3 矢量压字）。 |
 | **通道 3 · 响应式网页代码（HTML / CSS / React）** | 阿里国际站装修、独立站着陆页、可交互选型表与参数表 | 至少一半的经典 UX 规则——单栏语义分组斑马纹参数表（`M-005`）、弃用横向 Tab 改纵向展开 + Sticky 目录（`M-006`）、无边框留白（`M-007`）——必须用前端代码落地，而非整页切大图。 |
 | **通道 4 · 实拍与美工执行单** | 工厂老化测试台、UL/CE 证书证据、随箱线束配件全家福（`M-003`） | **B2B 反 AI 造假底线**：严禁让 AI 凭空捏造硬件内部构造、测试曲线或资质证书；直接输出去形容词化的机位、参照物与引线标注执行单。 |
 

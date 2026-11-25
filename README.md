@@ -6,9 +6,9 @@
 
 `art-direction-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
 
-**v1.4.2 · `catalog.json` `r14` · 22 verified sources · 38 visual methods (`M-001`–`M-038`) · 33 bilingual case cards (`en` + `zh`)**
+**v1.5.0 · `catalog.json` `r14` · 22 verified sources · 38 visual methods (`M-001`–`M-038`) · 33 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 poster skeletons + Output QA Gate**
 
-[Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Searchable catalog](library/catalog.json) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
+[Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Style Archetypes](library/styles/README.md) · [Poster Patterns](references/poster-patterns.md) · [Output QA Gate](references/output-qa-gate.md) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
 ---
 
@@ -90,7 +90,7 @@ flowchart LR
 | Channel | Best For | Why This Channel Exists |
 | :--- | :--- | :--- |
 | **1. AI Image Gen / Edit Prompts** | Atmospheric scenes, lifestyle context, lighting & hero compositions | Pairs with `image-prompt-guide` once buyer proof, scale reference (`M-001`), and focal hierarchy are locked. |
-| **2. Precision Code Rendering (`Python PIL` / `SVG`)** | Trade-show invitations, Swiss geometric posters, parking-lot billboards, long comparison charts | Solves AI image generators' 4 classic failures: broken modular grids (`M-016`), drifting brand HEX codes, garbled small English text, and unscannable QR codes (supports hybrid *AI scene + code typography/QR* pipelines). |
+| **2. Precision Code Rendering (`Python PIL` / `SVG`) & 3-Layer Hybrid** | Graphic invitations, Swiss grids, pure-color billboards, comparison charts; and Layer 3 editable typography for product posters | Solves AI generators' 4 classic failures: broken modular grids (`M-016`), drifting HEX codes, garbled small text, and unscannable QR codes. **Never hard-paste daylight product cutouts onto code gradients** — product posters requiring lighting fusion must follow [Output QA Gate](references/output-qa-gate.md) (Layer 1 AI lighting/scene reconstruction + Layer 2 deterministic label patching + Layer 3 vector typography). |
 | **3. Interactive Web Code (`HTML` / `CSS` / `React`)** | B2B storefronts (e.g., Alibaba International), landing pages, interactive spec tables | Half of UX layout science — single-column zebra spec sheets (`M-005`), vertical expansion over hidden horizontal tabs (`M-006`), borderless spacing (`M-007`) — requires real code, not flat JPEGs. |
 | **4. Photography & Retouching Briefs** | Factory test benches, real UL/CE certificates, included wiring-harness flat-lays (`M-003`) | **Strict anti-hallucination guardrail:** never let AI fabricate hardware internals, lab curves, or certificates. Outputs adjective-free camera angles, scale props, and callout coordinates. |
 
