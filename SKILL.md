@@ -5,7 +5,7 @@ description: >-
   基于产品事实、读者视线规律与真实案例的实证美术指导技能：统筹或诊断广告画面、落地页首屏（Hero）、电商详情页分镜（PDP Storyboard）、展会物料、跨视距触点（100m→10m→1m）、参数表版式及图文分工，并分流至四条下游落地通道。支持与 copywriting-learning 组合联动，也可从设计书籍、UX 实验与街头实拍案例中提炼可检索的美术指导动作。
 metadata:
   display_name: Art Direction · 实证美术指导与案例拆解
-  version: "1.4.0"
+  version: "1.4.1"
 ---
 
 # 实证美术指导与案例拆解 (Evidence-Based Art Direction & Case Learning)

@@ -2,11 +2,11 @@
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [中文案例索引](README.md)
 
-All 29 visual teardowns and usability benchmarks have full English case cards in `cases/en/` and linked Chinese counterparts in `cases/`, preserving verbatim original quotations from the underlying books and research reports. Every record carries an explicit `learning_origin` tag (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent comparative field teardowns are cleanly distinguished from static seeded books.
+All 32 visual teardowns and usability benchmarks have full English case cards in `cases/en/` and linked Chinese counterparts in `cases/`, preserving verbatim original quotations from the underlying books and research reports. Every record carries an explicit `learning_origin` tag (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent comparative field teardowns are cleanly distinguished from static seeded books.
 
 Start from the visual problem you are trying to solve. From the skill folder, run `python scripts/library.py search "wall of specs" --kind methods`, filter specifically for live co-dissected teardowns via `python scripts/library.py search "billboard" --origin co_dissected_teardown`, or run `python scripts/library.py get M-028 C-xiaomi-su7-2026-mall-billboard-teardown` to open methods and bilingual case cards together. [Searchable catalog](catalog.json) · [English translation manifest](translations.en.json)
 
-## Core Visual Methods (`M-001` – `M-034`)
+## Core Visual Methods (`M-001` – `M-037`)
 
 - `M-001`: **In-Scale Reference Framing** — Pair products with familiar size anchors (hands, human models, cupcakes, 19-inch racks) so buyers grasp physical scale without mental unit conversion.
 - `M-002`: **Descriptive Callout Lines & Mobile Text Guard** — Bridge the gap between skipped text and ambiguous close-ups using leader lines and 2–6 word callouts while protecting `375px` mobile legibility.
@@ -42,6 +42,9 @@ Start from the visual problem you are trying to solve. From the skill folder, ru
 - `M-032`: **Mobile Touch Targets (Fitts), Progressive Disclosure (Hick) & Native Conventions (Jakob)** — Keep primary CTAs `≥ 44×44px` with `≥ 8–12px` spacing in thumb zones, clear 9:16 social Safe Zones, group `>3–4` options with 1 highlighted recommendation + progressive disclosure, and follow native platform conventions.
 - `M-033`: **9:16 Vertical Safe-Zone Pixel Grid & First 2–3s Visual Hook Rule** — Enforce pixel-exact `1080×1920` Safe Zones (`Top ≥240px`, `Bottom ≥660px`, `Left ≥120px`, `Lower-Right 180–300px`), cut slow TV intros, land dynamic contrast + clear product visibility within 2–3s (`+65%` brand affinity lift, up to `90%` ad recall), and sync audio with safe-zone captions.
 - `M-034`: **Native Feed Static Formats, "Us vs. Them" Contrast & Thumbstop Diagnostics** — Diagnose front-end attention via TSR (`<25%` weak / `25–30%` baseline / `30–40%` strong / `40%+` elite) and Static Link CTR (`>1.0%–1.5%`), enforce Single-Idea Focus, and deploy Us vs. Them contrast, Native UI/Notes/Comment mashups, or Product-first pointouts backed by immediate landing-page proof.
+- `M-035`: **Physical-Scale Price Ladder & Emotional-Gauge Framing** — Align 3 physical SKU tiers in one monotone shot using real accompanying volume contrast (center-weighting the flagship tier), strip all body copy, and reframe price numerals via 1 sharp situational question (`"HOW MUCH DO YOU LOVE HER?"`).
+- `M-036`: **Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path** — Hijack a 0.3s cultural visual shorthand, flip ONE physical object's role for a 1.5s double-take, drop ambient room exposure 2–3 stops so one light cone links `Emotion → Subverted Tool → Hero Product`, and pair with a quiet 3–6 word line.
+- `M-037`: **Modern Typographic-Wall Poster (`60%` Condensed Display Type, 3-Tier Scale Drop & Corner QR Close)** — For product-free SaaS/services/events, lock a 3-color dark-field + neon-accent + white palette, pack a 6–9 word manifesto into `55%–65%` condensed bold tight-leading type, enforce a stark 3-tier scale drop, and close with bottom-left URL + bottom-right white-bordered QR code (Channel 2 ready).
 
 ---
 
@@ -95,3 +98,8 @@ Start from the visual problem you are trying to solve. From the skill folder, ru
 ### TikTok Creative Center & Motion — Modern Social Feed & Performance Creative Benchmarks (2 Cases)
 - [9:16 Safe Zones & First 2–3s Visual Hook](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [中文](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) – Pixel-exact `1080×1920` UI clearance (`240px` top / `660px` bottom / `180–300px` lower-right) plus early product visibility (`+65%` affinity lift) and 2-second hook rules (`C-tiktok-9x16-safe-zones-and-2s-hook`).
 - [Native Feed Statics, "Us vs. Them" Contrast & Thumbstop Diagnostics](cases/en/C-motion-native-statics-and-us-vs-them.md) · [中文](cases/C-motion-native-statics-and-us-vs-them.md) – TSR & Static CTR diagnostic ladder plus 3 anti-ad-blindness native static templates backed by post-click proof (`C-motion-native-statics-and-us-vs-them`).
+
+### Ads of the World — Modern OOH & Print Poster Craft Teardowns (3 Cases · `editorial_analysis`)
+- [Three Seven Paris — *How much do you love her?*](cases/en/C-aotw-three-seven-paris-price-scale.md) · [中文](cases/C-aotw-three-seven-paris-price-scale.md) – Same-frame `70€ / 220€ / 390€` physical bouquet-scale ladder turning price tags into a zero-body-copy emotional gauge (`C-aotw-three-seven-paris-price-scale`).
+- [Fnac — *Another Addiction is Possible*](cases/en/C-aotw-fnac-visual-subversion-light-cone.md) · [中文](cases/C-aotw-fnac-visual-subversion-light-cone.md) – Hijacking late-night blue screen glow for a rear-flashlight book double-take framed by a single low-key light cone (`C-aotw-fnac-visual-subversion-light-cone`).
+- [Muserk — *Get F'in Paid*](cases/en/C-aotw-muserk-typographic-wall-poster.md) · [中文](cases/C-aotw-muserk-typographic-wall-poster.md) – Product-free `60%` condensed neon-on-black typographic wall with 3-tier scale drop and corner URL + QR close (`C-aotw-muserk-typographic-wall-poster`).

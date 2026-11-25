@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "catalog_revision": 12,
-  "updated_at": "2026-11-22",
+  "catalog_revision": 13,
+  "updated_at": "2026-11-25",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
   "cases": {
@@ -234,6 +234,30 @@
       "zh_sha256": "5b1b37b9d340aa19326f4c122a1041f872891523fdc04dc433b5976731b3006e",
       "markdown_path_en": "library/cases/en/C-motion-native-statics-and-us-vs-them.md",
       "en_sha256": "6e3c40003da145ffbc8850880dc5c1ba20b70e3afde8e68dd1252ef8aca2bfae"
+    },
+    "C-aotw-three-seven-paris-price-scale": {
+      "title": "Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定",
+      "title_en": "Three Seven Paris \"How much do you love her?\": Physical-Scale Price Ladder & Emotional-Gauge Framing",
+      "markdown_path": "library/cases/C-aotw-three-seven-paris-price-scale.md",
+      "zh_sha256": "5fec4a73c534842585c5a05ec279b84dd29d316b5e63a458b16dec2500cef286",
+      "markdown_path_en": "library/cases/en/C-aotw-three-seven-paris-price-scale.md",
+      "en_sha256": "de7ad07fa631357b082df494225c8af18e955265eaeca96aad969f0f011142e5"
+    },
+    "C-aotw-fnac-visual-subversion-light-cone": {
+      "title": "Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导",
+      "title_en": "Fnac \"Another Addiction is Possible\": Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
+      "markdown_path": "library/cases/C-aotw-fnac-visual-subversion-light-cone.md",
+      "zh_sha256": "2442d6add47210d73e9b2b4dc9301aebc2ab1172e2777a27dfd26e37e93f8e59",
+      "markdown_path_en": "library/cases/en/C-aotw-fnac-visual-subversion-light-cone.md",
+      "en_sha256": "7a06e62923f815207cd8bed57899adffaf74d8d21d2d0a67d0edb0175a24f18f"
+    },
+    "C-aotw-muserk-typographic-wall-poster": {
+      "title": "Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口",
+      "title_en": "Muserk \"Get F'in Paid\": Modern Typographic-Wall Poster, 3-Tier Scale Drop & Corner QR Close",
+      "markdown_path": "library/cases/C-aotw-muserk-typographic-wall-poster.md",
+      "zh_sha256": "19b378a88bfbb3a23a21232ece156d612e2af48740afde1dca7d54a26871adc9",
+      "markdown_path_en": "library/cases/en/C-aotw-muserk-typographic-wall-poster.md",
+      "en_sha256": "93017f0d47f35e3adc985eb530040c3405d51976a51459c8298d2ce644e6a2a0"
     }
   }
 }

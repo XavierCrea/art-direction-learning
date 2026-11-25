@@ -2,13 +2,13 @@
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [English Case Index](README.en.md)
 
-这里收录经核验的电商 UX 实验、落地页改版案例、界面层级战术、经典平面设计/网格系统著作、可用性工程法则、现代认知心理学信息流与移动端基准以及**用户×Agent 街头实拍正反对比实战共创拆解**，以及从中提炼出的可检索视觉方法（`M-001`–`M-034`）与中英双语单篇案例拆解卡（`C-*`，共 29 篇）。
+这里收录经核验的电商 UX 实验、落地页改版案例、界面层级战术、经典平面设计/网格系统著作、可用性工程法则、现代认知心理学信息流与移动端基准以及**用户×Agent 街头实拍正反对比实战共创拆解**，以及从中提炼出的可检索视觉方法（`M-001`–`M-037`）与中英双语单篇案例拆解卡（`C-*`，共 32 篇）。
 
 - 检索脚本：`../scripts/library.py`（支持 `summary`、中英双语+症状加权+习得来源过滤 `search --origin <book_canon|benchmark_study|co_dissected_teardown|task_feedback>`、多 ID 批量 `get`、`validate --check-files` 与原子化入库 `apply-patch`）
 - 结构化双语索引：`catalog.json`（每条记录均显式标注 `learning_origin`，严格区分**静态原著典籍 `book_canon`**、**外部实验基准 `benchmark_study`**、**实战共创正反拆解 `co_dissected_teardown`** 与 **任务反馈 `task_feedback`**）
 - 英文译本与 SHA-256 校验表：`translations.en.json`
 
-## 核心视觉方法 (`M-001` – `M-034`)
+## 核心视觉方法 (`M-001` – `M-037`)
 
 | 编号 | 方法名称 | 解决的视觉卡点 (`when_stuck`) | 适用载体 |
 | :--- | :--- | :--- | :--- |
@@ -46,6 +46,9 @@
 | `M-032` | **移动端热区、渐进披露与心智顺应法 (Mobile Touch Targets, Progressive Disclosure & Native Conventions)** | 移动端主按钮够不到或易误触、9:16 竖屏字被遮挡、SKU 过多选择瘫痪，或反直觉 UI | 移动端 H5、PDP 选型、9:16 竖屏 |
 | `M-033` | **9:16 竖屏像素级安全区与前 2–3 秒视觉钩子法则 (9:16 Safe-Zone Pixel Grid & First 2–3s Visual Hook)** | 9:16 竖屏文字/价格被右侧互动栏或底部字幕遮挡，或慢前奏导致前 2 秒即被划走 | TikTok / 抖音 / Reels 9:16 竖屏 |
 | `M-034` | **信息流原生静态图、Us vs. Them 极化对比与停滑率诊断法 (Native Feed Statics, Us vs. Them & Thumbstop Diagnostics)** | 精修信息流海报 CTR < 1% 触发广告盲区、视频 TSR < 25%，或静态图塞成宣传单 | 社媒静态广告、对比长图、首帧分屏 |
+| `M-035` | **实体价格梯度 × 物理量感 × 情绪标尺锚定法 (Physical-Scale Price Ladder & Emotional-Gauge Framing)** | 高客单价礼品或多规格实体 SKU 直接标价冰冷、买家默认选最低价，且工艺长文没人看 | 线下海报、社媒静态图、多档位 SKU 主图 |
+| `M-036` | **熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导法 (Familiar Visual-Code Subversion & Single Light-Cone)** | 品牌/公益海报太说教 0.5 秒被看穿，或真实生活场景杂乱抓不住视觉焦点 | 户外/印刷海报、高停滑社媒封面 |
+| `M-037` | **现代无图纯字体墙海报：60% 压缩巨字 + 三级字阶落差与底角二维码收口 (Modern Typographic-Wall Poster)** | 无形服务/SaaS/活动无实物可拍，硬凑 3D 插画假大空且缺通道 2 像素直出模板 | 街头/展会纯字海报、社媒大字报、通道 2 |
 
 ## 视觉拆解案例卡 (`library/cases/*.md` & `library/cases/en/*.md`)
 
@@ -97,3 +100,8 @@
 ### TikTok Creative Center & Motion 现代信息流与效果创意基准（2 篇）
 - [TikTok Creative Center 9:16 竖屏安全区与前 2–3 秒视觉钩子：像素级避让红线与早期露品实证](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [English](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md)（`C-tiktok-9x16-safe-zones-and-2s-hook` · 关联 `M-033`）
 - [Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断](cases/C-motion-native-statics-and-us-vs-them.md) · [English](cases/en/C-motion-native-statics-and-us-vs-them.md)（`C-motion-native-statics-and-us-vs-them` · 关联 `M-034`）
+
+### Ads of the World 现代户外/印刷海报创意拆解（3 篇 · `editorial_analysis`）
+- [Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定](cases/C-aotw-three-seven-paris-price-scale.md) · [English](cases/en/C-aotw-three-seven-paris-price-scale.md)（`C-aotw-three-seven-paris-price-scale` · 关联 `M-035`）
+- [Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导](cases/C-aotw-fnac-visual-subversion-light-cone.md) · [English](cases/en/C-aotw-fnac-visual-subversion-light-cone.md)（`C-aotw-fnac-visual-subversion-light-cone` · 关联 `M-036`）
+- [Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口](cases/C-aotw-muserk-typographic-wall-poster.md) · [English](cases/en/C-aotw-muserk-typographic-wall-poster.md)（`C-aotw-muserk-typographic-wall-poster` · 关联 `M-037`）

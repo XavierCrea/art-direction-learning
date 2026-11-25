@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 12,
-  "updated_at": "2026-11-22",
+  "revision": 13,
+  "updated_at": "2026-11-25",
   "sources": [
     {
       "id": "S-baymard-in-scale-2017",
@@ -414,6 +414,60 @@
         "Thumbstop Ratio (TSR) & Static Link CTR Diagnostic Benchmarks",
         "Us vs. Them Polarization & Split-Screen / Table / Venn Formats",
         "Native Lo-Fi / Notes App / Social Proof Mashup & Single-Idea Static Rules"
+      ]
+    },
+    {
+      "id": "S-aotw-three-seven-paris-2023",
+      "kind": "web",
+      "version": 1,
+      "title": "Three Seven Paris — How much do you love her? (OOH Street Poster Campaign)",
+      "author": "The Refreshment Club (CD & Copy: Onur Kece; Photo: Antoine Blanchet)",
+      "publisher": "Ads of the World",
+      "retrieved_at": "2026-11-25",
+      "url": "https://www.adsoftheworld.com/campaigns/how-much-do-you-love-them",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已通过浏览器完整核阅全部 3 张巴黎街头张贴海报实拍图与页面背景说明（2023 年 2 月）。",
+      "coverage_note_en": "Full visual review via browser of all 3 street-pasted poster photographs and campaign metadata on Ads of the World (Feb 2023).",
+      "reviewed_locations": [
+        "All 3 street-pasted outdoor poster assets (70€ / 220€ / 390€ ceramic vase lineup)"
+      ]
+    },
+    {
+      "id": "S-aotw-fnac-another-addiction-2026",
+      "kind": "web",
+      "version": 1,
+      "title": "Fnac — Another Addiction is Possible (OOH / Print Campaign)",
+      "author": "Publicis Conseil (CCO: Marco Venturelli; Photo: Ale Burset)",
+      "publisher": "Ads of the World",
+      "retrieved_at": "2026-11-25",
+      "url": "https://www.adsoftheworld.com/campaigns/another-addiction-is-possible",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已通过浏览器完整核阅 2026 年 4 月上线的 3 张暗场卧室海报实拍图与 CNL 青少年阅读报告背景说明。",
+      "coverage_note_en": "Full visual review via browser of all 3 horizontal OOH/print poster photographs and CNL reading-study campaign brief on Ads of the World (Apr 2026).",
+      "reviewed_locations": [
+        "All 3 low-key bedroom poster executions (rear smartphone flashlight illuminating physical books)"
+      ]
+    },
+    {
+      "id": "S-aotw-muserk-get-fin-paid-2024",
+      "kind": "web",
+      "version": 1,
+      "title": "Muserk — Get F'in Paid (Nashville Grassroots Typographic Poster Campaign)",
+      "author": "GS&F Nashville (ECD: Melvin Strobbe; Copy: Nate Goodwin; Art: Alex Miracle)",
+      "publisher": "Ads of the World",
+      "retrieved_at": "2026-11-25",
+      "url": "https://www.adsoftheworld.com/campaigns/get-f-in-paid",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已通过浏览器完整核阅 2024 年 5 月纳什维尔街头张贴系列全部 3 张纯字体海报执行稿与页面说明。",
+      "coverage_note_en": "Full visual review via browser of all 3 typographic OOH/print poster executions and campaign brief on Ads of the World (May 2024).",
+      "reviewed_locations": [
+        "All 3 black + neon-magenta typographic-wall poster executions with bottom-right QR code"
       ]
     }
   ],
@@ -3113,6 +3167,199 @@
         "Us vs. Them 的每一条对比行是否均有真实物理/参数证据，且落地页首屏无缝承接？"
       ],
       "validation_refs": []
+    },
+    {
+      "id": "M-035",
+      "version": 1,
+      "title": "实体价格梯度 × 物理量感 × 情绪标尺锚定法",
+      "title_en": "Physical-Scale Price Ladder & Emotional-Gauge Framing",
+      "tags": [
+        "实体价格锚定",
+        "物理量感对比",
+        "礼品海报",
+        "多档位SKU",
+        "提问式标题",
+        "零正文海报"
+      ],
+      "tags_en": [
+        "physical price ladder",
+        "emotional gauge",
+        "gift poster",
+        "tiered sku comparison",
+        "question headline",
+        "zero body copy"
+      ],
+      "when_stuck": {
+        "zh": [
+          "高客单价礼品、多档位礼盒或不同尺寸实体 SKU 直接标价显得冰冷，买家本能选最便宜入门款",
+          "想拉高客单价但堆满工艺材质文字没人看",
+          "需要零正文、一眼懂且带幽默张力的线下海报或社媒种草静态图"
+        ],
+        "en": [
+          "High-ticket gifts or multi-size physical SKUs look cold with plain price tags so buyers default to the cheapest option",
+          "Long craftsmanship copy explaining why the flagship tier costs more goes unread",
+          "Need a zero-body-copy poster or feed static that makes the price numbers themselves the punchline"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "social_feed",
+        "pdp",
+        "catalog"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-three-seven-paris-2023",
+          "section": "3 street-pasted posters (70€ / 220€ / 390€ ceramic vase & rose bouquet lineup)"
+        }
+      ],
+      "rule": "面对高客单价礼品或多规格实体 SKU，放弃冰冷的价格表与工艺长文：在同一机位与极简单色底场上并排展示入门/主力/顶配 3 个实体，用真实的附属物或使用结果物理量感（如单支玫瑰 vs. 满捧花束）直观拉开体量差，并将最高价大件置于视觉中心；顶部仅放一句把价格映射为情绪/场景刻度的短提问（如『HOW MUCH DO YOU LOVE HER?』），让价格数字本身成为 0.5 秒笑点与向上锚点。",
+      "rule_en": "For high-ticket gifts or tiered physical SKUs, replace cold spec tables with a same-frame physical volume ladder on a quiet monotone surface: align entry, core, and flagship sizes using real accompanying contents or outcome fullness (e.g., single rose 70€ vs. overflowing bouquet 390€), center-weight the flagship tier, strip all body copy, and crown the lineup with 1 sharp situational question ('HOW MUCH DO YOU LOVE HER?') that turns price numerals into an instant emotional gauge.",
+      "applies_when": "推广高客单价礼品、多档位礼盒、不同容量/尺寸实体产品或需要拉升中高配占比的线下海报与社媒静态图时。",
+      "limits": "必须具备真实同机位实拍与真实在售价格；幽默提问须克制优雅，严禁滑向令人反感的道德绑架或低俗攀比；不适用于纯理性 B2B 工业零部件参数选型。",
+      "steps": [
+        "挑选 3 个真实价位差距清晰的实体档位，在极简单色桌面/背景上同机位实拍。",
+        "用真实附属物或使用结果的可视化量感（花束、配件量、续航/容量实物参照）放大物理差距，并将主力高配放在视觉居中位置。",
+        "直接把干净的价格数字标在各单品旁，砍掉全部材质与工艺正文。",
+        "顶部只放 1 句把『价格高低』转译成『心意/省心/享受刻度』的短提问。"
+      ],
+      "checks": [
+        "遮住品牌名扫视 0.5 秒，价格数字与物理体量差是否瞬间产生无需解释的幽默或价值锚定？",
+        "提问语气是否俏皮克制而不让人感到被冒犯或道德绑架？",
+        "画面是否足够干净（零冗余卖点框），让视线只在提问、实体量感与价格数字间闭环？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-036",
+      "version": 1,
+      "title": "熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导法",
+      "title_en": "Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
+      "tags": [
+        "视觉反转",
+        "Double-Take",
+        "暗场单光锥",
+        "视线路径",
+        "反说教海报",
+        "高停滑封面"
+      ],
+      "tags_en": [
+        "visual subversion",
+        "double-take",
+        "single light cone",
+        "low-key lighting",
+        "anti-preachy poster",
+        "focal path"
+      ],
+      "when_stuck": {
+        "zh": [
+          "品牌/公益海报或种草封面太直白说教，读者 0.5 秒看穿意图直接划走",
+          "真实生活实景照片细节杂乱，观众视线抓不住核心道具与产品",
+          "想在信息流里制造『第一眼熟悉、第二眼反转惊艳』的高停留与高评论效应"
+        ],
+        "en": [
+          "Brand poster or social cover feels predictable and preachy so viewers scroll past in 0.5s",
+          "Realistic lifestyle scenes are too visually busy for the eye to lock onto the key subject",
+          "Need a high-retention double-take visual hook that rewards a second glance"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "social_feed",
+        "landing_page"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-fnac-another-addiction-2026",
+          "section": "3 low-key bedroom posters ('Another addiction is possible.')"
+        }
+      ],
+      "rule": "用『熟悉视觉代码反转（Double-Take）』打破信息流审美疲劳：先借用受众 0.3 秒就能认出的高频生活画面（保留 90% 熟悉光影与构图），仅反转 1 个核心道具的物理用法（如深夜冷蓝手机光实为背面手电筒照纸书）；保留真实环境细节但将环境光压暗 2–3 档，用唯一一道高对比光锥串起『人物情绪 → 反转道具 → 目标产品』单一动线；文案压至 3–6 词放于暗部负空间，绝不剧透或说教。",
+      "rule_en": "Break feed predictability with Familiar Visual-Code Subversion (Double-Take): borrow a 0.3-second cultural shorthand (keeping 90% of its familiar framing and lighting) and subvert ONE physical object's role (e.g., late-night blue phone glow revealed as the rear LED flashlight illuminating a real book). Drop realistic room backgrounds by 2–3 stops so a Single Light-Cone channels the eye cleanly along Emotion -> Subverted Tool -> Hero Product, paired with a quiet 3–6 word reframing line in dark negative space ('Another addiction is possible.').",
+      "applies_when": "制作需要引发二次细看、情感共鸣与自发传播的品牌海报、小红书高停滑种草封面或首屏故事主视觉时。",
+      "limits": "反转的物理细节必须在手机缩略图尺寸下依然清晰可辨；严禁做成看 10 秒还看不懂的晦涩谜语；不适合要求 1 秒亮价卖货的纯硬广促销图。",
+      "steps": [
+        "找出目标受众最高频的 0.3 秒熟悉视觉定式（如深夜刷屏蓝光、杂乱工位、常见痛点姿势）。",
+        "保留 90% 的环境真实感与熟悉构图，只在 1 个关键道具或结果上制造清晰可见的物理反转。",
+        "压暗环境背景 2–3 档，用单一高对比光锥或冷暖色焦点串起『情绪 → 反转道具 → 产品』视线动线。",
+        "在暗部负空间放一句 3–6 词的克制重构标题，严禁在标题里直白解释画面笑点。"
+      ],
+      "checks": [
+        "把图缩成手机信息流卡片大小，第 0.5 秒是否立刻触发熟悉感，第 1.5 秒能否清晰看清那个物理反转细节？",
+        "暗场压暗后，唯一光锥是否让眼睛零干扰地落到目标产品上？",
+        "标题是否克制在 3–6 词且完全没有长辈说教味？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-037",
+      "version": 1,
+      "title": "现代无图纯字体墙海报：60% 高反差压缩巨字 + 三级字阶落差与底角二维码收口",
+      "title_en": "Modern Typographic-Wall Poster: 60% Condensed High-Contrast Display Type, 3-Tier Scale Drop & Corner QR Close",
+      "tags": [
+        "纯字体墙海报",
+        "无实物推广",
+        "三级字阶落差",
+        "高反差双色",
+        "底角二维码",
+        "通道2直出"
+      ],
+      "tags_en": [
+        "typographic wall poster",
+        "product-free ad",
+        "condensed display type",
+        "3-tier scale drop",
+        "corner qr close",
+        "channel 2 python pil"
+      ],
+      "when_stuck": {
+        "zh": [
+          "推广无形服务、SaaS、版权/维权、招聘或活动时没有实物产品图，硬凑抽象 3D 或图库握手照显得假大空",
+          "街头海报或社媒大字报字号拉不开层级，远看不吸睛、近看找不到扫码入口",
+          "需要用 Python PIL / SVG（通道 2）100% 像素级精准直出高冲击力纯字海报"
+        ],
+        "en": [
+          "Promoting an intangible service, SaaS, or event with no physical hardware—where stock photos or 3D blobs look hollow",
+          "Text-only posters lack scale contrast from afar and lack a clear scannable action close up",
+          "Need a high-impact pure typography poster blueprint ready for Channel 2 Python PIL/SVG rendering"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "social_feed",
+        "exhibition"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-muserk-get-fin-paid-2024",
+          "section": "3 Nashville typographic poster executions ('EVERY SONG. EVERY ROYALTY. EVERY F'N CENT.')"
+        }
+      ],
+      "rule": "当推广无形服务、SaaS 或痛点型活动无实物可拍时，彻底抛弃虚假插画，直接以文字几何体块为唯一画面：1) 锁死『纯黑/深底 + 1 个高饱和荧光/主强调色 + 纯白功能字』三色体系；2) 将 6–9 词锋利宣言排成超窄粗体紧行距（0.9–1.05）巨字墙，占满中部 55%–65% 画幅；3) 严格执行三级极端字阶落差（巨字主视觉 100% → 宽字距中号白字副标 22%–28% → 底左小字说明与加粗短链 10%–14%）；4) 底右锚定带白边静区的高对比定制二维码完成近距转化。",
+      "rule_en": "When promoting intangible services, SaaS, or events without physical hardware, kill generic illustrations and make typography the artwork: (1) lock a 3-color system (pitch-dark field + 1 high-chroma accent for hero type & QR + crisp white utility text); (2) set a sharp 6–9 word manifesto in ultra-condensed bold tight-leading (0.9–1.05) display type filling 55%–65% of the canvas; (3) enforce a stark 3-tier scale drop (100% hero wall -> 22%–28% tracked white subhead -> 10%–14% bottom-left explainer & bold URL); (4) anchor a high-contrast white-bordered QR code at bottom-right.",
+      "applies_when": "设计无实物服务的街头/展会海报、小红书/社媒大字报封面、SaaS 痛点宣言图，或通过通道 2（Python PIL / SVG + zxingcpp）直出高清纯字物料时。",
+      "limits": "必须具备足够锋利简短的 6–9 词痛点宣言（空洞废话放大只会更尴尬）；切忌把长段落塞进巨字墙；严肃 B2B/工业场景须保留其排版骨骼并替换为硬核数据/承诺，避免不当粗口。",
+      "steps": [
+        "将核心痛点或承诺压缩为 6–9 个强冲击词，分 3 行排布。",
+        "设定纯黑/深底 + 单一高饱和强调色 + 纯白三色板，用超窄粗体紧行距占满中部 55%–65% 画面。",
+        "在巨字墙正下方配 2–3 行宽字距中号白字副标解释具体机制，顶部锚定极小品牌名。",
+        "底部采用左右双锚收口：左下放小号说明 + 加粗短域名，右下放带清晰白边静区的同色系高对比二维码（经 zxingcpp 扫码验证）。"
+      ],
+      "checks": [
+        "退后 5 米或缩小到手机缩略图看，60% 压缩巨字墙是否形成一眼锁定视线的强色块？",
+        "三级字号落差是否足够极端（主字 vs. 副标 ≥ 3.5 倍），没有任何模糊的中间态？",
+        "底角二维码是否具备足够白边静区且 100% 可扫？"
+      ],
+      "validation_refs": []
     }
   ],
   "cases": [
@@ -5161,6 +5408,180 @@
         "verification_status": "source_verified"
       },
       "transfer_limits": "严禁捏造虚假竞品缺陷或伪造用户评价；避免点名诋毁竞品商标，改用客观品类通病对照。"
+    },
+    {
+      "id": "C-aotw-three-seven-paris-price-scale",
+      "version": 1,
+      "title": "Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定",
+      "title_en": "Three Seven Paris \"How much do you love her?\": Physical-Scale Price Ladder & Emotional-Gauge Framing",
+      "tags": [
+        "实体价格锚定",
+        "物理量感",
+        "情绪标尺",
+        "礼品海报",
+        "零正文"
+      ],
+      "tags_en": [
+        "physical price ladder",
+        "emotional gauge",
+        "gift poster",
+        "zero body copy",
+        "price anchoring"
+      ],
+      "when_stuck": {
+        "zh": [
+          "高客单价礼品或多规格实体 SKU 直接标价显得冰冷，买家默认选最便宜款",
+          "堆满工艺材质长文没人看",
+          "需要零正文且一眼看懂的向上价格锚定海报"
+        ],
+        "en": [
+          "High-ticket gifts or multi-size SKUs look cold with plain price tags",
+          "Craftsmanship body copy goes unread",
+          "Need a zero-body-copy poster that anchors buyers toward higher tiers"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-three-seven-paris-2023",
+          "section": "All 3 street-pasted outdoor poster assets"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-aotw-three-seven-paris-price-scale.md",
+      "markdown_path_en": "library/cases/en/C-aotw-three-seven-paris-price-scale.md",
+      "observations": [
+        "1. 暖石白单色表面上并排陈列 3 只手工陶瓷花瓶：中瓶配小束玫瑰标 220€、居中大宽瓶配满捧繁花标 390€、迷你单支瓶配孤零零一支玫瑰标 70€。",
+        "2. 顶部大号高对比细衬线大写提问 'HOW MUCH DO YOU LOVE HER?'，全画幅零正文、零工艺卖点列表，底部仅放极简黑色品牌标与网址。"
+      ],
+      "copy_visual_synergy": "提问式主标题把被动标价转化为幽默的『爱意量尺』，花束的物理丰满度在 0.5 秒内替高价花瓶完成心理辩护。",
+      "analysis": "当多规格实体商品直接用同框物理量感拉开视觉差距，再用一句情绪提问重构标价含义时，买家会自发产生向上选配的心理动量，无需冗长文字说服。",
+      "reusable_move": "同机位单色底并排实拍 3 档实体 → 用真实附属物/使用结果量感放大体量差并将最高配居中 → 砍掉正文，顶部只放 1 句把价格转为情绪刻度的短提问。",
+      "reusable_move_en": "Photograph 3 physical tiers side-by-side on a quiet monotone surface -> amplify volume contrast with real accompanying contents and center-weight the flagship tier -> strip body copy and crown with 1 sharp situational question ('HOW MUCH DO YOU LOVE HER?').",
+      "asset_prerequisites": "需同一机位、同一光影下的真实多规格实体实拍与真实在售价格。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "2023 年 2 月巴黎街头张贴实战案例（The Refreshment Club），页面未公布转化率数据，仅提炼客观构图与价格心理锚定机制。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "须保持幽默与优雅克制，严禁滑向令人反感的道德绑架；不适合纯理性 B2B 工业零件选型。"
+    },
+    {
+      "id": "C-aotw-fnac-visual-subversion-light-cone",
+      "version": 1,
+      "title": "Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导",
+      "title_en": "Fnac \"Another Addiction is Possible\": Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
+      "tags": [
+        "视觉反转",
+        "Double-Take",
+        "暗场单光锥",
+        "反说教",
+        "高停滑"
+      ],
+      "tags_en": [
+        "visual subversion",
+        "double-take",
+        "single light cone",
+        "anti-preachy",
+        "scroll stopping"
+      ],
+      "when_stuck": {
+        "zh": [
+          "品牌或公益海报太直白说教，读者 0.5 秒看穿直接划走",
+          "真实生活实景杂乱找不到视觉焦点",
+          "需要制造第一眼熟悉、第二眼反转的高停留画面"
+        ],
+        "en": [
+          "Brand poster feels preachy and predictable so viewers skip in 0.5s",
+          "Realistic lifestyle background is too cluttered to hold focus",
+          "Need a double-take visual hook that rewards a second glance"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-fnac-another-addiction-2026",
+          "section": "All 3 low-key bedroom OOH/print posters"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-aotw-fnac-visual-subversion-light-cone.md",
+      "markdown_path_en": "library/cases/en/C-aotw-fnac-visual-subversion-light-cone.md",
+      "observations": [
+        "1. 3 张横版深夜卧室海报先以『冷蓝白手机光照亮床上孩子专注面庞』触发屏幕上瘾的熟悉视觉定式；细看发现手机反拿，背面 LED 手电筒正照亮摊开的纸质漫画/小说。",
+        "2. 真实卧室杂物全部压暗入深棕暖暗调，唯一冷蓝光锥串起『人脸 → 背面手机光 → 纸书』；暗部留白仅放克制白字 'Another addiction is possible.' 与底部极小黄色 fnac 标。"
+      ],
+      "copy_visual_synergy": "画面靠 0.5 秒熟悉代码吸睛、1.5 秒物理反转制造会心一笑；4 词短标题顺势重构『上瘾』含义，零说教且不剧透。",
+      "analysis": "相比直白喊口号，劫持受众大脑里已有高度条件反射的日常视觉符号再反转 1 个细节，能在极短时间内触发认知奖赏与主动停留。",
+      "reusable_move": "借用 0.3 秒熟悉生活定式保留 90% 真实光影 → 仅反转 1 个核心道具的物理用法 → 压暗环境 2–3 档用唯一光锥串起三级视线 → 暗部留白配 3–6 词不剧透短标。",
+      "reusable_move_en": "Hijack a 0.3s familiar cultural visual code -> subvert ONE physical object's role for a 1.5s double-take -> drop ambient exposure 2–3 stops so a Single Light-Cone links Face -> Subverted Tool -> Product -> place a quiet 3–6 word reframing line in dark negative space ('Another addiction is possible.').",
+      "asset_prerequisites": "反转物理细节在手机缩略图或远距视角下必须清晰可辨。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "2026 年 4 月 Fnac 法国户外/印刷上线作品（Publicis Conseil），页面未公布转化率数据，仅提炼客观光影叙事与视觉反转机制。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁做成 10 秒看不懂的晦涩谜语；不适用于需 1 秒亮价促销的硬广。"
+    },
+    {
+      "id": "C-aotw-muserk-typographic-wall-poster",
+      "version": 1,
+      "title": "Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口",
+      "title_en": "Muserk \"Get F'in Paid\": Modern Typographic-Wall Poster, 3-Tier Scale Drop & Corner QR Close",
+      "tags": [
+        "纯字体墙海报",
+        "无实物服务",
+        "三级字阶落差",
+        "黑粉高反差",
+        "底角二维码"
+      ],
+      "tags_en": [
+        "typographic wall poster",
+        "product-free ad",
+        "3-tier scale drop",
+        "high contrast",
+        "corner qr close"
+      ],
+      "when_stuck": {
+        "zh": [
+          "无形服务/SaaS/活动没有实物产品图，硬凑抽象插画显假大空",
+          "纯字海报字号层级拉不开，远看不吸睛、近看缺转化收口",
+          "需要可直接用 Python PIL / SVG 精准直出的高冲击纯字模板"
+        ],
+        "en": [
+          "Intangible service or SaaS has no hardware to photograph",
+          "Text-only posters lack street stop-power and clear QR action close",
+          "Need a pure typography poster blueprint ready for Channel 2 Python PIL/SVG rendering"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-muserk-get-fin-paid-2024",
+          "section": "All 3 Nashville grassroots typographic poster executions"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-aotw-muserk-typographic-wall-poster.md",
+      "markdown_path_en": "library/cases/en/C-aotw-muserk-typographic-wall-poster.md",
+      "observations": [
+        "1. 零照片/零插画，纯黑底色中部约 60% 面积由紧行距、超窄粗体全大写荧光粉巨字块撑满（如 'EVERY SONG. / EVERY ROYALTY. / EVERY F'N CENT.'）。",
+        "2. 严格三级字阶落差：60% 荧光粉巨字 → 下方 3 行宽字距中号白字副标 → 左下角极小说明+加粗短链，右下角对称锚定带白边静区的荧光粉定制二维码。"
+      ],
+      "copy_visual_synergy": "巨字块本身充当远距色块主视觉与痛点宣言，底部『左短链 + 右白边高对比二维码』零干扰承接近距转化。",
+      "analysis": "对于没有硬件外形的 SaaS 或服务品牌，用极端字阶落差与纯黑/高饱和三色体系打造的纯字体墙，比廉价 3D 概念图更具街头停滑力与当代张力。",
+      "reusable_move": "锁死纯黑+单一高饱和强调色+纯白三色 → 将 6–9 词痛点宣言排成占幅 55%–65% 的超窄粗体紧行距巨字墙 → 下配中号宽字距白字副标 → 底角左短链+右白边高对比二维码收口。",
+      "reusable_move_en": "Lock a pitch-black + 1 high-chroma accent + white palette -> set a 6–9 word manifesto in ultra-condensed bold tight-leading display type filling 55%–65% of the frame -> add a medium tracked white subhead -> close with bottom-left bold URL + bottom-right white-bordered QR code.",
+      "asset_prerequisites": "须具备锋利简短的 6–9 词真实痛点宣言与可用二维码落地页。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "2024 年 5 月纳什维尔街头张贴系列案例（GS&F），页面未公布扫码转化率，仅提炼客观纯字排版骨骼与通道 2 工程复用模式。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "忌把长段落塞进巨字墙；严肃 B2B/工业场景保留排版骨骼并替换为克制硬核数据/承诺，避免不当粗口。"
     }
   ],
   "feedback": [
