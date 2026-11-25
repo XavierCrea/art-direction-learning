@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_revision": 16,
+  "catalog_revision": 17,
   "updated_at": "2026-11-25",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
@@ -271,9 +271,9 @@
       "title": "Coca-Cola《Recycle Me》：熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法",
       "title_en": "Coca-Cola \"Recycle Me\": Real-Object Symbol Deformation & 95% Monochrome Color-Field Minimalism",
       "markdown_path": "library/cases/C-coca-cola-recycle-me-deformation.md",
-      "zh_sha256": "ec86ce3db68d1bb19e0b3b099639a9751f766b50a80491a8eca1867cd42b8fd5",
+      "zh_sha256": "f1654c08a923baccc3db0e558184a38eed4bcf74e702cf66033173ad894f648f",
       "markdown_path_en": "library/cases/en/C-coca-cola-recycle-me-deformation.md",
-      "en_sha256": "14c1eb5967cc55b340a0a5af8dc449603c0c9565089972c903dbdc329ae0a1c3"
+      "en_sha256": "444b05baeb79f73d6ff9af721e8a8822f6af8263f5734d9370a037d58b585e5d"
     }
   }
 }

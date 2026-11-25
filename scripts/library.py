@@ -318,6 +318,27 @@ def _field_text(val: Any) -> str:
     return ""
 
 
+def _cjk_bigrams(text: str) -> list[str]:
+    runs: list[str] = []
+    buf: list[str] = []
+    for ch in text:
+        if "\u4e00" <= ch <= "\u9fff":
+            buf.append(ch)
+        else:
+            if len(buf) >= 2:
+                runs.append("".join(buf))
+            buf = []
+    if len(buf) >= 2:
+        runs.append("".join(buf))
+    grams: list[str] = []
+    for run in runs:
+        for idx in range(len(run) - 1):
+            gram = run[idx : idx + 2]
+            if gram not in grams:
+                grams.append(gram)
+    return grams
+
+
 def score_item(item: dict[str, Any], terms: list[str], full_query: str) -> int:
     score = 0
     high_blob = " ".join(_field_text(item.get(f)) for f in WEIGHT_HIGH_FIELDS)
@@ -330,6 +351,16 @@ def score_item(item: dict[str, Any], terms: list[str], full_query: str) -> int:
         score += (1 if term in high_blob else 0) * 3
         score += (1 if term in med_blob else 0) * 2
         score += (1 if term in low_blob else 0) * 1
+
+    if score == 0 and full_query:
+        grams = _cjk_bigrams(full_query)
+        if len(grams) >= 2:
+            hit_high = sum(1 for g in grams if g in high_blob)
+            hit_med = sum(1 for g in grams if g in med_blob)
+            if hit_high >= 2:
+                score += hit_high * 2
+            elif hit_high + hit_med >= 2:
+                score += hit_high * 2 + hit_med
 
     if len(terms) > 1 and full_query:
         if full_query in high_blob:
@@ -404,6 +435,10 @@ def cmd_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+VERIFIED_OUTCOME_STATUSES = {"verified", "source_verified", "source_reported"}
+FIELD_RESULT_TYPES = {"ab_test", "ab_test_result", "market_result", "usability_benchmark", "case_study_metric"}
+
+
 def infer_evidence_stage(
     item: dict[str, Any],
     group: str,
@@ -431,10 +466,81 @@ def infer_evidence_stage(
         return "source_verified"
     if group == "cases":
         outcome = item.get("outcome_evidence")
-        if isinstance(outcome, dict) and outcome.get("evidence_type") in {"ab_test_result", "market_result"}:
+        if (
+            isinstance(outcome, dict)
+            and outcome.get("evidence_type") in {"ab_test_result", "market_result"}
+            and outcome.get("verification_status") in VERIFIED_OUTCOME_STATUSES
+        ):
             return "field_validated"
         return "source_verified"
     return "source_verified"
+
+
+def build_evidence_profile(
+    item: dict[str, Any],
+    group: str,
+    sources_by_id: dict[str, dict[str, Any]],
+    feedback_by_id: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    source_checked = False
+    if group == "sources":
+        source_checked = item.get("reading_status") in {"partial_review", "full_review"}
+    elif group in {"methods", "cases"}:
+        for ref in item.get("source_refs", []):
+            sid = ref.get("source_id") if isinstance(ref, dict) else None
+            src = sources_by_id.get(sid) if isinstance(sid, str) else None
+            if src and src.get("reading_status") in {"partial_review", "full_review"}:
+                source_checked = True
+                break
+    elif group == "feedback":
+        source_checked = bool(item.get("source_locator"))
+
+    adopted_refs: list[str] = []
+    field_feedback_verified: list[str] = []
+    field_feedback_unverified: list[str] = []
+    if group == "methods":
+        for fid in item.get("validation_refs", []):
+            fb = feedback_by_id.get(fid)
+            if not fb:
+                continue
+            if fb.get("verified") is True:
+                adopted_refs.append(fid)
+                if fb.get("evidence_type") in {"ab_test_result", "market_result"}:
+                    field_feedback_verified.append(fid)
+            elif fb.get("evidence_type") in {"ab_test_result", "market_result"}:
+                field_feedback_unverified.append(fid)
+    elif group == "feedback":
+        fid = str(item.get("id", ""))
+        if item.get("verified") is True:
+            adopted_refs.append(fid)
+            if item.get("evidence_type") in {"ab_test_result", "market_result"}:
+                field_feedback_verified.append(fid)
+        elif item.get("evidence_type") in {"ab_test_result", "market_result"}:
+            field_feedback_unverified.append(fid)
+
+    audience_result = "none"
+    if field_feedback_verified:
+        audience_result = f"verified_project_result ({', '.join(field_feedback_verified)})"
+    elif field_feedback_unverified:
+        audience_result = f"unverified_result ({', '.join(field_feedback_unverified)})"
+    elif group == "cases":
+        outcome = item.get("outcome_evidence")
+        if isinstance(outcome, dict):
+            ev_type = str(outcome.get("evidence_type") or "")
+            ver_status = str(outcome.get("verification_status") or "unverified")
+            if ev_type in FIELD_RESULT_TYPES:
+                if ver_status in VERIFIED_OUTCOME_STATUSES:
+                    audience_result = f"{ver_status}:{ev_type}"
+                else:
+                    audience_result = f"unverified:{ev_type}"
+            elif ev_type:
+                audience_result = f"none ({ev_type})"
+
+    return {
+        "source_checked": source_checked,
+        "project_adopted": adopted_refs if adopted_refs else False,
+        "audience_result": audience_result,
+    }
 
 
 def infer_evidence_type(
@@ -487,6 +593,7 @@ def cmd_search(args: argparse.Namespace) -> int:
                     "learning_origin": origin,
                     "evidence_stage": infer_evidence_stage(item, group, feedback_by_id),
                     "evidence_type": infer_evidence_type(item, group, origin, feedback_by_id),
+                    "evidence_profile": build_evidence_profile(item, group, sources_by_id, feedback_by_id),
                     "title": item.get("title"),
                     "title_en": item.get("title_en"),
                     "status": item.get("status", item.get("reading_status")),

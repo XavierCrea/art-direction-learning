@@ -21,14 +21,14 @@
 
 1. **Replace Preachy Copy with Authentic Physical Deformation**:
    - When communicating a concrete physical action or material property (recycling compression, cable flexibility, crush resistance, foldability), skip lifestyle lectures and isolate **one unmistakably recognized symbol or physical object captured in authentic real-world mechanical stress** (scanned or photographed—never cheap digital warp filters).
-2. **Flood `≥90%` of the Frame with One Pure Brand Color Field**:
-   - Center the single high-contrast deformed graphic inside a `≥90%` solid brand color field (reinforcing `M-028` high-noise billboard denoising) with zero borders, badges, or background clutter.
-3. **Cap Copy at `0–1` Action Words**:
-   - Close with a tiny centered 1–3 word action verb or feature name at the bottom margin (or zero copy when context is unmistakable) so the viewer gets the 0.5-second "aha" moment.
+2. **Frame the Single Deformed Mark with Generous Clean Negative Space**:
+   - Coca-Cola's execution isolated the white crushed mark inside a `~95%` pure Coca-Cola Red field; when adapting, adjust solid-field proportion to fit your medium and brand guidelines while keeping backgrounds and extra badges clear so nothing dilutes the visual dissonance.
+3. **Keep Closing Copy Minimal (`0–1` Short Action Words)**:
+   - Place a quiet action verb or concise spec/feature cue (or zero copy when unmistakable) so the viewer completes the connection themselves.
 
 ## Asset Prerequisites & Transfer Limits (`asset_prerequisites` & `transfer_limits`)
 
-- **Hard Transfer Guardrail (0.3-Second Baseline Recognition Rule)**: This move works **only if the audience already knows the intact baseline shape in 0.3 seconds**. Global icons can crush their own wordmarks; **small, emerging, or B2B brands must NEVER deform an unfamiliar logo** (passersby will assume a printing error). Instead, apply real physical deformation to a **universally recognized physical object** (a crushed can/carton, a sharply knotted/bent cable, a compressed protective shell, or a folded everyday container).
+- **Baseline Recognition Guardrail**: This move works **only when viewers already hold a clear mental image of the object's intact normal shape**. Global icons can crush their own wordmarks; **small, emerging, or B2B brands should NOT deform an unfamiliar logo** (passersby will assume a printing error). Instead, apply authentic physical stress to a **universally recognized everyday object** (a crushed can/carton, knotted cable, compressed shell, or a bent hammer representing impact resistance).
 - **Brand & Scenario Limits**: Ensure the physical deformation aligns with the desired claim (never make durable hardware look fragile or broken); unsuitable for multi-spec e-commerce PDPs or urgent price-led promo banners.
 
 ## Outcome Evidence & Source

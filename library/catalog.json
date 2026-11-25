@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 16,
+  "revision": 17,
   "updated_at": "2026-11-25",
   "sources": [
     {
@@ -511,7 +511,7 @@
   "methods": [
     {
       "id": "M-001",
-      "version": 2,
+      "version": 3,
       "title": "同框比例参照法：在主图画廊放入已知尺寸参照物，消除买家体积误判",
       "tags": [
         "比例参照",
@@ -531,10 +531,12 @@
       ],
       "when_stuck": {
         "zh": [
-          "详情页写了长宽高或容量数字，但只放纯白底抠图，买家对实际大小没概念、把大设备看小或把小产品看大"
+          "详情页写了长宽高或容量数字，但只放纯白底抠图，买家对实际大小没概念、把大设备看小或把小产品看大",
+          "看不出这是什么、有多大，陌生产品或零部件孤零零放白底上缺少体量与场景参照"
         ],
         "en": [
-          "Buyers cannot judge physical size from white-background cutout photos and misinterpret dimensions"
+          "Buyers cannot judge physical size from white-background cutout photos and misinterpret dimensions",
+          "Can't tell what this is or how big it is without an everyday scale anchor"
         ]
       },
       "channels": [
@@ -570,7 +572,7 @@
     },
     {
       "id": "M-002",
-      "version": 2,
+      "version": 3,
       "title": "图文引线标注与移动端字号守卫：在产品图中嵌入结构引线与短标签，弥合图文断层",
       "tags": [
         "引线标注",
@@ -590,10 +592,12 @@
       ],
       "when_stuck": {
         "zh": [
-          "买家只滑图片不看正文描述，看着局部微距特写不知道拍的是什么部件，或漏看防水、兼容尺寸、散热留空等关键卖点"
+          "买家只滑图片不看正文描述，看着局部微距特写不知道拍的是什么部件，或漏看防水、兼容尺寸、散热留空等关键卖点",
+          "看不出这是什么部件或接口，局部特写缺少明确标注"
         ],
         "en": [
-          "Users skip text descriptions and get confused by heavily cropped close-ups or miss non-visual features like waterproofing"
+          "Users skip text descriptions and get confused by heavily cropped close-ups or miss non-visual features like waterproofing",
+          "Can't tell what this part or port is from an unlabeled close-up"
         ]
       },
       "channels": [
@@ -865,7 +869,7 @@
     },
     {
       "id": "M-007",
-      "version": 3,
+      "version": 4,
       "title": "字重色阶降噪与无边框分组法：用 2 档字重 + 3 级色阶 + 同色相浅字 + 底色留白替代杂乱边框",
       "tags": [
         "视觉层级",
@@ -887,10 +891,12 @@
       ],
       "when_stuck": {
         "zh": [
-          "页面靠无脑放大字号区分重点、到处是密集的黑灰表格边框、实心小图标比旁边文字显黑显重，或深色/彩色背景上的灰字/半透明白字发脏透底看不清"
+          "页面靠无脑放大字号区分重点、到处是密集的黑灰表格边框、实心小图标比旁边文字显黑显重，或深色/彩色背景上的灰字/半透明白字发脏透底看不清",
+          "画面看着像模板、框线堆砌像廉价 PPT，缺乏干净的层次感"
         ],
         "en": [
-          "UI relies only on font size, has cluttered borders, heavy solid icons overpower adjacent text, or uses muddy grey / translucent white text on colored backgrounds"
+          "UI relies only on font size, has cluttered borders, heavy solid icons overpower adjacent text, or uses muddy grey / translucent white text on colored backgrounds",
+          "Layout looks like a generic template or cluttered slide full of boxes"
         ]
       },
       "channels": [
@@ -1384,7 +1390,7 @@
     },
     {
       "id": "M-014",
-      "version": 3,
+      "version": 4,
       "title": "12 色轮取色、色质拉开与冷退暖进面积比：用亮暗调去幼稚化，用冷色铺底衬托小面积暖色焦点",
       "tags": [
         "12色轮",
@@ -1454,15 +1460,14 @@
       "applies_when": "为店铺首页、详情页、广告海报或工业品手册制定色彩方案，或诊断现有页面为什么颜色刺眼、字看不清、缺乏高级感。",
       "limits": "核心客观底线是不把色质（明暗度）相近的两种颜色直接叠放导致文字边缘发抖难认；冷暖 8:2 比例适用于需要小焦点在冷色界面跳出的场景，当大面积暖色本身是品牌核心识别色（如 M-039）或情绪主题时应灵活换招；屏幕交付用 RGB，印刷大面积深黑底需配浓郁黑（C20 M20 Y20 K100）。",
       "steps": [
-        "定色相关系：从品牌主色或核心摄影图（用吸管工具吸取）出发，在 12 色轮上选定『分裂互补色（主色 + 互补色两侧的邻色）』或『类似色（相邻 2–3 色）』。",
-        "去纯色幼稚感：在纯色中加入黑色得到沉稳的暗色（Shade，用于背景或主标题），或加入白色得到柔和的亮色（Tint，用于浅底色块或次级分区）。",
-        "做黑白灰度（色质）核验：将画面临时转为黑白灰度，检查文字与底色是否依然黑白分明；若灰度接近导致模糊发抖，立即调亮或调暗其中一方。",
-        "分配冷暖面积比（8:2 或 9:1）：用后退型冷色（深蓝、冷灰、墨绿）承担 80%–90% 的背景与框架面积，仅用 10%–20% 的前进型暖色（橙红、暖金、亮黄）点亮主 CTA 按钮、核心数据或卖点徽章。"
+        "定色相关系：从品牌主色或核心摄影图出发，按目标气质决定色盘（若品牌识别本身靠大面积高饱和暖色建立，如 M-039，全幅暖色铺底完全成立；若需沉稳耐看的多模块页面，可用分裂互补色或类似色）。",
+        "按需调明暗阶梯：当刺眼纯基色导致廉价感时，加黑生成暗色（Shade）或加白生成亮色（Tint）拉开层次。",
+        "做黑白灰度（色质）核验：将画面临时转为黑白灰度，检查前景文字/主角与背景是否明暗分明，避免同色质叠放引起边缘发抖。",
+        "按意图分配冷暖面积：希望小元素（CTA、关键数字、徽章）在冷调版面中率先跳出时，用 8:2 或 9:1 冷多暖少比例；若主题本身为大面积暖色品牌场，则靠高反差纯白或深色主角承托视线。"
       ],
       "checks": [
-        "将设计稿转为黑白灰度（模拟黑白复印机）时，所有文字和关键图形是否依然清晰易读、毫无视觉抖动？",
-        "是否已将刺眼的纯基色（如正红+正绿、正红+正黄+正蓝）转化为带有亮色（Tint）或暗色（Shade）阶梯的高级色调？",
-        "画面中的暖色是否控制在小面积焦点位置，没有大面积泛滥成灾？"
+        "将设计稿转为黑白灰度时，所有核心文字和关键图形是否依然明暗分明、没有边缘发抖？",
+        "若目标是让小焦点在冷调页面跳出，冷暖面积比是否服务于该焦点；若采用大面积暖色品牌场，是否守住了主体的高对比可读性？"
       ],
       "validation_refs": [],
       "title_en": "12-Color Wheel Harmonies, Tonal Value Separation & Cool-Recedes / Warm-Advances Ratio",
@@ -1472,7 +1477,7 @@
     },
     {
       "id": "M-015",
-      "version": 3,
+      "version": 4,
       "title": "字体禁同门冲突与六维叠加对比法：严禁同类别字体混排，用大小写混排与多维极值拉开层级",
       "tags": [
         "字体对比",
@@ -1551,16 +1556,15 @@
       "applies_when": "为海报、详情页首屏、技术白皮书或纯文字说明页选择主副标题与正文字体搭配，或修复『两个标题互相抢镜』与『纯文字页灰蒙蒙一片』的问题。",
       "limits": "禁止的是外观接近且无分工的字体冲突；当两款无衬线体具备清晰结构差异与明确角色分工时（例如超窄展示无衬线标题配宽松高可读无衬线正文），同页搭配完全成立；短于 2–3 词的标识、导航或标签可使用全大写加字距。现代体（Modern）与花体/手写体仍不适合小字号长正文。",
       "steps": [
-        "盘点页面字体类别：将页面字体收敛为『1 个多字重超级无衬线家族（如 Inter / Avenir Next / 思源黑体，内部调取 Heavy 800 配 Regular 400）』或『1 个衬线体 + 1 个无衬线体』，立即清除同门重复的第二种字体。",
-        "解除全大写（All Caps）封印：将超过 3 个单词的全大写标题改为首字母大写（Title Case）或句首大写（Sentence Case），利用省出的一半横向宽度将字号直接放大 30%–50%。",
-        "消除双中心互搏（Competing Focal Points）：若一行字号大但字重细、另一行字号小但用了全大写粗体，必须明确选定唯一主角赋予『大字号 + 极粗字重』，将配角降维。",
-        "用『大小 + 粗细 + 形状/方向』三维叠加强化对比：例如主标题用 40pt 极粗直立无衬线体，副标题/引言用 16pt 衬线斜体，正文用 11pt 旧式衬线常规体。",
-        "调节纯文字页的『版面灰度（Typographic Color）』：在无图文字页中，通过极粗黑体小标题、段落首句加粗、以及拉开副栏字距/行距，创造深浅交替的视觉节奏。"
+        "盘点页面字体角色：确保同页每款字体有清晰结构差异与明确分工（例如单一多字重超级家族、衬线 + 无衬线、或有明确角色分工的超窄展示无衬线标题 + 宽松高可读无衬线正文），消除长相接近却无分工的同门冲突。",
+        "审视长标题大小写：超过 3–4 词的英文标题优先用大小写混排保留词形轮廓并争取更大字号；极短标识、导航或 1–2 词标签仍可按需使用全大写加字距。",
+        "消除双中心互搏：明确主副标题层级，避免两个位置字号与字重势均力敌抢视线。",
+        "按需叠加多维对比（大小、粗细、结构、形状、方向、灰度节奏）让纯文字区块产生清晰阅读节拍。"
       ],
       "checks": [
-        "页面上是否彻底杜绝了『两种不同无衬线体混用』或『手写体配衬线斜体』的同形状/同结构冲突？",
-        "主标题是否已避免使用占空间又难认的长串全大写（All Caps），从而获得了更大的实际字号和清晰的词形轮廓？",
-        "主标题与副标题之间是否同时拉开了『大小 + 粗细 + 结构/形状』至少两个维度的强烈对比？"
+        "页面是否消除了“外观接近、功能无分工”的字体冲突（两款无衬线体如具明确展示/正文分工则允许并存）？",
+        "长英文主标题是否避免了因全大写被迫缩字号、难扫读的问题？",
+        "主标题与副标题/正文是否形成了肉眼一眼可辨的层级落差？"
       ],
       "validation_refs": [],
       "title_en": "Typography Anti-Conflict & 6-Dimension Contrast: Preserve Word Coastlines and Stack Contrasts",
@@ -2714,7 +2718,7 @@
     },
     {
       "id": "M-028",
-      "version": 2,
+      "version": 3,
       "learning_origin": "co_dissected_teardown",
       "title": "高噪商圈/展会巨幕的纯色场降噪、L屏景别递进与打卡背景板法则",
       "title_en": "High-Noise Mall/Expo Billboard Color-Field Denoising, L-Screen Scale Progression & UGC Backdrop Framing",
@@ -2786,18 +2790,17 @@
       "applies_when": "品牌或核心单品已具备高公众认知度（Schwartz Stage 1–2）或处于垂直行业展会内（受众已知晓品牌主业），且线下步行圈内有实体展厅/展位承接后续参数咨询。",
       "limits": "【证据层级说明】本方法来自小米 SU7 街头正反实拍共创拆解，已获用户认可收录指导后续项目（user_endorsed），尚未包含迁移至其他品牌后的受众实测或投放验证（需由后续项目反馈升级至 field_validated）。【适用与换招边界】高纯度 ≥75% 单色场是高噪远距大牌的候选强招之一，而非唯一户外公式；低知名度新品牌在泛流量冷启动投放时切忌照搬“只放人像/抽象短句不放产品”，须保留清晰产品本体或明确品类定义；行人会停步走近的通道、候车亭或展位内，亦可采用叙事照片、长文或可扫二维码。",
       "steps": [
-        "先拍摄或调取投放点位的真实街景/展馆环境底图，识别周围最强的环境色噪点（如满街红黄餐饮霓虹灯或杂乱展位灯箱）",
-        "扔掉复杂的多层风景合成背景，选取与环境噪点形成强色温/明度反差的单一高纯度品牌色场铺满 ≥75% 画幅",
-        "若为 L 型转角屏或双联屏，锁定同一色系跨越转角：左屏（副屏）放“产品实景 + ≤5 字产品名”，右屏（主屏）放“人物松弛特写或纯色场 + ≤8 字情绪/体感短句”，删掉一切割裂画面的白底 Logo 膏药块",
-        "检查字号与位置：将主标题宽度收至画幅 50%–60%，确保文字完全落在纯净色场内（不跨背景交界线），并删光底部蚂蚁小字、价格表与二维码",
-        "核对 100m→10m→1m 触点接力：确认一楼展厅、街区快闪或展位桌面已备好承接好奇心的实车/样品与完整规格选型表"
+        "先评估投放点位的真实观看条件（远距高速经过 vs. 停步走近）与周围环境噪点（如满街红黄霓虹灯或杂乱展位）。",
+        "若属高噪远距快速扫视大屏，可优先候选大面积高纯度单一品牌色场（如小米案采用 ≥75% 卡布里蓝）切开环境噪点，替代易发灰的复杂风景合成背景。",
+        "若为 L 型转角屏或双联屏，尽量保持同色系跨角衔接，用“一屏交待主体 + 一屏立住情绪”的景别递进替代刺眼白底切块或两屏重复口号。",
+        "按实际观看距离取舍文字与行动入口：百米远距高速点位删掉看不清的细碎参数与小字；观众可停步走近的通道、候车亭或展位内，可保留必要叙事文字或实扫验证过的二维码。",
+        "核对认知度与线下承接：若为低知名度新品牌，务必保留清晰产品本体或明确品类定义，不盲目照搬“纯人像/无产品谜语牌”。"
       ],
       "checks": [
-        "把设计稿缩放到真实街景照片的屏幕位置看 1.5 秒：画面是像一块纯净宝石把周围霓虹灯切开了，还是和周围招牌融成了一团灰？",
-        "画面上是否还有任何站在 50 米外看不清的底部免责小字、二维码或多宫格价格？",
-        "如果是 L 屏或双屏，是否避免了“左右屏说同一句话”和“刺眼白底切块”？",
-        "普通路人站在屏幕下拍照发小红书时，画面和那句文案能让她显得有品位，还是像站在促销传单下？",
-        "认知度核验：当前品牌是否真的具备“不写品类大家也认识”的知名度？若不具备，是否已补回清晰的产品本体与品类锚点？"
+        "把设计稿放进真实环境/视距下预览 1.5 秒：核心识别信息（品牌/展名/方向或主张）是否清晰跳出而非融进环境噪点？",
+        "如果是 L 屏或双屏，是否避免了“左右屏说同一句话”和割裂画面的突兀白底切块？",
+        "信息密度是否匹配真实观看条件（远距高速无糊成白斑的小字；近距停步位保留了必要行动信息）？",
+        "认知度核验：当前品牌若不具备“不写品类大家也认识”的知名度，是否已保留清晰的产品本体或品类锚点？"
       ],
       "validation_refs": [
         "F-002"
@@ -3143,7 +3146,7 @@
     },
     {
       "id": "M-034",
-      "version": 2,
+      "version": 3,
       "title": "信息流原生静态图、Us vs. Them 极化对比与停滑率诊断法",
       "title_en": "Native Feed Static Formats, \"Us vs. Them\" Contrast & Thumbstop Diagnostics",
       "tags": [
@@ -3196,15 +3199,15 @@
       "applies_when": "设计小红书、Meta、Instagram、TikTok 图文信息流拉新静态图、对比长图，或诊断低点击率/低停滑率广告素材时。",
       "limits": "不同行业、客单价、平台与冷热流量池的点击率基线差异极大，严禁拿海外 DTC 快消基准硬套 B2B 高客单或私域投放；严禁捏造虚假竞品缺陷或伪造素人评论截图，Us vs. Them 对比须保持同口径公平对照。",
       "steps": [
-        "先看前端数据诊断：若视频 TSR <25% 或静态 Link CTR <1.0%，直接判为『视觉钩子/画风失效』，推倒重做构图。",
-        "强制执行『一图一主张』：砍掉所有次要卖点与装饰渐变，只留 1 个 1 秒可读懂的核心反差或证据。",
-        "从三大原生母版中选定 1 种落地：Us vs. Them 两列/分屏对比（适合通道 2 Python PIL/SVG 精准出图）、原生备忘录/真实用户评价拼接、或产品微距指认。",
-        "核对落地页/详情页首屏：确保点击后 3 秒内看到对应对比项的客观实证，防止高 CTR 低转化。"
+        "先做同条件基线对照：当视频 TSR 或静态图 Link CTR 低于 Motion 报告的海外 DTC 参考线（25% / 1.0%）时，先与同账号、同平台、相近受众及投放目标的历史数据对比，判断问题更可能出在受众定向、出价、钩子文案还是首帧构图。",
+        "若确诊为信息流广告盲区或视觉停滑不足，围绕『一图一主张』规划对照测试，不要盲目删改已验证有效的卖点。",
+        "从三大原生静态思路中择优立项测试：公平同口径的 Us vs. Them 对比、原生备忘录/真实用户评价拼接、或产品微距实拍单点指认。",
+        "核对落地页/详情页首屏：确保点击后能立刻承接广告里的核心对比或实证，避免高点击低转化。"
       ],
       "checks": [
-        "把静态图缩到手机信息流实际宽度扫视 1 秒，能否只靠 1 个视觉中心读懂唯一主张？",
-        "是否摆脱了『企业棚拍精修宣传单』的塑料感，在信息流里具备原生内容亲和力？",
-        "Us vs. Them 的每一条对比行是否均有真实物理/参数证据，且落地页首屏无缝承接？"
+        "是否已先对照同账号、同平台、相近受众与目标的历史表现，而不是单凭外部绝对阈值就断定构图失败？",
+        "把静态图缩到手机信息流实际宽度扫视 1 秒，能否快速读懂核心主张且没有生硬广告盲区感？",
+        "若采用 Us vs. Them 对比，双方口径与拍摄条件是否公平真实，且落地页首屏无缝承接实证？"
       ],
       "validation_refs": [],
       "evidence_stage": "source_verified"
@@ -3276,7 +3279,7 @@
     },
     {
       "id": "M-036",
-      "version": 1,
+      "version": 2,
       "title": "熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导法",
       "title_en": "Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
       "tags": [
@@ -3299,12 +3302,14 @@
         "zh": [
           "品牌/公益海报或种草封面太直白说教，读者 0.5 秒看穿意图直接划走",
           "真实生活实景照片细节杂乱，观众视线抓不住核心道具与产品",
-          "想在信息流里制造『第一眼熟悉、第二眼反转惊艳』的高停留与高评论效应"
+          "想在信息流里制造『第一眼熟悉、第二眼反转惊艳』的高停留与高评论效应",
+          "想让人再看一眼、停下来产生好奇心，而不是一眼看完就划走"
         ],
         "en": [
           "Brand poster or social cover feels predictable and preachy so viewers scroll past in 0.5s",
           "Realistic lifestyle scenes are too visually busy for the eye to lock onto the key subject",
-          "Need a high-retention double-take visual hook that rewards a second glance"
+          "Need a high-retention double-take visual hook that rewards a second glance",
+          "Want viewers to look twice and pause out of curiosity"
         ]
       },
       "channels": [
@@ -3468,7 +3473,7 @@
     },
     {
       "id": "M-039",
-      "version": 1,
+      "version": 2,
       "title": "熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法",
       "title_en": "Real-Object Symbol Deformation & 95% Monochrome Color-Field Minimalism",
       "tags": [
@@ -3511,22 +3516,23 @@
           "section": "Urban corner LED billboard ('RECÍCLAME') & crushed-can logo print posters"
         }
       ],
-      "rule": "当需要用 0.5 秒零说教传递单一物理动作或材料特性时，采用『熟悉符号真实物理形变 × 纯色极端留白法』：1) 选取具备 0.3 秒常态认知基准的视觉对象（超强国民级品牌可取自家经典标识，中小/新品牌必须改取大众一眼认得的通用物理载体，绝不硬扭陌生 Logo）；2) 通过真实受力后的实拍/扫描提取自然折痕与形变（拒绝廉价软件扭曲滤镜）；3) 将唯一形变主角居中孤立于 ≥90% 单一高纯度品牌色场中，全画幅仅保留 0–1 个极小行动短词收口。",
-      "rule_en": "To communicate a single physical action or material property in 0.5 seconds without preaching, use Real-Object Symbol Deformation & Monochrome Color-Field Minimalism: (1) choose a visual object with a 0.3s intact mental baseline (iconic global brands may deform their own mark; emerging/B2B brands MUST deform a universally recognized everyday physical object, never an unfamiliar logo); (2) capture authentic crease/stress geometry from a real physically stressed object rather than cheap digital warp filters; (3) center that lone deformed mark inside a >=90% pure brand color field with 0–1 tiny action words at the bottom.",
+      "rule": "【原作观察】Coca-Cola《Recycle Me》户外与平面系列把从真实捏扁铝罐扫描提取的变形 Logo 居中放进约 95% 纯可口可乐红底场，仅留 0–1 个极小动词（RECÍCLAME），靠常态记忆与真实褶皱现态的反差让人 0.5 秒脑补“捏扁→回收”。【可迁移用法】当你希望用近乎零说教的画面在瞬间传递单一物理动作或材料特性（如回收、柔韧、折叠、抗撞）时，选取受众一眼认得“完好常态”的经典符号或通用实物载体（大牌可用自身标志，中小/新品牌改用大众公认的通用实物轮廓），采集真实物理受力后的自然形变，并放进高留白纯净底场配极简短词收口。",
+      "rule_en": "[Original Observation] Coca-Cola's 'Recycle Me' OOH and print series placed logos scanned from real crushed aluminum cans dead-center inside a ~95% pure Coca-Cola Red field with 0–1 tiny action words ('RECÍCLAME'), letting the contrast between intact memory and creased reality trigger instant 'crush -> recycle' completion. [Reusable Application] When communicating a single physical action or material property (recycling, flexibility, foldability, impact resistance) without preaching, capture authentic physical stress geometry on a widely recognized mark or universal everyday object (emerging/B2B brands should deform universal objects, never unfamiliar logos) and frame it cleanly with generous negative space and minimal closing copy.",
       "applies_when": "制作商圈/展馆户外态度大牌、环保/公益破圈海报、强物理特性（柔韧/折叠/抗压/回收）品牌形象平面或极简社媒话题海报时。",
       "limits": "严格受限于『0.3 秒常态识别度铁律』：陌生品牌直接扭曲自家 Logo 会被当成排版或印刷事故；物理形变方向必须贴合正面产品逻辑，严禁引发质量脆弱的负面联想；不适用于需要多参数对比或亮价促单的电商详情页。",
       "steps": [
-        "锁定要传递的唯一物理动作或特性（如捏扁回收、弯折不断、压缩收纳），确认被形变对象是否具备 0.3 秒常识级常态认知（非顶级大众品牌一律选用通用实物载体而非自家 Logo）。",
-        "用真实物理受力后的实物拍摄或扫描提取形变轮廓（保留真实折角、压缩张力与透视），避免生硬的平面滤镜拉伸。",
-        "铺满 ≥90% 高饱和单一品牌纯色底场，将高反差单色形变主角孤立居中，删掉全部背景照片、装饰框与次要卖点。",
-        "底部居中仅保留 0–1 个极小行动动词/功能词（如 RECÍCLAME），退后 5 米或缩至手机卡片尺寸验证 0.5 秒能否瞬间触发因果顿悟。"
+        "确认要传达的单一物理动作或特性（卖轻便/柔韧/回收可对自身或包装施力；卖坚固/抗撞宜对施压外物或传统旧方案施力，避免把自家硬件画坏）。",
+        "检验常态识别度：确认受众无需解释就能认出该对象“原本长什么样”（非头部大众品牌优先改用通用实物轮廓，如易拉罐、数据线、纸箱、铁锤、声波）。",
+        "通过真实受力拍摄、扫描或物理逻辑呈现自然折痕与形变，避免廉价平面扭曲滤镜。",
+        "用高留白纯净底场（参考可口可乐案约 90%+ 纯色场，具体按载体与品牌规范灵活调整）托住唯一形变主角，配极简 0–1 个行动短词或核心参数收口。"
       ],
       "checks": [
-        "遮住底部小字扫视 0.5 秒，受众能否立刻察觉『它本来不是这个形状』并自动脑补出背后的物理动作？",
-        "若为非头部大众品牌，形变对象是否已替换为大众 0.3 秒认得的通用物理载体（而非陌生自家 Logo）？",
-        "纯色留白占比是否 ≥90%，且完全没有多余标题、参数块或装饰图标稀释视觉冲击力？"
+        "遮住底部短词快速扫视，受众能否立刻察觉“它发生了某种真实物理形变”并脑补出背后的动作或卖点？",
+        "若为非头部大众品牌，是否已改用大众一眼认得的通用实物载体（而非硬扭陌生自家 Logo）？",
+        "画面留白与信息克制程度是否服务于聚焦该形变反差，且没有引发“产品脆弱易损”的误读？"
       ],
-      "validation_refs": []
+      "validation_refs": [],
+      "evidence_stage": "source_verified"
     }
   ],
   "cases": [

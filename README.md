@@ -6,7 +6,7 @@
 
 `art-direction-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
 
-**v1.5.0 · `catalog.json` `r16` · 23 verified sources · 39 visual methods (`M-001`–`M-039`) · 34 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 composable pattern groups + Objective Output QA Gate**
+**v1.5.0 · `catalog.json` `r17` · 23 verified sources · 39 visual methods (`M-001`–`M-039`) · 34 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 composable pattern groups + Objective Output QA Gate**
 
 [Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Style Archetypes](library/styles/README.md) · [Poster Patterns](references/poster-patterns.md) · [Output QA Gate](references/output-qa-gate.md) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
@@ -90,7 +90,7 @@ flowchart LR
 | Channel | Best For | Why This Channel Exists |
 | :--- | :--- | :--- |
 | **1. AI Image Gen / Edit Prompts** | Atmospheric scenes, lifestyle context, lighting & hero compositions | Pairs with `image-prompt-guide` once buyer proof, scale reference (`M-001`), and focal hierarchy are locked. |
-| **2. Precision Code Rendering (`Python PIL` / `SVG`) & 3-Layer Hybrid** | Graphic invitations, Swiss grids, pure-color billboards, comparison charts; and Layer 3 editable typography for product posters | Solves AI generators' 4 classic failures: broken modular grids (`M-016`), drifting HEX codes, garbled small text, and unscannable QR codes. **Never hard-paste daylight product cutouts onto code gradients** — product posters requiring lighting fusion must follow [Output QA Gate](references/output-qa-gate.md) (Layer 1 AI lighting/scene reconstruction + Layer 2 deterministic label patching + Layer 3 vector typography). |
+| **2. Precision Code Rendering (`Python PIL` / `SVG`), Direct Photo Layout & Hybrid** | Direct layout on quality original/venue photos, graphic invitations, Swiss grids, comparison charts, and vector typography | Solves AI generators' 4 classic failures: broken modular grids (`M-016`), drifting HEX codes, garbled small text, and broken QR codes. When a strong original venue or studio photo already exists, use **Channel 0 direct photo layout** (crop, grade, set type); when compositing products, follow [Output QA Gate](references/output-qa-gate.md) to pick among matching-background swap, reshoot/relight, color-matched compositing, or AI relighting + label patching while verifying hardware ports and geometry. |
 | **3. Interactive Web Code (`HTML` / `CSS` / `React`)** | B2B storefronts (e.g., Alibaba International), landing pages, interactive spec tables | Half of UX layout science — single-column zebra spec sheets (`M-005`), vertical expansion over hidden horizontal tabs (`M-006`), borderless spacing (`M-007`) — requires real code, not flat JPEGs. |
 | **4. Photography & Retouching Briefs** | Factory test benches, real UL/CE certificates, included wiring-harness flat-lays (`M-003`) | **Strict anti-hallucination guardrail:** never let AI fabricate hardware internals, lab curves, or certificates. Outputs adjective-free camera angles, scale props, and callout coordinates. |
 
@@ -118,7 +118,7 @@ For offline exhibitions and commercial spaces, the skill orchestrates visual den
 
 ---
 
-## What's Inside the Library (`catalog.json` `r16`)
+## What's Inside the Library (`catalog.json` `r17`)
 
 Every record explicitly tags its **`learning_origin`** (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent teardowns are clearly separated from seeded books and UX studies — and can be filtered directly via `--origin`.
 
