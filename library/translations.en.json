@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_revision": 13,
+  "catalog_revision": 14,
   "updated_at": "2026-11-25",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
@@ -258,6 +258,14 @@
       "zh_sha256": "19b378a88bfbb3a23a21232ece156d612e2af48740afde1dca7d54a26871adc9",
       "markdown_path_en": "library/cases/en/C-aotw-muserk-typographic-wall-poster.md",
       "en_sha256": "93017f0d47f35e3adc985eb530040c3405d51976a51459c8298d2ce644e6a2a0"
+    },
+    "C-aotw-mercedes-rollover-sensor-state-sequence": {
+      "title": "Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓",
+      "title_en": "Mercedes-Benz \"Rollover Sensor\": Icon-as-Diagram Sequential State Repetition & Whisper Reveal",
+      "markdown_path": "library/cases/C-aotw-mercedes-rollover-sensor-state-sequence.md",
+      "zh_sha256": "858ba9a1cd1632f5d0e3fb37c2b1148671f786f2709c6c119beaae254306b2a2",
+      "markdown_path_en": "library/cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md",
+      "en_sha256": "a84531790407c140f78e4b5b217f6536f226c2433d4a7b13f8023721690966ad"
     }
   }
 }

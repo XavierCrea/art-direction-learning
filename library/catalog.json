@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 13,
+  "revision": 14,
   "updated_at": "2026-11-25",
   "sources": [
     {
@@ -468,6 +468,24 @@
       "coverage_note_en": "Full visual review via browser of all 3 typographic OOH/print poster executions and campaign brief on Ads of the World (May 2024).",
       "reviewed_locations": [
         "All 3 black + neon-magenta typographic-wall poster executions with bottom-right QR code"
+      ]
+    },
+    {
+      "id": "S-aotw-mercedes-rollover-sensor-2007",
+      "kind": "web",
+      "version": 1,
+      "title": "Mercedes-Benz — Rollover Sensor (Print Campaign)",
+      "author": "Jung von Matt/Donau (CD/AD: Volkmar Weiß; Copy: Dietmar Voll, Michael Haeussler)",
+      "publisher": "Ads of the World",
+      "retrieved_at": "2026-11-25",
+      "url": "https://www.adsoftheworld.com/campaigns/rollover-sensor",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已通过浏览器完整核阅 2007 年 3 月奥地利平面广告原图与德文底注（4 枚奔驰星标逐帧旋转归位序列）。",
+      "coverage_note_en": "Full visual review via browser of the March 2007 Austrian print ad and German footer copy (4-frame sequential rotation of Mercedes-Benz star emblems returning upright).",
+      "reviewed_locations": [
+        "Single landscape print asset (4 rotated Mercedes-Benz emblems + German footer copy)"
       ]
     }
   ],
@@ -3360,6 +3378,70 @@
         "底角二维码是否具备足够白边静区且 100% 可扫？"
       ],
       "validation_refs": []
+    },
+    {
+      "id": "M-038",
+      "version": 1,
+      "title": "符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓",
+      "title_en": "Icon-as-Diagram Sequential State Repetition & Whisper Reveal",
+      "tags": [
+        "符号逐帧演进",
+        "隐形技术可视化",
+        "标识即图解",
+        "极简负空间",
+        "静默底注",
+        "通道2矢量直出"
+      ],
+      "tags_en": [
+        "icon as diagram",
+        "sequential state repetition",
+        "invisible tech visualization",
+        "whisper reveal",
+        "minimalist negative space",
+        "channel 2 vector"
+      ],
+      "when_stuck": {
+        "zh": [
+          "需要表达看不见的底层安全机制、传感器、防抖/降噪/均衡算法或物理纠偏能力，不想画丑陋事故现场或晦涩工程原理图",
+          "需要零实拍成本、纯矢量几何即可呈现动态物理过程的高端极简海报或特性页",
+          "常规大号主标题喊口号太吵，想用极简视觉谜题建立冷静的高端技术权威感"
+        ],
+        "en": [
+          "Need to visualize invisible safety sensors, stabilization, ANC, or balancing algorithms without gory accidents or dense schematics",
+          "Want a zero-photography minimalist poster or feature visual that conveys physical motion via pure vector geometry",
+          "Loud headline slogans feel cheap and you want calm engineering authority via a 1-second visual riddle"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "landing_page",
+        "social_feed",
+        "exhibition"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-mercedes-rollover-sensor-2007",
+          "section": "Landscape print asset (4 sequential Mercedes-Benz star emblems + German footer)"
+        }
+      ],
+      "rule": "当需要把看不见的底层硬件保护、校准、防抖或均衡技术可视化时，采用『符号逐帧演进法（Icon-as-Diagram）』：1) 选定 1 个公众 0.3 秒即识『常态基准』的极简符号（自带方向感的知名 Logo，或电池柱/声波/水平仪等通用物理图标）；2) 在 ≥80% 纯净负空间中水平等距横排 3–5 帧，呈现『异常/失衡 → 纠偏 → 稳定归位』动态序列，取消大号主标题；3) 在右下角或终帧下方仅放极小一行『静默底注（Whisper Reveal）』报出功能名与收益，把顿悟留给读者。",
+      "rule_en": "To visualize invisible safety sensors, stabilization, ANC, or balancing tech without gory scenes or dense schematics, use Icon-as-Diagram Sequential State Repetition: (1) pick ONE minimalist symbol with an unmistakable normal baseline (an orientation-sensitive iconic logo or a universal physical icon like battery bars/sound waves/horizon level); (2) repeat it horizontally across 3–5 equal-spaced frames inside >=80% clean negative space showing Imbalance -> Correction -> Stabilized Normal, with zero display headline; (3) resolve the 1-second riddle with a tiny single-line Whisper Reveal at bottom-right naming the feature and payoff.",
+      "applies_when": "设计高端技术品牌海报、硬科技特性模块（防抖、降噪、BMS 均衡、稳压、安全传感器）或通过通道 2（Python PIL / SVG 矢量精准直出）制作极简平面物料时。",
+      "limits": "所选符号必须一眼可辨『歪了/异常』；若为陌生新品牌或对称圆标，必须改用通用物理图标而非硬转 Logo；依赖 1–2 秒顿悟，不适用于急需 0.5 秒亮价促单的促销硬广。",
+      "steps": [
+        "确认该隐形技术的物理本质（倾翻归位、抖动变清晰、杂波变直线、不齐变均衡），匹配 1 个自带常态基准的极简矢量符号。",
+        "在 ≥80% 纯色冷调负空间正中横排 3–5 帧，精确递增旋转/位移/平滑参数直至最右帧完全归位，在终帧正下方锚定品牌字标。",
+        "彻底删除大号主标题、背景图与多余装饰，只在右下角放极小一行『功能名 + 一句结果收益』静默揭晓。"
+      ],
+      "checks": [
+        "不看右下角小字，仅凭 3–5 个符号的排列能否在 1 秒内看出『从异常逐步恢复正常』的物理方向？",
+        "如果把品牌名遮掉，该符号的『歪斜/异常态』是否依然一眼可辨？",
+        "负空间占比是否 ≥ 80%，且没有多余大标题抢走视觉谜题的顿悟感？"
+      ],
+      "validation_refs": []
     }
   ],
   "cases": [
@@ -5582,6 +5664,64 @@
         "verification_status": "source_verified"
       },
       "transfer_limits": "忌把长段落塞进巨字墙；严肃 B2B/工业场景保留排版骨骼并替换为克制硬核数据/承诺，避免不当粗口。"
+    },
+    {
+      "id": "C-aotw-mercedes-rollover-sensor-state-sequence",
+      "version": 1,
+      "title": "Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓",
+      "title_en": "Mercedes-Benz \"Rollover Sensor\": Icon-as-Diagram Sequential State Repetition & Whisper Reveal",
+      "tags": [
+        "符号逐帧演进",
+        "隐形技术可视化",
+        "极简留白",
+        "静默底注",
+        "奔驰平面广告"
+      ],
+      "tags_en": [
+        "icon as diagram",
+        "sequential state repetition",
+        "invisible tech",
+        "whisper reveal",
+        "minimalist print"
+      ],
+      "when_stuck": {
+        "zh": [
+          "需要可视化看不见的传感器/防抖/降噪/均衡等隐形技术，不想画事故现场或晦涩原理图",
+          "想用极简纯矢量几何在静态平面上表达动态纠偏过程",
+          "想去掉喧嚣大标题，用视觉谜题建立高端技术权威感"
+        ],
+        "en": [
+          "Need to visualize invisible safety/stabilization/balancing tech without accidents or dense diagrams",
+          "Want pure vector geometry to express kinetic recovery on a static page",
+          "Want calm engineering authority without shouting headlines"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-aotw-mercedes-rollover-sensor-2007",
+          "section": "Single landscape print asset"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-aotw-mercedes-rollover-sensor-state-sequence.md",
+      "markdown_path_en": "library/cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md",
+      "observations": [
+        "1. 横版冷灰底场留出 >85% 负空间，无车、无路、无人物、无大号主标题；正中水平横排 4 枚等大奔驰三叉星徽标，从左至右由约 140–150° 倾翻逐帧回正至完全直立，终帧下锁 Mercedes-Benz 字标。",
+        "2. 右下角仅放极小一行德文底注：'Der Überschlagsensor. Aktiviert Schutzsysteme, bevor es zu spät ist. Nur ein Mercedes ist ein Mercedes.'"
+      ],
+      "copy_visual_synergy": "4 枚旋转归位的徽标在静态平面上构成 1 秒动能谜题；右下角极小一行静默底注点破『翻滚传感器』功能名与保护收益，让读者自己完成顿悟。",
+      "analysis": "把具有极强方向共识的品牌符号直接变成物理状态图解，既避免了展示翻车事故的负面观感，又以极低信息噪音传递出顶级工程克制感。",
+      "reusable_move": "选 1 个一眼可辨常态基准的极简符号 → 在 ≥80% 负空间横排 3–5 帧演完『失衡 → 纠偏 → 归位』且取消大标题 → 右下角极小一行静默底注揭晓功能名与收益。",
+      "reusable_move_en": "Repeat 1 orientation-sensitive symbol across 3–5 horizontal frames inside >=80% negative space showing Imbalance -> Correction -> Stabilized Normal with zero display headline, resolving the riddle via a tiny single-line Whisper Reveal at bottom-right.",
+      "asset_prerequisites": "符号本身须具备大众 0.3 秒可辨的常态/朝向基准（陌生品牌须改用通用物理图标）。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "2007 年 3 月 Jung von Matt/Donau 经典奔驰平面广告作品，页面无转化率数据，仅提炼客观符号演进构图与通道 2 矢量复用机制。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "不适用于急需 0.5 秒亮价促单的促销图；序列不超过 5 帧以防失去一眼通读感。"
     }
   ],
   "feedback": [
