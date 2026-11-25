@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_revision": 14,
+  "catalog_revision": 15,
   "updated_at": "2026-11-25",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
@@ -266,6 +266,14 @@
       "zh_sha256": "858ba9a1cd1632f5d0e3fb37c2b1148671f786f2709c6c119beaae254306b2a2",
       "markdown_path_en": "library/cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md",
       "en_sha256": "a84531790407c140f78e4b5b217f6536f226c2433d4a7b13f8023721690966ad"
+    },
+    "C-coca-cola-recycle-me-deformation": {
+      "title": "Coca-Cola《Recycle Me》：熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法",
+      "title_en": "Coca-Cola \"Recycle Me\": Real-Object Symbol Deformation & 95% Monochrome Color-Field Minimalism",
+      "markdown_path": "library/cases/C-coca-cola-recycle-me-deformation.md",
+      "zh_sha256": "ec86ce3db68d1bb19e0b3b099639a9751f766b50a80491a8eca1867cd42b8fd5",
+      "markdown_path_en": "library/cases/en/C-coca-cola-recycle-me-deformation.md",
+      "en_sha256": "14c1eb5967cc55b340a0a5af8dc449603c0c9565089972c903dbdc329ae0a1c3"
     }
   }
 }

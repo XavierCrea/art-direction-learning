@@ -2,11 +2,11 @@
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [中文案例索引](README.md)
 
-All 33 visual teardowns and usability benchmarks have full English case cards in `cases/en/` and linked Chinese counterparts in `cases/`, preserving verbatim original quotations from the underlying books and research reports. Every record carries an explicit `learning_origin` tag (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent comparative field teardowns are cleanly distinguished from static seeded books.
+All 34 visual teardowns and usability benchmarks have full English case cards in `cases/en/` and linked Chinese counterparts in `cases/`, preserving verbatim original quotations from the underlying books and research reports. Every record carries an explicit `learning_origin` tag (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent comparative field teardowns are cleanly distinguished from static seeded books.
 
 Start from the visual problem you are trying to solve. From the skill folder, run `python scripts/library.py search "wall of specs" --kind methods`, filter specifically for live co-dissected teardowns via `python scripts/library.py search "billboard" --origin co_dissected_teardown`, or run `python scripts/library.py get M-028 C-xiaomi-su7-2026-mall-billboard-teardown` to open methods and bilingual case cards together. [Searchable catalog](catalog.json) · [English translation manifest](translations.en.json)
 
-## Core Visual Methods (`M-001` – `M-038`)
+## Core Visual Methods (`M-001` – `M-039`)
 
 - `M-001`: **In-Scale Reference Framing** — Pair products with familiar size anchors (hands, human models, cupcakes, 19-inch racks) so buyers grasp physical scale without mental unit conversion.
 - `M-002`: **Descriptive Callout Lines & Mobile Text Guard** — Bridge the gap between skipped text and ambiguous close-ups using leader lines and 2–6 word callouts while protecting `375px` mobile legibility.
@@ -46,6 +46,7 @@ Start from the visual problem you are trying to solve. From the skill folder, ru
 - `M-036`: **Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path** — Hijack a 0.3s cultural visual shorthand, flip ONE physical object's role for a 1.5s double-take, drop ambient room exposure 2–3 stops so one light cone links `Emotion → Subverted Tool → Hero Product`, and pair with a quiet 3–6 word line.
 - `M-037`: **Modern Typographic-Wall Poster (`60%` Condensed Display Type, 3-Tier Scale Drop & Corner QR Close)** — For product-free SaaS/services/events, lock a 3-color dark-field + neon-accent + white palette, pack a 6–9 word manifesto into `55%–65%` condensed bold tight-leading type, enforce a stark 3-tier scale drop, and close with bottom-left URL + bottom-right white-bordered QR code (Channel 2 ready).
 - `M-038`: **Icon-as-Diagram Sequential State Repetition & Whisper Reveal** — Visualize invisible safety/stabilization/balancing tech by repeating 1 orientation-sensitive symbol across 3–5 horizontal frames (`Imbalance → Correction → Stabilized Normal`) inside `≥80%` negative space with zero display headline and a tiny single-line footer reveal (Channel 2 vector ready).
+- `M-039`: **Real-Object Symbol Deformation & 95% Monochrome Color-Field Minimalism** — Capture authentic physical stress/crease geometry from a real stressed object (iconic mark or universal everyday object with a 0.3s baseline—never deform an unfamiliar brand logo) and isolate it dead-center inside a `≥90%` solid brand color field with `0–1` tiny action words.
 
 ---
 
@@ -100,8 +101,9 @@ Start from the visual problem you are trying to solve. From the skill folder, ru
 - [9:16 Safe Zones & First 2–3s Visual Hook](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [中文](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) – Pixel-exact `1080×1920` UI clearance (`240px` top / `660px` bottom / `180–300px` lower-right) plus early product visibility (`+65%` affinity lift) and 2-second hook rules (`C-tiktok-9x16-safe-zones-and-2s-hook`).
 - [Native Feed Statics, "Us vs. Them" Contrast & Thumbstop Diagnostics](cases/en/C-motion-native-statics-and-us-vs-them.md) · [中文](cases/C-motion-native-statics-and-us-vs-them.md) – TSR & Static CTR diagnostic ladder plus 3 anti-ad-blindness native static templates backed by post-click proof (`C-motion-native-statics-and-us-vs-them`).
 
-### Ads of the World — Modern OOH & Print Poster Craft Teardowns (4 Cases · `editorial_analysis`)
+### Modern OOH & Print Poster Craft Teardowns (5 Cases · `editorial_analysis`)
 - [Three Seven Paris — *How much do you love her?*](cases/en/C-aotw-three-seven-paris-price-scale.md) · [中文](cases/C-aotw-three-seven-paris-price-scale.md) – Same-frame `70€ / 220€ / 390€` physical bouquet-scale ladder turning price tags into a zero-body-copy emotional gauge (`C-aotw-three-seven-paris-price-scale`).
 - [Fnac — *Another Addiction is Possible*](cases/en/C-aotw-fnac-visual-subversion-light-cone.md) · [中文](cases/C-aotw-fnac-visual-subversion-light-cone.md) – Hijacking late-night blue screen glow for a rear-flashlight book double-take framed by a single low-key light cone (`C-aotw-fnac-visual-subversion-light-cone`).
 - [Muserk — *Get F'in Paid*](cases/en/C-aotw-muserk-typographic-wall-poster.md) · [中文](cases/C-aotw-muserk-typographic-wall-poster.md) – Product-free `60%` condensed neon-on-black typographic wall with 3-tier scale drop and corner URL + QR close (`C-aotw-muserk-typographic-wall-poster`).
 - [Mercedes-Benz — *Rollover Sensor*](cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md) · [中文](cases/C-aotw-mercedes-rollover-sensor-state-sequence.md) – 4-frame rotational star-emblem sequence on `>85%` negative space with a whisper-quiet German footer resolving invisible safety tech (`C-aotw-mercedes-rollover-sensor-state-sequence`).
+- [Coca-Cola — *Recycle Me*](cases/en/C-coca-cola-recycle-me-deformation.md) · [中文](cases/C-coca-cola-recycle-me-deformation.md) – Authentic crushed-can logo deformation centered in a `≥95%` pure Coca-Cola Red field with `0–1` tiny action words (`C-coca-cola-recycle-me-deformation`).

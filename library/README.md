@@ -2,13 +2,13 @@
 
 [English homepage](../README.md) · [项目中文首页](../README.zh-CN.md) · [English Case Index](README.en.md)
 
-这里收录经核验的电商 UX 实验、落地页改版案例、界面层级战术、经典平面设计/网格系统著作、可用性工程法则、现代认知心理学信息流与移动端基准以及**用户×Agent 街头实拍正反对比实战共创拆解**，以及从中提炼出的可检索视觉方法（`M-001`–`M-038`）与中英双语单篇案例拆解卡（`C-*`，共 33 篇）。
+这里收录经核验的电商 UX 实验、落地页改版案例、界面层级战术、经典平面设计/网格系统著作、可用性工程法则、现代认知心理学信息流与移动端基准以及**用户×Agent 街头实拍正反对比实战共创拆解**，以及从中提炼出的可检索视觉方法（`M-001`–`M-039`）与中英双语单篇案例拆解卡（`C-*`，共 34 篇）。
 
 - 检索脚本：`../scripts/library.py`（支持 `summary`、中英双语+症状加权+习得来源过滤 `search --origin <book_canon|benchmark_study|co_dissected_teardown|task_feedback>`、多 ID 批量 `get`、`validate --check-files` 与原子化入库 `apply-patch`）
 - 结构化双语索引：`catalog.json`（每条记录均显式标注 `learning_origin`，严格区分**静态原著典籍 `book_canon`**、**外部实验基准 `benchmark_study`**、**实战共创正反拆解 `co_dissected_teardown`** 与 **任务反馈 `task_feedback`**）
 - 英文译本与 SHA-256 校验表：`translations.en.json`
 
-## 核心视觉方法 (`M-001` – `M-038`)
+## 核心视觉方法 (`M-001` – `M-039`)
 
 | 编号 | 方法名称 | 解决的视觉卡点 (`when_stuck`) | 适用载体 |
 | :--- | :--- | :--- | :--- |
@@ -50,6 +50,7 @@
 | `M-036` | **熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导法 (Familiar Visual-Code Subversion & Single Light-Cone)** | 品牌/公益海报太说教 0.5 秒被看穿，或真实生活场景杂乱抓不住视觉焦点 | 户外/印刷海报、高停滑社媒封面 |
 | `M-037` | **现代无图纯字体墙海报：60% 压缩巨字 + 三级字阶落差与底角二维码收口 (Modern Typographic-Wall Poster)** | 无形服务/SaaS/活动无实物可拍，硬凑 3D 插画假大空且缺通道 2 像素直出模板 | 街头/展会纯字海报、社媒大字报、通道 2 |
 | `M-038` | **符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓 (Sequential State Repetition & Whisper Reveal)** | 表达看不见的传感器/防抖/降噪/均衡等隐形技术，不想画丑陋事故或晦涩原理图 | 高端技术海报、特性模块、通道 2 矢量 |
+| `M-039` | **熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法 (Real-Object Symbol Deformation & Monochrome Field)** | 环保/耐用/物理动作户外海报易滑向说教或杂乱拼贴，想用 0.5 秒零文案违和感直击因果 | 商圈巨幕、态度平面海报、社媒品牌卡 |
 
 ## 视觉拆解案例卡 (`library/cases/*.md` & `library/cases/en/*.md`)
 
@@ -102,8 +103,9 @@
 - [TikTok Creative Center 9:16 竖屏安全区与前 2–3 秒视觉钩子：像素级避让红线与早期露品实证](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [English](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md)（`C-tiktok-9x16-safe-zones-and-2s-hook` · 关联 `M-033`）
 - [Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断](cases/C-motion-native-statics-and-us-vs-them.md) · [English](cases/en/C-motion-native-statics-and-us-vs-them.md)（`C-motion-native-statics-and-us-vs-them` · 关联 `M-034`）
 
-### Ads of the World 现代户外/印刷海报创意拆解（4 篇 · `editorial_analysis`）
+### 现代户外/印刷海报创意拆解（5 篇 · `editorial_analysis`）
 - [Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定](cases/C-aotw-three-seven-paris-price-scale.md) · [English](cases/en/C-aotw-three-seven-paris-price-scale.md)（`C-aotw-three-seven-paris-price-scale` · 关联 `M-035`）
 - [Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导](cases/C-aotw-fnac-visual-subversion-light-cone.md) · [English](cases/en/C-aotw-fnac-visual-subversion-light-cone.md)（`C-aotw-fnac-visual-subversion-light-cone` · 关联 `M-036`）
 - [Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口](cases/C-aotw-muserk-typographic-wall-poster.md) · [English](cases/en/C-aotw-muserk-typographic-wall-poster.md)（`C-aotw-muserk-typographic-wall-poster` · 关联 `M-037`）
 - [Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓](cases/C-aotw-mercedes-rollover-sensor-state-sequence.md) · [English](cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md)（`C-aotw-mercedes-rollover-sensor-state-sequence` · 关联 `M-038`）
+- [Coca-Cola《Recycle Me》：熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法](cases/C-coca-cola-recycle-me-deformation.md) · [English](cases/en/C-coca-cola-recycle-me-deformation.md)（`C-coca-cola-recycle-me-deformation` · 关联 `M-039`）

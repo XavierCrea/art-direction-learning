@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 14,
+  "revision": 15,
   "updated_at": "2026-11-25",
   "sources": [
     {
@@ -486,6 +486,25 @@
       "coverage_note_en": "Full visual review via browser of the March 2007 Austrian print ad and German footer copy (4-frame sequential rotation of Mercedes-Benz star emblems returning upright).",
       "reviewed_locations": [
         "Single landscape print asset (4 rotated Mercedes-Benz emblems + German footer copy)"
+      ]
+    },
+    {
+      "id": "S-famouscampaigns-coca-cola-recycle-me-2024",
+      "kind": "web",
+      "version": 1,
+      "title": "Coca-Cola — Recycle Me (Why Coca Cola have crushed their iconic logo)",
+      "author": "Famous Campaigns Editorial",
+      "publisher": "Famous Campaigns",
+      "published_at": "2024-04-01",
+      "retrieved_at": "2026-11-25",
+      "url": "https://www.famouscampaigns.com/2024/04/coca-cola-have-crushed-their-iconic-logo/",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "已通过浏览器完整核阅 2024 年 4 月 Coca-Cola 全球 Recycle Me 户外转角巨幕（RECÍCLAME）与多张真实捏扁铝罐提取变形 Logo 平面海报实拍图及原文说明。",
+      "coverage_note_en": "Full visual review via browser of Coca-Cola's April 2024 Recycle Me urban corner LED billboard ('RECÍCLAME') and crushed-can-extracted print poster executions on Famous Campaigns.",
+      "reviewed_locations": [
+        "Urban corner LED billboard ('RECÍCLAME') & crushed-can logo print posters"
       ]
     }
   ],
@@ -3442,6 +3461,68 @@
         "负空间占比是否 ≥ 80%，且没有多余大标题抢走视觉谜题的顿悟感？"
       ],
       "validation_refs": []
+    },
+    {
+      "id": "M-039",
+      "version": 1,
+      "title": "熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法",
+      "title_en": "Real-Object Symbol Deformation & 95% Monochrome Color-Field Minimalism",
+      "tags": [
+        "符号物理形变",
+        "品牌资产形变",
+        "纯色极端留白",
+        "零文案海报",
+        "户外破圈",
+        "反说教"
+      ],
+      "tags_en": [
+        "symbol deformation",
+        "crushed logo",
+        "monochrome color field",
+        "zero copy poster",
+        "viral ooh",
+        "anti-preachy"
+      ],
+      "when_stuck": {
+        "zh": [
+          "环保倡导、物理特性（抗压/柔韧/可折叠）或品牌态度户外海报容易滑向说教口号或琐碎场景拼贴，在杂乱街景里抓不住视线",
+          "想在 0.5 秒内不靠长文案，让受众一眼脑补出一个具体的物理动作或因果关系"
+        ],
+        "en": [
+          "Sustainability, durability, or brand-attitude OOH posters feel preachy or cluttered in noisy cityscapes",
+          "Need a 0.5-second near-zero-copy visual punch that lets viewers reconstruct a physical action instantly"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "exhibition",
+        "social_feed"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-famouscampaigns-coca-cola-recycle-me-2024",
+          "section": "Urban corner LED billboard ('RECÍCLAME') & crushed-can logo print posters"
+        }
+      ],
+      "rule": "当需要用 0.5 秒零说教传递单一物理动作或材料特性时，采用『熟悉符号真实物理形变 × 纯色极端留白法』：1) 选取具备 0.3 秒常态认知基准的视觉对象（超强国民级品牌可取自家经典标识，中小/新品牌必须改取大众一眼认得的通用物理载体，绝不硬扭陌生 Logo）；2) 通过真实受力后的实拍/扫描提取自然折痕与形变（拒绝廉价软件扭曲滤镜）；3) 将唯一形变主角居中孤立于 ≥90% 单一高纯度品牌色场中，全画幅仅保留 0–1 个极小行动短词收口。",
+      "rule_en": "To communicate a single physical action or material property in 0.5 seconds without preaching, use Real-Object Symbol Deformation & Monochrome Color-Field Minimalism: (1) choose a visual object with a 0.3s intact mental baseline (iconic global brands may deform their own mark; emerging/B2B brands MUST deform a universally recognized everyday physical object, never an unfamiliar logo); (2) capture authentic crease/stress geometry from a real physically stressed object rather than cheap digital warp filters; (3) center that lone deformed mark inside a >=90% pure brand color field with 0–1 tiny action words at the bottom.",
+      "applies_when": "制作商圈/展馆户外态度大牌、环保/公益破圈海报、强物理特性（柔韧/折叠/抗压/回收）品牌形象平面或极简社媒话题海报时。",
+      "limits": "严格受限于『0.3 秒常态识别度铁律』：陌生品牌直接扭曲自家 Logo 会被当成排版或印刷事故；物理形变方向必须贴合正面产品逻辑，严禁引发质量脆弱的负面联想；不适用于需要多参数对比或亮价促单的电商详情页。",
+      "steps": [
+        "锁定要传递的唯一物理动作或特性（如捏扁回收、弯折不断、压缩收纳），确认被形变对象是否具备 0.3 秒常识级常态认知（非顶级大众品牌一律选用通用实物载体而非自家 Logo）。",
+        "用真实物理受力后的实物拍摄或扫描提取形变轮廓（保留真实折角、压缩张力与透视），避免生硬的平面滤镜拉伸。",
+        "铺满 ≥90% 高饱和单一品牌纯色底场，将高反差单色形变主角孤立居中，删掉全部背景照片、装饰框与次要卖点。",
+        "底部居中仅保留 0–1 个极小行动动词/功能词（如 RECÍCLAME），退后 5 米或缩至手机卡片尺寸验证 0.5 秒能否瞬间触发因果顿悟。"
+      ],
+      "checks": [
+        "遮住底部小字扫视 0.5 秒，受众能否立刻察觉『它本来不是这个形状』并自动脑补出背后的物理动作？",
+        "若为非头部大众品牌，形变对象是否已替换为大众 0.3 秒认得的通用物理载体（而非陌生自家 Logo）？",
+        "纯色留白占比是否 ≥90%，且完全没有多余标题、参数块或装饰图标稀释视觉冲击力？"
+      ],
+      "validation_refs": []
     }
   ],
   "cases": [
@@ -5722,6 +5803,62 @@
         "verification_status": "source_verified"
       },
       "transfer_limits": "不适用于急需 0.5 秒亮价促单的促销图；序列不超过 5 帧以防失去一眼通读感。"
+    },
+    {
+      "id": "C-coca-cola-recycle-me-deformation",
+      "version": 1,
+      "title": "Coca-Cola《Recycle Me》：熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法",
+      "title_en": "Coca-Cola \"Recycle Me\": Real-Object Symbol Deformation & 95% Monochrome Color-Field Minimalism",
+      "tags": [
+        "符号物理形变",
+        "纯色极端留白",
+        "零文案海报",
+        "户外破圈",
+        "可口可乐"
+      ],
+      "tags_en": [
+        "symbol deformation",
+        "crushed logo",
+        "monochrome color field",
+        "zero copy poster",
+        "coca-cola recycle me"
+      ],
+      "when_stuck": {
+        "zh": [
+          "环保倡导或单一物理动作海报容易滑向说教口号，在杂乱商圈中抓不住视线",
+          "想用 0.5 秒零文案视觉违和感让受众自己脑补行动因果"
+        ],
+        "en": [
+          "Sustainability or physical-action OOH posters feel preachy and disappear in noisy cityscapes",
+          "Want a 0.5-second zero-copy visual dissonance that triggers instant mental completion"
+        ]
+      },
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-famouscampaigns-coca-cola-recycle-me-2024",
+          "section": "Urban corner LED billboard ('RECÍCLAME') & crushed-can logo print posters"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-coca-cola-recycle-me-deformation.md",
+      "markdown_path_en": "library/cases/en/C-coca-cola-recycle-me-deformation.md",
+      "observations": [
+        "1. 街景建筑转角巨幅 LED 屏以 ≥95% 高饱和纯可口可乐红铺满，居中仅放一个被真实捏扁的白色 Coca-Cola 花体字标，底部极小一行动词 'RECÍCLAME'，零罐身写真、零回收图标、零环保长文。",
+        "2. 平面印刷版甚至彻底 0 文案，直接用从真实捏扁铝罐表面扫描提取的多组真实折痕变形 Logo 居中悬浮在纯红底场上，靠真实物理折角与压缩张力完成叙事。"
+      ],
+      "copy_visual_synergy": "经典花体字的真实捏扁形变在 0.5 秒内制造『完好常态记忆 vs. 捏扁现态』的瞬间违和，让大脑自动补全『捏扁易拉罐 → 回收』动作链；底部 0–1 个极小行动词仅作点题收口，零说教。",
+      "analysis": "当符号本身已具备国民级常态识别度时，真实物理形变配合 95% 纯品牌色场能把原本需要一整段环保文案解释的动作压缩成 0.5 秒无字图像，在杂乱街景中获得碾压级视觉截停力。",
+      "reusable_move": "选定具备 0.3 秒常态识别度的符号/通用物理载体 → 通过真实受力实拍或扫描提取自然形变折痕 → 居中孤立于 ≥90% 高纯度单色品牌底场 → 仅留 0–1 个极小行动短词收口（中小品牌严禁扭曲陌生 Logo，须改用通用实物载体）。",
+      "reusable_move_en": "Pick a visual mark or universal everyday object with a 0.3s intact baseline -> capture authentic crease/stress geometry from a real physically stressed object -> isolate it dead-center inside a >=90% pure brand color field -> close with 0–1 tiny action words (emerging/B2B brands must deform universal objects, never unfamiliar logos).",
+      "asset_prerequisites": "被形变对象须具备 0.3 秒常识级常态认知，且形变来自真实物理受力采样而非生硬滤镜。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "2024 年 4 月 Coca-Cola 全球 Recycle Me 户外及平面战役实拍核验，出处未披露量化回收率增幅，仅提炼客观符号形变与纯色极端留白构图机制。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "陌生品牌严禁扭曲自家 Logo 以免被误判为印刷/排版事故；不适用于需要多参数展示或价格促单的电商详情页。"
     }
   ],
   "feedback": [
