@@ -1,6 +1,6 @@
 # Laws of UX Serial Position Effect & Peak-End Rule: Primacy-Recency Anchoring & Peak-End Storyboarding for Carousels and Long PDPs
 
-[English Case Index](../README.en.md) · [简体中文](../C-lawsofux-serial-position-and-peak-end.md) · Cognitive Psychology & Multi-Slide Storyboarding
+[English Case Index](../../README.en.md) · [简体中文](../C-lawsofux-serial-position-and-peak-end.md) · Cognitive Psychology & Multi-Slide Storyboarding
 
 - **Symptom (`when_stuck`)**: A swipe carousel (Xiaohongshu / IG Slides 1→N), long e-commerce PDP, or mobile tab bar gives every slide equal visual weight—leaving readers unable to recall the core selling point and trailing off at the final screen with no clear conversion close.
 - **Channels**: Social Swipe Carousels (Xiaohongshu / IG / TikTok Photo Mode), Long-Form PDP Storyboards, Mobile Navigation & Landing Pages.

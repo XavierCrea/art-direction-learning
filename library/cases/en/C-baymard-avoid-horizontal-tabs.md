@@ -1,6 +1,6 @@
 # Baymard PDP Navigation Study: Ditching Content-Hiding "Horizontal Tabs" for Vertically Expanded Sections and a Sticky ToC
 
-[English Case Index](../README.en.md) · [简体中文](../C-baymard-avoid-horizontal-tabs.md) · Independent Usability Testing (Including B2B Electronic Components & Industrial Sites)
+[English Case Index](../../README.en.md) · [简体中文](../C-baymard-avoid-horizontal-tabs.md) · Independent Usability Testing (Including B2B Electronic Components & Industrial Sites)
 
 - **Symptom (`when_stuck`)**: To make a product page look "short and tidy," core sections like technical specifications, CAD drawings, customer reviews, or shipping policies are tucked inside non-sticky **"Horizontal Tabs"**—causing vertically scrolling buyers to overlook them completely, assume the information is missing, and leave.
 - **Channels**: B2B and B2C e-commerce Product Detail Pages (`PDP`), Alibaba.com custom product descriptions, technical solution landing pages.

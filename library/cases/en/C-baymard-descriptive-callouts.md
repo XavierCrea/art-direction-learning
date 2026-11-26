@@ -1,6 +1,6 @@
 # Baymard Descriptive Callouts Study: Bridging the "Scan Images, Skip Text" Gap with Leader Lines and Short Labels
 
-[English Case Index](../README.en.md) · [简体中文](../C-baymard-descriptive-callouts.md) · Independent Usability Testing & E-Commerce Benchmark Study
+[English Case Index](../../README.en.md) · [简体中文](../C-baymard-descriptive-callouts.md) · Independent Usability Testing & E-Commerce Benchmark Study
 
 - **Symptom (`when_stuck`)**: You shot high-resolution macro close-ups or wrote key selling points (waterproofing, pocket capacity, ventilation clearance) in the text description, but buyers swipe through the image gallery without reading the copy, stare at cropped close-ups in confusion (*"What the heck is this?"*), and bounce.
 - **Channels**: E-commerce PDP image galleries, feature callout graphics, B2B industrial component detail diagrams.

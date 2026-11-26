@@ -13,11 +13,14 @@
 - `reading_status`：`registered`、`metadata_only`、`partial_review`、`full_review`。
 - **书籍核验与跨环境便携约束**：`kind == "book"` 时必须记录 `pdf_pages`（正整数）。采用出版社、版权页、目录与图文完整度的复合核验：拒收 Bookey / Blinkist 等剔除原书排版图例的纯文字商业书摘，但不凭单一字眼（如正版书章节 `Summary`）误杀可用资料；仅读译本时英文提炼须标明为转述。为保证技能包跨机器可移植，外部书籍统一设 `original_availability = "citation_only"` 并省略宿主机绝对路径；若将允许分发的原件归档在库内 `sources/` 下，则记录库内相对路径 `path` 与 `sha256`。
 
-## 三层证据状态约定 (`evidence_stage`)
-为防止把“来源已核对”或“用户认可拆解”误当成“已获真实市场验证”，方法、案例与反馈记录统一区分三层证据状态（`scripts/library.py search` 首层检索会自动返回）：
-- `source_verified`：**来源已核对**（原著、公开研究或可追溯设计作品已实看核验；无公开投放数据时效果栏如实标注“作品观察，效果未公开”）；
-- `user_endorsed`：**用户认可或项目采用**（如用户在对话中认可该拆解逻辑，或已选用于本团队项目方案，但尚未获得外部受众测试或真实投放数据）；
-- `field_validated`：**市场或受众已验证**（具备明确的受众可用性测试、A/B 测试或真实投放结果反馈支撑）。
+## 证据的独立记录
+
+检索结果里的 `evidence_profile` 分别描述来源、使用情况和效果。一条方法可以同时具备多种证据。
+
+- `source_checked` 表示来源已有实际核阅定位。反馈记录需要已核实的定位和观察。
+- `project_status` 分为 `none`、`endorsed`（认可拆解或方案）与 `adopted`（实际项目使用）。在核实的反馈记录中登记，并指明项目或记录位置。旧版已核实的编辑反馈可以支持认可。
+- `audience_result` 展示证据状态。可用 `none`、`unverified`、`source_reported` 或 `verified` 表达。对应条目从 `audience_evidence` 读取结果、类型和出处。正面、负面和无明显差异都照实记录。
+- `evidence_stage` 是供旧调用读取的摘要，由以上记录推导。旧库中明确保存的标签仍可校验，需要对应证据支持。试稿认可或投放方自述属于各自的证据类型。
 
 ## 2. methods（可复用视觉方法 `M-*`）
 必填字段：
@@ -46,15 +49,19 @@
 - `analysis`（为什么这种视觉安排能解决读者的判断障碍）
 - `reusable_move`（中文可迁移视觉动作公式）、`reusable_move_en`（英文可迁移视觉动作公式，保留原书关键术语与原句）
 - `asset_prerequisites`（执行该视觉动作必须具备的真实素材前提）
-- `outcome_evidence`（含 `evidence_type`、`claim`、`verification_status`）
+- `outcome_evidence` 记录证据类型、结论和核验状态。自己核验过的实测结论用 `verified`。资料方公开的结论可记 `source_reported`，保留出处。识别耗时等无公开实测的推断写在案例分析里。
 - `transfer_limits`（迁移时的禁用边界）
 
 ## 4. feedback（实战反馈记录 `F-*`）
-必填字段：`id`、`version`、`title`、`kind`（`"feedback"`）、`evidence_type`、`source_locator`、`observation`、`verified`（布尔值）、`task_id`；建议附带 `title_en` 与 `observation_en`。
+必填字段包括 `id`、`version`、`title`、`kind`、`evidence_type`、`source_locator`、`observation`、`verified` 和 `task_id`。可选 `project_status` 记录认可或实际采用。若有受众或投放试验，说明比较条件、样本口径与结果。
+
+## 案例文件指纹
+
+新指纹用 UTF-8 内容的 LF 换行计算。Windows CRLF、Mac LF 和 UTF-8 BOM 仅改变保存方式。实际改字仍会触发重新核对。旧库保留的原始指纹兼容读入，原始 PDF 或其他二进制信源继续按原字节核对。
 
 ## 5. CLI 工具约定 (`scripts/library.py`)
 - `summary`：输出各分组数量、双语支持状态与信源阅读状态。
-- `search "<query>" [--kind ...] [--channel ...] [--origin ...] [--limit 8]`：支持中英文与口语化症状检索，首层结果同时返回标题摘要、`applies_when`（适用条件）、`limits`/`transfer_limits`（失效边界）、`evidence_stage`（三层证据状态）与 `evidence_type`（证据类型），让调用者在选用前先看到边界。
+- `search "<query>"` 支持中英关键词和简短中文症状。返回适用前提、失效边界和 `evidence_profile`。近似匹配以相关性排序，空结果表示暂无足够匹配。
 - `get <ID1> [<ID2> ...]`：支持单次传入多个 ID 批量读取，自动校验并解析 `markdown_path` 与 `markdown_path_en`。
 - `validate [--check-files]`：校验 Schema、外键引用、页码范围、中英案例卡文件存在性以及 `library/translations.en.json` 的 SHA-256 指纹一致性。
-- `apply-patch --file <patch.json> [--check-files]`：原子化入库命令。
+- `apply-patch --file <patch.json> --check-files` 为本次更新的双语案例记录指纹，校验后写入。案例路径相对于所选资料库，兼容 `cases/...`、`library/cases/...` 和旧库中的反斜线。

@@ -1,6 +1,6 @@
 # Refactoring UI Interface Hierarchy Tactics: 7 Visual Adjustments That Fix Cluttered Layouts Without Changing Copy
 
-[English Case Index](../README.en.md) · [简体中文](../C-refactoring-ui-hierarchy-tactics.md) · UI Hierarchy & Visual Weight Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-refactoring-ui-hierarchy-tactics.md) · UI Hierarchy & Visual Weight Teardown
 
 - **Symptom (`when_stuck`)**: Feature cards, B2B specification modules, or storefront sections feel loud, dark, and cluttered—every headline is oversized, every box has a `1px` border, every button is solid primary color, icons are blown up to `64–80px`, and secondary text on colored headers looks muddy.
 - **Channels**: Landing page feature grids, PDP specification cards, B2B comparison tables, and storefront UI components.

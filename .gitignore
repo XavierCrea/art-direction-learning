@@ -8,3 +8,6 @@ __pycache__/
 library/style-refs/**/local/*
 !library/style-refs/**/local/.gitkeep
 
+
+# Advisory lock created by local case-library updates
+**/history/.library.lock

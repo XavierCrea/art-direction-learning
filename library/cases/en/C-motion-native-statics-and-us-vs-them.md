@@ -1,45 +1,22 @@
-# Motion Performance Creative Benchmarks: Native Static Ads, "Us vs. Them" Contrast & Thumbstop Ratio Diagnostics
+# Motion Creative Diagnosis: Use a Comparable Baseline to Choose What to Test
 
-[English Case Index](../README.en.md) · [简体中文](../C-motion-native-statics-and-us-vs-them.md) · Paid Social & Performance Creative Benchmark
+[English Case Index](../../README.en.md) · [简体中文](../C-motion-native-statics-and-us-vs-them.md)
 
-- **Symptom (`when_stuck`)**: Polished studio banners in Xiaohongshu, Instagram, Meta, or TikTok feeds suffer weak Link CTR (`< 1.0%`) or video 3-second Thumbstop Ratio (`< 25%`), and the team cannot tell whether the opening visual failed or the glossy "ad look" triggered automatic banner blindness.
-- **Channels**: Social Feed Static Ads & Organic Covers (Xiaohongshu / IG / Meta), Comparison Graphics, Split-Screen Opening Hooks.
+## When this helps
 
-## What the Source Material Shows (`observations`)
+Short views or link clicks fell. You need to decide whether to examine the visual, copy, audience, or delivery conditions first.
 
-- **Thumbstop Ratio (TSR) & Static CTR Diagnostic Ladder**:
-  - Video Thumbstop Ratio (`(3-Second Video Views ÷ Impressions) × 100`):
-    - **`< 25%` (Weak)**: Impressions are wasted before viewers even watch; the first frame or opening visual hook failed to interrupt scrolling;
-    - **`25%–30%` (Baseline)**: Standard working threshold for broad prospecting DTC video ads;
-    - **`30%–40%` (Strong)**: Reliably captures feed attention and lowers front-end CPM pressure;
-    - **`40%+` (Elite)**: Exceptional pattern-interrupt capability, typically driven by native formatting or polarizing visual hooks.
-  - **Static Ad Benchmark**: Aim for **`> 1.0%–1.5%` Link CTR** on prospecting feeds, driven by instant at-a-glance clarity.
-- **3 High-Converting Native Static Formats**:
-  1. **"Us vs. Them" Contrast Statics**: Side-by-side physical tests, clean comparison tables, or Venn diagrams that create immediate 2-second cognitive contrast (*"Old way vs. Our way"*); high TSR/CTR must be backed by matching landing-page proof to avoid post-click drop-off;
-  2. **Native UI / Lo-Fi / Social Proof Mashups**: Notes-app layouts, tweet/comment-response bubbles, and real customer review collages that look native to the feed and bypass corporate banner blindness;
-  3. **Product-First Single-Idea Pointout Statics**: One explicit message per image anchored on a real product macro or problem/result shot—never a crowded multi-feature brochure.
+## What Motion recommends
 
-## How Copy and Visuals Work Together (`copy_visual_synergy`)
+Use comparable creatives in the same account to establish a baseline. Inspect changes in viewing, clicks and conversion separately. Platforms define short views differently. Align audience, placement, objective and reporting period before drawing a conclusion from a change.
 
-- **Native visual framing disarms "ad reflex" in < 1 second**: Authentic side-by-side tests, native notes/comment layouts, or raw product pointouts read as organic feed content rather than corporate banners.
-- **Ultra-tight contrast rows & authentic customer phrasing close the glance**: Keep Us vs. Them rows to 3–6 words and preserve real colloquial review phrasing rather than polished brand slogans.
+## Three visual hypotheses to test
 
-## Reusable Visual Move (`reusable_move`)
+- **A fair split-screen comparison**. Show the same dimension on both sides at a consistent scale. Make the conditions and landing-page proof available.
+- **A native note or review**. Use a familiar format and real testimony, keeping its source and context.
+- **A concrete product detail**. Show one detail that matters to a decision and label its location or purpose.
 
-1. **Use TSR / CTR as Diagnostic Warning Signals (Never Auto-Blame Layout from One Number)**:
-   - Treat the Motion DTC paid-social figures (`< 25%` TSR / `< 1.0%` Link CTR) as reference warning signals—always benchmark first against the same account, platform, objective, and comparable audience history before deciding whether to test visual framing (e.g., Us vs. Them split-screen or native pointout), hook copy, or audience targeting.
-2. **Rebuild Feed Statics Around 1 of 3 Proven Native Templates ("Single-Idea Focus")**:
-   - Strip secondary feature badges and commit the frame to ONE message via: (a) **Us vs. Them side-by-side table/split-screen** (ideal for Channel 2 Python PIL/SVG exact rendering), (b) **Native Notes / Real Comment Mashup**, or (c) **Product-First Macro Pointout**.
-3. **Close the Post-Click Proof Loop**:
-   - Echo and substantiate the exact Us vs. Them comparison immediately above the fold on the destination landing page or PDP.
+A 0.8% link CTR against a comparable historical baseline of 0.6% calls for checking sample size and the rest of the funnel before changing the visual. The three formats above are creative test options.
 
-## Asset Prerequisites & Transfer Limits (`asset_prerequisites` & `transfer_limits`)
-
-- **Asset Prerequisite**: Requires verifiable product/formula/spec differences for Us vs. Them claims and genuine customer comments for social proof mashups.
-- **Transfer Limit**: Never fabricate competitor flaws or fake user reviews; avoid naming rival trademarks disparagingly (frame objectively as *"Standard / Old Way vs. Our Approach"*).
-
-## Outcome Evidence & Source
-
-- **Evidence Type**: Aggregated DTC performance creative benchmarks & media-buying diagnostic standards (`Usability & Performance Benchmark`).
-- **Source**: Motion Creative Strategy Frameworks & Paid Social Benchmarks (`https://motionapp.com`).
-- **Linked Method**: `M-034` (Native Feed Static Formats, "Us vs. Them" Contrast & Thumbstop Diagnostics).
+- **Method** M-034
+- **Sources** [Motion creative diagnosis](https://help.motionapp.com/en/articles/8757194-tell-stories-and-build-hypotheses-with-metrics) · [Motion metric definitions](https://help.motionapp.com/en/articles/7730931-metrics-cheat-sheet)

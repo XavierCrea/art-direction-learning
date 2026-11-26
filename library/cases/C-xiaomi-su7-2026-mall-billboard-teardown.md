@@ -96,20 +96,16 @@
 
 ## 五、 可迁移视觉动作 (`reusable_move` & `reusable_move_en`)
 
-- **中文可迁移法则**：
-  在设计高噪物理环境（核心商圈巨幕、行业展会主通道背板、展位门头）的视觉画面时：
-  1. **纯色场降噪**：砍掉复杂的山川树林合成背景，用 **≥75% 面积的高纯度单一品牌色场（Color Field）** 与周围环境形成冷暖或明暗强切割；
-  2. **L 屏/双屏同色递进**：禁止用刺眼白底块把屏幕切成多段；多屏联动时保持同色系延展，采用**“一屏远景交待产品 + 一屏近景特写/纯色短句立情绪”**的景别分工；
-  3. **克制字重与零小字**：主屏文案控制在 **≤8 个词/10 个字**，四周留出 **≥75% 纯色呼吸区**，严禁让文字骑在背景明暗交界线上，全面取消远距离无法辨认的底部免责小字与二维码；
-  4. **预留打卡背景与触点接力**：将 100 米外围大屏打造为无促销膏药的“打卡背景板”，把硬核参数表留给 1 米内的展台手册、选型表或详情页。
-- **English Reusable Move**:
-  When designing large-format visuals for high-noise physical environments (shopping mall facade LEDs, trade-show main-aisle backdrops, booth headers):
-  1. **Color-Field Denoising**: Strip out busy landscape backgrounds (mountains, forests, multi-tone roads) that turn muddy on outdoor LEDs; flood **`>= 75%` of the canvas with a single high-purity brand Color Field** that cuts through surrounding warm/neon street clutter;
-  2. **Same-Hue Multi-Screen Progression**: Never chop a wide or L-shaped corner screen with a jarring white logo patch; flow the same color field across the corner and assign **Wide Product Context (`<= 5 words`)** to one panel and **Close-Up Human/Mood Anchor (`<= 8 words`)** to the other;
-  3. **Restrained Type & Zero Fine Print**: Keep headline width to `<= 60%` of the canvas with `>= 75%` open color-field breathing room, never straddle text across background horizon lines, and purge all unreadable bottom fine print, price grids, and QR codes;
-  4. **100m-to-1m Touchpoint Relay**: Design the `100m` exterior screen as a clean, shareable social backdrop (`UGC-Ready Backdrop`), deferring dense engineering specs to the `1m` booth catalog, spec sheet, or PDP.
+**可借用的构图动作**
 
----
+1. 在实际点位照片上预览。对照画面和环境的明度、色彩与尺度。小米案的大面积卡布里蓝是其中一种做法。
+2. 快速经过时让品牌、品类或展位方向先被认出。观众可停步、接近时，可以给叙事文字、日期、可实扫二维码或规格留位置。
+3. 多屏可用共同的色彩、字号或主题线索串联。让远景和近景各补一段信息。
+4. 把 100m / 10m / 1m、原案色场和文字密度作为场地参考。用实际行走路线、视距和遮挡验收。
+
+**Reusable moves (English)**
+
+Preview the design in its real surroundings. Lead with the brand, category, or wayfinding cue at a glance. Use the stops people can approach for narrative, dates, tested QR codes or specifications. Share a visual cue across screens and vary the shot scale when that helps tell the story.
 
 ## 六、 素材前提与禁用红线 (`asset_prerequisites` & `transfer_limits`)
 

@@ -1,6 +1,6 @@
 # Laws of UX Von Restorff Effect & Aesthetic-Usability Guardrails: Breaking Feed Homogeneity Without Triggering "Polished Ad Blindness"
 
-[English Case Index](../README.en.md) · [简体中文](../C-lawsofux-von-restorff-and-aesthetic-usability.md) · Cognitive Psychology & Modern Feed Art Direction
+[English Case Index](../../README.en.md) · [简体中文](../C-lawsofux-von-restorff-and-aesthetic-usability.md) · Cognitive Psychology & Modern Feed Art Direction
 
 - **Symptom (`when_stuck`)**: In a 2-column social feed (e.g., Xiaohongshu 3:4 grid) or e-commerce search results, your cover looks identical to neighboring competitors so users scroll right past; every element on the page shouts for attention so nothing stands out; or overly polished "ad-style" visuals mask missing facts and trigger instant ad blindness.
 - **Channels**: Social Feed Covers (Xiaohongshu / IG), Ad Banners, Pricing & Landing Pages, Key PDP Modules.

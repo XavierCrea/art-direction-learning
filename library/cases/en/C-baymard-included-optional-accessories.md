@@ -1,6 +1,6 @@
 # Baymard Included & Optional Accessories Study: Preventing Value Misjudgment with "Included in the Box" Knolling and "Sold Separately" Microcopy
 
-[English Case Index](../README.en.md) · [简体中文](../C-baymard-included-optional-accessories.md) · Independent Usability Testing & E-Commerce Benchmark Study
+[English Case Index](../../README.en.md) · [简体中文](../C-baymard-included-optional-accessories.md) · Independent Usability Testing & E-Commerce Benchmark Study
 
 - **Symptom (`when_stuck`)**: A product includes high-value accessories (harnesses, temperature probes, blades, chargers) that are only mentioned in text below the fold—so buyers think the product is overpriced—or gallery photos show optional add-ons without warning, leaving buyers feeling deceived when those items aren't in the box.
 - **Channels**: E-commerce PDP image galleries, B2B equipment packing list visuals (`What's in the Box`), modular accessory showcases.

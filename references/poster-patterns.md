@@ -39,7 +39,7 @@
 | 你希望读者看完产生什么效果（传播任务） | 优先查阅的知识库案例与方法 | 核心可借用的构图机制 | 常见落点骨架 |
 | :--- | :--- | :--- | :--- |
 | **让人停一下、第二眼再看懂**（好奇心 / 信息揭晓顺序） | `M-036` · [`C-aotw-fnac-visual-subversion-light-cone`](../library/cases/C-aotw-fnac-visual-subversion-light-cone.md)<br>`M-038` · [`C-aotw-mercedes-rollover-sensor-state-sequence`](../library/cases/C-aotw-mercedes-rollover-sensor-state-sequence.md) | 借熟悉视觉代码制造第一眼预期 $\rightarrow$ 第二眼反转揭晓，或用 3–5 帧符号状态序列演完看不见的机制 | 案例结构优先 / `P-05` / `P-04B` |
-| **0.5 秒记住一个动作或物理特性**（反说教品牌/态度海报） | `M-039` · [`C-coca-cola-recycle-me-deformation`](../library/cases/C-coca-cola-recycle-me-deformation.md) | 用真实受力形变替代长文案说教，借 ≥90% 纯色场放大常态与现态的瞬间反差 | 案例结构优先 / `P-06B` |
+| **让读者看懂并记住一个物理动作** | `M-039` · [可口可乐的真实形变](../library/cases/C-coca-cola-recycle-me-deformation.md) | 拍下熟悉物件的真实变化，用背景和对比突出这个动作。按需要加一句行动提示。 | 案例结构优先 / `P-06B` |
 | **让人认出一个地方、建立到场感或品牌情绪**（邀请函 / 商圈巨幕） | `M-028` · [`C-xiaomi-su7-2026-mall-billboard-teardown`](../library/cases/C-xiaomi-su7-2026-mall-billboard-teardown.md)<br>`M-019` · [`C-muller-brockmann-color-fields-and-posters`](../library/cases/C-muller-brockmann-color-fields-and-posters.md) | 用官方场馆建筑建立“我要去这里”的到场感，或用高纯度单色场切断街景噪点并留出打卡位 | `P-05` / `P-06B` |
 | **无实物产品，直接让展名、承诺或时间成为画面** | `M-019`（瑞士无单品构成海报）<br>`M-037` · [`C-aotw-muserk-typographic-wall-poster`](../library/cases/C-aotw-muserk-typographic-wall-poster.md) | 彻底放弃空洞装饰插画，用极端字阶落差与纯字体几何体块做唯一主视觉 + 底角清晰行动入口 | `P-06B` |
 | **让人一眼看懂档位差、体积大小或公平差异** | `M-035` · [`C-aotw-three-seven-paris-price-scale`](../library/cases/C-aotw-three-seven-paris-price-scale.md)<br>`M-001` · [`C-baymard-in-scale-reference`](../library/cases/C-baymard-in-scale-reference.md)<br>`M-034` · [`C-motion-native-statics-and-us-vs-them`](../library/cases/C-motion-native-statics-and-us-vs-them.md) | 同框物理量感拉开档位差、放熟悉尺寸参照物免换算，或同口径左右公平对照 | `P-04A` / `P-05` |
@@ -148,12 +148,12 @@
 
 #### P-06B：远距识别网格 (`distance-recognition-grid`)
 - **适用任务**：停车场远距大牌（`M-028`）、展位门楣与 `170cm` 视平线导向（`M-019`）、街头纯字体宣言海报（`M-037`）、单色场极简户外牌（`M-039`）。
-- **构图原则**：服务于行人在移动中 **1–3 秒认出方向、展位或核心主张**——虽同样依托网格秩序，但字号、信息密度与验收方式与 `P-06A` 完全不同：大幅拉开字阶落差、大面积纯色场切开环境噪点、砍掉远距不可读的细碎参数。
+- **构图原则**　让移动中的观众先识别展名、方向或主张。用字阶、清楚的照片或色场把它从真实环境中分出来。走近后可以增加必要细节与行动入口。
 - **视线揭晓顺序草图**：
   ```text
-  [1] 10m–100m 远距先撞见纯色场 / 巨字视觉块 / 展位大号
+  [1] 远处先认出方向、展位或品牌
         ↓
-  [2] 走近 1m–3m 才读取补充日期、副标或底角行动码（如有）
+  [2] 停步后读取日期、副标或可扫的行动码（如有）
   ```
 - **依赖素材**：明确的品牌主色、极度凝练的核心词/展位号，以及经验证可跳转的行动入口（如需扫码）。
 - **必须保真的细节**：在目标观看距离下核心识别信息一眼可辨；核心展位号、时间、方向箭头零差错。

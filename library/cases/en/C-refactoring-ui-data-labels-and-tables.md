@@ -1,6 +1,6 @@
 # Refactoring UI De-Labeling, Spec-Sheet Label Emphasis & Multi-Column Table Consolidation
 
-[English Case Index](../README.en.md) · [简体中文](../C-refactoring-ui-data-labels-and-tables.md) · Data Presentation, Spec Sheets & Rich Table Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-refactoring-ui-data-labels-and-tables.md) · Data Presentation, Spec Sheets & Rich Table Teardown
 
 - **Case ID**: `C-refactoring-ui-data-labels-and-tables`
 - **Source**: `S-wathan-schoger-refactoring-ui-2018` — Adam Wathan & Steve Schoger, *Refactoring UI* (PDF p.48–53, 128–129, 244–249)

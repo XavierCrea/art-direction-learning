@@ -1,6 +1,6 @@
 # Robin Williams Typography Conflict vs. 6-Dimension Contrast: Why Combining Two Similar Typefaces Breaks a Page
 
-[English Case Index](../README.en.md) · [简体中文](../C-williams-typography-conflict-vs-contrast.md) · Typography Conflict & Contrast Experiments
+[English Case Index](../../README.en.md) · [简体中文](../C-williams-typography-conflict-vs-contrast.md) · Typography Conflict & Contrast Experiments
 
 - **Case ID**: `C-williams-typography-conflict-vs-contrast`
 - **Case Type**: `editorial_teardown` (Typographic Conflict vs. Contrast Experiments)
@@ -28,15 +28,15 @@
 ---
 
 ## 3. How Copy and Visuals Work Together (`copy_visual_synergy`)
-- **Align visual weight strictly with semantic importance**: The #1 value proposition must simultaneously receive the largest size *and* the heaviest weight; never split visual dominance between a large-but-thin headline and a small-but-bold subhead.
+- **Make the reading roles clear**. Size, weight, and placement can each communicate priority. Check the actual reading order at the intended size.
 - **Break up gray text walls with ultra-bold inline lead-ins (Book p.187 / PDF p.200)**: When FAQs, warranties, or technical notes lack room for illustrations, set the first `3–5` decisive words of each item in **Extra Bold / Black** so scanning buyers can grasp the full argument just by reading the bold anchors.
 
 ---
 
 ## 4. Reusable Visual Move (`reusable_move`)
-1. **Never Mix Two Fonts from the Same Structural Category (*"Concord or Contrast—Never Conflict"*)**: Use at most 2 typeface families on a page, chosen from **different structural categories** (e.g., `Sans Serif + Oldstyle Serif`, or `Slab Serif + Script`). Never combine two different Sans Serifs, two Oldstyle Serifs, two Scripts, or a Script with an Italic.
-2. **Pull Extreme Weights Within a Single Super-Family**: If using a single Sans Serif family (e.g., *Inter*, *Avenir Next*, *Source Han Sans*), pair **Heavy/Black (`800–900`)** directly against **Light/Regular (`300–400`)**—never pair Regular (`400`) with Medium (`500`).
-3. **Stack 2–3 Dimensions of Contrast (`Size + Weight + Form/Structure`)**: Replace long `ALL CAPS` headlines with `Title/Sentence Case` to boost point size by up to `50%`, and reserve `ALL CAPS` strictly for short `1–3 word` eyebrow labels with added letter-spacing.
+1. **Assign type roles first**. One family can serve the whole layout. Two sans serif faces can also work when a condensed display face and a readable text face have distinct jobs.
+2. **Use weight and width to clarify hierarchy**. Choose a difference readers can see at the target size. The examples in the book show specific settings for specific layouts.
+3. **Combine scale, weight and form as needed**. Caps can work for short labels. Test longer headlines at their actual width and viewing size.
 
 ---
 

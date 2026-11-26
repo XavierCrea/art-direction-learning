@@ -1,6 +1,6 @@
 # Baymard Spec Sheet Scannability Study: Replacing "Walls of Specs" with Single-Column Semantic Grouping and Alternating Row Shading
 
-[English Case Index](../README.en.md) · [简体中文](../C-baymard-spec-sheet-scannability.md) · Independent Usability Testing & Eye-Tracking Research
+[English Case Index](../../README.en.md) · [简体中文](../C-baymard-spec-sheet-scannability.md) · Independent Usability Testing & Eye-Tracking Research
 
 - **Symptom (`when_stuck`)**: Engineering or technical products have dozens of specifications dumped into an ungrouped `"Wall of Specs"` or split into two side-by-side columns to save vertical height—causing buyers to lose their place horizontally or mistake a single product's two-column spec sheet for a comparison between two different models.
 - **Channels**: Product Detail Page (`PDP`) specification tables, B2B selection catalogs, PDF datasheets.

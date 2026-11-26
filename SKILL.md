@@ -2,7 +2,7 @@
 name: art-direction-learning
 description: >-
   Evidence-based art direction for ads, product detail page (PDP) storyboards, hero sections, trade-show invitations, cross-distance spatial touchpoints (100m→10m→1m), and image-copy synergy grounded in verified product facts and documented visual cases. Extract reusable art direction moves from design books, UX research, and live field teardowns.
-  基于产品事实、读者视线规律与真实案例的实证美术指导技能：统筹或诊断广告画面、落地页首屏（Hero）、电商详情页分镜（PDP Storyboard）、展会物料、跨视距触点（100m→10m→1m）、参数表版式及图文分工，并分流至四条下游落地通道。支持与 copywriting-learning 组合联动，也可从设计书籍、UX 实验与街头实拍案例中提炼可检索的美术指导动作。
+  基于传播目的、真实素材与案例规划广告、详情页分镜、落地页首屏、展会物料、参数图及图文分工。按素材条件选择制作方式，支持独立使用、搭配 copywriting-learning 或提炼可检索的视觉方法。
 metadata:
   display_name: Art Direction · 实证美术指导与案例拆解
   version: "1.5.0"
@@ -19,10 +19,10 @@ metadata:
 ## 资料入口与检索工具 (Library & CLI)
 
 - 资料库默认位置见 [library-location.json](references/library-location.json)；用户本轮指定的资料库优先。
-- 使用 `python scripts/library.py search "关键词 / symptom"` 检索方法与案例（支持**中英双语标题/规则/标签、`when_stuck` 双语卡点症状匹配与字段加权排序**，首层结果同时返回**适用条件、失效边界与证据层级**，可用 `--kind methods|cases|sources|feedback`、`--channel` 或 **`--origin co_dissected_teardown|book_canon|benchmark_study|task_feedback`** 过滤）。
-- 使用 `python scripts/library.py get ID1 ID2 ...` **批量读取**多条方法与案例记录（单次调用即可传入多个 ID，返回结果同时包含中文 `markdown_path` 与英文 `markdown_path_en` 详单路径，英文版完整保留原书原句引用）。
+- 使用 `python scripts/library.py search "关键词或视觉卡点"` 检索中英方法与案例。首层结果展示适用条件、失效边界和 `evidence_profile`，包含来源核对、项目状态和受众结果。可按记录、渠道与 `--origin` 筛选。
+- 使用 `python scripts/library.py get ID1 ID2 ...` 批量取记录和中英文案例路径。选用自定义库时，会使用该库的案例文件。
 - 使用 `python scripts/library.py summary` 查看资料库规模与已读范围；使用 `python scripts/library.py validate --check-files` 核对引用完整性、中英案例卡配对与 `translations.en.json` SHA-256 指纹。
-- 新增或修改知识库记录时，使用 `python scripts/library.py apply-patch --file patch.json --check-files` 执行**原子化更新**（自动备份旧版本至 `history/`、递增 `revision`、合并记录并执行校验，失败自动回滚）。
+- 新增或修改记录时先写好中英文案例卡，再用 `python scripts/library.py apply-patch --file patch.json --check-files` 更新。脚本生成指纹、校验和备份后替换目录。纯换行差异在文本指纹校验中等价。
 - 实际打开对应记录（及必要的 `library/cases/*.md` / `library/cases/en/*.md` 或原始页）后，才能说明使用了该视觉方法或案例。未读完的原书或无原书图例的商业书摘（如 Bookey/Blinkist）不得冒充原书入库。
 
 ## 按当前任务工作 (Workflows)
@@ -47,7 +47,7 @@ metadata:
    - **下游落地执行通道（Downstream Execution Channels）**：
      1. **通道 0（优质实拍/场馆原图直排）**：手头已有官方场馆照、完整棚拍图或高质量实景图时，直接“原图裁切 + 必要调色 + 矢量压字”，无需让 AI 重画背景；
      2. **通道 1（AI 生图/改图 Prompt）**：需要新建实景氛围、统一影棚光影或概念合成时使用，涉及真实硬件时须核对外形、端口数与比例；
-     3. **通道 2（代码级精确平面渲染 Python PIL / SVG & 混合管线）**：纯平面网格、品牌 HEX 色场、参数表与经 `zxingcpp` 校验且核对目标页的真二维码优先走代码精准渲染；含实体产品需合成时按 [output-qa-gate.md](references/output-qa-gate.md) 在换底、补拍/重布光、合成调色或 AI 光影重构 + 关键铭牌局部 `patch` 之间择优，不强制 AI 改动真实硬件结构；
+     3. **通道 2（代码级精确平面渲染 Python PIL / SVG & 混合管线）**：纯平面网格、品牌 HEX 色场、参数表与在成品尺寸下实扫并核对目标页的二维码优先走代码精准渲染；含实体产品需合成时按 [output-qa-gate.md](references/output-qa-gate.md) 在换底、补拍/重布光、合成调色或 AI 光影重构 + 关键铭牌局部 `patch` 之间择优，不强制 AI 改动真实硬件结构；
      4. **通道 3（前端网页/交互组件 HTML/CSS/React）**：针对店铺装修、着陆页、可交互选型表与斑马纹参数表（`M-005`/`M-020`–`M-023`），直接落地为响应式代码；
      5. **通道 4（摄影与美工执行单）**：针对严禁 AI 伪造的工厂车间实拍、真实线束全家福（`M-003`）与硬件微距证据，输出去形容词的拍摄与排版指令单。
 
@@ -55,7 +55,7 @@ metadata:
 
 读取 [学习与更新指南](references/learning.md) 和 [知识记录约定](references/knowledge-contract.md)。
 - 收到书籍 PDF 时，先做版本、版权页与正文完整度复合核验；允许收录可追溯到具体设计师或品牌的纯审美视觉标杆（效果栏如实标注“作品观察，效果未公开 / `editorial_analysis`”），但仍拒收 Bookey / Blinkist 等剔除原书排版图例的商业纯文字书摘；
-- 使用**“五把解剖刀”**拆解时，明确分开记录**“原作是怎么做的”**与**“下次什么场景可借、何时失效”**，并区分三层证据状态（`source_verified` 来源已核对 / `user_endorsed` 用户认可或项目采用 / `field_validated` 受众测试或投放验证）；仅读译本时英文提炼须标注为转述；
+- 区分原作观察、可迁移办法和实际使用结果。入库时将来源核对、用户认可或采用、受众测试分别登记。只核阅译本时，英文提炼标为转述。
 - 先向用户展示拟入库的记录摘要，获准后通过 `library.py apply-patch` 原子写入并校验。
 
 ### 3. 近期趋势与外部视觉案例搜集

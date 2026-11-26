@@ -1,6 +1,6 @@
 # Mercedes-Benz "Rollover Sensor": Icon-as-Diagram Sequential State Repetition & Whisper Reveal
 
-[English Case Index](../README.en.md) · [简体中文](../C-aotw-mercedes-rollover-sensor-state-sequence.md) · Invisible-Tech Visualization & Minimalist Print Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-aotw-mercedes-rollover-sensor-state-sequence.md) · Invisible-Tech Visualization & Minimalist Print Teardown
 
 - **Symptom (`when_stuck`)**: You need to visualize an invisible safety mechanism, sensor, stabilization, noise-cancellation, or balancing algorithm—where depicting accidents feels crude, engineering schematics look dense, and plain hardware photos show nothing of the underlying tech.
 - **Channels**: Tech/Brand Print & OOH Posters, High-End Feature Sections, Minimalist Social Knowledge Cards—directly suited for **Channel 2 (Python PIL / SVG exact vector rendering)**.

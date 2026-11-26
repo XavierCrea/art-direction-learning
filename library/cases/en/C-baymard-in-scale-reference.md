@@ -1,6 +1,6 @@
 # Baymard In-Scale Reference Study: Eliminating Size Misjudgment for 42% of Buyers with Familiar Physical Anchors
 
-[English Case Index](../README.en.md) · [简体中文](../C-baymard-in-scale-reference.md) · Independent Usability Testing & E-Commerce Benchmark Study
+[English Case Index](../../README.en.md) · [简体中文](../C-baymard-in-scale-reference.md) · Independent Usability Testing & E-Commerce Benchmark Study
 
 - **Symptom (`when_stuck`)**: A product page lists exact dimensions (`L × W × H`) or volume numbers in text, but the gallery only shows isolated white-background `"Cut Out"` photos—leaving buyers unable to gauge physical scale, mistaking a large unit for a compact one (or vice versa), and abandoning the purchase.
 - **Channels**: E-commerce Product Detail Page (`PDP`) galleries, B2B industrial equipment catalogs, Amazon/Alibaba listing images, technical brochures.

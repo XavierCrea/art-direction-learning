@@ -1,6 +1,6 @@
 # Laws of UX Zeigarnik Effect & Goal-Gradient Effect: Unfinished-Loop Swipe Tension & Progress-Cue Momentum
 
-[English Case Index](../README.en.md) · [简体中文](../C-lawsofux-zeigarnik-and-goal-gradient.md) · Cognitive Psychology & Carousel / Multi-Step Retention
+[English Case Index](../../README.en.md) · [简体中文](../C-lawsofux-zeigarnik-and-goal-gradient.md) · Cognitive Psychology & Carousel / Multi-Step Retention
 
 - **Symptom (`when_stuck`)**: A swipe carousel (Xiaohongshu / IG), horizontal gallery, or multi-step product selector has solid content, yet readers drop off after Slide 1 or abandon halfway because the layout creates no visual pull to keep swiping or finish.
 - **Channels**: Social Swipe Carousels (Xiaohongshu / IG / TikTok Photo Mode), Multi-Step Selectors & Forms, Long PDPs.

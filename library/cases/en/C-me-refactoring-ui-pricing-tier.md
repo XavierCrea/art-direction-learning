@@ -1,6 +1,6 @@
 # Refactoring UI & Basecamp Pricing Tier Framing: Reshaping Price Perception with Screen-Space Weight, Deliverable Bundling, and Cost Anchors
 
-[English Case Index](../README.en.md) · [简体中文](../C-me-refactoring-ui-pricing-tier.md) · Landing Page Pricing Teardown & Verified Sales Split
+[English Case Index](../../README.en.md) · [简体中文](../C-me-refactoring-ui-pricing-tier.md) · Landing Page Pricing Teardown & Verified Sales Split
 
 - **Symptom (`when_stuck`)**: Your high-value product, engineering kit, or `$79–$149+` package is judged against cheap `$10` commodities (like a plain Amazon e-book or bare PCB), or buyers overwhelmingly default to your cheapest starter tier.
 - **Channels**: Landing page Pricing Sections, B2B sample kit vs. turnkey solution comparison cards, standard vs. pro model tables.

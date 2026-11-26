@@ -4,9 +4,9 @@
 
 ## Stop playing prompt roulette with AI layouts. Give your agent an Art Director grounded in eye-tracking research and classic design books.
 
-`art-direction-learning` is **not** a prompt wrapper for image generators. It is an upstream **Art Director / Visual Director** skill that first decides *what buyer decision a screen must support, what physical proof belongs in frame, how grids/spacing/color scales work, and what clutter to cut* — then routes the output into **4 distinct execution channels** (AI image prompts, pixel-exact Python/SVG rendering, responsive HTML/React code, or adjective-free photography briefs).
+`art-direction-learning` is an art direction skill for ads, product pages, and trade-show materials. It starts with the audience’s task and available assets, then uses documented cases to decide how the image, type, and layout should work together. Verified product evidence supports claims where it matters.
 
-**v1.5.0 · `catalog.json` `r17` · 23 verified sources · 39 visual methods (`M-001`–`M-039`) · 34 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 composable pattern groups + Objective Output QA Gate**
+**v1.5.0 · `catalog.json` `r18` · 23 verified sources · 39 visual methods (`M-001`–`M-039`) · 34 bilingual case cards (`en` + `zh`) · 7 verified style archetypes + 6 composable pattern groups + Objective Output QA Gate**
 
 [Explore the English library](library/README.en.md) · [中文案例与方法索引](library/README.md) · [Style Archetypes](library/styles/README.md) · [Poster Patterns](references/poster-patterns.md) · [Output QA Gate](references/output-qa-gate.md) · [Pairs with `copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)
 
@@ -75,12 +75,13 @@ Diagnose any draft flaws first, check genre routing (M-019), and propose 2–3 d
 
 ## How it works
 
-### 1. One Art Director Brain → Four Downstream Execution Channels
+### 1. Five production routes
 
 ```mermaid
 flowchart LR
   A["copywriting-learning<br/>(What to say & in what order)"] --> C["art-direction-learning<br/>(Art Director: Facts → Visual Proof, Grid & Color)"]
-  B["Verified Product Facts &<br/>Brand Assets"] --> C
+  B["Available assets, viewing context<br/>and verified product facts when needed"] --> C
+  C --> D0["Channel 0: Layout on original photos<br/>Crop, grade, and set type"]
   C --> D1["Channel 1: AI Image Prompts<br/>Scenes, lighting, lifestyle & hero shots"]
   C --> D2["Channel 2: Code-Level Rendering<br/>Python PIL / SVG → pixel-exact grids, HEX colors & QR"]
   C --> D3["Channel 3: Web / UI Code<br/>HTML / CSS / React PDPs, zebra spec tables & Sticky ToC"]
@@ -89,20 +90,23 @@ flowchart LR
 
 | Channel | Best For | Why This Channel Exists |
 | :--- | :--- | :--- |
+| **0. Direct photo layout** | A suitable original venue, studio, or documentary photo | Crop, adjust color, and set type while preserving the real subject. |
 | **1. AI Image Gen / Edit Prompts** | Atmospheric scenes, lifestyle context, lighting & hero compositions | Pairs with `image-prompt-guide` once buyer proof, scale reference (`M-001`), and focal hierarchy are locked. |
-| **2. Precision Code Rendering (`Python PIL` / `SVG`), Direct Photo Layout & Hybrid** | Direct layout on quality original/venue photos, graphic invitations, Swiss grids, comparison charts, and vector typography | Solves AI generators' 4 classic failures: broken modular grids (`M-016`), drifting HEX codes, garbled small text, and broken QR codes. When a strong original venue or studio photo already exists, use **Channel 0 direct photo layout** (crop, grade, set type); when compositing products, follow [Output QA Gate](references/output-qa-gate.md) to pick among matching-background swap, reshoot/relight, color-matched compositing, or AI relighting + label patching while verifying hardware ports and geometry. |
+| **2. Precision code rendering or compositing** | Type-led invitations, grids, charts, QR codes, and product compositions | Render critical text and geometry accurately. For compositions, choose a matching image, reshoot, color-match or relight while preserving real features. [Output QA](references/output-qa-gate.md) |
 | **3. Interactive Web Code (`HTML` / `CSS` / `React`)** | B2B storefronts (e.g., Alibaba International), landing pages, interactive spec tables | Half of UX layout science — single-column zebra spec sheets (`M-005`), vertical expansion over hidden horizontal tabs (`M-006`), borderless spacing (`M-007`) — requires real code, not flat JPEGs. |
 | **4. Photography & Retouching Briefs** | Factory test benches, real UL/CE certificates, included wiring-harness flat-lays (`M-003`) | **Strict anti-hallucination guardrail:** never let AI fabricate hardware internals, lab curves, or certificates. Outputs adjective-free camera angles, scale props, and callout coordinates. |
 
-### 2. Cross-Distance Spatial Relay (`100m → 10m → 1m`)
+### 2. Plan for the actual viewing distance
 
-For offline exhibitions and commercial spaces, the skill orchestrates visual density across viewing distances (`M-019` + `M-028`):
+The `100m → 10m → 1m` sequence and `170 cm` eye-line are case references. Check the actual route, obstructions and dwell time before using them.
 
-| Distance | Touchpoint | Visual Strategy | What Gets Ruthlessly Cut |
-| :--- | :--- | :--- | :--- |
-| **`100m`** | Parking-lot mega-poster / mall exterior LED (`M-028`) | 1.5-second glance: `≥75%` single high-chroma brand color field to slice through clutter + short category/emotion hook + 6× oversized booth number | Spec tables, multi-grid pricing, footnotes, QR codes |
-| **`10m`** | Booth fascia / `170 cm` eye-level main backdrop (`M-019`) | Locks the exact same brand color as the `100m` poster for instant cross-space recall; anchors core positioning at `170 cm` standing eye level | Low-placed copy blocked by crowds or counters |
-| **`1m`** | Tabletop selection sheet / online PDP (`M-001`–`M-005`, `M-020`) | Closes technical buyers with In-Scale photos, descriptive callouts, zebra-striped spec tables, and verified certification proof | Vague slogans without measurable engineering specs |
+| Viewing condition | Design decision |
+| :--- | :--- |
+| Passing at a distance | Lead with the cue people need to recognize quickly, such as a venue, booth direction or brand. A solid color field is one option. |
+| Approaching or stopping | Keep the date, narrative or tested QR code where visitors can actually read it and act. |
+| Close inspection | Use verified product details, size references or spec tables when they help the decision. |
+| An invitation shared by phone | Check the chat or email preview and keep the required information in the artwork. |
+
 
 ---
 
@@ -118,14 +122,14 @@ For offline exhibitions and commercial spaces, the skill orchestrates visual den
 
 ---
 
-## What's Inside the Library (`catalog.json` `r17`)
+## What's Inside the Library (`catalog.json` `r18`)
 
 Every record explicitly tags its **`learning_origin`** (`book_canon`, `benchmark_study`, `co_dissected_teardown`, or `task_feedback`) so live user–agent teardowns are clearly separated from seeded books and UX studies — and can be filtered directly via `--origin`.
 
 | Source Category (`learning_origin`) | Reviewed Works & Field Teardowns (`23` Sources) | Methods (`39`) & Bilingual Cases (`34` `zh` + `34` `en`) |
 | :--- | :--- | :--- |
 | **[Live Co-Dissected] Comparative Field Teardowns (`co_dissected_teardown`)** | **2026 New Xiaomi SU7 × Shu Qi "Capri Blue" Mall Billboards vs. Competitor Outdoor LEDs (Genesis, Voyah Taishan, Denza N9, XPeng X9, Buick, Geely, Avatr)**: 3-question inquiry chain + 6-dimensional street-photo teardown | `M-028` (`validated`) · `1` bilingual case card (`C-xiaomi-su7-2026-mall-billboard-teardown`) + `F-002` |
-| **Modern Social Feeds, Carousels & Mobile Ergonomics (`benchmark_study`)** | **Laws of UX** (`lawsofux.com`, 9 net-new cognitive principles), **TikTok Creative Center** (`1080×1920` pixel Safe Zones & 2–3s visual hooks), and **Motion Performance Creative Benchmarks** (TSR diagnostic ladder, *Us vs. Them* & native static ads) | `M-029`–`M-034` · `6` bilingual case cards (`C-lawsofux-*`, `C-tiktok-*`, `C-motion-*`) |
+| **Modern Social Feeds, Carousels & Mobile Ergonomics (`benchmark_study`)** | **Laws of UX** (`lawsofux.com`, 9 net-new cognitive principles), **TikTok Ads** (placement-specific safe zones and opening creative), and **Motion** (same-account metric baselines, *Us vs. Them* and native static ads) | `M-029`–`M-034` · `6` bilingual case cards (`C-lawsofux-*`, `C-tiktok-*`, `C-motion-*`) |
 | **Modern OOH & Print Poster Craft (`benchmark_study` · `editorial_analysis`)** | **Ads of the World & Famous Campaigns** live-inspected campaigns: **Three Seven Paris** (*How much do you love her?*, physical-scale price ladder), **Fnac** (*Another Addiction is Possible*, visual double-take & single light-cone), **Muserk** (*Get F'in Paid*, 60% condensed typographic wall + corner QR), **Mercedes-Benz** (*Rollover Sensor*, 4-frame icon-as-diagram state sequence & whisper reveal), and **Coca-Cola** (*Recycle Me*, crushed-can symbol deformation + 95% monochrome color-field minimalism) | `M-035`–`M-039` · `5` bilingual case cards (`C-aotw-*`, `C-coca-cola-*`) |
 | **Baymard Institute UX Benchmarks (`benchmark_study`)** | `5` large-scale eye-tracking & usability studies on In-Scale images, Descriptive Callouts, Included/Optional Accessories, Spec Sheet Scannability, and Horizontal Tabs | `M-001`–`M-003`, `M-005`–`M-006` · `5` bilingual case cards (`C-baymard-*`) |
 | **Marketing Examples (Harry Dry)** | `4` landing page, pricing & brand teardowns (Above-the-Fold Guide, Rows' Live Spreadsheet A/B Test & Haako Rewrite, Refactoring UI `$149` Tier & Basecamp `$99` Anchor, Tropicana `$55M` Rebrand Loss & Angostura Bitters) | `M-004`, `M-009`–`M-010` · `4` bilingual case cards (`C-me-*`) |
@@ -172,4 +176,4 @@ python3 scripts/library.py validate --check-files
 `art-direction-learning` works standalone or in tandem with [`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning):
 
 - **[`copywriting-learning`](https://github.com/XavierCrea/copywriting-learning)** decides *what to say, in what sequence, and with what proof*;
-- **`art-direction-learning`** decides *what physical evidence the camera or layout shows, how items align on the grid, which of the 4 delivery channels to use, and how `100m → 10m → 1m` touchpoints hand off to each other*.
+- **`art-direction-learning`** chooses what the image shows, what the text carries, how people read it, and which production route fits.

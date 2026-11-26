@@ -1,5 +1,7 @@
 # 2026 New Xiaomi SU7 × Shu Qi "Capri Blue" Mall Billboards vs. Competitor Outdoor LED Teardown (`C-xiaomi-su7-2026-mall-billboard-teardown`)
 
+[English Case Index](../../README.en.md)
+
 > **[Learning Origin · 知识习得溯源]**: `co_dissected_teardown` (Live Co-Dissected Field Teardown · 实战共创与街头实拍正反对比拆解)
 > - **How this differs from static book canon (`book_canon`) and lab benchmarks (`benchmark_study`)**: This case was co-dissected in live dialogue through a **3-step strategic inquiry chain + street-level photographic counterexamples**:
 >   1. **Question 1 (Counter-Intuitive Strategy)**: *"Why is Xiaomi bold enough to put zero specs—and in some locations only spokesperson Shu Qi—on ultra-expensive prime shopping mall exterior billboards?"*
@@ -82,13 +84,10 @@ All observations below are verified directly from street-level photographs and c
 
 ## 5. Reusable Visual Move (`reusable_move_en`)
 
-When designing large-format visuals for high-noise physical environments (shopping mall facade LEDs, trade-show main-aisle backdrops, booth headers):
-1. **Color-Field Denoising**: Strip out busy landscape backgrounds (mountains, forests, multi-tone roads) that turn muddy on outdoor LEDs; flood **`>= 75%` of the canvas with a single high-purity brand Color Field** that cuts through surrounding warm/neon street clutter;
-2. **Same-Hue Multi-Screen Progression**: Never chop a wide or L-shaped corner screen with a jarring white logo patch; flow the same color field across the corner and assign **Wide Product Context (`<= 5 words`)** to one panel and **Close-Up Human/Mood Anchor (`<= 8 words`)** to the other;
-3. **Restrained Type & Zero Fine Print**: Keep headline width to `<= 60%` of the canvas with `>= 75%` open color-field breathing room, never straddle text across background horizon lines, and purge all unreadable bottom fine print, price grids, and QR codes;
-4. **100m-to-1m Touchpoint Relay**: Design the `100m` exterior screen as a clean, shareable social backdrop (`UGC-Ready Backdrop`), deferring dense engineering specs to the `1m` booth catalog, spec sheet, or PDP.
-
----
+1. Preview each screen in its real setting. Xiaomi’s large Capri Blue field is one example of separating a display from a busy background.
+2. Give moving viewers a quick brand, category, or wayfinding cue. A placement visitors can approach can carry a story, dates, a tested QR code or specifications.
+3. Link adjacent screens through a shared visual cue. Vary the shot scale when it gives each screen a job.
+4. Treat the original viewing distances, color-field area and type density as observations from those sites. Check the actual placement and obstructions before delivery.
 
 ## 6. Asset Prerequisites & Transfer Limits (`asset_prerequisites` & `transfer_limits`)
 
