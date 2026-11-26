@@ -1,6 +1,6 @@
 # Tropicana's $55M Rebrand Disaster & Angostura's Oversized Label: Guarding Zero-Thought Distinctive Visual Assets
 
-[English Case Index](../README.en.md) · [简体中文](../C-me-tropicana-angostura-visual-assets.md) · Brand Packaging & Distinctive Brand Assets Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-me-tropicana-angostura-visual-assets.md) · Brand Packaging & Distinctive Brand Assets Teardown
 
 - **Symptom (`when_stuck`)**: In the name of "modern, minimalist, clean design," a packaging, thumbnail, or storefront redesign strips away the brand's most recognizable concrete visual cue and replaces it with a generic flat color blob or vertical text—causing repeat buyers to walk right past it and new buyers to stop and think about what it is.
 - **Channels**: Product packaging design, e-commerce search listing thumbnails (`PLP`), brand refreshes (`Rebranding`).

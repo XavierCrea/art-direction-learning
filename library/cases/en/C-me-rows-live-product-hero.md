@@ -1,6 +1,6 @@
 # Rows Hero A/B Test & Haako Visual Rewrite: Replacing Dense Text Blocks with a Live Product Workspace or Operational Visual
 
-[English Case Index](../README.en.md) · [简体中文](../C-me-rows-live-product-hero.md) · A/B Test Case Study & Before/After Landing Page Rewrites
+[English Case Index](../../README.en.md) · [简体中文](../C-me-rows-live-product-hero.md) · A/B Test Case Study & Before/After Landing Page Rewrites
 
 - **Symptom (`when_stuck`)**: Your product has a clear workflow or unique physical mechanism, but the page uses a **huge block of text** or a generic static banner to explain how it works—so visitors bounce before reading past the second line.
 - **Channels**: SaaS/tool landing pages, B2B/e-commerce hero sections with interactive configurators/selectors, product overview blocks.

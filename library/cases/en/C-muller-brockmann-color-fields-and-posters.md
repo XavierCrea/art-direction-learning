@@ -1,6 +1,6 @@
 # Josef Müller-Brockmann's Color-Field Padding Experiments & Product-Free Swiss Typographic Posters
 
-[English Case Index](../README.en.md) · [简体中文](../C-muller-brockmann-color-fields-and-posters.md) · Color-Field Anti-Cramping Proof & Swiss Poster Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-muller-brockmann-color-fields-and-posters.md) · Color-Field Anti-Cramping Proof & Swiss Poster Teardown
 
 - **Case ID**: `C-muller-brockmann-color-fields-and-posters`
 - **Source**: `S-muller-brockmann-grid-systems` — Josef Müller-Brockmann, *Grid systems in graphic design* (PDF p.50–64)

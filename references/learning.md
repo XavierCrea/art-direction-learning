@@ -17,32 +17,13 @@
 2. **原作客观画面观察 (`observations`)**：照实保留原作的颜色、比例、字体、帧数与实验样本数据，不篡改原著或作品本身。
 3. **图字分工机制 (`copy_visual_synergy`)**：拆解画面与文字是如何配合的——画面承担了哪部分直觉证明？文字或标注补充了哪部分非视觉信息？
 4. **可迁移视觉动作 (`reusable_move` / `rule`)**：写清**“这招解决什么问题、在什么条件下适用、什么时候应该换招”**，避免把单件作品里的具体做法写成放之四海而皆准的禁令；若引用投放数据基准（如点击率/停留率），保留原报告数字与样本出处，但只作**排查预警信号**而非直接归因到构图。
-5. **素材前提、失效边界与三层证据状态 (`asset_prerequisites`、`transfer_limits`、`evidence_stage`)**：明确用这招依赖什么素材、什么情况会失效，并诚实区分三层证据——**`source_verified`（来源已核对）**、**`user_endorsed`（用户认可或项目采用）**、**`field_validated`（有受众测试或真实投放结果）**。
+5. **素材前提、失效边界与证据**　明确所需素材和适用范围。分别登记来源核对、方案认可或项目采用、受众实测结果。
 
 ---
 
-## 三、 原子化写入与校验（使用 `apply-patch`）
+## 三、 入库与校验
 
-为防止直接编辑数千行的 `catalog.json` 导致格式损坏或遗漏历史备份，所有入库操作统一走 `scripts/library.py apply-patch`：
-
-1. **准备单篇案例 Markdown（如有新增案例）**：
-   在 `library/cases/<case_id>.md` 下按标准模板写入完整案例拆解卡。
-2. **编写轻量补丁文件（如 `tmp_patch.json`）**：
-   只包含本次拟新增或更新的 `sources`、`methods`、`cases`、`feedback` 条目：
-   ```json
-   {
-     "sources": [...],
-     "methods": [...],
-     "cases": [...]
-   }
-   ```
-3. **展示给用户确认后执行原子入库**：
-   ```bash
-   python scripts/library.py apply-patch --file tmp_patch.json --check-files
-   ```
-   脚本会自动完成：
-   - 将当前 `catalog.json` 完整备份至 `library/history/catalog-r{旧revision}.json`；
-   - 递增顶层 `revision` 并更新 `updated_at`；
-   - 按 `id` 合并新增或更新记录；
-   - 执行全量 `validate`（若引用缺失、页码越界或缺少必填字段，脚本自动回滚并输出具体错误）。
-4. **清理临时补丁文件并汇报**：说明新增/更新了哪些记录 ID、关联页码及当前 `catalog_revision`。
+1. 在所选库下准备 `cases/<case-id>.md` 和 `cases/en/<case-id>.md`。在补丁的 `cases` 列表登记两条路径。只改正文时，也把已有案例 ID 放入补丁，指纹才会更新到该卡。
+2. 完成你本轮要求的复核后，执行 `python3 scripts/library.py apply-patch --file patch.json --check-files`。使用自定义库时，把 `--library <目录>` 放在子命令前。
+3. 工具为本次提交的案例生成中英文文本指纹，核对引用和未改动的卡片。校验通过后，保留旧目录和变更前的指纹备份至 `history/`，再用完整文件替换。失败信息会指出具体记录或文件。
+4. 用 `validate --check-files` 查看终版状态。Windows CRLF 与 Mac LF 均可校验，正文改字需随案例更新。

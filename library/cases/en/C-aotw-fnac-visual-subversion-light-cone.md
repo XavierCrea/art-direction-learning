@@ -1,6 +1,6 @@
 # Fnac "Another Addiction is Possible": Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path
 
-[English Case Index](../README.en.md) · [简体中文](../C-aotw-fnac-visual-subversion-light-cone.md) · Visual Double-Take & Low-Key Lighting Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-aotw-fnac-visual-subversion-light-cone.md) · Visual Double-Take & Low-Key Lighting Teardown
 
 - **Symptom (`when_stuck`)**: Brand posters or social covers feel predictable and preachy so viewers decode and skip them in 0.5 seconds; or realistic lifestyle scenes look too visually noisy for the eye to lock onto the product.
 - **Channels**: Outdoor / Print Brand Posters (OOH), High-Retention Social Feed Covers (Xiaohongshu / IG), Story-Driven Hero Visuals.

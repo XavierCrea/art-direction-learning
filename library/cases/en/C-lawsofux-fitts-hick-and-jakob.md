@@ -1,6 +1,6 @@
 # Laws of UX Fitts's Law, Hick's Law & Jakob's Law: Mobile Thumb Targets, Progressive Disclosure & Native Platform Conventions
 
-[English Case Index](../README.en.md) · [简体中文](../C-lawsofux-fitts-hick-and-jakob.md) · Cognitive Psychology & Modern Mobile UI / Social Safe Zones
+[English Case Index](../../README.en.md) · [简体中文](../C-lawsofux-fitts-hick-and-jakob.md) · Cognitive Psychology & Modern Mobile UI / Social Safe Zones
 
 - **Symptom (`when_stuck`)**: Mobile primary CTAs are too small, trapped out of single-hand thumb reach, or packed so tightly that users mis-tap; too many SKUs/options displayed at once trigger choice paralysis; or custom non-standard UI patterns inside social/e-commerce ecosystems force users to relearn basic interactions.
 - **Channels**: Mobile Landing Pages & H5, E-Commerce PDPs & SKU Selectors, 9:16 Social Video/Feed Overlays & UI Components.

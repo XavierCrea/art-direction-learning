@@ -1,6 +1,6 @@
 # Steve Krug's "Big Bang Theory of Web Design": The 50ms First Impression, 6–8 Word Taglines vs. Mottos, the Homepage Tragedy of the Commons, and the Reservoir of Goodwill
 
-[English Case Index](../README.en.md) · [简体中文](../C-krug-homepage-big-bang-tagline-and-goodwill.md) · Homepage Above-the-Fold, Tagline Uniqueness & Goodwill Reservoir Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-krug-homepage-big-bang-tagline-and-goodwill.md) · Homepage Above-the-Fold, Tagline Uniqueness & Goodwill Reservoir Teardown
 
 - **Case ID**: `C-krug-homepage-big-bang-tagline-and-goodwill`
 - **Source**: `S-krug-dmmt-3e-2014` — Steve Krug, *Don’t Make Me Think, Revisited (Third Edition)* (Chapters 7, 10, 11 & 12, PDF p.114–134, 175–202, 203–220)

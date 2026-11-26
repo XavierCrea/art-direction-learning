@@ -9,14 +9,24 @@ import datetime as dt
 import hashlib
 import json
 import os
-import shutil
+import re
+import stat
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
 GROUPS = ("sources", "methods", "cases", "feedback")
 STATUS_VALUES = {"reference", "candidate", "validated", "retired"}
 EVIDENCE_STAGES = {"source_verified", "user_endorsed", "field_validated"}
+PROJECT_STATUSES = {"endorsed", "adopted"}
+PROJECT_RESULT_TYPES = {"ab_test", "ab_test_result", "market_result"}
+AUDIENCE_OUTCOME_TYPES = PROJECT_RESULT_TYPES | {"usability_benchmark", "case_study_metric"}
+REPORTED_OUTCOME_STATES = {"source_verified", "source_reported"}
+OUTCOME_STATES = REPORTED_OUTCOME_STATES | {"verified", "unverified", "verified_field_observation"}
+CASE_HASH_MODE = "utf8-lf"
+CASE_FILES = (("markdown_path", "zh_sha256"), ("markdown_path_en", "en_sha256"))
+CHINESE_RUN = re.compile(r"[㐀-䶿一-鿿]{3,}")
 READING_STATUS_VALUES = {"registered", "metadata_only", "partial_review", "full_review"}
 LEARNING_ORIGINS = {"book_canon", "benchmark_study", "co_dissected_teardown", "task_feedback"}
 EVIDENCE_TYPES = {
@@ -127,18 +137,26 @@ def resolve_library_root(cli_value: str | None) -> Path:
         return Path(env_value).expanduser().resolve()
     config_path = skill_root() / "references" / "library-location.json"
     if config_path.exists():
-        config = json.loads(config_path.read_text(encoding="utf-8"))
+        config = read_json(config_path)
         default_root = config.get("default_library_root", "library")
         candidate = Path(default_root).expanduser()
         return candidate.resolve() if candidate.is_absolute() else (skill_root() / candidate).resolve()
     return (skill_root() / "library").resolve()
 
 
+def read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def json_bytes(data: dict[str, Any]) -> bytes:
+    return (json.dumps(data, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+
+
 def load_catalog(root: Path) -> tuple[dict[str, Any], Path]:
     catalog_path = root / "catalog.json"
     if not catalog_path.exists():
         raise FileNotFoundError(f"catalog.json not found at {catalog_path}")
-    return json.loads(catalog_path.read_text(encoding="utf-8")), catalog_path
+    return read_json(catalog_path), catalog_path
 
 
 def sha256_file(path: Path) -> str:
@@ -149,8 +167,38 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+
 def _resolve_md_path(root: Path, md_rel: str) -> Path:
-    return (skill_root() / md_rel).resolve() if md_rel.startswith("library/") else (root / md_rel).resolve()
+    relative = md_rel.replace("\\", "/")
+    if relative.startswith("library/"):
+        relative = relative[len("library/"):]
+    return (root / relative).resolve()
+
+
+def normalized_case_bytes(raw: bytes) -> bytes:
+    return raw.removeprefix(b"\xef\xbb\xbf").replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
+def case_digest_matches(path: Path, expected: str | None, mode: str | None) -> bool:
+    raw = path.read_bytes()
+    content = normalized_case_bytes(raw)
+    if mode == CASE_HASH_MODE:
+        return hashlib.sha256(content).hexdigest() == expected
+    # A legacy manifest may have fingerprinted either a Windows or a macOS checkout.
+    crlf = content.replace(b"\n", b"\r\n")
+    return any(hashlib.sha256(form).hexdigest() == expected for form in (raw, content, crlf))
+
+
+def read_committed_translations(root: Path, revision: int) -> dict[str, Any] | None:
+    path = root / "translations.en.json"
+    if not path.is_file():
+        return None
+    manifest = read_json(path)
+    staged_revision = manifest.get("catalog_revision")
+    if isinstance(staged_revision, int) and staged_revision > revision:
+        previous = root / "history" / f"translations-r{revision}.json"
+        return read_json(previous) if previous.is_file() else None
+    return manifest
 
 
 def _valid_when_stuck(value: Any) -> bool:
@@ -164,7 +212,12 @@ def _valid_when_stuck(value: Any) -> bool:
     return False
 
 
-def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False) -> list[str]:
+def validate_catalog(
+    data: dict[str, Any],
+    root: Path,
+    check_files: bool = False,
+    translations: dict[str, Any] | None = None,
+) -> list[str]:
     errors: list[str] = []
     if data.get("schema_version") != 1:
         errors.append("schema_version must be 1")
@@ -173,6 +226,10 @@ def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False
     for group in GROUPS:
         if not isinstance(data.get(group), list):
             errors.append(f"{group} must be a list")
+        elif any(not isinstance(item, dict) for item in data[group]):
+            errors.append(f"{group} must contain only objects")
+    if errors:
+        return errors
 
     ids: dict[str, str] = {}
     sources_by_id: dict[str, dict[str, Any]] = {}
@@ -181,9 +238,6 @@ def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False
     for group in GROUPS:
         for index, item in enumerate(data.get(group, [])):
             label = f"{group}[{index}]"
-            if not isinstance(item, dict):
-                errors.append(f"{label} must be an object")
-                continue
             missing = sorted(REQUIRED[group] - set(item.keys()))
             if missing:
                 errors.append(f"{label} ({item.get('id', 'unknown')}) missing required fields: {', '.join(missing)}")
@@ -219,8 +273,8 @@ def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False
         if availability == "citation_only" and ("path" in source or "local_path" in source):
             errors.append(f"{source_id} citation_only source must omit local machine paths")
         if check_files and rel_path:
-            file_path = root / rel_path
-            if not file_path.exists():
+            file_path = root / rel_path.replace("\\", "/")
+            if not file_path.is_file():
                 errors.append(f"{source_id} missing file at {file_path}")
             elif source.get("sha256"):
                 actual = sha256_file(file_path)
@@ -233,9 +287,6 @@ def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False
             status = item.get("status")
             if status not in STATUS_VALUES:
                 errors.append(f"{item_id} has invalid status {status!r}")
-            ev_stage = item.get("evidence_stage")
-            if ev_stage is not None and ev_stage not in EVIDENCE_STAGES:
-                errors.append(f"{item_id} has invalid evidence_stage {ev_stage!r}")
             if not _valid_when_stuck(item.get("when_stuck")):
                 errors.append(f"{item_id} has invalid when_stuck (expected bilingual dict {{'zh': [...], 'en': [...]}})")
             refs = item.get("source_refs")
@@ -252,59 +303,100 @@ def validate_catalog(data: dict[str, Any], root: Path, check_files: bool = False
                         for page in ref.get("pdf_pages", []):
                             if not isinstance(page, int) or page < 1 or (isinstance(max_pages, int) and page > max_pages):
                                 errors.append(f"{item_id} has out-of-range pdf_page {page} for {source_id}")
-            if status == "validated":
-                val_refs = item.get("validation_refs", [])
-                if not isinstance(val_refs, list) or not val_refs:
+            val_refs = item.get("validation_refs", [])
+            if not isinstance(val_refs, list) or not all(isinstance(fid, str) for fid in val_refs):
+                errors.append(f"{item_id} validation_refs must be a list of feedback IDs")
+            else:
+                if status == "validated" and not val_refs:
                     errors.append(f"{item_id} is validated but has no validation_refs")
                 for feedback_id in val_refs:
                     fb = feedback_by_id.get(feedback_id)
                     if not fb:
                         errors.append(f"{item_id} validation_ref {feedback_id!r} not found")
-                    elif fb.get("verified") is not True:
+                    elif status == "validated" and fb.get("verified") is not True:
                         errors.append(f"{item_id} validation_ref {feedback_id!r} is not verified")
 
             if group == "cases":
                 outcome = item.get("outcome_evidence")
                 if not isinstance(outcome, dict):
                     errors.append(f"{item_id} outcome_evidence must be an object")
-                elif outcome.get("evidence_type") not in EVIDENCE_TYPES:
-                    errors.append(f"{item_id} outcome_evidence has invalid evidence_type {outcome.get('evidence_type')!r}")
-                for field in ("markdown_path", "markdown_path_en"):
+                else:
+                    if outcome.get("evidence_type") not in EVIDENCE_TYPES:
+                        errors.append(f"{item_id} outcome_evidence has invalid evidence_type")
+                    state = outcome.get("verification_status")
+                    if state is not None and (not isinstance(state, str) or state not in OUTCOME_STATES):
+                        errors.append(f"{item_id} outcome_evidence has invalid verification_status {state!r}")
+                    if state == "verified" and not has_text(outcome.get("claim")):
+                        errors.append(f"{item_id} verified outcome needs a recorded result")
+                for field, _ in CASE_FILES:
                     md_rel = item.get(field)
                     if not isinstance(md_rel, str) or not md_rel.strip():
                         errors.append(f"{item_id} {field} must be a non-empty string")
                     elif check_files:
                         md_path = _resolve_md_path(root, md_rel)
-                        if not md_path.exists():
+                        if not md_path.is_file():
                             errors.append(f"{item_id} missing {field} file at {md_path}")
+
 
     if check_files:
         trans_path = root / "translations.en.json"
-        if not trans_path.exists():
+        if translations is None:
+            translations = read_committed_translations(root, data["revision"])
+        if translations is None:
             errors.append(f"missing bilingual translation manifest at {trans_path}")
         else:
-            trans = json.loads(trans_path.read_text(encoding="utf-8"))
-            trans_cases = trans.get("cases", {})
-            for item in data.get("cases", []):
+            trans_cases = translations.get("cases")
+            if not isinstance(trans_cases, dict):
+                errors.append("translations.en.json cases must be an object")
+                trans_cases = {}
+            for item in data["cases"]:
                 cid = item.get("id")
-                t_entry = trans_cases.get(cid)
-                if not isinstance(t_entry, dict):
+                entry = trans_cases.get(cid)
+                if not isinstance(entry, dict):
                     errors.append(f"translations.en.json missing entry for case {cid}")
                     continue
-                zh_p = _resolve_md_path(root, item["markdown_path"])
-                en_p = _resolve_md_path(root, item["markdown_path_en"])
-                if zh_p.exists() and t_entry.get("zh_sha256") != sha256_file(zh_p):
-                    errors.append(f"translations.en.json zh_sha256 mismatch for {cid}")
-                if en_p.exists() and t_entry.get("en_sha256") != sha256_file(en_p):
-                    errors.append(f"translations.en.json en_sha256 mismatch for {cid}")
+                mode = entry.get("hash_mode", translations.get("hash_mode"))
+                if mode not in (None, CASE_HASH_MODE):
+                    errors.append(f"translations.en.json invalid hash_mode for {cid}")
+                    continue
+                for path_field, hash_field in CASE_FILES:
+                    relative = item.get(path_field)
+                    if not has_text(relative):
+                        continue
+                    card_path = _resolve_md_path(root, relative)
+                    if card_path.is_file() and not case_digest_matches(card_path, entry.get(hash_field), mode):
+                        errors.append(f"translations.en.json {hash_field} mismatch for {cid}")
 
-    for fb in data.get("feedback", []):
+    for fb in data["feedback"]:
         fb_id = fb.get("id", "<feedback>")
         if fb.get("evidence_type") not in EVIDENCE_TYPES:
             errors.append(f"{fb_id} has invalid evidence_type")
         if not isinstance(fb.get("verified"), bool):
             errors.append(f"{fb_id} verified must be a boolean")
+        state = fb.get("project_status")
+        if state is not None and (not isinstance(state, str) or state not in PROJECT_STATUSES):
+            errors.append(f"{fb_id} has invalid project_status {state!r}")
+        elif state and not confirmed_feedback(fb):
+            errors.append(f"{fb_id} project_status needs verified feedback with a locator and observation")
 
+    if errors:
+        return errors
+    for group in GROUPS:
+        for item in data[group]:
+            explicit = item.get("evidence_stage")
+            if explicit is None:
+                continue
+            if not isinstance(explicit, str) or explicit not in EVIDENCE_STAGES:
+                errors.append(f"{item['id']} has invalid evidence_stage {explicit!r}")
+                continue
+            profile = build_evidence_profile(item, group, sources_by_id, feedback_by_id)
+            supported = {
+                "source_verified": profile["source_checked"],
+                "user_endorsed": profile["project_status"] in PROJECT_STATUSES,
+                "field_validated": profile["audience_result"].startswith("verified"),
+            }
+            if not supported[explicit]:
+                errors.append(f"{item['id']} evidence_stage {explicit!r} lacks supporting evidence")
     return errors
 
 
@@ -318,25 +410,32 @@ def _field_text(val: Any) -> str:
     return ""
 
 
-def _cjk_bigrams(text: str) -> list[str]:
-    runs: list[str] = []
-    buf: list[str] = []
-    for ch in text:
-        if "\u4e00" <= ch <= "\u9fff":
-            buf.append(ch)
-        else:
-            if len(buf) >= 2:
-                runs.append("".join(buf))
-            buf = []
-    if len(buf) >= 2:
-        runs.append("".join(buf))
-    grams: list[str] = []
-    for run in runs:
-        for idx in range(len(run) - 1):
-            gram = run[idx : idx + 2]
-            if gram not in grams:
-                grams.append(gram)
-    return grams
+
+def chinese_phrase_score(item: dict[str, Any], full_query: str) -> int:
+    clauses = CHINESE_RUN.findall(full_query)
+    if not clauses:
+        return 0
+    symptoms = item.get("when_stuck")
+    if isinstance(symptoms, dict):
+        symptoms = symptoms.get("zh", [])
+    labels = [*item.get("tags", []), *(symptoms if isinstance(symptoms, list) else [symptoms])]
+    short_labels = {label for label in labels if isinstance(label, str) and CHINESE_RUN.fullmatch(label)}
+    phrase_text = f"{_field_text(labels)} {_field_text(item.get('title'))}"
+    phrases = {part for part in CHINESE_RUN.findall(phrase_text) if len(part) >= 4 or part in short_labels}
+
+    best = 0
+    for clause in clauses:
+        grams = {clause[i:i + 3] for i in range(len(clause) - 2)}
+        for phrase in phrases:
+            if clause in phrase or phrase in clause:
+                shared = min(len(clause), len(phrase))
+                best = max(best, min(20, 5 + shared) if shared >= 4 or clause == phrase else 4)
+                continue
+            other = {phrase[i:i + 3] for i in range(len(phrase) - 2)}
+            common = len(grams & other)
+            if common >= 2 and common * 3 >= min(len(grams), len(other)) * 2:
+                best = max(best, min(6, common))
+    return best
 
 
 def score_item(item: dict[str, Any], terms: list[str], full_query: str) -> int:
@@ -352,15 +451,13 @@ def score_item(item: dict[str, Any], terms: list[str], full_query: str) -> int:
         score += (1 if term in med_blob else 0) * 2
         score += (1 if term in low_blob else 0) * 1
 
-    if score == 0 and full_query:
-        grams = _cjk_bigrams(full_query)
-        if len(grams) >= 2:
-            hit_high = sum(1 for g in grams if g in high_blob)
-            hit_med = sum(1 for g in grams if g in med_blob)
-            if hit_high >= 2:
-                score += hit_high * 2
-            elif hit_high + hit_med >= 2:
-                score += hit_high * 2 + hit_med
+    score += chinese_phrase_score(item, full_query)
+    symptoms = item.get("when_stuck")
+    labels = [*item.get("tags", []), *item.get("tags_en", [])]
+    if isinstance(symptoms, dict):
+        labels.extend([*symptoms.get("en", []), *symptoms.get("zh", [])])
+    if full_query and full_query in {_field_text(label).strip() for label in labels}:
+        score += 8
 
     if len(terms) > 1 and full_query:
         if full_query in high_blob:
@@ -435,45 +532,21 @@ def cmd_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-VERIFIED_OUTCOME_STATUSES = {"verified", "source_verified", "source_reported"}
-FIELD_RESULT_TYPES = {"ab_test", "ab_test_result", "market_result", "usability_benchmark", "case_study_metric"}
+
+def has_text(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
 
 
-def infer_evidence_stage(
-    item: dict[str, Any],
-    group: str,
-    feedback_by_id: dict[str, dict[str, Any]],
-) -> str:
-    explicit = item.get("evidence_stage")
-    if isinstance(explicit, str) and explicit in EVIDENCE_STAGES:
-        return explicit
-    if group == "feedback":
-        ev_type = item.get("evidence_type")
-        if ev_type in {"ab_test_result", "market_result"} and item.get("verified") is True:
-            return "field_validated"
-        return "user_endorsed" if item.get("verified") is True else "source_verified"
-    if group == "methods":
-        val_refs = item.get("validation_refs", [])
-        if isinstance(val_refs, list) and val_refs:
-            for fid in val_refs:
-                fb = feedback_by_id.get(fid)
-                if fb and fb.get("verified") is True and fb.get("evidence_type") in {"ab_test_result", "market_result"}:
-                    return "field_validated"
-            for fid in val_refs:
-                fb = feedback_by_id.get(fid)
-                if fb and fb.get("verified") is True:
-                    return "user_endorsed"
-        return "source_verified"
-    if group == "cases":
-        outcome = item.get("outcome_evidence")
-        if (
-            isinstance(outcome, dict)
-            and outcome.get("evidence_type") in {"ab_test_result", "market_result"}
-            and outcome.get("verification_status") in VERIFIED_OUTCOME_STATUSES
-        ):
-            return "field_validated"
-        return "source_verified"
-    return "source_verified"
+def checked_source(source: dict[str, Any]) -> bool:
+    return source.get("reading_status") in {"partial_review", "full_review"} and bool(source.get("reviewed_locations"))
+
+
+def confirmed_feedback(feedback: dict[str, Any]) -> bool:
+    return (
+        feedback.get("verified") is True
+        and has_text(feedback.get("source_locator"))
+        and has_text(feedback.get("observation"))
+    )
 
 
 def build_evidence_profile(
@@ -482,65 +555,70 @@ def build_evidence_profile(
     sources_by_id: dict[str, dict[str, Any]],
     feedback_by_id: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
-    source_checked = False
     if group == "sources":
-        source_checked = item.get("reading_status") in {"partial_review", "full_review"}
-    elif group in {"methods", "cases"}:
-        for ref in item.get("source_refs", []):
-            sid = ref.get("source_id") if isinstance(ref, dict) else None
-            src = sources_by_id.get(sid) if isinstance(sid, str) else None
-            if src and src.get("reading_status") in {"partial_review", "full_review"}:
-                source_checked = True
-                break
+        source_checked = checked_source(item)
     elif group == "feedback":
-        source_checked = bool(item.get("source_locator"))
+        source_checked = confirmed_feedback(item)
+    else:
+        source_checked = any(
+            checked_source(sources_by_id[ref["source_id"]])
+            for ref in item.get("source_refs", [])
+            if isinstance(ref, dict) and ref.get("source_id") in sources_by_id
+        )
 
-    adopted_refs: list[str] = []
-    field_feedback_verified: list[str] = []
-    field_feedback_unverified: list[str] = []
-    if group == "methods":
-        for fid in item.get("validation_refs", []):
-            fb = feedback_by_id.get(fid)
-            if not fb:
-                continue
-            if fb.get("verified") is True:
-                adopted_refs.append(fid)
-                if fb.get("evidence_type") in {"ab_test_result", "market_result"}:
-                    field_feedback_verified.append(fid)
-            elif fb.get("evidence_type") in {"ab_test_result", "market_result"}:
-                field_feedback_unverified.append(fid)
-    elif group == "feedback":
-        fid = str(item.get("id", ""))
-        if item.get("verified") is True:
-            adopted_refs.append(fid)
-            if item.get("evidence_type") in {"ab_test_result", "market_result"}:
-                field_feedback_verified.append(fid)
-        elif item.get("evidence_type") in {"ab_test_result", "market_result"}:
-            field_feedback_unverified.append(fid)
+    feedback = [item] if group == "feedback" else [
+        feedback_by_id[fid] for fid in item.get("validation_refs", []) if fid in feedback_by_id
+    ]
+    adopted, endorsed, results = [], [], []
+    for entry in feedback:
+        accepted = confirmed_feedback(entry)
+        project_status = entry.get("project_status")
+        if accepted and project_status == "adopted":
+            adopted.append(entry["id"])
+        elif accepted and (
+            project_status == "endorsed" or (project_status is None and entry.get("evidence_type") == "editorial_feedback")
+        ):
+            endorsed.append(entry["id"])
+        if entry.get("evidence_type") in PROJECT_RESULT_TYPES:
+            results.append({
+                "status": "verified" if accepted else "unverified",
+                "evidence_type": entry["evidence_type"],
+                "claim": entry.get("observation"),
+                "source": entry["id"],
+            })
 
-    audience_result = "none"
-    if field_feedback_verified:
-        audience_result = f"verified_project_result ({', '.join(field_feedback_verified)})"
-    elif field_feedback_unverified:
-        audience_result = f"unverified_result ({', '.join(field_feedback_unverified)})"
-    elif group == "cases":
-        outcome = item.get("outcome_evidence")
-        if isinstance(outcome, dict):
-            ev_type = str(outcome.get("evidence_type") or "")
-            ver_status = str(outcome.get("verification_status") or "unverified")
-            if ev_type in FIELD_RESULT_TYPES:
-                if ver_status in VERIFIED_OUTCOME_STATUSES:
-                    audience_result = f"{ver_status}:{ev_type}"
-                else:
-                    audience_result = f"unverified:{ev_type}"
-            elif ev_type:
-                audience_result = f"none ({ev_type})"
+    outcome = item.get("outcome_evidence")
+    if group == "cases" and isinstance(outcome, dict) and outcome.get("evidence_type") in AUDIENCE_OUTCOME_TYPES:
+        state = outcome.get("verification_status")
+        verified = source_checked and state == "verified" and has_text(outcome.get("claim"))
+        reported = source_checked and state in REPORTED_OUTCOME_STATES and has_text(outcome.get("claim"))
+        results.append({
+            "status": "verified" if verified else "source_reported" if reported else "unverified",
+            "evidence_type": outcome["evidence_type"],
+            "claim": outcome.get("claim"),
+            "source": item["id"],
+        })
 
+    best_result = next(
+        (result for state in ("verified", "source_reported", "unverified") for result in results if result["status"] == state),
+        None,
+    )
     return {
         "source_checked": source_checked,
-        "project_adopted": adopted_refs if adopted_refs else False,
-        "audience_result": audience_result,
+        "project_status": "adopted" if adopted else "endorsed" if endorsed else "none",
+        "project_refs": [*adopted, *endorsed],
+        "project_adopted": adopted or False,
+        "audience_result": f"{best_result['status']}:{best_result['evidence_type']}" if best_result else "none",
+        "audience_evidence": results,
     }
+
+
+def infer_evidence_stage(profile: dict[str, Any]) -> str | None:
+    if profile["audience_result"].startswith("verified"):
+        return "field_validated"
+    if profile["project_status"] in PROJECT_STATUSES:
+        return "user_endorsed"
+    return "source_verified" if profile["source_checked"] else None
 
 
 def infer_evidence_type(
@@ -586,14 +664,15 @@ def cmd_search(args: argparse.Namespace) -> int:
                 continue
             score = score_item(item, terms, full_query)
             if score > 0:
+                profile = build_evidence_profile(item, group, sources_by_id, feedback_by_id)
                 entry: dict[str, Any] = {
                     "group": group,
                     "id": item.get("id"),
                     "version": item.get("version"),
                     "learning_origin": origin,
-                    "evidence_stage": infer_evidence_stage(item, group, feedback_by_id),
+                    "evidence_stage": infer_evidence_stage(profile),
                     "evidence_type": infer_evidence_type(item, group, origin, feedback_by_id),
-                    "evidence_profile": build_evidence_profile(item, group, sources_by_id, feedback_by_id),
+                    "evidence_profile": profile,
                     "title": item.get("title"),
                     "title_en": item.get("title_en"),
                     "status": item.get("status", item.get("reading_status")),
@@ -673,83 +752,172 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 1 if errors else 0
 
 
-def cmd_apply_patch(args: argparse.Namespace) -> int:
-    root = resolve_library_root(args.library)
-    data, catalog_path = load_catalog(root)
-    patch_path = Path(args.file).expanduser().resolve()
-    if not patch_path.exists():
-        print(json.dumps({"applied": False, "error": f"Patch file not found: {patch_path}"}, ensure_ascii=False, indent=2))
-        return 1
+def write_atomic(path: Path, content: bytes) -> None:
+    with tempfile.NamedTemporaryFile(prefix=f".{path.name}.", dir=path.parent, delete=False) as handle:
+        staged = Path(handle.name)
+        try:
+            handle.write(content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        except BaseException:
+            handle.close()
+            staged.unlink(missing_ok=True)
+            raise
+    try:
+        if path.exists():
+            staged.chmod(stat.S_IMODE(path.stat().st_mode))
+        os.replace(staged, path)
+    finally:
+        staged.unlink(missing_ok=True)
 
-    patch = json.loads(patch_path.read_text(encoding="utf-8"))
-    new_data = copy.deepcopy(data)
-    old_revision = new_data.get("revision", 1)
-    added_ids: list[str] = []
-    updated_ids: list[str] = []
+
+def lock_writer(handle: Any) -> None:
+    if os.name == "nt":
+        import msvcrt
+
+        handle.seek(0)
+        msvcrt.locking(handle.fileno(), msvcrt.LK_LOCK, 1)
+    else:
+        import fcntl
+
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+
+
+def refresh_case_fingerprints(
+    root: Path,
+    catalog: dict[str, Any],
+    case_ids: set[str],
+    manifest: dict[str, Any],
+) -> list[str]:
+    records = manifest.setdefault("cases", {})
+    if not isinstance(records, dict):
+        return ["translations.en.json cases must be an object"]
+    errors = []
+    for case in catalog["cases"]:
+        cid = case["id"]
+        if cid not in case_ids:
+            continue
+        existing = records.get(cid)
+        entry = dict(existing) if isinstance(existing, dict) else {}
+        entry.update(title=case.get("title"), title_en=case.get("title_en"), hash_mode=CASE_HASH_MODE)
+        for path_field, hash_field in CASE_FILES:
+            relative = case.get(path_field)
+            if not has_text(relative):
+                errors.append(f"{cid} {path_field} must be a non-empty string")
+                continue
+            card = _resolve_md_path(root, relative)
+            if not card.is_file():
+                errors.append(f"{cid} missing {path_field} file at {card}")
+                continue
+            entry[path_field] = relative
+            entry[hash_field] = hashlib.sha256(normalized_case_bytes(card.read_bytes())).hexdigest()
+        records[cid] = entry
+    manifest["catalog_revision"] = catalog["revision"]
+    manifest["updated_at"] = catalog["updated_at"]
+    return errors
+
+
+def apply_catalog_patch(root: Path, patch: dict[str, Any], check_files: bool) -> dict[str, Any]:
+    data, catalog_path = load_catalog(root)
+    old_catalog = catalog_path.read_bytes()
+    old_revision = data["revision"]
+    manifest_path = root / "translations.en.json"
+    if manifest_path.is_file():
+        current = read_json(manifest_path)
+        staged_revision = current.get("catalog_revision")
+        if isinstance(staged_revision, int) and staged_revision > old_revision:
+            previous = root / "history" / f"translations-r{old_revision}.json"
+            if previous.is_file():
+                write_atomic(manifest_path, previous.read_bytes())
+            elif not data["cases"]:
+                manifest_path.unlink()
+            else:
+                raise ValueError(f"missing manifest backup for catalog r{old_revision}")
+    added_ids, updated_ids = [], []
+    changed_cases: set[str] = set()
 
     for group in GROUPS:
         patch_items = patch.get(group, [])
-        if not isinstance(patch_items, list):
-            continue
-        existing_list = new_data.setdefault(group, [])
-        index_by_id = {item.get("id"): idx for idx, item in enumerate(existing_list) if isinstance(item, dict)}
-        for p_item in patch_items:
-            p_id = p_item.get("id")
-            if p_id in index_by_id:
-                idx = index_by_id[p_id]
-                old_ver = existing_list[idx].get("version", 1)
-                merged = copy.deepcopy(existing_list[idx])
-                merged.update(p_item)
-                if "version" not in p_item or p_item["version"] <= old_ver:
-                    merged["version"] = old_ver + 1
-                existing_list[idx] = merged
-                updated_ids.append(p_id)
+        if not isinstance(patch_items, list) or any(not isinstance(item, dict) for item in patch_items):
+            raise ValueError(f"patch {group} must be a list of objects")
+        indexed = {item["id"]: index for index, item in enumerate(data[group])}
+        encountered = set()
+        for changes in patch_items:
+            record_id = changes.get("id")
+            if not has_text(record_id) or record_id in encountered:
+                raise ValueError(f"missing or duplicate patch ID in {group}: {record_id!r}")
+            encountered.add(record_id)
+            version = changes.get("version")
+            if version is not None and (type(version) is not int or version < 1):
+                raise ValueError(f"{record_id} version must be a positive integer")
+            if record_id in indexed:
+                current = data[group][indexed[record_id]]
+                previous_version = current["version"]
+                current.update(changes)
+                current["version"] = max(previous_version + 1, version or 1)
+                updated_ids.append(record_id)
             else:
-                if "version" not in p_item:
-                    p_item["version"] = 1
-                existing_list.append(p_item)
-                added_ids.append(p_id)
+                data[group].append({**changes, "version": version or 1})
+                added_ids.append(record_id)
+            if group == "cases":
+                changed_cases.add(record_id)
 
-    new_data["revision"] = old_revision + 1
-    new_data["updated_at"] = patch.get("updated_at") or dt.date.today().isoformat()
+    data["revision"] = old_revision + 1
+    data["updated_at"] = patch.get("updated_at") or dt.date.today().isoformat()
+    manifest = None
+    if check_files and changed_cases:
+        manifest = read_json(manifest_path) if manifest_path.is_file() else {"schema_version": 1, "language": "en"}
+        errors = refresh_case_fingerprints(root, data, changed_cases, manifest)
+        if errors:
+            return {"applied": False, "error_count": len(errors), "errors": errors}
 
-    errors = validate_catalog(new_data, root, check_files=args.check_files)
+    errors = validate_catalog(data, root, check_files, manifest)
     if errors:
-        print(
-            json.dumps(
-                {
-                    "applied": False,
-                    "rolled_back": True,
-                    "error_count": len(errors),
-                    "errors": errors,
-                },
-                ensure_ascii=False,
-                indent=2,
-            )
-        )
-        return 1
+        return {"applied": False, "error_count": len(errors), "errors": errors}
 
-    history_dir = root / "history"
-    history_dir.mkdir(parents=True, exist_ok=True)
-    backup_path = history_dir / f"catalog-r{old_revision}.json"
-    shutil.copy2(catalog_path, backup_path)
+    backup = root / "history" / f"catalog-r{old_revision}.json"
+    write_atomic(backup, old_catalog)
+    if manifest is None:
+        write_atomic(catalog_path, json_bytes(data))
+    else:
+        old_manifest = manifest_path.read_bytes() if manifest_path.is_file() else None
+        if old_manifest is not None:
+            write_atomic(root / "history" / f"translations-r{old_revision}.json", old_manifest)
+        try:
+            write_atomic(manifest_path, json_bytes(manifest))
+            write_atomic(catalog_path, json_bytes(data))
+        except BaseException:
+            if catalog_path.read_bytes() == old_catalog:
+                if old_manifest is None:
+                    manifest_path.unlink(missing_ok=True)
+                elif manifest_path.read_bytes() != old_manifest:
+                    write_atomic(manifest_path, old_manifest)
+            raise
+    return {
+        "applied": True,
+        "previous_revision": old_revision,
+        "new_revision": data["revision"],
+        "backup_path": str(backup),
+        "added_ids": added_ids,
+        "updated_ids": updated_ids,
+    }
 
-    catalog_path.write_text(json.dumps(new_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(
-        json.dumps(
-            {
-                "applied": True,
-                "previous_revision": old_revision,
-                "new_revision": new_data["revision"],
-                "backup_path": str(backup_path),
-                "added_ids": added_ids,
-                "updated_ids": updated_ids,
-            },
-            ensure_ascii=False,
-            indent=2,
-        )
-    )
-    return 0
+
+def cmd_apply_patch(args: argparse.Namespace) -> int:
+    root = resolve_library_root(args.library)
+    try:
+        patch = read_json(Path(args.file).expanduser().resolve())
+        if not isinstance(patch, dict):
+            raise ValueError("patch must be an object")
+        history = root / "history"
+        history.mkdir(exist_ok=True)
+        with (history / ".library.lock").open("a+b") as lock:
+            lock_writer(lock)
+            result = apply_catalog_patch(root, patch, args.check_files)
+    except (OSError, ValueError) as exc:
+        result = {"applied": False, "error": str(exc)}
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["applied"] else 1
 
 
 def main() -> int:

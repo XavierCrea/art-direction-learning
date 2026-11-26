@@ -1,6 +1,6 @@
 # Marketing Examples Above-the-Fold 5-Element Architecture: Replacing Abstract Illustrations with the "Product in Action"
 
-[English Case Index](../README.en.md) · [简体中文](../C-me-above-the-fold-visual.md) · Landing Page Teardown & Conversion Structure Guide
+[English Case Index](../../README.en.md) · [简体中文](../C-me-above-the-fold-visual.md) · Landing Page Teardown & Conversion Structure Guide
 
 - **Symptom (`when_stuck`)**: A landing page or storefront hero section (`Above the Fold`) shows generic flat illustrations, abstract 3D blobs, or stock handshake photos paired with vague slogans—leaving visitors unable to tell what physical product or tool you actually sell within 3 seconds, and hesitant to click the CTA button.
 - **Channels**: Brand website Hero Sections, B2B storefront homepages, product launch landing pages.

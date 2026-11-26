@@ -1,6 +1,6 @@
 # Steve Krug's Third Law ("Cut Half, Then Half Again") & the 6-Item "Trunk Test" for Page Navigation
 
-[English Case Index](../README.en.md) · [简体中文](../C-krug-omit-words-and-trunk-test-navigation.md) · Copy Pruning (`103` to `34` Words) & Trunk Test Wayfinding Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-krug-omit-words-and-trunk-test-navigation.md) · Copy Pruning (`103` to `34` Words) & Trunk Test Wayfinding Teardown
 
 - **Case ID**: `C-krug-omit-words-and-trunk-test-navigation`
 - **Source**: `S-krug-dmmt-3e-2014` — Steve Krug, *Don’t Make Me Think, Revisited (Third Edition)* (Chapters 4–6 & 13, PDF p.70–113, 224)

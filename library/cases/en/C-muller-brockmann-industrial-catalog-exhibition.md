@@ -1,6 +1,6 @@
 # Josef Müller-Brockmann's 30-Field B2B Industrial Catalog & 170cm Trade-Show Booth Eye-Level Grid
 
-[English Case Index](../README.en.md) · [简体中文](../C-muller-brockmann-industrial-catalog-exhibition.md) · B2B Technical Manual & 3D Exhibition Space Grid Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-muller-brockmann-industrial-catalog-exhibition.md) · B2B Technical Manual & 3D Exhibition Space Grid Teardown
 
 - **Case ID**: `C-muller-brockmann-industrial-catalog-exhibition`
 - **Source**: `S-muller-brockmann-grid-systems` — Josef Müller-Brockmann, *Grid systems in graphic design* (PDF p.65–76)

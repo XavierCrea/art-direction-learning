@@ -1,6 +1,6 @@
 # Muserk "Get F'in Paid": Modern Typographic-Wall Poster, 3-Tier Scale Drop & Corner QR Close
 
-[English Case Index](../README.en.md) · [简体中文](../C-aotw-muserk-typographic-wall-poster.md) · Product-Free Poster & Channel-2 Exact Rendering Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-aotw-muserk-typographic-wall-poster.md) · Product-Free Poster & Channel-2 Exact Rendering Teardown
 
 - **Symptom (`when_stuck`)**: Promoting an intangible service, SaaS platform, event, or advocacy message with no physical hardware to photograph—where generic 3D blobs or stock handshake photos look hollow and fail to stop street or social-feed traffic.
 - **Channels**: Street / Expo Typographic Posters (OOH), Social Big-Type Cover Cards, Product-Free SaaS / Service Ads—ideal for **Channel 2 (Python PIL / SVG exact rendering)**.

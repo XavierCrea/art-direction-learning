@@ -1,6 +1,6 @@
 # Josef Müller-Brockmann's 8/20/32-Field Modular Grids & Baseline Alignment System
 
-[English Case Index](../README.en.md) · [简体中文](../C-muller-brockmann-modular-grid-construction.md) · Systematic Grid Construction & Typographic Alignment Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-muller-brockmann-modular-grid-construction.md) · Systematic Grid Construction & Typographic Alignment Teardown
 
 - **Case ID**: `C-muller-brockmann-modular-grid-construction`
 - **Source**: `S-muller-brockmann-grid-systems` — Josef Müller-Brockmann, *Grid systems in graphic design: A visual communication manual for graphic designers, typographers and three dimensional designers* (PDF p.16–50)

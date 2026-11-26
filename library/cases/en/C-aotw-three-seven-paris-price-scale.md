@@ -1,6 +1,6 @@
 # Three Seven Paris "How much do you love her?": Physical-Scale Price Ladder & Emotional-Gauge Framing
 
-[English Case Index](../README.en.md) · [简体中文](../C-aotw-three-seven-paris-price-scale.md) · OOH Poster & High-Ticket Physical Price Anchoring Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-aotw-three-seven-paris-price-scale.md) · OOH Poster & High-Ticket Physical Price Anchoring Teardown
 
 - **Symptom (`when_stuck`)**: High-ticket gifts, tiered bundles, or multi-size physical SKUs look cold when lined up with plain price tags—causing shoppers to default to the cheapest option—while long craftsmanship copy goes unread.
 - **Channels**: Street / Mall OOH Posters, Social Feed Static Covers, Tiered Gift / SKU Comparison Images (PDP / Ad Banner).

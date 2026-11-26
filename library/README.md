@@ -25,8 +25,8 @@
 | `M-011` | **亲密性分群与眯眼停顿计数法 (Proximity Grouping & Eye-Stop Count)** | 元素塞满四角不敢留白、小标题与上下段等距，视线乱跳超过 5 次找不到重点 | 名片、海报、详情页模块 |
 | `M-012` | **硬边对齐线与去居中化法则 (Hard-Edge Alignment & Anti-Centering)** | 混用居中/左对齐，或通篇默认居中导致边缘软弱、图文间卡着零碎截留空白 | 全品类网页、画册、广告 |
 | `M-013` | **重复视觉锚点与强烈对比法则 (Repetitive Anchors & Bold Contrast)** | 多屏页面像拼凑散页，或全页灰蒙蒙缺乏焦点、12pt 配 14pt 微弱对比像失误 | 多屏详情页、画册、海报 |
-| `M-014` | **12 色轮取色、色质拉开与冷退暖进面积比 (Color Wheel, Value & Cool/Warm Ratio)** | 纯色搭配俗气像玩具、深底暗字色质太近发抖模糊，或暖色面积过大压迫视线 | 品牌配色、海报、详情页 |
-| `M-015` | **字体禁同门冲突与六维叠加对比法 (Anti-Conflict & 6-Dimension Type Contrast)** | 同页混用两种相似字体打架、手写体配斜体冲突，或全大写长标题占空间难识别 | 标题排版、白皮书、海报 |
+| `M-014` | **色轮、明度对比与冷暖配色** | 字与背景难分辨，或希望在冷调画面突出一个小元素 | 品牌配色、海报、详情页 |
+| `M-015` | **字体角色与六维排版对比** | 两套字体太相似、文字层级难辨，或长标题很难读 | 标题排版、白皮书、海报 |
 | `M-016` | **正文行高模数网格与页边距递进法 (Baseline Modular Grid & Margin Ratios)** | 多图文页面图片高低错落、图注漂浮、文字行与图片顶底边缘对不齐 | 画册、选型册、详情页 |
 | `M-017` | **多格矩阵远近景配对与空白格留白法 (8/20/32-Field Matrix & Scale Pairing)** | 多图画册呆板枯燥，或把所有网格 100% 塞满导致画面窒息 | 产品画册、B2B 技术手册 |
 | `M-018` | **色块防贴边铁律（字锁格块外扩 / 块锁格字内缩）(Color Field Padding & Bleed)** | 文字放进彩色底框后四周紧贴色块边缘，显得憋屈廉价 | 卖点卡片、海报色带、表格 |
@@ -39,25 +39,25 @@
 | `M-025` | **Krug 第三定律（字数砍半再砍半）与“后备箱测试”路牌体系 (Cut Half Twice & Trunk Test)** | 页面堆满自嗨欢迎词和说明段、当前 Tab 指示太弱，或落入内页找不到层级方向 | 全站导航、详情页、规格书 |
 | `M-026` | **首屏“大爆炸理论”：50ms 第一印象、6–8 词区分度口号与防公地悲剧 (Homepage Big Bang & Tagline)** | 访客 3 秒看不懂公司干什么、口号像大空话，或各部门往首页硬塞横幅沦为公地悲剧 | 独立站首页、国际站旺铺首屏 |
 | `M-027` | **“善意储蓄罐”视觉守护、真 FAQ 去伪与前缀关键词双模扫视法 (Goodwill Reservoir & Ear-Scanning)** | 故意隐藏价格/运费耗尽买家耐心、拿自吹自擂假 FAQ 充数，或标题/列表前半句雷同 | 询盘转化页、定价区、FAQ |
-| `M-028` | **[实战共创] 高噪商圈/展会巨幕的纯色场降噪、L屏景别递进与打卡背景板法则 (High-Noise Billboard Color-Field Denoising & L-Screen Progression)** | 商圈外墙或展会主背板被周围红黄霓虹灯吞没、少字风景图依然发灰紧绷，或 L 屏被白底膏药块割裂 | 商圈户外巨幕、L屏、展会主背板 |
+| `M-028` | **户外大屏的环境对比与远近信息分工** | 展位号被背景吃掉、组屏割裂，或不同视距需要不同的信息密度 | 商圈户外巨幕、组屏、展会背板 |
 | `M-029` | **信息流破群孤立与美感可用性边界法 (Feed-Breaking Isolation & Aesthetic-Usability Guardrails)** | 小红书双列瀑布流封面与同行雷同无人停滑、全员高亮零焦点，或过度精修触发广告盲区 | 社媒信息流封面、广告主图、定价页 |
 | `M-030` | **首尾锚定与峰终分镜排布法 (Primacy-Recency Anchoring & Peak-End Storyboarding)** | 多图轮播或长详情页平均用力记不住重点、尾屏草草收尾，或导航核心入口埋在中间 | 滑动多图轮播、长详情页、移动导航 |
 | `M-031` | **滑屏悬念张力与进度梯度牵引法 (Unfinished-Loop Tension & Goal-Gradient Progress Cues)** | 多图笔记翻页率低、横滑卡片占满全宽看不出可滑，或多步骤选型中途跳出 | 滑动多图轮播、横滑画廊、多步表单 |
 | `M-032` | **移动端热区、渐进披露与心智顺应法 (Mobile Touch Targets, Progressive Disclosure & Native Conventions)** | 移动端主按钮够不到或易误触、9:16 竖屏字被遮挡、SKU 过多选择瘫痪，或反直觉 UI | 移动端 H5、PDP 选型、9:16 竖屏 |
-| `M-033` | **9:16 竖屏像素级安全区与前 2–3 秒视觉钩子法则 (9:16 Safe-Zone Pixel Grid & First 2–3s Visual Hook)** | 9:16 竖屏文字/价格被右侧互动栏或底部字幕遮挡，或慢前奏导致前 2 秒即被划走 | TikTok / 抖音 / Reels 9:16 竖屏 |
-| `M-034` | **信息流原生静态图、Us vs. Them 极化对比与停滑率诊断法 (Native Feed Statics, Us vs. Them & Thumbstop Diagnostics)** | 精修信息流海报 CTR < 1% 触发广告盲区、视频 TSR < 25%，或静态图塞成宣传单 | 社媒静态广告、对比长图、首帧分屏 |
+| `M-033` | **按投放位验证竖屏安全区与开场信息** | 文字被控件遮挡，或开场缺少继续观看的理由 | 竖屏广告、封面与短片 |
+| `M-034` | **信息流素材诊断与原生静态形式测试** | 短时观看或点击表现变化，原因待查 | 社媒广告、对照创意 |
 | `M-035` | **实体价格梯度 × 物理量感 × 情绪标尺锚定法 (Physical-Scale Price Ladder & Emotional-Gauge Framing)** | 高客单价礼品或多规格实体 SKU 直接标价冰冷、买家默认选最低价，且工艺长文没人看 | 线下海报、社媒静态图、多档位 SKU 主图 |
 | `M-036` | **熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导法 (Familiar Visual-Code Subversion & Single Light-Cone)** | 品牌/公益海报太说教 0.5 秒被看穿，或真实生活场景杂乱抓不住视觉焦点 | 户外/印刷海报、高停滑社媒封面 |
 | `M-037` | **现代无图纯字体墙海报：60% 压缩巨字 + 三级字阶落差与底角二维码收口 (Modern Typographic-Wall Poster)** | 无形服务/SaaS/活动无实物可拍，硬凑 3D 插画假大空且缺通道 2 像素直出模板 | 街头/展会纯字海报、社媒大字报、通道 2 |
 | `M-038` | **符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓 (Sequential State Repetition & Whisper Reveal)** | 表达看不见的传感器/防抖/降噪/均衡等隐形技术，不想画丑陋事故或晦涩原理图 | 高端技术海报、特性模块、通道 2 矢量 |
-| `M-039` | **熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法 (Real-Object Symbol Deformation & Monochrome Field)** | 环保/耐用/物理动作户外海报易滑向说教或杂乱拼贴，想用 0.5 秒零文案违和感直击因果 | 商圈巨幕、态度平面海报、社媒品牌卡 |
+| `M-039` | **熟悉符号的真实形变与纯色色场** | 想通过熟悉物件的形变让观众读出动作 | 户外、平面和社媒海报 |
 
 ## 视觉拆解案例卡 (`library/cases/*.md` & `library/cases/en/*.md`)
 
 ### 实战共创与街头实拍正反对比拆解（`learning_origin: co_dissected_teardown` · 1 篇）
 > 区别于下方静态投喂的设计原著（`book_canon`）与外部实验室报告（`benchmark_study`），本分组记录**用户与 Agent 在真实商业观察中通过连续追问（`inquiry_chain`）与同行街头实拍正反对比共同推演、并经用户确认入库（`status: validated`）的鲜活实战智慧**。可用 `python scripts/library.py search "商圈" --origin co_dissected_teardown` 单独检索。
 
-- [2026 新一代小米 SU7 × 舒淇「卡布里蓝」商圈巨幕 vs. 同行车企大屏正反对比：为什么顶级商圈外墙不谈参数，且纯色场完胜风景图？](cases/C-xiaomi-su7-2026-mall-billboard-teardown.md) · [English](cases/en/C-xiaomi-su7-2026-mall-billboard-teardown.md)（`C-xiaomi-su7-2026-mall-billboard-teardown` · 关联 `M-028`、`F-002`）
+- [2026 新一代小米 SU7 × 舒淇「卡布里蓝」商圈巨幕 vs. 同行车企大屏正反对比：大面积色场、组屏和实际观看距离](cases/C-xiaomi-su7-2026-mall-billboard-teardown.md) · [English](cases/en/C-xiaomi-su7-2026-mall-billboard-teardown.md)（`C-xiaomi-su7-2026-mall-billboard-teardown` · 关联 `M-028`、`F-002`）
 
 ### Baymard Institute 电商 UX 眼动与可用性基准（5 篇）
 - [Baymard 比例参照实验：用已知尺寸参照物消除 42% 买家的体积误判](cases/C-baymard-in-scale-reference.md) · [English](cases/en/C-baymard-in-scale-reference.md)（`C-baymard-in-scale-reference`）
@@ -100,12 +100,12 @@
 - [Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应](cases/C-lawsofux-fitts-hick-and-jakob.md) · [English](cases/en/C-lawsofux-fitts-hick-and-jakob.md)（`C-lawsofux-fitts-hick-and-jakob` · 关联 `M-032`）
 
 ### TikTok Creative Center & Motion 现代信息流与效果创意基准（2 篇）
-- [TikTok Creative Center 9:16 竖屏安全区与前 2–3 秒视觉钩子：像素级避让红线与早期露品实证](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [English](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md)（`C-tiktok-9x16-safe-zones-and-2s-hook` · 关联 `M-033`）
-- [Motion 效果创意实证基准：信息流原生静态图、Us vs. Them 极化对比与停滑率诊断](cases/C-motion-native-statics-and-us-vs-them.md) · [English](cases/en/C-motion-native-statics-and-us-vs-them.md)（`C-motion-native-statics-and-us-vs-them` · 关联 `M-034`）
+- [TikTok 竖屏案例：按投放位定安全区，按创意设计开场](cases/C-tiktok-9x16-safe-zones-and-2s-hook.md) · [English](cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md)（`C-tiktok-9x16-safe-zones-and-2s-hook` · 关联 `M-033`）
+- [Motion 创意诊断：用可比基线决定要测什么](cases/C-motion-native-statics-and-us-vs-them.md) · [English](cases/en/C-motion-native-statics-and-us-vs-them.md)（`C-motion-native-statics-and-us-vs-them` · 关联 `M-034`）
 
 ### 现代户外/印刷海报创意拆解（5 篇 · `editorial_analysis`）
 - [Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定](cases/C-aotw-three-seven-paris-price-scale.md) · [English](cases/en/C-aotw-three-seven-paris-price-scale.md)（`C-aotw-three-seven-paris-price-scale` · 关联 `M-035`）
 - [Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导](cases/C-aotw-fnac-visual-subversion-light-cone.md) · [English](cases/en/C-aotw-fnac-visual-subversion-light-cone.md)（`C-aotw-fnac-visual-subversion-light-cone` · 关联 `M-036`）
 - [Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口](cases/C-aotw-muserk-typographic-wall-poster.md) · [English](cases/en/C-aotw-muserk-typographic-wall-poster.md)（`C-aotw-muserk-typographic-wall-poster` · 关联 `M-037`）
 - [Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓](cases/C-aotw-mercedes-rollover-sensor-state-sequence.md) · [English](cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md)（`C-aotw-mercedes-rollover-sensor-state-sequence` · 关联 `M-038`）
-- [Coca-Cola《Recycle Me》：熟悉符号真实物理形变 × 95% 纯品牌色场极简留白法](cases/C-coca-cola-recycle-me-deformation.md) · [English](cases/en/C-coca-cola-recycle-me-deformation.md)（`C-coca-cola-recycle-me-deformation` · 关联 `M-039`）
+- [可口可乐《Recycle Me》：用熟悉符号的真实形变表现动作](cases/C-coca-cola-recycle-me-deformation.md) · [English](cases/en/C-coca-cola-recycle-me-deformation.md)（`C-coca-cola-recycle-me-deformation` · 关联 `M-039`）

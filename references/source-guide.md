@@ -19,9 +19,9 @@
 
 | 来源名称 | 核心价值与补齐方向 | 典型入口 | 证据属性 |
 | :--- | :--- | :--- | :--- |
-| **TikTok Creative Center (Top Ads)** | 9:16 竖屏前 3 秒视觉钩子（Visual Hook）、原生 UGC 实拍结构、无声播放（Sound-Off）花字与画面分工、安全区（Safe Zones）避让 | `https://ads.tiktok.com/business/creativecenter` | 官方高转化广告库 + 逐秒留存/互动曲线（Second-by-Second Analytics） |
+| **TikTok For Business** | 按实际版位核对安全区，并据 Creative Codes 调整开场。引用广告回忆数据时保留前 6 秒的研究口径。 | [安全区模板](https://ads.tiktok.com/resources/help/article/tiktok-auction-in-feed-ads?lang=en) · [Creative Codes](https://ads.tiktok.com/business/en/blog/creative-best-practices-top-performing-ads) | 官方规范及所引样本研究 |
 | **巨量创意（Ocean Engine）** | 中文短视频信息流前 3 秒吸睛分帧、原生卖点演示、痛点反差开场与完播流失节点拆解 | `https://cc.oceanengine.com` | 官方行业爆款创意库与分帧吸睛率曲线 |
-| **Motion (Creative Strategy Reports) & Foreplay.co** | 海外 DTC 品牌效果创意（Performance Creative）实证：Us vs. Them 静态对比图、原生贴纸/手写标注图、反精致“丑广告（Ugly Ads）”停滑机制 | `https://motionapp.com`<br>`https://foreplay.co` | 效果广告年度数据报告 + 高转化 Swipe File 拆解 |
+| **Motion** | 按平台定义读短时观看数据，用同账号可比素材的表现建立基线。 | [创意诊断](https://help.motionapp.com/en/articles/8757194-tell-stories-and-build-hypotheses-with-metrics) · [指标定义](https://help.motionapp.com/en/articles/7730931-metrics-cheat-sheet) | 指标说明与诊断方法 |
 | **Meta Ad Library** | 检索竞品在投静态图文与滑屏轮播（Carousel）；**实证门槛：优先筛选持续投放 >30 天的长跑广告**，过滤短期试错素材 | `https://www.facebook.com/ads/library` | 真实在投商业广告数据库（以投放时长为实证过滤条件） |
 | **Growth.Design** | 漫画分镜式移动端 App 体验拆解（含 TikTok、Duolingo、Airbnb 等），逐屏拆解视觉层级、认知负荷、首屏引导与心理触发点 | `https://growth.design/case-studies` | 真实产品逐屏 UX 与视觉心理拆解（Visual Teardown） |
 | **Laws of UX (Jon Yablonski)** | 现代移动端与信息流底层认知规律速查：Von Restorff 孤立效应、Hick 选择定律、Miller 分块、Jakob 习惯定律、Fitts 触控热区、美感可用性效应 | `https://lawsofux.com` | 认知心理学与交互法则速查库（官网适合提炼 `M-*` 规则与症状路由） |

@@ -1,6 +1,6 @@
 # Robin Williams CRAP Layout Makeovers: From "5-Eye-Stop Amateur Cards & Ads" to Professional Visual Order
 
-[English Case Index](../README.en.md) · [简体中文](../C-williams-crap-layout-makeovers.md) · Before/After Layout Redesign Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-williams-crap-layout-makeovers.md) · Before/After Layout Redesign Teardown
 
 - **Case ID**: `C-williams-crap-layout-makeovers`
 - **Case Type**: `editorial_teardown` (Before/After Layout Makeovers)

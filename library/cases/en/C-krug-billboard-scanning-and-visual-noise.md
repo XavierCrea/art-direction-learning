@@ -1,6 +1,6 @@
 # Steve Krug's "Billboard Design 101": Why Users Don't Read Pages, How Visual Nesting Breaks, and How to Eliminate the 3 Types of Visual Noise
 
-[English Case Index](../README.en.md) · [简体中文](../C-krug-billboard-scanning-and-visual-noise.md) · Scanning Behavior, Visual Nesting & Affordance Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-krug-billboard-scanning-and-visual-noise.md) · Scanning Behavior, Visual Nesting & Affordance Teardown
 
 - **Case ID**: `C-krug-billboard-scanning-and-visual-noise`
 - **Source**: `S-krug-dmmt-3e-2014` — Steve Krug, *Don’t Make Me Think, Revisited: A Common Sense Approach to Web Usability (Third Edition)* (Chapters 1–3 & 10, PDF p.28–69, 194–197)

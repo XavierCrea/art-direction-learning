@@ -1,6 +1,6 @@
 # Refactoring UI Non-Linear Spacing Scale, Anti-12-Column Grid Dogma & Typographic Discipline
 
-[English Case Index](../README.en.md) · [简体中文](../C-refactoring-ui-spacing-grid-and-typography.md) · Spacing Systems, Responsive Grids & Web Typography Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-refactoring-ui-spacing-grid-and-typography.md) · Spacing Systems, Responsive Grids & Web Typography Teardown
 
 - **Case ID**: `C-refactoring-ui-spacing-grid-and-typography`
 - **Source**: `S-wathan-schoger-refactoring-ui-2018` — Adam Wathan & Steve Schoger, *Refactoring UI* (PDF p.24–33, 65–136)

@@ -1,6 +1,6 @@
 # Refactoring UI 9-Shade HSL Palettes, Perceived-Brightness Hue Rotation, Depth Layers & Hero Image Contrast
 
-[English Case Index](../README.en.md) · [简体中文](../C-refactoring-ui-hsl-color-depth-and-images.md) · Color Systems, Elevation Shadows & Image Contrast Teardown
+[English Case Index](../../README.en.md) · [简体中文](../C-refactoring-ui-hsl-color-depth-and-images.md) · Color Systems, Elevation Shadows & Image Contrast Teardown
 
 - **Case ID**: `C-refactoring-ui-hsl-color-depth-and-images`
 - **Source**: `S-wathan-schoger-refactoring-ui-2018` — Adam Wathan & Steve Schoger, *Refactoring UI* (PDF p.137–238)

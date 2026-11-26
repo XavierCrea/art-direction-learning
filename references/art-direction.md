@@ -28,8 +28,8 @@
 
 | 当遇到以下视觉痛点或用户原话（Symptom / `when_stuck`） | 推荐检索词 (`search`) | 优先调取的核心方法与案例 (`M-001`–`M-039`) |
 | :--- | :--- | :--- |
-| **“看不出这是什么” / 写了尺寸数字但买家没体积概念** | `比例 参照 尺寸` 或 `in-scale size` | `M-001` · `C-baymard-in-scale-reference`（另见 `poster-patterns.md` `P-01` 陌生零部件先露全貌） |
-| **放了局部特写图，买家看不懂拍的是哪、有什么用** | `特写 引线 图注` 或 `callout caption crop` | `M-002` · `C-baymard-descriptive-callouts` |
+| **写了尺寸数字，但读者对实物没大小概念** | `比例 参照 尺寸` 或 `in-scale size` | `M-001` · `C-baymard-in-scale-reference` |
+| **“看不出这是什么”或局部特写不知道拍了哪个部件** | `特写 引线 图注` 或 `callout caption crop` | `M-002` · `C-baymard-descriptive-callouts`。也可参考构图指南 P-01，先展示轮廓和使用位置。 |
 | **买家搞不清图片里的配件到底送不送 / 产生售后纠纷** | `配件 标配 选配` 或 `accessories included` | `M-003` · `C-baymard-included-optional-accessories` |
 | **首屏放了漂亮插画或大段文字，访客看不出卖什么实物** | `首屏 实景 演示` 或 `above the fold hero` | `M-004` · `C-me-above-the-fold-visual` · `C-me-rows-live-product-hero` |
 | **参数表太长像一堵墙、视线串行，或双栏被误认为两款对比** | `参数表 扫描 分组` 或 `spec sheet scannability` | `M-005`、`M-020` · `C-baymard-spec-sheet-scannability` · `C-refactoring-ui-data-labels-and-tables` |
@@ -43,12 +43,12 @@
 | **按钮名字费脑、扁平化看不出可点、说明文太长或内页迷路** | `广告牌 噪音 砍半 后备箱 口号` 或 `billboard trunk test tagline` | `M-024`–`M-027` · `C-krug-billboard-scanning-and-visual-noise` · `C-krug-omit-words-and-trunk-test-navigation` · `C-krug-homepage-big-bang-tagline-and-goodwill` |
 | **商圈外墙/展会远距大牌被环境噪点吞没、L 屏割裂或没人打卡** | `商圈 户外大屏 纯色场 L屏 打卡` 或 `mall billboard color field` | `M-028` · `C-xiaomi-su7-2026-mall-billboard-teardown` |
 | **信息流封面没人停滑、轮播翻页率低、移动端按钮难按或选择瘫痪** | `孤立效应 峰终 翻页 拇指热区` 或 `von restorff swipe carousel fitts` | `M-029`–`M-032` · `C-lawsofux-*` |
-| **9:16 竖屏字被平台控件遮挡，或前 2–3 秒就被划走** | `9:16 安全区 视觉钩子` 或 `9:16 safe zones hook` | `M-033` · `C-tiktok-9x16-safe-zones-and-2s-hook` |
+| **9:16 竖屏字被平台控件挡住，或开场缺少接着看的理由** | `9:16 安全区 版位` 或 `9:16 safe zones` | `M-033` · `C-tiktok-9x16-safe-zones-and-2s-hook` |
 | **“太像硬广没人点” / 怎么公平对照竞品或排查低点击率素材** | `原生静态图 对比 停滑率` 或 `us vs them native static` | `M-034` · `C-motion-native-statics-and-us-vs-them` |
 | **“想让人停一下、再看一眼” / 品牌海报太直白说教** | `视觉反转 Double-Take 光锥` 或 `double-take visual subversion` | `M-036` · `C-aotw-fnac-visual-subversion-light-cone` |
 | **无实物服务/活动没图可放，硬凑 3D 显得假大空** | `纯字体墙 无实物 二维码` 或 `typographic wall product-free` | `M-037` · `C-aotw-muserk-typographic-wall-poster` |
 | **看不见的底层安全/防抖/均衡技术，怎么不靠丑陋示意图讲清** | `符号逐帧演进 隐形技术 静默底注` 或 `icon as diagram whisper reveal` | `M-038` · `C-aotw-mercedes-rollover-sensor-state-sequence` |
-| **0.5 秒记住一个动作或物理特性（如回收/柔韧/抗撞），拒绝说教** | `符号物理形变 纯色极端留白` 或 `symbol deformation crushed logo` | `M-039` · `C-coca-cola-recycle-me-deformation` |
+| **想让人看懂某个物理动作或材料变化** | `符号 真实形变` 或 `symbol deformation` | `M-039` · `C-coca-cola-recycle-me-deformation` |
 
 ---
 
