@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_revision": 18,
+  "catalog_revision": 19,
   "updated_at": "2026-11-26",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
@@ -11,7 +11,8 @@
       "markdown_path": "library/cases/C-baymard-in-scale-reference.md",
       "zh_sha256": "ad1a5415d09bf8a45ba321d5099bfe0de45db04f07da939bd163f402ceb20250",
       "markdown_path_en": "library/cases/en/C-baymard-in-scale-reference.md",
-      "en_sha256": "9995f6523f6887faa4a997f82d0d951a0a0df63a780f1b7332696a63188cc6b2"
+      "en_sha256": "9995f6523f6887faa4a997f82d0d951a0a0df63a780f1b7332696a63188cc6b2",
+      "hash_mode": "utf8-lf"
     },
     "C-baymard-descriptive-callouts": {
       "title": "Baymard 图文引线标注实验：用图内结构引线与短标签弥合“只看图不读字”的断层",
@@ -19,7 +20,8 @@
       "markdown_path": "library/cases/C-baymard-descriptive-callouts.md",
       "zh_sha256": "38ad649cbcfd6be4710d378833105e3928d7f1a31fc4bc018c4cc4cf12a8842c",
       "markdown_path_en": "library/cases/en/C-baymard-descriptive-callouts.md",
-      "en_sha256": "b6e36ff6f45049b1469d2f3ea75cf314b7d11c826a84f03c32f5f6ee3ed8da16"
+      "en_sha256": "b6e36ff6f45049b1469d2f3ea75cf314b7d11c826a84f03c32f5f6ee3ed8da16",
+      "hash_mode": "utf8-lf"
     },
     "C-baymard-included-optional-accessories": {
       "title": "Baymard 标配与选配附件图实验：用“标配全家福”与“单独出售”微文案消除价值误判",
@@ -27,7 +29,8 @@
       "markdown_path": "library/cases/C-baymard-included-optional-accessories.md",
       "zh_sha256": "5f7cb340d8b77cf65a3ba4e688b98abd6a12dec238f5bb5851bd52cbb67d4fc1",
       "markdown_path_en": "library/cases/en/C-baymard-included-optional-accessories.md",
-      "en_sha256": "28dd98913aa6d3b52e8c4b004c38a195ee429a469dbacd053ac3c2c45f5f1e4e"
+      "en_sha256": "28dd98913aa6d3b52e8c4b004c38a195ee429a469dbacd053ac3c2c45f5f1e4e",
+      "hash_mode": "utf8-lf"
     },
     "C-baymard-spec-sheet-scannability": {
       "title": "Baymard 参数表视觉扫描实验：用单栏语义分组与斑马纹底色取代“参数墙”",
@@ -35,7 +38,8 @@
       "markdown_path": "library/cases/C-baymard-spec-sheet-scannability.md",
       "zh_sha256": "6663bf47945ff0b9de3041a6708bc3bc791715c5f825204b4f0aae9b5d7dc12f",
       "markdown_path_en": "library/cases/en/C-baymard-spec-sheet-scannability.md",
-      "en_sha256": "6f15fa0884f9053b155546c695b6654fb1e8ae457e919e12ac715f4d7054157a"
+      "en_sha256": "6f15fa0884f9053b155546c695b6654fb1e8ae457e919e12ac715f4d7054157a",
+      "hash_mode": "utf8-lf"
     },
     "C-baymard-avoid-horizontal-tabs": {
       "title": "Baymard 详情页导航实验：弃用隐藏核心内容的“横向 Tab”，改用纵向展开分节与吸顶目录",
@@ -43,7 +47,8 @@
       "markdown_path": "library/cases/C-baymard-avoid-horizontal-tabs.md",
       "zh_sha256": "f52728aa122b68b074886fb7c08bc335939cf850b8e25a071088d04e2f031008",
       "markdown_path_en": "library/cases/en/C-baymard-avoid-horizontal-tabs.md",
-      "en_sha256": "4f9d294f25ddd7e81a95f05b45efd4e39a8c23eb953f556979580a39fd6bf37a"
+      "en_sha256": "4f9d294f25ddd7e81a95f05b45efd4e39a8c23eb953f556979580a39fd6bf37a",
+      "hash_mode": "utf8-lf"
     },
     "C-me-above-the-fold-visual": {
       "title": "Marketing Examples 首屏五要素视觉架构：用“产品运转实景”取代抽象插画",
@@ -51,7 +56,8 @@
       "markdown_path": "library/cases/C-me-above-the-fold-visual.md",
       "zh_sha256": "e73636b045d381fa1488ffa5f33ccaee024501a6113c36a4e6784a5a19fb8322",
       "markdown_path_en": "library/cases/en/C-me-above-the-fold-visual.md",
-      "en_sha256": "c8155b45d0c5bbb8a0c43e34e48bb5131f00ab8a579f9ddc2ebd247e99700527"
+      "en_sha256": "c8155b45d0c5bbb8a0c43e34e48bb5131f00ab8a579f9ddc2ebd247e99700527",
+      "hash_mode": "utf8-lf"
     },
     "C-me-rows-live-product-hero": {
       "title": "Rows 首屏实测与 Haako 视觉重塑：用“可直视/可交互的产品工作台”取代大段文字说明",
@@ -59,7 +65,8 @@
       "markdown_path": "library/cases/C-me-rows-live-product-hero.md",
       "zh_sha256": "525929f8f438c5c4a37ea967e8ac1407c962443edd0690b88d3d95dad520c0e6",
       "markdown_path_en": "library/cases/en/C-me-rows-live-product-hero.md",
-      "en_sha256": "83cb9e68a22bc42e5a263ca5f33c41dff8a023e16eab2318d8c003ae8e35d399"
+      "en_sha256": "83cb9e68a22bc42e5a263ca5f33c41dff8a023e16eab2318d8c003ae8e35d399",
+      "hash_mode": "utf8-lf"
     },
     "C-refactoring-ui-hierarchy-tactics": {
       "title": "Refactoring UI 界面层级与降噪八法：用字重色阶、同色相浅字、粗重对比平衡与去边框重塑商业级质感",
@@ -67,7 +74,8 @@
       "markdown_path": "library/cases/C-refactoring-ui-hierarchy-tactics.md",
       "zh_sha256": "76131f60b378fbf7546eb49146bdc3aee92ef00488dd447e93dcdc000f881c75",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-hierarchy-tactics.md",
-      "en_sha256": "f718c1998c3392e56aeb6f8ad039787c3ec53faa782760516c2df14358a95182"
+      "en_sha256": "f718c1998c3392e56aeb6f8ad039787c3ec53faa782760516c2df14358a95182",
+      "hash_mode": "utf8-lf"
     },
     "C-me-refactoring-ui-pricing-tier": {
       "title": "Refactoring UI 与 Basecamp 定价视觉锚定：用版面面积、字号对比与交付物拆解重塑价格感知",
@@ -75,7 +83,8 @@
       "markdown_path": "library/cases/C-me-refactoring-ui-pricing-tier.md",
       "zh_sha256": "7b07ce7588f86676a179d360f0037dce924dfbf8d02564ea63416efa0a656dea",
       "markdown_path_en": "library/cases/en/C-me-refactoring-ui-pricing-tier.md",
-      "en_sha256": "d118cb691dd5521f2d33e737bc84bdf13954850f9da0f439d3904274cfb26b2a"
+      "en_sha256": "d118cb691dd5521f2d33e737bc84bdf13954850f9da0f439d3904274cfb26b2a",
+      "hash_mode": "utf8-lf"
     },
     "C-me-tropicana-angostura-visual-assets": {
       "title": "Tropicana 5500 万美元改版教训与 Angostura 超大酒标：守住“零思考识别”的视觉锤",
@@ -83,7 +92,8 @@
       "markdown_path": "library/cases/C-me-tropicana-angostura-visual-assets.md",
       "zh_sha256": "66b946db817713c7fdde64ec917a5559da509f0f082e9f412c0736393bb2e2d7",
       "markdown_path_en": "library/cases/en/C-me-tropicana-angostura-visual-assets.md",
-      "en_sha256": "c50aed8941f82ce187f424c286e7dd52c557262ec11c4a77e538af938d3bb36c"
+      "en_sha256": "c50aed8941f82ce187f424c286e7dd52c557262ec11c4a77e538af938d3bb36c",
+      "hash_mode": "utf8-lf"
     },
     "C-williams-crap-layout-makeovers": {
       "title": "Robin Williams 四大基本原则（CRAP）版式重构实录：从“视线停顿 5 次的业余名片与广告”到专业秩序感",
@@ -91,7 +101,8 @@
       "markdown_path": "library/cases/C-williams-crap-layout-makeovers.md",
       "zh_sha256": "8bb3e9e204e2f7a261950d191e57354b73942b5f7d068754f0f729e6b2778e2b",
       "markdown_path_en": "library/cases/en/C-williams-crap-layout-makeovers.md",
-      "en_sha256": "b6a8ab4496cbe424d643504b4a4b045acba4213e72e1da2743ac389397545dfa"
+      "en_sha256": "b6a8ab4496cbe424d643504b4a4b045acba4213e72e1da2743ac389397545dfa",
+      "hash_mode": "utf8-lf"
     },
     "C-williams-color-wheel-value-warmth": {
       "title": "Robin Williams 色轮与视觉色感实验：用暗色/亮色、色质差与“冷退暖进”法则终结廉价配色",
@@ -99,7 +110,8 @@
       "markdown_path": "library/cases/C-williams-color-wheel-value-warmth.md",
       "zh_sha256": "b9fb20f5c5ee16470c3a910399f232841018dd4845b80046deaf647b774f208b",
       "markdown_path_en": "library/cases/en/C-williams-color-wheel-value-warmth.md",
-      "en_sha256": "e9d62208337b6d83ce48ecfbc196ce9d7f68a3f7fd7eb82120a3f2c920256e57"
+      "en_sha256": "e9d62208337b6d83ce48ecfbc196ce9d7f68a3f7fd7eb82120a3f2c920256e57",
+      "hash_mode": "utf8-lf"
     },
     "C-williams-typography-conflict-vs-contrast": {
       "title": "Robin Williams 字体冲突与六维对比实验：为什么“长得很像的两种字体”是版面大忌？",
@@ -107,7 +119,8 @@
       "markdown_path": "library/cases/C-williams-typography-conflict-vs-contrast.md",
       "zh_sha256": "d23f7831a19e116fd809407e1812fd7756457464ce9e6a0635d7447a97b4ce93",
       "markdown_path_en": "library/cases/en/C-williams-typography-conflict-vs-contrast.md",
-      "en_sha256": "3782328bc397684b8cf5f4fb92df3340c95340e645cc3a12c44daae755e39059"
+      "en_sha256": "3782328bc397684b8cf5f4fb92df3340c95340e645cc3a12c44daae755e39059",
+      "hash_mode": "utf8-lf"
     },
     "C-muller-brockmann-modular-grid-construction": {
       "title": "米勒-布罗克曼 8/20/32 格模数网格与基线对齐实验：以正文行高统领多图文版面",
@@ -115,7 +128,8 @@
       "markdown_path": "library/cases/C-muller-brockmann-modular-grid-construction.md",
       "zh_sha256": "88dbf46678fcc8d7e53be29fd88ab73897b587a4c34ff35748acd5cbbf26e71a",
       "markdown_path_en": "library/cases/en/C-muller-brockmann-modular-grid-construction.md",
-      "en_sha256": "a0ffb62695a2a241b612f93ba72dacaf40859ef07949b2881b75cc4a703d49ae"
+      "en_sha256": "a0ffb62695a2a241b612f93ba72dacaf40859ef07949b2881b75cc4a703d49ae",
+      "hash_mode": "utf8-lf"
     },
     "C-muller-brockmann-color-fields-and-posters": {
       "title": "色块内边距四图实验与瑞士无产品构成海报：防贴边铁律与活动海报去单品化",
@@ -123,7 +137,8 @@
       "markdown_path": "library/cases/C-muller-brockmann-color-fields-and-posters.md",
       "zh_sha256": "aaa4aa91ad6cbaf1de474449f8087f67f67299486c74145e1f911e63c0afc2d2",
       "markdown_path_en": "library/cases/en/C-muller-brockmann-color-fields-and-posters.md",
-      "en_sha256": "0763fd907aaee22114c1574c28236c5a652b1e9f1bfcb3de0a0342343818832c"
+      "en_sha256": "0763fd907aaee22114c1574c28236c5a652b1e9f1bfcb3de0a0342343818832c",
+      "hash_mode": "utf8-lf"
     },
     "C-muller-brockmann-industrial-catalog-exhibition": {
       "title": "B2B 工业品 30 格技术手册与三维展位 170cm 视平线网格：从复杂图纸册到实体展台",
@@ -131,7 +146,8 @@
       "markdown_path": "library/cases/C-muller-brockmann-industrial-catalog-exhibition.md",
       "zh_sha256": "ebfa92333dbc980205d9ec1feea2458ba65a1ea130a6456d0829db09723c87eb",
       "markdown_path_en": "library/cases/en/C-muller-brockmann-industrial-catalog-exhibition.md",
-      "en_sha256": "3445b18fde77a3a736b9419c234b1435e890d24d35917a362828b5c6462b422e"
+      "en_sha256": "3445b18fde77a3a736b9419c234b1435e890d24d35917a362828b5c6462b422e",
+      "hash_mode": "utf8-lf"
     },
     "C-refactoring-ui-data-labels-and-tables": {
       "title": "Refactoring UI 数据展示、参数表反强调与富表格重构：从呆板 Label: Value 到高密度可扫描界面",
@@ -139,7 +155,8 @@
       "markdown_path": "library/cases/C-refactoring-ui-data-labels-and-tables.md",
       "zh_sha256": "0c1607cadce9824028f20b79476961c9b8d5043b3d78c874a86f04e8bcc39c53",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-data-labels-and-tables.md",
-      "en_sha256": "cb02094a63dfe5e2fe999358c9cc7915fff08fbe3a6de3a97cc9154ee0f18e18"
+      "en_sha256": "cb02094a63dfe5e2fe999358c9cc7915fff08fbe3a6de3a97cc9154ee0f18e18",
+      "hash_mode": "utf8-lf"
     },
     "C-refactoring-ui-spacing-grid-and-typography": {
       "title": "Refactoring UI 间距系统、反 12 栏教条与排版微操实验：25% 非线性步进、45–75 字符行宽与基线/行高反比法则",
@@ -147,7 +164,8 @@
       "markdown_path": "library/cases/C-refactoring-ui-spacing-grid-and-typography.md",
       "zh_sha256": "a3369481e617bf398a52512ff9e6d42dc8859d5c9f4cca28e1d41ef4b069ba59",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-spacing-grid-and-typography.md",
-      "en_sha256": "9c35137b1c93b94ae9852a60dcac768274b8293e4571da96274b9e3d71137f5d"
+      "en_sha256": "9c35137b1c93b94ae9852a60dcac768274b8293e4571da96274b9e3d71137f5d",
+      "hash_mode": "utf8-lf"
     },
     "C-refactoring-ui-hsl-color-depth-and-images": {
       "title": "Refactoring UI 9 阶 HSL 色板、感知亮度色相旋转与双层阴影/背景图控对比实验",
@@ -155,7 +173,8 @@
       "markdown_path": "library/cases/C-refactoring-ui-hsl-color-depth-and-images.md",
       "zh_sha256": "296a90957d7fb6d5cfd4a66640682ee7d5d826d31b638f0ddc5c6f78889419c7",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-hsl-color-depth-and-images.md",
-      "en_sha256": "2c44685115b78bddb590dc70ba4b4f0e627885d7a9a84835fefb8a13968262d8"
+      "en_sha256": "2c44685115b78bddb590dc70ba4b4f0e627885d7a9a84835fefb8a13968262d8",
+      "hash_mode": "utf8-lf"
     },
     "C-krug-billboard-scanning-and-visual-noise": {
       "title": "Krug 60mph 广告牌扫视模型、视觉层级嵌套反例与三大视觉噪音（Shouting/Disorganization/Clutter）拆解",
@@ -163,7 +182,8 @@
       "markdown_path": "library/cases/C-krug-billboard-scanning-and-visual-noise.md",
       "zh_sha256": "f9acd278d9d4512b8ee6df22c790f869b42e21f6ab25f4a06fb5bf800fce63db",
       "markdown_path_en": "library/cases/en/C-krug-billboard-scanning-and-visual-noise.md",
-      "en_sha256": "9c6e1f3775fcedaf72935c2e14d009b09629e6a5856ff04ecb5763bc95780310"
+      "en_sha256": "9c6e1f3775fcedaf72935c2e14d009b09629e6a5856ff04ecb5763bc95780310",
+      "hash_mode": "utf8-lf"
     },
     "C-krug-omit-words-and-trunk-test-navigation": {
       "title": "Krug 第三定律（103 词→34 词双砍半实证）、路牌导航、物理连通 Tab 与 6 项后备箱测试（Trunk Test）",
@@ -171,7 +191,8 @@
       "markdown_path": "library/cases/C-krug-omit-words-and-trunk-test-navigation.md",
       "zh_sha256": "9765650108557a04e9227239f92e54e37faa3eeca936dab37756c64f903a3756",
       "markdown_path_en": "library/cases/en/C-krug-omit-words-and-trunk-test-navigation.md",
-      "en_sha256": "c7742637f4a0dad23464bc492980ede299d4dd1f30e8d461ff42eac681226576"
+      "en_sha256": "c7742637f4a0dad23464bc492980ede299d4dd1f30e8d461ff42eac681226576",
+      "hash_mode": "utf8-lf"
     },
     "C-krug-homepage-big-bang-tagline-and-goodwill": {
       "title": "Krug 首屏大爆炸（50ms 第一印象与 5 问）、Tagline vs. Motto 唯一性测试与买家善意储蓄罐水位计",
@@ -179,7 +200,8 @@
       "markdown_path": "library/cases/C-krug-homepage-big-bang-tagline-and-goodwill.md",
       "zh_sha256": "3883fc225ab9990a57dd87d38feac9eb030cdf6e795bf42dbf7906b1b13e5281",
       "markdown_path_en": "library/cases/en/C-krug-homepage-big-bang-tagline-and-goodwill.md",
-      "en_sha256": "a57c981f990264bcf0dad57041e371d81d7c051a520fdf2e46b07b5bb786e1f4"
+      "en_sha256": "a57c981f990264bcf0dad57041e371d81d7c051a520fdf2e46b07b5bb786e1f4",
+      "hash_mode": "utf8-lf"
     },
     "C-xiaomi-su7-2026-mall-billboard-teardown": {
       "zh_path": "library/cases/C-xiaomi-su7-2026-mall-billboard-teardown.md",
@@ -189,7 +211,8 @@
       "title": "2026 新一代小米 SU7 × 舒淇「卡布里蓝」商圈巨幕 vs. 同行车企大屏正反对比：为什么顶级商圈外墙不谈参数，且纯色场完胜风景图？",
       "title_en": "2026 New Xiaomi SU7 × Shu Qi \"Capri Blue\" Mall Billboards vs. Competitor Outdoor LEDs: Why Prime Mall Facades Omit Specs and Pure Color Fields Beat Landscape KVs",
       "markdown_path": "library/cases/C-xiaomi-su7-2026-mall-billboard-teardown.md",
-      "markdown_path_en": "library/cases/en/C-xiaomi-su7-2026-mall-billboard-teardown.md"
+      "markdown_path_en": "library/cases/en/C-xiaomi-su7-2026-mall-billboard-teardown.md",
+      "hash_mode": "utf8-lf"
     },
     "C-lawsofux-von-restorff-and-aesthetic-usability": {
       "title": "Laws of UX 孤立效应与美感可用性边界：信息流破群突围与防“精修盲区”法则",
@@ -197,7 +220,8 @@
       "markdown_path": "library/cases/C-lawsofux-von-restorff-and-aesthetic-usability.md",
       "zh_sha256": "27836bfa7a4a38cf4963810942c0bfe2cbd3d6aa67e3d6ca9f84411c9fb57b5e",
       "markdown_path_en": "library/cases/en/C-lawsofux-von-restorff-and-aesthetic-usability.md",
-      "en_sha256": "3d19899fd9a65b5e94e181104d91d4960935ddb3a626af9b7f5c704a26cac31e"
+      "en_sha256": "3d19899fd9a65b5e94e181104d91d4960935ddb3a626af9b7f5c704a26cac31e",
+      "hash_mode": "utf8-lf"
     },
     "C-lawsofux-serial-position-and-peak-end": {
       "title": "Laws of UX 系列位置效应与峰终定律：多图轮播与长详情页的首尾锚定及峰值分镜",
@@ -205,7 +229,8 @@
       "markdown_path": "library/cases/C-lawsofux-serial-position-and-peak-end.md",
       "zh_sha256": "aae76f9ac6cc4ee3da367624319e7d4383a31f834fea90d2b05b27c383494c88",
       "markdown_path_en": "library/cases/en/C-lawsofux-serial-position-and-peak-end.md",
-      "en_sha256": "83c77b475d637c554b74d882bf5d7225ef0f74e1260439c2be136aee770efe0e"
+      "en_sha256": "83c77b475d637c554b74d882bf5d7225ef0f74e1260439c2be136aee770efe0e",
+      "hash_mode": "utf8-lf"
     },
     "C-lawsofux-zeigarnik-and-goal-gradient": {
       "title": "Laws of UX 蔡格尼克效应与目标梯度效应：多图轮播翻页张力与进度牵引设计",
@@ -213,7 +238,8 @@
       "markdown_path": "library/cases/C-lawsofux-zeigarnik-and-goal-gradient.md",
       "zh_sha256": "2a0ee64f2665b732ea0f188ba467c9eb1a5e72c67fc9136abd7c5a804adc9970",
       "markdown_path_en": "library/cases/en/C-lawsofux-zeigarnik-and-goal-gradient.md",
-      "en_sha256": "c5cdd67b7639a942ce23869f175791bfae91a96066e9b1800516b05fc0bca8da"
+      "en_sha256": "c5cdd67b7639a942ce23869f175791bfae91a96066e9b1800516b05fc0bca8da",
+      "hash_mode": "utf8-lf"
     },
     "C-lawsofux-fitts-hick-and-jakob": {
       "title": "Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应",
@@ -221,7 +247,8 @@
       "markdown_path": "library/cases/C-lawsofux-fitts-hick-and-jakob.md",
       "zh_sha256": "b6af0af578e3af8b5b87eb3d89c8bb85b67146a1a941e3d15421bc150161649b",
       "markdown_path_en": "library/cases/en/C-lawsofux-fitts-hick-and-jakob.md",
-      "en_sha256": "0f99772dbaff05c36dedea1c324967712dadb4d8f7d610cf5d745f619f8d26dc"
+      "en_sha256": "0f99772dbaff05c36dedea1c324967712dadb4d8f7d610cf5d745f619f8d26dc",
+      "hash_mode": "utf8-lf"
     },
     "C-tiktok-9x16-safe-zones-and-2s-hook": {
       "title": "TikTok 竖屏案例：按投放位定安全区，按创意设计开场",
@@ -229,7 +256,8 @@
       "markdown_path": "library/cases/C-tiktok-9x16-safe-zones-and-2s-hook.md",
       "zh_sha256": "0bebe5fa2a8b1f0d302cf75b6e040621fbc8e42b6c255ecabc535ba0e58810db",
       "markdown_path_en": "library/cases/en/C-tiktok-9x16-safe-zones-and-2s-hook.md",
-      "en_sha256": "87a71822816983c2f3c9ff2389d6a252cd5c2feed53619a18037b389e0a78699"
+      "en_sha256": "87a71822816983c2f3c9ff2389d6a252cd5c2feed53619a18037b389e0a78699",
+      "hash_mode": "utf8-lf"
     },
     "C-motion-native-statics-and-us-vs-them": {
       "title": "Motion 创意诊断：用可比基线决定要测什么",
@@ -237,7 +265,8 @@
       "markdown_path": "library/cases/C-motion-native-statics-and-us-vs-them.md",
       "zh_sha256": "e5d6c61ff2fc33908c1e9e08a135571f458c391e8e59cc0a63fdf82aa4f9caa7",
       "markdown_path_en": "library/cases/en/C-motion-native-statics-and-us-vs-them.md",
-      "en_sha256": "9b1aef4680a7b0770b623c1a0c363962d521c1cb6d904a24750afcaea7922c7b"
+      "en_sha256": "9b1aef4680a7b0770b623c1a0c363962d521c1cb6d904a24750afcaea7922c7b",
+      "hash_mode": "utf8-lf"
     },
     "C-aotw-three-seven-paris-price-scale": {
       "title": "Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定",
@@ -245,7 +274,8 @@
       "markdown_path": "library/cases/C-aotw-three-seven-paris-price-scale.md",
       "zh_sha256": "5fec4a73c534842585c5a05ec279b84dd29d316b5e63a458b16dec2500cef286",
       "markdown_path_en": "library/cases/en/C-aotw-three-seven-paris-price-scale.md",
-      "en_sha256": "07786372f2d52c94dcf40ef698377d762e5382168b1318dcd293e580c6ba9ad2"
+      "en_sha256": "07786372f2d52c94dcf40ef698377d762e5382168b1318dcd293e580c6ba9ad2",
+      "hash_mode": "utf8-lf"
     },
     "C-aotw-fnac-visual-subversion-light-cone": {
       "title": "Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导",
@@ -253,7 +283,8 @@
       "markdown_path": "library/cases/C-aotw-fnac-visual-subversion-light-cone.md",
       "zh_sha256": "2442d6add47210d73e9b2b4dc9301aebc2ab1172e2777a27dfd26e37e93f8e59",
       "markdown_path_en": "library/cases/en/C-aotw-fnac-visual-subversion-light-cone.md",
-      "en_sha256": "8cdb8bf71e236fc10472becd403fb5c9aa77bb7b2fe45dc5dac2807d33ca24fb"
+      "en_sha256": "8cdb8bf71e236fc10472becd403fb5c9aa77bb7b2fe45dc5dac2807d33ca24fb",
+      "hash_mode": "utf8-lf"
     },
     "C-aotw-muserk-typographic-wall-poster": {
       "title": "Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口",
@@ -261,7 +292,8 @@
       "markdown_path": "library/cases/C-aotw-muserk-typographic-wall-poster.md",
       "zh_sha256": "19b378a88bfbb3a23a21232ece156d612e2af48740afde1dca7d54a26871adc9",
       "markdown_path_en": "library/cases/en/C-aotw-muserk-typographic-wall-poster.md",
-      "en_sha256": "344ea4133c77eb530f8c91845aae11a3a5c6471f14e6f268845328492b52a925"
+      "en_sha256": "344ea4133c77eb530f8c91845aae11a3a5c6471f14e6f268845328492b52a925",
+      "hash_mode": "utf8-lf"
     },
     "C-aotw-mercedes-rollover-sensor-state-sequence": {
       "title": "Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓",
@@ -269,7 +301,8 @@
       "markdown_path": "library/cases/C-aotw-mercedes-rollover-sensor-state-sequence.md",
       "zh_sha256": "858ba9a1cd1632f5d0e3fb37c2b1148671f786f2709c6c119beaae254306b2a2",
       "markdown_path_en": "library/cases/en/C-aotw-mercedes-rollover-sensor-state-sequence.md",
-      "en_sha256": "2c74a88a3a4eb21e5e949ec55ffa2d0b5c2959833be942723da2fa5e0acaf8ba"
+      "en_sha256": "2c74a88a3a4eb21e5e949ec55ffa2d0b5c2959833be942723da2fa5e0acaf8ba",
+      "hash_mode": "utf8-lf"
     },
     "C-coca-cola-recycle-me-deformation": {
       "title": "可口可乐《Recycle Me》：用熟悉符号的真实形变表现动作",
@@ -277,7 +310,8 @@
       "markdown_path": "library/cases/C-coca-cola-recycle-me-deformation.md",
       "zh_sha256": "766ef3e177cb8d9d5da3154d59840ff26d6ba8d318db003a8519a5b11b33e9f8",
       "markdown_path_en": "library/cases/en/C-coca-cola-recycle-me-deformation.md",
-      "en_sha256": "84a881bd5d5f6db3121bfa0c056d3fe8bc855826bf97e3d407e514df480b5ef9"
+      "en_sha256": "84a881bd5d5f6db3121bfa0c056d3fe8bc855826bf97e3d407e514df480b5ef9",
+      "hash_mode": "utf8-lf"
     }
   },
   "hash_mode": "utf8-lf"

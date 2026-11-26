@@ -11,3 +11,7 @@ library/style-refs/**/local/*
 
 # Advisory lock created by local case-library updates
 **/history/.library.lock
+
+# Local runtime rollback snapshots (kept locally, excluded from Git history)
+library/history/*.json
+!library/history/.gitkeep

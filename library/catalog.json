@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 18,
+  "revision": 19,
   "updated_at": "2026-11-26",
   "sources": [
     {
@@ -3552,7 +3552,7 @@
   "cases": [
     {
       "id": "C-baymard-in-scale-reference",
-      "version": 2,
+      "version": 3,
       "title": "Baymard 比例参照实验：用已知尺寸参照物消除 42% 买家的体积误判",
       "tags": [
         "比例参照",
@@ -3603,11 +3603,16 @@
       "title_en": "Baymard In-Scale Image Benchmark: Eliminating Size Misjudgment for 42% of Shoppers with Familiar Scale Anchors",
       "reusable_move_en": "Add at least 1 static 'In-Scale Image' in slots 2–4 of the main gallery pairing the product at true 1:1 scale with a human hand/model, familiar everyday object (like KitchenAid's cupcakes), or standard B2B 19-inch rack / DIN rail + dimension overlay arrows.",
       "markdown_path_en": "library/cases/en/C-baymard-in-scale-reference.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "pdp",
+        "catalog",
+        "ad_banner"
+      ]
     },
     {
       "id": "C-baymard-descriptive-callouts",
-      "version": 3,
+      "version": 4,
       "title": "Baymard 图文引线标注实验：用图内结构引线与短标签弥合“只看图不读字”的断层",
       "tags": [
         "引线标注",
@@ -3664,11 +3669,17 @@
       "title_en": "Baymard Descriptive Callouts Study: Bridging Skipped Copy and Ambiguous Close-Ups with Leader Lines and Badges",
       "reusable_move_en": "Add leader lines and 2–6 word callouts ('100% Waterproof', 'Fits up to 15.6\" laptop', 'All-weather fabric') to every macro crop, functional scene, and compatibility shot while verifying >=28–32px equivalent legibility on a 375px mobile screen.",
       "markdown_path_en": "library/cases/en/C-baymard-descriptive-callouts.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "pdp",
+        "catalog",
+        "ad_banner",
+        "social_feed"
+      ]
     },
     {
       "id": "C-baymard-included-optional-accessories",
-      "version": 2,
+      "version": 3,
       "title": "Baymard 标配与选配附件图实验：用“标配全家福”与“单独出售”微文案消除价值误判",
       "tags": [
         "标配全家福",
@@ -3720,11 +3731,16 @@
       "title_en": "Baymard Included & Optional Accessories Study: Preventing Lost Sales and Expectations Fallout with 'In the Box' & 'Sold Separately' Callouts",
       "reusable_move_en": "Place a dedicated 'Included in the Box' knolling image in the main gallery showing all bundled items (preventing the 63% miss rate), and stamp any depicted optional accessory with explicit 'Sold Separately' microcopy instead of vague 'Additional Options Available'.",
       "markdown_path_en": "library/cases/en/C-baymard-included-optional-accessories.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "pdp",
+        "catalog",
+        "packaging"
+      ]
     },
     {
       "id": "C-baymard-spec-sheet-scannability",
-      "version": 2,
+      "version": 3,
       "title": "Baymard 参数表视觉扫描实验：用单栏语义分组与斑马纹底色取代“参数墙”",
       "tags": [
         "参数表",
@@ -3775,11 +3791,16 @@
       "title_en": "Baymard Spec Sheet Eye-Tracking Benchmark: Replacing 'Walls of Specs' with Single-Column Semantic Groups & Alternating Row Shading",
       "reusable_move_en": "Extract 4–6 decisive 'Key Specs' at the top, group the full spec table into single-column semantic sections of 5–8 rows, apply alternating row shading (#FFFFFF / #F8FAFC) to prevent eye-tracking row jumps, and never split one product's specs into side-by-side columns.",
       "markdown_path_en": "library/cases/en/C-baymard-spec-sheet-scannability.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "pdp",
+        "spec_sheet",
+        "catalog"
+      ]
     },
     {
       "id": "C-baymard-avoid-horizontal-tabs",
-      "version": 2,
+      "version": 3,
       "title": "Baymard 详情页导航实验：弃用隐藏核心内容的“横向 Tab”，改用纵向展开分节与吸顶目录",
       "tags": [
         "横向标签页",
@@ -3831,11 +3852,16 @@
       "title_en": "Baymard PDP Navigation Study: Why Horizontal Tabs Hide Critical B2B & B2C Content and How Expanded Sections + Sticky ToC Fix It",
       "reusable_move_en": "Replace horizontal PDP tabs (where engineers missed TE Connectivity's 'Features' and STMicroelectronics' 'Sample and Buy' tabs) with vertically Expanded Sections + a Sticky ToC jump bar on desktop, and Vertically Collapsed Accordions on mobile.",
       "markdown_path_en": "library/cases/en/C-baymard-avoid-horizontal-tabs.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "pdp",
+        "landing_page",
+        "storefront"
+      ]
     },
     {
       "id": "C-me-above-the-fold-visual",
-      "version": 2,
+      "version": 3,
       "title": "Marketing Examples 首屏五要素视觉架构：用“产品运转实景”取代抽象插画",
       "tags": [
         "首屏五要素",
@@ -3885,11 +3911,16 @@
       "title_en": "Marketing Examples Above-the-Fold Architecture: 'Don't Show Me Fancy Illustrations. Show Me Your Product in Action'",
       "reusable_move_en": "Build the hero viewport around 5 elements: 1) Concrete Value Title, 2) Specific Mechanism Subtitle, 3) Real Product-in-Action Visual (zero abstract stock vectors), 4) Quantified Social Proof, and 5) Primary CTA + risk-reversal microcopy.",
       "markdown_path_en": "library/cases/en/C-me-above-the-fold-visual.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "landing_page",
+        "storefront",
+        "pdp"
+      ]
     },
     {
       "id": "C-me-rows-live-product-hero",
-      "version": 2,
+      "version": 3,
       "title": "Rows 首屏实测与 Haako 视觉重塑：用“可直视/可交互的产品工作台”取代大段文字说明",
       "tags": [
         "首屏交互",
@@ -3940,11 +3971,15 @@
       "title_en": "Rows' Homepage Test That Doubled Conversions & Haako's Hero Rewrite: Replacing Text Walls with Live Product Workbenches",
       "reusable_move_en": "When your product has an intuitive interface or distinctive physical form, replace introductory prose with an interactive live workbench (like Rows' live spreadsheet that 'doubled conversions' under '1. Freemium + 2. Spreadsheets are familiar') or a 1-sentence headline + full-width product-in-action visual (like Haako and Banquist).",
       "markdown_path_en": "library/cases/en/C-me-rows-live-product-hero.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "landing_page",
+        "storefront"
+      ]
     },
     {
       "id": "C-refactoring-ui-hierarchy-tactics",
-      "version": 4,
+      "version": 5,
       "title": "Refactoring UI 界面层级与降噪八法：用字重色阶、同色相浅字、粗重对比平衡与去边框重塑商业级质感",
       "tags": [
         "视觉层级",
@@ -4045,11 +4080,17 @@
       "title_en": "Refactoring UI Interface Hierarchy Tactics: 7 Visual Adjustments That Fix Cluttered Layouts Without Changing Copy",
       "reusable_move_en": "Use 2 font weights + 3 text color shades instead of font-size inflation; pick same-hue high-lightness text on colored backgrounds; replace 1px borders with background tint steps and +16–24px spacing; enclose 16–24px icons in 48px tinted containers; and allow only 1 solid Primary CTA per view.",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-hierarchy-tactics.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "landing_page",
+        "pdp",
+        "spec_sheet",
+        "mobile_ui"
+      ]
     },
     {
       "id": "C-me-refactoring-ui-pricing-tier",
-      "version": 2,
+      "version": 3,
       "title": "Refactoring UI 与 Basecamp 定价视觉锚定：用版面面积、字号对比与交付物拆解重塑价格感知",
       "tags": [
         "定价版式",
@@ -4102,11 +4143,16 @@
       "title_en": "Refactoring UI & Basecamp Pricing Tier Framing: Reshaping Price Perception with Screen-Space Weight, Deliverable Bundling, and Cost Anchors",
       "reusable_move_en": "Escape low-price commodity anchors by visually unpacking all bundled deliverables ('Step 2 - Escape the context of an e-book'), pre-anchoring against piecemeal tool costs (like Basecamp's $99/month comparison), and giving the target tier ('The Complete Package') 'twice as much screen space' + the sole solid CTA (driving 78% / 6,765 buyers to the $149 tier).",
       "markdown_path_en": "library/cases/en/C-me-refactoring-ui-pricing-tier.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "landing_page",
+        "pdp",
+        "presentation"
+      ]
     },
     {
       "id": "C-me-tropicana-angostura-visual-assets",
-      "version": 2,
+      "version": 3,
       "title": "Tropicana 5500 万美元改版教训与 Angostura 超大酒标：守住“零思考识别”的视觉锤",
       "tags": [
         "视觉锤",
@@ -4157,11 +4203,16 @@
       "title_en": "Tropicana's $55M Rebrand Disaster & Angostura's Oversized Label: Guarding Zero-Thought Distinctive Visual Assets",
       "reusable_move_en": "Audit and protect unmistakable recognition cues (like Tropicana's 'A straw in an orange' and horizontal wordmark, or Angostura's 1870 oversized label) against minimalist flattening ('A yellow blob looks like medicine' — 'I don’t want to think to buy orange juice').",
       "markdown_path_en": "library/cases/en/C-me-tropicana-angostura-visual-assets.md",
-      "learning_origin": "benchmark_study"
+      "learning_origin": "benchmark_study",
+      "channels": [
+        "packaging",
+        "pdp",
+        "ad_banner"
+      ]
     },
     {
       "id": "C-williams-crap-layout-makeovers",
-      "version": 2,
+      "version": 3,
       "title": "Robin Williams 四大基本原则（CRAP）版式重构实录：从“视线停顿 5 次的业余名片与广告”到专业秩序感",
       "tags": [
         "四大基本原则",
@@ -4229,11 +4280,17 @@
       "title_en": "Robin Williams CRAP Layout Makeovers: From '5-Eye-Stop Amateur Cards & Ads' to Professional Visual Order",
       "reusable_move_en": "Strip heavy borders and 'http://' / 'Tel:' / 'Email:' prefixes, format URLs in CamelCase (www.MoonstoneCatchers.com), cluster related items into <=3–5 Proximity groups, align everything to one flush-left/right 'hard vertical edge' (pushing 'trapped white space' outward), and create 1 bold Contrast focal point ('Don’t be a wimp').",
       "markdown_path_en": "library/cases/en/C-williams-crap-layout-makeovers.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "landing_page",
+        "presentation"
+      ]
     },
     {
       "id": "C-williams-color-wheel-value-warmth",
-      "version": 3,
+      "version": 4,
       "title": "Robin Williams 色轮与视觉色感实验：用暗色/亮色、色质差与“冷退暖进”法则终结廉价配色",
       "tags": [
         "12色轮",
@@ -4304,11 +4361,17 @@
       "title_en": "Robin Williams Color Wheel & Tonal Value Experiments: Ending Garish Palettes with Tints/Shades, Value Separation, and 'Cool Recedes / Warm Advances'",
       "reusable_move_en": "Try a small warm accent when it should lead the eye on cool ground. A broad warm field can carry a brand or mood. Test the perceived contrast of essential information in grayscale.",
       "markdown_path_en": "library/cases/en/C-williams-color-wheel-value-warmth.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "pdp",
+        "packaging"
+      ]
     },
     {
       "id": "C-williams-typography-conflict-vs-contrast",
-      "version": 3,
+      "version": 4,
       "title": "Robin Williams 字体冲突与六维对比实验：为什么“长得很像的两种字体”是版面大忌？",
       "tags": [
         "字体冲突",
@@ -4380,11 +4443,17 @@
       "title_en": "Robin Williams Typography Conflict vs. 6-Dimension Contrast: Why Combining Two Similar Typefaces Breaks a Page",
       "reusable_move_en": "Give headlines, body copy, and labels distinct roles. Two sans serifs can work when a condensed face is used for display and a readable face for text. Treat point-size changes in the book as observations from that layout.",
       "markdown_path_en": "library/cases/en/C-williams-typography-conflict-vs-contrast.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "landing_page",
+        "presentation"
+      ]
     },
     {
       "id": "C-muller-brockmann-modular-grid-construction",
-      "version": 2,
+      "version": 3,
       "title": "米勒-布罗克曼 8/20/32 格模数网格与基线对齐实验：以正文行高统领多图文版面",
       "tags": [
         "模数网格",
@@ -4450,11 +4519,17 @@
       "title_en": "Josef Müller-Brockmann's 8/20/32-Field Modular Grids & Baseline Alignment System",
       "reusable_move_en": "Keep columns to 7–10 words per line, set progressive page margins (1 : 1.5 : 2 : 3), derive vertical grid fields from integer multiples of body line-height (55 lines = 4 fields x 13 lines + 3 empty lines), crop images flush with cap-height and baseline, and leave 20%–35% contiguous empty fields.",
       "markdown_path_en": "library/cases/en/C-muller-brockmann-modular-grid-construction.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "catalog",
+        "print_collateral",
+        "presentation",
+        "landing_page"
+      ]
     },
     {
       "id": "C-muller-brockmann-color-fields-and-posters",
-      "version": 2,
+      "version": 3,
       "title": "色块内边距四图实验与瑞士无产品构成海报：防贴边铁律与活动海报去单品化",
       "tags": [
         "色块内边距",
@@ -4521,11 +4596,16 @@
       "title_en": "Josef Müller-Brockmann's Color-Field Padding Experiments & Product-Free Swiss Typographic Posters",
       "reusable_move_en": "Per 'Coloured areas in the grid system' (Figs. 1–4), never match a colored box flush to text edges — either bleed the color field outward (Fig. 2) or inset the text by >=1 line-height (Fig. 3); for event invitations ('musica viva', 'Der Film'), make asymmetric grid typography and oversized dates/booth numbers the sole hero without SKU cutouts.",
       "markdown_path_en": "library/cases/en/C-muller-brockmann-color-fields-and-posters.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "exhibition"
+      ]
     },
     {
       "id": "C-muller-brockmann-industrial-catalog-exhibition",
-      "version": 2,
+      "version": 3,
       "title": "B2B 工业品 30 格技术手册与三维展位 170cm 视平线网格：从复杂图纸册到实体展台",
       "tags": [
         "工业品手册",
@@ -4587,11 +4667,17 @@
       "title_en": "Josef Müller-Brockmann's 30-Field B2B Industrial Catalog & 170cm Trade-Show Booth Eye-Level Grid",
       "reusable_move_en": "Use a 15-field per page (3x5, 30-field spread) modular grid to lock B2B photos, CAD dimensional drawings, and performance curves into shared horizontal bands; on physical booth walls (220x110cm, 2x8 fields), anchor all headlines and key graphics around the 170cm standing eye-level line (rows 3–6), keeping the bottom 25% empty.",
       "markdown_path_en": "library/cases/en/C-muller-brockmann-industrial-catalog-exhibition.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "catalog",
+        "spec_sheet",
+        "exhibition",
+        "print_collateral"
+      ]
     },
     {
       "id": "C-refactoring-ui-data-labels-and-tables",
-      "version": 2,
+      "version": 3,
       "title": "Refactoring UI 数据展示、参数表反强调与富表格重构：从呆板 Label: Value 到高密度可扫描界面",
       "tags": [
         "去标签化",
@@ -4666,11 +4752,17 @@
       "title_en": "Refactoring UI De-Labeling, Spec-Sheet Label Emphasis & Multi-Column Table Consolidation",
       "reusable_move_en": "Treat labels as a last resort on self-evident fields, combine values with units ('12 left in stock'), emphasize left-hand parameter labels on spec sheets ('scanning the page for words like \"depth\", not \"7.6mm\"'), right-align numeric columns with tabular-nums, and consolidate 6-column tables into 4 rich two-line columns.",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-data-labels-and-tables.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "spec_sheet",
+        "pdp",
+        "mobile_ui",
+        "catalog"
+      ]
     },
     {
       "id": "C-refactoring-ui-spacing-grid-and-typography",
-      "version": 2,
+      "version": 3,
       "title": "Refactoring UI 间距系统、反 12 栏教条与排版微操实验：25% 非线性步进、45–75 字符行宽与基线/行高反比法则",
       "tags": [
         "非线性间距尺",
@@ -4774,11 +4866,17 @@
       "title_en": "Refactoring UI Non-Linear Spacing Scale, Anti-12-Column Grid Dogma & Typographic Discipline",
       "reusable_move_en": "Match border-radius to personality ('using no border radius at all feels much more serious and formal'), lock a 16px-base non-linear spacing scale with >=25% jumps, cap paragraph line width at 45–75 chars (20–35em), align mixed font sizes by baseline ('Baseline, not center'), and tighten headline line-height to 1.0–1.2.",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-spacing-grid-and-typography.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "landing_page",
+        "pdp",
+        "mobile_ui",
+        "spec_sheet"
+      ]
     },
     {
       "id": "C-refactoring-ui-hsl-color-depth-and-images",
-      "version": 2,
+      "version": 3,
       "title": "Refactoring UI 9 阶 HSL 色板、感知亮度色相旋转与双层阴影/背景图控对比实验",
       "tags": [
         "HSL色板",
@@ -4882,11 +4980,17 @@
       "title_en": "Refactoring UI 9-Shade HSL Palettes, Perceived-Brightness Hue Rotation, Depth Layers & Hero Image Contrast",
       "reusable_move_en": "Build 100–900 HSL scales by rotating hue <=20°–30° toward 60°/180°/300° bright peaks or 0°/120°/240° dark valleys, flip badge contrast (pale 100 fill + dark 800 text for WCAG 4.5:1), pair 1px top highlights with two-part shadows, overlap cards across boundaries, crop screenshots tightly, and tame hero photos with monochrome multiply overlays.",
       "markdown_path_en": "library/cases/en/C-refactoring-ui-hsl-color-depth-and-images.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "landing_page",
+        "pdp",
+        "mobile_ui",
+        "ad_banner"
+      ]
     },
     {
       "id": "C-krug-billboard-scanning-and-visual-noise",
-      "version": 3,
+      "version": 4,
       "title": "Krug 60mph 广告牌扫视模型、视觉层级嵌套反例与三大视觉噪音（Shouting/Disorganization/Clutter）拆解",
       "tags": [
         "60mph扫视",
@@ -4970,11 +5074,17 @@
       "title_en": "Steve Krug's 'Billboard Design 101': Why Users Don't Read Pages, How Visual Nesting Breaks, and How to Eliminate the 3 Types of Visual Noise",
       "reusable_move_en": "Design for 60-mph scanning ('We don’t read pages. We scan them. We satisfice. We muddle through.'): use 0ms conventional labels ('Jobs' not 'Job-o-Rama'), fix over-spanning section headers and floating subheads, preserve unambiguous button affordances ('No cursor = no hover = no clue'), and purge Shouting, Disorganization, and Clutter.",
       "markdown_path_en": "library/cases/en/C-krug-billboard-scanning-and-visual-noise.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "landing_page",
+        "storefront",
+        "pdp",
+        "ad_banner"
+      ]
     },
     {
       "id": "C-krug-omit-words-and-trunk-test-navigation",
-      "version": 3,
+      "version": 4,
       "title": "Krug 第三定律（103 词→34 词双砍半实证）、路牌导航、物理连通 Tab 与 6 项后备箱测试（Trunk Test）",
       "tags": [
         "字数双砍半",
@@ -5063,11 +5173,17 @@
       "title_en": "Steve Krug's Third Law ('Cut Half, Then Half Again') & the 6-Item 'Trunk Test' for Page Navigation",
       "reusable_move_en": "Apply Krug's Third Law ('Get rid of half the words on each page, then get rid of half of what’s left' — 'Happy talk must die' & 'Instructions must die', cutting 103 -> 34 words), make 'You are here' cues 'twice as prominent', break the bottom border under the active tab so it connects physically to the content below, and verify all 6 Trunk Test items on deep pages.",
       "markdown_path_en": "library/cases/en/C-krug-omit-words-and-trunk-test-navigation.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "landing_page",
+        "storefront",
+        "pdp",
+        "mobile_ui"
+      ]
     },
     {
       "id": "C-krug-homepage-big-bang-tagline-and-goodwill",
-      "version": 3,
+      "version": 4,
       "title": "Krug 首屏大爆炸（50ms 第一印象与 5 问）、Tagline vs. Motto 唯一性测试与买家善意储蓄罐水位计",
       "tags": [
         "首屏大爆炸",
@@ -5156,11 +5272,16 @@
       "title_en": "Steve Krug's 'Big Bang Theory of Web Design': The 50ms First Impression, 6–8 Word Taglines vs. Mottos, the Homepage Tragedy of the Commons, and the Reservoir of Goodwill",
       "reusable_move_en": "Answer all 4 Homepage Questions ('What is this? What do they have? What can I do? Why here?') + Search/Browse/Samples above the fold, pair the logo with a 6–8 word differentiating Tagline ('Real college. Real-world ready.' passing Nielsen's logo-swap test, never a mission statement), prevent Homepage Overgrazing, refill the Reservoir of Goodwill with upfront pricing/MOQ and Candid FAQs (not QWWPWAs), and front-load keywords for ear-scanning.",
       "markdown_path_en": "library/cases/en/C-krug-homepage-big-bang-tagline-and-goodwill.md",
-      "learning_origin": "book_canon"
+      "learning_origin": "book_canon",
+      "channels": [
+        "landing_page",
+        "storefront",
+        "pdp"
+      ]
     },
     {
       "id": "C-xiaomi-su7-2026-mall-billboard-teardown",
-      "version": 2,
+      "version": 3,
       "learning_origin": "co_dissected_teardown",
       "title": "2026 新一代小米 SU7 × 舒淇「卡布里蓝」商圈巨幕 vs. 同行车企大屏正反对比：为什么顶级商圈外墙不谈参数，且纯色场完胜风景图？",
       "title_en": "2026 New Xiaomi SU7 × Shu Qi \"Capri Blue\" Mall Billboards vs. Competitor Outdoor LEDs: Why Prime Mall Facades Omit Specs and Pure Color Fields Beat Landscape KVs",
@@ -5243,11 +5364,16 @@
         "claim": "2026 新一代小米 SU7「卡布里蓝」商圈巨幕配合上海百年张园 #蓝色慢游节（五一单日客流峰值约 12 万人次）与 5 城核心商圈大屏，实现街头强视觉截停与小红书现象级打卡二创；同期小米全面取消海报底部蚂蚁小字。",
         "verification_status": "verified_field_observation"
       },
-      "transfer_limits": "视觉观察及用户认可拆解适用于此处取样，未记录跨品牌受众验证。按真实点位、遮挡、受众熟悉度和停留条件决定信息与素材。"
+      "transfer_limits": "视觉观察及用户认可拆解适用于此处取样，未记录跨品牌受众验证。按真实点位、遮挡、受众熟悉度和停留条件决定信息与素材。",
+      "channels": [
+        "exhibition",
+        "ad_banner",
+        "print_collateral"
+      ]
     },
     {
       "id": "C-lawsofux-von-restorff-and-aesthetic-usability",
-      "version": 1,
+      "version": 2,
       "title": "Laws of UX 孤立效应与美感可用性边界：信息流破群突围与防“精修盲区”法则",
       "title_en": "Laws of UX Von Restorff Effect & Aesthetic-Usability Guardrails: Breaking Feed Homogeneity Without Triggering \"Polished Ad Blindness\"",
       "tags": [
@@ -5301,11 +5427,17 @@
         "claim": "源自 von Restorff (1933) 记忆实验与 Kurosu & Kashimura (1995) 252 人 ATM 界面研究，经 Jon Yablonski 归纳为现代数字产品基础视觉准则。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁一屏同时高亮多个卖点导致焦点抵消，严禁用虚假系统提示或误导性视觉噱头博取点击。"
+      "transfer_limits": "严禁一屏同时高亮多个卖点导致焦点抵消，严禁用虚假系统提示或误导性视觉噱头博取点击。",
+      "channels": [
+        "social_feed",
+        "social_carousel",
+        "ad_banner",
+        "pdp"
+      ]
     },
     {
       "id": "C-lawsofux-serial-position-and-peak-end",
-      "version": 1,
+      "version": 2,
       "title": "Laws of UX 系列位置效应与峰终定律：多图轮播与长详情页的首尾锚定及峰值分镜",
       "title_en": "Laws of UX Serial Position Effect & Peak-End Rule: Primacy-Recency Anchoring & Peak-End Storyboarding for Carousels and Long PDPs",
       "tags": [
@@ -5359,11 +5491,17 @@
         "claim": "源自 Ebbinghaus (1885)、Murdock (1962) U 型回忆实验与 Kahneman et al. (1993) 峰终定律研究，经 lawsofux.com 整理为序列体验设计基准。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁伪造夸大测试图制造虚假峰值；不可把核心卖点孤立埋在中段而不做首尾呼应。"
+      "transfer_limits": "严禁伪造夸大测试图制造虚假峰值；不可把核心卖点孤立埋在中段而不做首尾呼应。",
+      "channels": [
+        "social_carousel",
+        "pdp",
+        "landing_page",
+        "presentation"
+      ]
     },
     {
       "id": "C-lawsofux-zeigarnik-and-goal-gradient",
-      "version": 1,
+      "version": 2,
       "title": "Laws of UX 蔡格尼克效应与目标梯度效应：多图轮播翻页张力与进度牵引设计",
       "title_en": "Laws of UX Zeigarnik Effect & Goal-Gradient Effect: Unfinished-Loop Swipe Tension & Progress-Cue Momentum",
       "tags": [
@@ -5417,11 +5555,16 @@
         "claim": "源自 Bluma Zeigarnik (1920s) 记忆研究、Clark Hull (1932) 及 Kivetz et al. (2006) 消费行为实验，经 lawsofux.com 归纳为流程留存基准。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁滥用无干货的虚假标题党悬念透支善意，严禁将无限信息流伪装成有限进度条。"
+      "transfer_limits": "严禁滥用无干货的虚假标题党悬念透支善意，严禁将无限信息流伪装成有限进度条。",
+      "channels": [
+        "social_carousel",
+        "mobile_ui",
+        "landing_page"
+      ]
     },
     {
       "id": "C-lawsofux-fitts-hick-and-jakob",
-      "version": 1,
+      "version": 2,
       "title": "Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应",
       "title_en": "Laws of UX Fitts's Law, Hick's Law & Jakob's Law: Mobile Thumb Targets, Progressive Disclosure & Native Platform Conventions",
       "tags": [
@@ -5482,11 +5625,17 @@
         "claim": "源自 Paul Fitts (1954)、Hick & Hyman (1952–1953)、Alvin Toffler (1970) 及 Jakob Nielsen 研究，经 lawsofux.com 汇总为现代移动端人因交互基准。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "不可为追求极简而删掉专业/B2B 买家决策必需的关键参数，应改用分组、筛选器与渐进披露减负。"
+      "transfer_limits": "不可为追求极简而删掉专业/B2B 买家决策必需的关键参数，应改用分组、筛选器与渐进披露减负。",
+      "channels": [
+        "mobile_ui",
+        "landing_page",
+        "pdp",
+        "storefront"
+      ]
     },
     {
       "id": "C-tiktok-9x16-safe-zones-and-2s-hook",
-      "version": 2,
+      "version": 3,
       "title": "TikTok 竖屏案例：按投放位定安全区，按创意设计开场",
       "title_en": "TikTok Vertical Creative: Placement-Specific Safe Zones and Early Cues",
       "tags": [
@@ -5538,11 +5687,16 @@
         "claim": "TikTok Creative Codes 引用的广告回忆影响研究窗口为前 6 秒。安全区依据平台自己的版位说明验证。",
         "verification_status": "source_reported"
       },
-      "transfer_limits": "跨平台或更换广告形式时重新核对。研究数值引用前 6 秒口径与原始样本。节奏、露脸时机和字幕长度按任务定。"
+      "transfer_limits": "跨平台或更换广告形式时重新核对。研究数值引用前 6 秒口径与原始样本。节奏、露脸时机和字幕长度按任务定。",
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "mobile_ui"
+      ]
     },
     {
       "id": "C-motion-native-statics-and-us-vs-them",
-      "version": 3,
+      "version": 4,
       "title": "Motion 创意诊断：用可比基线决定要测什么",
       "title_en": "Motion Creative Diagnosis: Use a Comparable Baseline to Choose What to Test",
       "tags": [
@@ -5595,11 +5749,17 @@
         "claim": "引用 Motion 的指标定义与账户内对照诊断建议。三种构图作为可测试方式，库内未记录各自的受众效果。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "单个停滑或点击率数字不能证明首帧失败。素材测试应考虑受众、出价、样本、版位和落地页。"
+      "transfer_limits": "单个停滑或点击率数字不能证明首帧失败。素材测试应考虑受众、出价、样本、版位和落地页。",
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "social_carousel",
+        "pdp"
+      ]
     },
     {
       "id": "C-aotw-three-seven-paris-price-scale",
-      "version": 1,
+      "version": 2,
       "title": "Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定",
       "title_en": "Three Seven Paris \"How much do you love her?\": Physical-Scale Price Ladder & Emotional-Gauge Framing",
       "tags": [
@@ -5653,11 +5813,16 @@
         "claim": "2023 年 2 月巴黎街头张贴实战案例（The Refreshment Club），页面未公布转化率数据，仅提炼客观构图与价格心理锚定机制。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "须保持幽默与优雅克制，严禁滑向令人反感的道德绑架；不适合纯理性 B2B 工业零件选型。"
+      "transfer_limits": "须保持幽默与优雅克制，严禁滑向令人反感的道德绑架；不适合纯理性 B2B 工业零件选型。",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "pdp"
+      ]
     },
     {
       "id": "C-aotw-fnac-visual-subversion-light-cone",
-      "version": 2,
+      "version": 3,
       "title": "Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导",
       "title_en": "Fnac \"Another Addiction is Possible\": Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
       "tags": [
@@ -5713,11 +5878,16 @@
         "claim": "2026 年 4 月 Fnac 法国户外/印刷上线作品（Publicis Conseil），页面未公布转化率数据，仅提炼客观光影叙事与视觉反转机制。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁做成 10 秒看不懂的晦涩谜语；不适用于需 1 秒亮价促销的硬广。"
+      "transfer_limits": "严禁做成 10 秒看不懂的晦涩谜语；不适用于需 1 秒亮价促销的硬广。",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "social_feed"
+      ]
     },
     {
       "id": "C-aotw-muserk-typographic-wall-poster",
-      "version": 1,
+      "version": 2,
       "title": "Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口",
       "title_en": "Muserk \"Get F'in Paid\": Modern Typographic-Wall Poster, 3-Tier Scale Drop & Corner QR Close",
       "tags": [
@@ -5771,11 +5941,17 @@
         "claim": "2024 年 5 月纳什维尔街头张贴系列案例（GS&F），页面未公布扫码转化率，仅提炼客观纯字排版骨骼与通道 2 工程复用模式。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "忌把长段落塞进巨字墙；严肃 B2B/工业场景保留排版骨骼并替换为克制硬核数据/承诺，避免不当粗口。"
+      "transfer_limits": "忌把长段落塞进巨字墙；严肃 B2B/工业场景保留排版骨骼并替换为克制硬核数据/承诺，避免不当粗口。",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "exhibition",
+        "social_feed"
+      ]
     },
     {
       "id": "C-aotw-mercedes-rollover-sensor-state-sequence",
-      "version": 1,
+      "version": 2,
       "title": "Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓",
       "title_en": "Mercedes-Benz \"Rollover Sensor\": Icon-as-Diagram Sequential State Repetition & Whisper Reveal",
       "tags": [
@@ -5829,11 +6005,17 @@
         "claim": "2007 年 3 月 Jung von Matt/Donau 经典奔驰平面广告作品，页面无转化率数据，仅提炼客观符号演进构图与通道 2 矢量复用机制。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "不适用于急需 0.5 秒亮价促单的促销图；序列不超过 5 帧以防失去一眼通读感。"
+      "transfer_limits": "不适用于急需 0.5 秒亮价促单的促销图；序列不超过 5 帧以防失去一眼通读感。",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "pdp",
+        "social_carousel"
+      ]
     },
     {
       "id": "C-coca-cola-recycle-me-deformation",
-      "version": 2,
+      "version": 3,
       "title": "可口可乐《Recycle Me》：用熟悉符号的真实形变表现动作",
       "title_en": "Coca-Cola ‘Recycle Me’: Making an Action Visible Through Real Deformation",
       "tags": [
@@ -5884,7 +6066,13 @@
         "claim": "奥美项目页核实标志来自压扁的真实饮料罐。出处未公开识别用时或回收率增幅。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "预览时询问观众看到了什么动作与对象。品牌陌生时可用通用物件。避免把耐用主张画成产品已损坏。识别耗时和回收增幅未披露。"
+      "transfer_limits": "预览时询问观众看到了什么动作与对象。品牌陌生时可用通用物件。避免把耐用主张画成产品已损坏。识别耗时和回收增幅未披露。",
+      "channels": [
+        "ad_banner",
+        "print_collateral",
+        "exhibition",
+        "social_feed"
+      ]
     }
   ],
   "feedback": [

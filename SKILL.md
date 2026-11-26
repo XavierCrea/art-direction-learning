@@ -19,10 +19,10 @@ metadata:
 ## 资料入口与检索工具 (Library & CLI)
 
 - 资料库默认位置见 [library-location.json](references/library-location.json)；用户本轮指定的资料库优先。
-- 使用 `python scripts/library.py search "关键词或视觉卡点"` 检索中英方法与案例。首层结果展示适用条件、失效边界和 `evidence_profile`，包含来源核对、项目状态和受众结果。可按记录、渠道与 `--origin` 筛选。
-- 使用 `python scripts/library.py get ID1 ID2 ...` 批量取记录和中英文案例路径。选用自定义库时，会使用该库的案例文件。
+- 使用 `python scripts/library.py search "关键词或视觉卡点"` 检索中英方法、案例与风格母版（`--kind styles` 可单搜风格）。首层结果展示适用条件、失效边界、`evidence_profile` 与风格本地锚点图存在性。可按记录、渠道（同时覆盖 `methods` 与 `cases`）与 `--origin` 筛选。
+- 使用 `python scripts/library.py get ID1 ID2 ...` 批量取记录、风格母版（自动探测 `local_anchor_images`）和中英文案例路径。选用自定义库时，会使用该库的案例文件。
 - 使用 `python scripts/library.py summary` 查看资料库规模与已读范围；使用 `python scripts/library.py validate --check-files` 核对引用完整性、中英案例卡配对与 `translations.en.json` SHA-256 指纹。
-- 新增或修改记录时先写好中英文案例卡，再用 `python scripts/library.py apply-patch --file patch.json --check-files` 更新。脚本生成指纹、校验和备份后替换目录。纯换行差异在文本指纹校验中等价。
+- 新增或修改记录时先写好中英文案例卡，再用 `python scripts/library.py apply-patch --file patch.json` 更新（默认开启文件与指纹校验，仅保留最近 5 个本地回滚快照；纯元数据离线补丁才显式传 `--skip-file-checks`）。纯换行差异在文本指纹校验中等价。
 - 实际打开对应记录（及必要的 `library/cases/*.md` / `library/cases/en/*.md` 或原始页）后，才能说明使用了该视觉方法或案例。未读完的原书或无原书图例的商业书摘（如 Bookey/Blinkist）不得冒充原书入库。
 
 ## 按当前任务工作 (Workflows)

@@ -40,7 +40,7 @@
 ## 3. cases（真实视觉案例与实验拆解 `C-*`）
 必填字段：
 - `id`、`version`、`title`、`title_en`
-- `tags`、`tags_en`、`when_stuck`（`{"zh": [...], "en": [...]}`）
+- `tags`、`tags_en`、`when_stuck`（`{"zh": [...], "en": [...]}`）、`channels`（合法载体枚举数组）
 - `status`、`source_refs`
 - `case_type`
 - `markdown_path`（指向 `library/cases/<id>.md`）与 `markdown_path_en`（指向 `library/cases/en/<id>.md`，英文卡须保留原书/原报告中的原句引用）
@@ -60,8 +60,8 @@
 新指纹用 UTF-8 内容的 LF 换行计算。Windows CRLF、Mac LF 和 UTF-8 BOM 仅改变保存方式。实际改字仍会触发重新核对。旧库保留的原始指纹兼容读入，原始 PDF 或其他二进制信源继续按原字节核对。
 
 ## 5. CLI 工具约定 (`scripts/library.py`)
-- `summary`：输出各分组数量、双语支持状态与信源阅读状态。
-- `search "<query>"` 支持中英关键词和简短中文症状。返回适用前提、失效边界和 `evidence_profile`。近似匹配以相关性排序，空结果表示暂无足够匹配。
-- `get <ID1> [<ID2> ...]`：支持单次传入多个 ID 批量读取，自动校验并解析 `markdown_path` 与 `markdown_path_en`。
-- `validate [--check-files]`：校验 Schema、外键引用、页码范围、中英案例卡文件存在性以及 `library/translations.en.json` 的 SHA-256 指纹一致性。
-- `apply-patch --file <patch.json> --check-files` 为本次更新的双语案例记录指纹，校验后写入。案例路径相对于所选资料库，兼容 `cases/...`、`library/cases/...` 和旧库中的反斜线。
+- `summary`：输出各分组数量（含 `styles` 与本机实存锚点统计）、双语支持状态与信源阅读状态。
+- `search "<query>"` 支持中英关键词、简短中文症状与 `--kind styles` 风格母版检索；`--channel` 同时覆盖 `methods` 与 `cases`。返回适用前提、失效边界、`evidence_profile` 及风格 `local_anchor_images`。近似匹配以相关性排序，空结果表示暂无足够匹配。
+- `get <ID1> [<ID2> ...]`：支持单次传入多个 ID 批量读取（含风格 ID 如 `apple-dark-pro`），自动校验并解析 `markdown_path`、`markdown_path_en` 及本机 `local_anchor_images`。
+- `validate [--check-files]`：校验 Schema、合法字段白名单、外键引用、页码范围、中英案例卡文件存在性以及 `library/translations.en.json` 的 SHA-256 指纹一致性。
+- `apply-patch --file <patch.json>` 默认开启 `--check-files`（特殊纯元数据离线补丁可传 `--skip-file-checks`），为本次更新的双语案例记录指纹，校验后写入并自动仅保留最近 5 个本地 `history/` 快照。案例路径相对于所选资料库，兼容 `cases/...`、`library/cases/...` 和旧库中的反斜线。

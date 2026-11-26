@@ -213,6 +213,47 @@ class LibraryTests(unittest.TestCase):
             self.assertIn("](../../README.en.md)", card.read_text(encoding="utf-8"))
             self.assertTrue(index.is_file())
 
+    def test_channel_filter_includes_cases_and_rejects_invalid_channel(self):
+        hits = self.listing("9:16 safe zones")
+        self.assertTrue(any(item["group"] == "cases" for item in hits))
+        filtered = json.loads(self.cli("search", "9:16 safe zones", "--channel", "ad_banner").stdout)
+        ids = {item["id"] for item in filtered}
+        self.assertIn("M-033", ids)
+        self.assertIn("C-tiktok-9x16-safe-zones-and-2s-hook", ids)
+        bad = self.cli("search", "safe zones", "--channel", "nonexistent_channel")
+        self.assertNotEqual(bad.returncode, 0)
+
+    def test_apply_patch_defaults_to_check_files_rejects_unknown_fields_and_prunes_history(self):
+        bad_patch = self.write_patch({"methods": [{"id": "M-001", "apply_when": "typo field"}]})
+        rejected = self.cli("apply-patch", "--file", str(bad_patch))
+        self.assertNotEqual(rejected.returncode, 0)
+        self.assertIn("unknown fields", rejected.stdout)
+
+        for idx in range(7):
+            delta = self.write_patch({"methods": [{"id": "M-001", "applies_when": f"Iteration {idx}"}]})
+            ok = self.cli("apply-patch", "--file", str(delta))
+            self.assertEqual(ok.returncode, 0, ok.stdout)
+        backups = list((self.root / "history").glob("catalog-r*.json"))
+        self.assertLessEqual(len(backups), LIBRARY["MAX_HISTORY_REVISIONS"])
+
+    def test_style_search_get_and_local_anchor_detection(self):
+        empty_get = json.loads(self.cli("get", "apple-dark-pro").stdout)
+        self.assertEqual(empty_get["group"], "styles")
+        self.assertFalse(empty_get["has_local_anchors"])
+        self.assertEqual(empty_get["local_anchor_images"], [])
+
+        anchor = self.root / "style-refs" / "apple-dark-pro" / "local" / "01-test-anchor.jpg"
+        anchor.parent.mkdir(parents=True, exist_ok=True)
+        anchor.write_bytes(b"fake-jpg")
+
+        populated_get = json.loads(self.cli("get", "apple-dark-pro").stdout)
+        self.assertTrue(populated_get["has_local_anchors"])
+        self.assertEqual(populated_get["local_anchor_images"], [str(anchor.resolve())])
+
+        found = json.loads(self.cli("search", "apple dark pro", "--kind", "styles").stdout)
+        self.assertEqual(found[0]["id"], "apple-dark-pro")
+        self.assertTrue(found[0]["has_local_anchors"])
+
 
 if __name__ == "__main__":
     unittest.main()

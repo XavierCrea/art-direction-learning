@@ -24,8 +24,25 @@ PROJECT_RESULT_TYPES = {"ab_test", "ab_test_result", "market_result"}
 AUDIENCE_OUTCOME_TYPES = PROJECT_RESULT_TYPES | {"usability_benchmark", "case_study_metric"}
 REPORTED_OUTCOME_STATES = {"source_verified", "source_reported"}
 OUTCOME_STATES = REPORTED_OUTCOME_STATES | {"verified", "unverified", "verified_field_observation"}
+CHANNEL_VALUES = {
+    "ad_banner",
+    "catalog",
+    "exhibition",
+    "landing_page",
+    "mobile_ui",
+    "packaging",
+    "pdp",
+    "presentation",
+    "print_collateral",
+    "social_carousel",
+    "social_feed",
+    "spec_sheet",
+    "storefront",
+}
 CASE_HASH_MODE = "utf8-lf"
 CASE_FILES = (("markdown_path", "zh_sha256"), ("markdown_path_en", "en_sha256"))
+IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"}
+MAX_HISTORY_REVISIONS = 5
 CHINESE_RUN = re.compile(r"[㐀-䶿一-鿿]{3,}")
 READING_STATUS_VALUES = {"registered", "metadata_only", "partial_review", "full_review"}
 LEARNING_ORIGINS = {"book_canon", "benchmark_study", "co_dissected_teardown", "task_feedback"}
@@ -80,6 +97,7 @@ REQUIRED = {
         "tags",
         "tags_en",
         "when_stuck",
+        "channels",
         "status",
         "source_refs",
         "case_type",
@@ -104,6 +122,56 @@ REQUIRED = {
         "observation",
         "verified",
         "task_id",
+    },
+}
+
+ALLOWED_FIELDS = {
+    "sources": REQUIRED["sources"]
+    | {
+        "author",
+        "coverage_note",
+        "coverage_note_en",
+        "isbn",
+        "learning_origin",
+        "local_path",
+        "original_availability",
+        "path",
+        "pdf_pages",
+        "published_at",
+        "publisher",
+        "secondary_url",
+        "sha256",
+        "updated_at",
+        "url",
+        "urls",
+    },
+    "methods": REQUIRED["methods"]
+    | {
+        "allowed_genres",
+        "evidence_stage",
+        "evidence_type",
+        "forbidden_genres",
+        "learning_origin",
+        "scope_layer",
+    },
+    "cases": REQUIRED["cases"]
+    | {
+        "evidence_stage",
+        "inquiry_chain",
+        "learning_origin",
+        "validation_refs",
+    },
+    "feedback": REQUIRED["feedback"]
+    | {
+        "cases_used",
+        "date",
+        "evidence_stage",
+        "learning_origin",
+        "methods_used",
+        "observation_en",
+        "project_status",
+        "reusable_lesson",
+        "title_en",
     },
 }
 
@@ -241,6 +309,9 @@ def validate_catalog(
             missing = sorted(REQUIRED[group] - set(item.keys()))
             if missing:
                 errors.append(f"{label} ({item.get('id', 'unknown')}) missing required fields: {', '.join(missing)}")
+            unknown = sorted(set(item.keys()) - ALLOWED_FIELDS[group])
+            if unknown:
+                errors.append(f"{label} ({item.get('id', 'unknown')}) has unknown fields: {', '.join(unknown)}")
             item_id = item.get("id")
             if not isinstance(item_id, str) or not item_id.strip():
                 errors.append(f"{label} id must be a non-empty string")
@@ -289,6 +360,11 @@ def validate_catalog(
                 errors.append(f"{item_id} has invalid status {status!r}")
             if not _valid_when_stuck(item.get("when_stuck")):
                 errors.append(f"{item_id} has invalid when_stuck (expected bilingual dict {{'zh': [...], 'en': [...]}})")
+            channels = item.get("channels")
+            if not isinstance(channels, list) or not channels or not all(
+                isinstance(ch, str) and ch in CHANNEL_VALUES for ch in channels
+            ):
+                errors.append(f"{item_id} channels must be a non-empty list of valid channels")
             refs = item.get("source_refs")
             if not isinstance(refs, list) or not refs:
                 errors.append(f"{item_id} must have non-empty source_refs")
@@ -496,9 +572,66 @@ def infer_learning_origin(item: dict[str, Any], group: str, sources_by_id: dict[
     return "benchmark_study"
 
 
+def discover_local_anchors(root: Path, style_id: str) -> tuple[Path, list[str]]:
+    local_dir = (root / "style-refs" / style_id / "local").resolve()
+    if not local_dir.is_dir():
+        return local_dir, []
+    images = sorted(
+        str(path.resolve())
+        for path in local_dir.iterdir()
+        if path.is_file() and path.suffix.lower() in IMAGE_EXTS
+    )
+    return local_dir, images
+
+
+def _extract_bullet_value(text: str, label: str) -> str:
+    match = re.search(rf"^- \*\*{re.escape(label)}\*\*[：:]\s*(.+)$", text, re.MULTILINE)
+    return match.group(1).strip().strip("`") if match else ""
+
+
+def load_styles(root: Path) -> list[dict[str, Any]]:
+    styles_dir = root / "styles"
+    if not styles_dir.is_dir():
+        return []
+    records: list[dict[str, Any]] = []
+    for path in sorted(styles_dir.glob("*.md")):
+        if path.name in {"README.md", "_TEMPLATE.md"}:
+            continue
+        style_id = path.stem
+        content = path.read_text(encoding="utf-8")
+        heading = re.search(r"^#\s+(.+)$", content, re.MULTILINE)
+        title = heading.group(1).strip() if heading else style_id
+        quadrant = _extract_bullet_value(content, "视觉气质象限")
+        industry_raw = _extract_bullet_value(content, "可选行业标签")
+        tags = [t.strip() for t in re.split(r"[/、,，]", industry_raw) if t.strip()]
+        if quadrant:
+            tags.insert(0, quadrant)
+        evidence_stage = _extract_bullet_value(content, "证据状态") or "source_verified"
+        local_dir, anchors = discover_local_anchors(root, style_id)
+        records.append({
+            "id": style_id,
+            "title": title,
+            "title_en": quadrant or title,
+            "quadrant": quadrant,
+            "tags": tags,
+            "tags_en": [style_id, quadrant] if quadrant else [style_id],
+            "status": evidence_stage,
+            "evidence_stage": evidence_stage,
+            "style_path": f"styles/{path.name}",
+            "style_resolved_path": str(path.resolve()),
+            "local_refs_dir": str(local_dir),
+            "local_anchor_images": anchors,
+            "has_local_anchors": bool(anchors),
+            "observations": content[:1200],
+            "rule": _extract_bullet_value(content, "光源设定") or title,
+        })
+    return records
+
+
 def cmd_summary(args: argparse.Namespace) -> int:
     root = resolve_library_root(args.library)
     data, catalog_path = load_catalog(root)
+    styles = load_styles(root)
     sources_by_id = {s.get("id"): s for s in data.get("sources", []) if isinstance(s, dict) and s.get("id")}
     by_origin: dict[str, dict[str, int]] = {}
     for group in GROUPS:
@@ -507,6 +640,8 @@ def cmd_summary(args: argparse.Namespace) -> int:
             origin = infer_learning_origin(item, group, sources_by_id)
             group_counts[origin] = group_counts.get(origin, 0) + 1
         by_origin[group] = group_counts
+    counts = {group: len(data.get(group, [])) for group in GROUPS}
+    counts["styles"] = len(styles)
     summary = {
         "library_root": str(root),
         "catalog_path": str(catalog_path),
@@ -514,7 +649,8 @@ def cmd_summary(args: argparse.Namespace) -> int:
         "revision": data.get("revision"),
         "updated_at": data.get("updated_at"),
         "bilingual_support": True,
-        "counts": {group: len(data.get(group, [])) for group in GROUPS},
+        "counts": counts,
+        "styles_with_local_anchors": sum(1 for style in styles if style["has_local_anchors"]),
         "by_learning_origin": by_origin,
         "sources": [
             {
@@ -650,7 +786,8 @@ def cmd_search(args: argparse.Namespace) -> int:
     feedback_by_id = {f.get("id"): f for f in data.get("feedback", []) if isinstance(f, dict) and f.get("id")}
     full_query = args.query.strip().lower()
     terms = [t for t in full_query.split() if t]
-    groups = [args.kind] if args.kind != "all" else list(GROUPS)
+    search_styles = args.kind in {"all", "styles"}
+    groups = [] if args.kind == "styles" else ([args.kind] if args.kind != "all" else list(GROUPS))
     matches = []
 
     for group in groups:
@@ -694,6 +831,31 @@ def cmd_search(args: argparse.Namespace) -> int:
                     entry["transfer_limits"] = item.get("transfer_limits")
                 matches.append(entry)
 
+    if search_styles and not args.channel and not getattr(args, "origin", None):
+        for style in load_styles(root):
+            if args.status and style.get("status") != args.status:
+                continue
+            score = score_item(style, terms, full_query)
+            if score > 0:
+                matches.append({
+                    "group": "styles",
+                    "id": style["id"],
+                    "title": style["title"],
+                    "title_en": style["title_en"],
+                    "quadrant": style["quadrant"],
+                    "status": style["status"],
+                    "evidence_stage": style["evidence_stage"],
+                    "score": score,
+                    "tags": style["tags"],
+                    "tags_en": style["tags_en"],
+                    "summary": style["rule"],
+                    "style_path": style["style_path"],
+                    "style_resolved_path": style["style_resolved_path"],
+                    "local_refs_dir": style["local_refs_dir"],
+                    "has_local_anchors": style["has_local_anchors"],
+                    "local_anchor_images": style["local_anchor_images"],
+                })
+
     matches.sort(key=lambda row: (-row["score"], row["id"] or ""))
     print(json.dumps(matches[: args.limit], ensure_ascii=False, indent=2))
     return 0
@@ -720,6 +882,25 @@ def cmd_get(args: argparse.Namespace) -> int:
                         record["markdown_en_resolved_path"] = str(md_en_path)
                         record["markdown_en_exists"] = md_en_path.exists()
                 found_map[item_id] = record
+
+    for style in load_styles(root):
+        style_id = style["id"]
+        if style_id in requested_ids and style_id not in found_map:
+            found_map[style_id] = {
+                "group": "styles",
+                "item": {
+                    "id": style["id"],
+                    "title": style["title"],
+                    "quadrant": style["quadrant"],
+                    "tags": style["tags"],
+                    "evidence_stage": style["evidence_stage"],
+                    "style_path": style["style_path"],
+                },
+                "style_resolved_path": style["style_resolved_path"],
+                "local_refs_dir": style["local_refs_dir"],
+                "has_local_anchors": style["has_local_anchors"],
+                "local_anchor_images": style["local_anchor_images"],
+            }
 
     missing = [rid for rid in requested_ids if rid not in found_map]
     results = [found_map[rid] for rid in requested_ids if rid in found_map]
@@ -817,7 +998,21 @@ def refresh_case_fingerprints(
     return errors
 
 
-def apply_catalog_patch(root: Path, patch: dict[str, Any], check_files: bool) -> dict[str, Any]:
+def prune_history(history_dir: Path, keep: int = MAX_HISTORY_REVISIONS) -> None:
+    if not history_dir.is_dir():
+        return
+    pattern = re.compile(r"^(?:catalog|translations)-r(\d+)\.json$")
+    revisions: dict[int, list[Path]] = {}
+    for path in history_dir.iterdir():
+        match = pattern.match(path.name)
+        if match:
+            revisions.setdefault(int(match.group(1)), []).append(path)
+    for rev in sorted(revisions, reverse=True)[keep:]:
+        for old_path in revisions[rev]:
+            old_path.unlink(missing_ok=True)
+
+
+def apply_catalog_patch(root: Path, patch: dict[str, Any], check_files: bool = True) -> dict[str, Any]:
     data, catalog_path = load_catalog(root)
     old_catalog = catalog_path.read_bytes()
     old_revision = data["revision"]
@@ -893,6 +1088,7 @@ def apply_catalog_patch(root: Path, patch: dict[str, Any], check_files: bool) ->
                 elif manifest_path.read_bytes() != old_manifest:
                     write_atomic(manifest_path, old_manifest)
             raise
+    prune_history(root / "history")
     return {
         "applied": True,
         "previous_revision": old_revision,
@@ -932,23 +1128,24 @@ def main() -> int:
 
     sub.add_parser("summary", help="Show library counts and source status")
 
-    search = sub.add_parser("search", help="Weighted bilingual & symptom search across methods, cases, sources, feedback")
+    search = sub.add_parser("search", help="Weighted bilingual & symptom search across methods, cases, sources, feedback, and styles")
     search.add_argument("query", help="Search query (supports space-separated bilingual keywords & symptoms)")
-    search.add_argument("--kind", choices=["all", *GROUPS], default="all")
-    search.add_argument("--status", choices=sorted(STATUS_VALUES))
-    search.add_argument("--channel", help="Filter by channel (e.g. pdp, landing_page, ad_banner, spec_sheet)")
+    search.add_argument("--kind", choices=["all", *GROUPS, "styles"], default="all")
+    search.add_argument("--status", choices=sorted(STATUS_VALUES | EVIDENCE_STAGES))
+    search.add_argument("--channel", choices=sorted(CHANNEL_VALUES), help="Filter by channel (e.g. pdp, landing_page, ad_banner, spec_sheet)")
     search.add_argument("--origin", choices=sorted(LEARNING_ORIGINS), help="Filter by learning origin (book_canon, benchmark_study, co_dissected_teardown, task_feedback)")
     search.add_argument("--limit", type=int, default=8)
 
-    get_p = sub.add_parser("get", help="Fetch one or more records by ID in a single batch call")
-    get_p.add_argument("ids", nargs="+", help="One or more record IDs (e.g. M-001 M-004 C-baymard-in-scale-reference)")
+    get_p = sub.add_parser("get", help="Fetch one or more records or style archetypes by ID in a single batch call")
+    get_p.add_argument("ids", nargs="+", help="One or more record or style IDs (e.g. M-001 C-baymard-in-scale-reference apple-dark-pro)")
 
     val = sub.add_parser("validate", help="Validate catalog schema, references, and bilingual case files")
     val.add_argument("--check-files", action="store_true", help="Verify local source files, bilingual markdown cards, and SHA-256 digests")
 
     patch = sub.add_parser("apply-patch", help="Atomically merge a JSON patch into catalog.json with backup and validation")
     patch.add_argument("--file", required=True, help="Path to patch JSON file")
-    patch.add_argument("--check-files", action="store_true", help="Also verify referenced files exist before committing")
+    patch.add_argument("--check-files", action="store_true", dest="check_files", default=True, help="Verify referenced files and refresh case digests (default: enabled)")
+    patch.add_argument("--skip-file-checks", action="store_false", dest="check_files", help="Skip file existence and case digest checks (use only for metadata-only offline patches)")
 
     args = parser.parse_args()
     commands = {
