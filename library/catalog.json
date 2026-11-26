@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 19,
+  "revision": 20,
   "updated_at": "2026-11-26",
   "sources": [
     {
@@ -516,6 +516,114 @@
       "urls": [
         "https://www.famouscampaigns.com/2024/04/coca-cola-have-crushed-their-iconic-logo/",
         "https://www.ogilvy.com/work/recycle-me"
+      ]
+    },
+    {
+      "id": "S-ikea-tomorrow-starts-tonight-2024",
+      "kind": "web",
+      "version": 1,
+      "title": "IKEA — Tomorrow Starts Tonight (OOH Diptych Campaign)",
+      "author": "Mother London",
+      "publisher": "Collater.al",
+      "retrieved_at": "2026-11-26",
+      "url": "https://www.collater.al/en/tomorrow-starts-tonight-ikea-campaign/",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "核阅 Mother London 为宜家英国创作的双联户外海报（SLEEP 能量饮料罐×床单、抗老面霜罐×羽绒被）实拍与出处。",
+      "coverage_note_en": "Reviewed Mother London's IKEA UK OOH diptych posters (SLEEP energy drink can × bedsheet, anti-ageing cream jar × duvet) and campaign source.",
+      "reviewed_locations": [
+        "OOH diptych brick-wall installation and individual poster layouts (£13 bedsheet, £16 duvet)"
+      ]
+    },
+    {
+      "id": "S-louispoulsen-ph-centenary-2026",
+      "kind": "web",
+      "version": 1,
+      "title": "Louis Poulsen — PH Centenary Poster (Poul Henningsen 3-Shade Light Ray Diagram)",
+      "author": "Louis Poulsen",
+      "publisher": "Louis Poulsen Official",
+      "retrieved_at": "2026-11-26",
+      "url": "https://www.louispoulsen.com/en-us/ph-centenary-poster",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "核阅 Louis Poulsen 官方 PH Centenary 海报纯黑底几何光路折射图与实景裱框陈列。",
+      "coverage_note_en": "Reviewed official Louis Poulsen PH Centenary Poster clean black-ground geometric ray-path diagram and framed interior shot.",
+      "reviewed_locations": [
+        "PH Centenary Poster product page & PH Centenary Collection"
+      ]
+    },
+    {
+      "id": "S-hay-clara-zweigbergk-jseries",
+      "kind": "web",
+      "version": 1,
+      "title": "HAY — J-Series Art Direction by Clara von Zweigbergk",
+      "author": "Clara von Zweigbergk",
+      "publisher": "It's Nice That",
+      "retrieved_at": "2026-11-26",
+      "url": "https://www.itsnicethat.com/articles/clara-von-zweigbergk-graphic-design-240417",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "核阅 HAY J-Series 目录画册 3×5 两面墙折角灰场矩阵与 J110 珊瑚红孤立页。",
+      "coverage_note_en": "Reviewed HAY J-Series catalog 3x5 two-wall architectural corner matrix and isolated coral-red J110 spread.",
+      "reviewed_locations": [
+        "Open J-Series catalog spread and canary-yellow stacked furniture cover"
+      ]
+    },
+    {
+      "id": "S-montana-colour-protagonist-3daysofdesign",
+      "kind": "web",
+      "version": 1,
+      "title": "Montana Furniture at 3daysofdesign — Colour Becomes the Protagonist",
+      "author": "Montana Furniture",
+      "publisher": "The Interior Design",
+      "retrieved_at": "2026-11-26",
+      "url": "https://theinteriordesign.it/en/montana-furniture-at-3daysofdesign-2026-colour-becomes-the-protagonist-of-contemporary-design",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "核阅 Montana 垂直双色切面背景墙（深茄紫×鼠尾草绿）与亮橙 Panton Wire 边几、天然亚麻材质对冲实景图。",
+      "coverage_note_en": "Reviewed Montana's vertical two-tone wall split (aubergine × sage green) with bright orange Panton Wire table and oatmeal linen contrast.",
+      "reviewed_locations": [
+        "Bedroom corner color-blocking vignette"
+      ]
+    },
+    {
+      "id": "S-ikea-guilty-pets-2019",
+      "kind": "web",
+      "version": 1,
+      "title": "IKEA — Guilty Pets: Don't Worry, You Can Afford It",
+      "author": "Memac Ogilvy",
+      "publisher": "Ads of the World",
+      "retrieved_at": "2026-11-26",
+      "url": "https://www.adsoftheworld.com/campaigns/ikea-guilty-pets",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "核阅宜家 Guilty Pets 系列（猫咪打碎 FÄRGRIK 马克杯 Dhs 3 与小狗咬坏水壶篇）俯拍与微型价签排版。",
+      "coverage_note_en": "Reviewed IKEA Guilty Pets series (cat with shattered FÄRGRIK mug Dhs 3 and dog with chewed kettle) overhead framing and micro price-tag layout.",
+      "reviewed_locations": [
+        "FÄRGRIK Mug Dhs 3 shattered kitchen scene"
+      ]
+    },
+    {
+      "id": "S-ikea-proudly-second-best-2023",
+      "kind": "web",
+      "version": 1,
+      "title": "IKEA — Proudly the Second Best",
+      "author": "INGO Stockholm / David Miami",
+      "publisher": "Ads of the World",
+      "retrieved_at": "2026-11-26",
+      "url": "https://www.adsoftheworld.com/campaigns/proudly-the-second-best",
+      "reading_status": "full_review",
+      "original_availability": "citation_only",
+      "learning_origin": "benchmark_study",
+      "coverage_note": "核阅宜家 Proudly Second Best 系列（空置 ANTILOP 高脚餐椅 Dhs 99 与父子喂食怀抱画面、婴儿床篇）。",
+      "coverage_note_en": "Reviewed IKEA Proudly Second Best series (empty ANTILOP Highchair Dhs 99 beside father feeding toddler on lap, and crib execution).",
+      "reviewed_locations": [
+        "ANTILOP Highchair Dhs 99 execution"
       ]
     }
   ],
@@ -3292,14 +3400,14 @@
     },
     {
       "id": "M-036",
-      "version": 3,
-      "title": "熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导法",
-      "title_en": "Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
+      "version": 4,
+      "title": "熟悉视觉代码反转（Double-Take）、暗场单光锥与跨品类容器嫁接法",
+      "title_en": "Familiar Visual-Code Subversion (Double-Take), Single Light-Cone & Cross-Category Container Grafting",
       "tags": [
         "视觉反转",
         "Double-Take",
         "暗场单光锥",
-        "视线路径",
+        "跨品类容器嫁接",
         "反说教海报",
         "高停滑封面"
       ],
@@ -3307,30 +3415,29 @@
         "visual subversion",
         "double-take",
         "single light cone",
-        "low-key lighting",
+        "container grafting",
         "anti-preachy poster",
         "focal path"
       ],
       "when_stuck": {
         "zh": [
           "品牌/公益海报或种草封面太直白说教，读者 0.5 秒看穿意图直接划走",
+          "基础日用品同质化严重，想在不喊打折的前提下用视觉双关让人停下来再看一眼",
           "真实生活实景照片细节杂乱，观众视线抓不住核心道具与产品",
-          "想在信息流里制造『第一眼熟悉、第二眼反转惊艳』的高停留与高评论效应",
-          "想让人再看一眼、停下来产生好奇心，而不是一眼看完就划走",
-          "想让人再看一眼",
-          "第一眼扫过去就划走了"
+          "想在信息流里制造『第一眼熟悉、第二眼反转惊艳』的高停留与高评论效应"
         ],
         "en": [
           "Brand poster or social cover feels predictable and preachy so viewers scroll past in 0.5s",
+          "Everyday commodity goods look generic and need a witty double-take without discount-banner clutter",
           "Realistic lifestyle scenes are too visually busy for the eye to lock onto the key subject",
-          "Need a high-retention double-take visual hook that rewards a second glance",
-          "Want viewers to look twice and pause out of curiosity"
+          "Need a high-retention double-take visual hook that rewards a second glance"
         ]
       },
       "channels": [
         "ad_banner",
         "social_feed",
-        "landing_page"
+        "landing_page",
+        "print_collateral"
       ],
       "scope_layer": "universal_grammar",
       "status": "reference",
@@ -3339,22 +3446,26 @@
         {
           "source_id": "S-aotw-fnac-another-addiction-2026",
           "section": "3 low-key bedroom posters ('Another addiction is possible.')"
+        },
+        {
+          "source_id": "S-ikea-tomorrow-starts-tonight-2024",
+          "section": "OOH Diptych ('SLEEP' energy drink can × bedsheet & anti-ageing cream jar × duvet)"
         }
       ],
-      "rule": "用『熟悉视觉代码反转（Double-Take）』打破信息流审美疲劳：先借用受众 0.3 秒就能认出的高频生活画面（保留 90% 熟悉光影与构图），仅反转 1 个核心道具的物理用法（如深夜冷蓝手机光实为背面手电筒照纸书）；保留真实环境细节但将环境光压暗 2–3 档，用唯一一道高对比光锥串起『人物情绪 → 反转道具 → 目标产品』单一动线；文案压至 3–6 词放于暗部负空间，绝不剧透或说教。",
-      "rule_en": "Break feed predictability with Familiar Visual-Code Subversion (Double-Take): borrow a 0.3-second cultural shorthand (keeping 90% of its familiar framing and lighting) and subvert ONE physical object's role (e.g., late-night blue phone glow revealed as the rear LED flashlight illuminating a real book). Drop realistic room backgrounds by 2–3 stops so a Single Light-Cone channels the eye cleanly along Emotion -> Subverted Tool -> Hero Product, paired with a quiet 3–6 word reframing line in dark negative space ('Another addiction is possible.').",
-      "applies_when": "制作需要引发二次细看、情感共鸣与自发传播的品牌海报、小红书高停滑种草封面或首屏故事主视觉时。",
-      "limits": "反转的物理细节必须在手机缩略图尺寸下依然清晰可辨；严禁做成看 10 秒还看不懂的晦涩谜语；不适合要求 1 秒亮价卖货的纯硬广促销图。",
+      "rule": "用『熟悉视觉代码反转（Double-Take）』打破信息流疲劳，分两条路径落地：1) **实景道具反转 + 暗场单光锥**（Fnac 模式）：借用 0.3 秒高频生活定式，保留 90% 真实光影但压暗环境 2–3 档，仅反转 1 个核心道具用法，用唯一光锥串起『情绪 → 反转道具 → 产品』；2) **跨品类高溢价容器嫁接**（IKEA 模式）：当本品为普通日用品但提供高感知收益（提神/抗衰/减压）时，把本品真实材质装入或倒出高溢价品类容器（如能量饮料罐流出纯棉床单、磨砂面霜罐塞满羽绒被），配双联并置与极简价签锚定。两条路径均须把文案压到 3–6 词，绝不剧透笑点。",
+      "rule_en": "Break feed predictability with Familiar Visual-Code Subversion (Double-Take) via two routes: (1) **In-Scene Object Flip + Single Light-Cone** (Fnac): hijack a 0.3s cultural shorthand, drop ambient room exposure 2–3 stops, flip ONE physical object's role, and channel the eye via one light cone; (2) **Cross-Category Container Grafting** (IKEA): pour or pack a commodity product's authentic material into a higher-markup category container (e.g., cotton bedsheet pouring from an energy drink can, duvet stuffed in an anti-ageing cream jar) paired in a side-by-side diptych with micro price anchors. Keep headlines to 3–6 words and never spoil the twist.",
+      "applies_when": "制作需要引发二次细看、情感共鸣与自发传播的品牌海报、户外双联广告、小红书高停滑种草封面或日用品态度主视觉时。",
+      "limits": "反转或容器嫁接的物理材质细节必须在手机缩略图或远距视角下清晰可辨；严禁做成看 10 秒还看不懂的晦涩谜语，也不适用于需 1 秒展示完整规格的 B2B 硬参数表。",
       "steps": [
-        "找出目标受众最高频的 0.3 秒熟悉视觉定式（如深夜刷屏蓝光、杂乱工位、常见痛点姿势）。",
-        "保留 90% 的环境真实感与熟悉构图，只在 1 个关键道具或结果上制造清晰可见的物理反转。",
-        "压暗环境背景 2–3 档，用单一高对比光锥或冷暖色焦点串起『情绪 → 反转道具 → 产品』视线动线。",
-        "在暗部负空间放一句 3–6 词的克制重构标题，严禁在标题里直白解释画面笑点。"
+        "选定受众 0.3 秒即识的熟悉代码：要么是高频生活定式（路径 1），要么是高溢价品类经典容器（路径 2）。",
+        "只反转 1 个物理变量：要么反转实景内道具用法，要么把本品真实材质物理性地装入/倒出跨界容器。",
+        "控制背景与节奏：实景压暗 2–3 档用单光锥收拢视线；容器嫁接优先用干净棚拍纯色底做双联并置放大记忆度。",
+        "用 3–6 词不剧透短标或极简价签（如 £13 / £16）完成品牌与商业收口。"
       ],
       "checks": [
-        "把图缩成手机信息流卡片大小，第 0.5 秒是否立刻触发熟悉感，第 1.5 秒能否清晰看清那个物理反转细节？",
-        "暗场压暗后，唯一光锥是否让眼睛零干扰地落到目标产品上？",
-        "标题是否克制在 3–6 词且完全没有长辈说教味？"
+        "缩成手机卡片大小后，第 0.5 秒是否先触发熟悉预期，第 1.5 秒能否清晰看清物理反转或织物材质？",
+        "单光锥或纯色双联构图是否让眼睛零干扰地落到目标产品上？",
+        "文案是否克制在 3–6 词内，且完全没有解释笑点或说教感？"
       ],
       "validation_refs": []
     },
@@ -3545,6 +3656,196 @@
         "遮住底部短词快速扫视，受众能否立刻察觉“它发生了某种真实物理形变”并脑补出背后的动作或卖点？",
         "第一次看到这张图的目标读者能否认出物件的正常形态，并说出它发生了什么改变？",
         "画面留白与信息克制程度是否服务于聚焦该形变反差，且没有引发“产品脆弱易损”的误读？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-040",
+      "version": 1,
+      "title": "无形物理场的工程几何射线图解法",
+      "title_en": "Engineering Geometric Ray-Path Diagramming for Invisible Physical Fields",
+      "tags": [
+        "无形物理场",
+        "光学射线图",
+        "机理可视化",
+        "通道2矢量直出",
+        "工程权威感"
+      ],
+      "tags_en": [
+        "invisible physics",
+        "ray path diagram",
+        "mechanism visualization",
+        "channel 2 vector",
+        "engineering authority"
+      ],
+      "when_stuck": {
+        "zh": [
+          "防眩光漫反射、声场扩散、气流风道或热传导路径等看不见的物理性能实拍拍不出来",
+          "用粗大发光箭头或浮夸 3D 波纹画性能示意显得像廉价地摊模板"
+        ],
+        "en": [
+          "Invisible physical performance (glare-free light diffusion, acoustics, airflow, thermal paths) cannot be photographed directly",
+          "Thick glowing arrows or cheesy 3D waves make mechanism graphics look like cheap templates"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "pdp",
+        "catalog",
+        "print_collateral"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-louispoulsen-ph-centenary-2026",
+          "section": "PH Centenary Poster logarithmic-spiral light refraction diagram"
+        }
+      ],
+      "rule": "当需要可视化光学漫反射、声场扩散、风道气流或散热传导等无形物理机制时，严禁使用无物理依据的粗大发光箭头或花哨 3D 特效；应基于真实产品截面构造，在纯暗场或高对比纯色场上用 1–2px 精密工程几何射线与极细交点微光晕绘制真实物理路径，四周保留充裕均匀留白（M-018），并优先通过通道 2（SVG / Python 代码矢量）精准渲染。",
+      "rule_en": "To visualize invisible physics (glare-free light diffusion, acoustic dispersion, airflow, or heat transfer), reject arbitrary glowing arrows and tacky 3D waves. Plot verified cross-section geometry as fine 1–2px engineering ray paths with subtle intersection highlights over a matte-dark or solid field, surround with generous margins (M-018), and render via Channel 2 precision vector code (SVG/Python).",
+      "applies_when": "灯具光学、声学音响、风扇/空调风道、散热器或精密结构件需要在品牌海报或详情页机理屏建立专业技术权威感时。",
+      "limits": "射线或等高线必须有真实物理结构截面依据，严禁脱离硬件构造编造假射线或伪科学波形；不适用于只看价格秒下单的冲动促销图。",
+      "steps": [
+        "核对真实硬件截面（灯罩曲率、声学导波孔、风道挡板或散热鳍片）。",
+        "将无形物理场抽象为 1–2px 精密矢量射线/等高线，仅在真实反射或汇流交点处保留极克制的微光点。",
+        "用深色哑光底或纯色场承载图解，四周留足宽边距（M-018），品牌名与型号退居上下边距边缘。",
+        "优先走通道 2 代码矢量渲染输出，确保线条锐利且无 AI 畸变。"
+      ],
+      "checks": [
+        "射线转折角度与交点是否符合真实产品结构截面，而非随意画的装饰线条？",
+        "是否彻底清除了粗笨发光箭头、霓虹光环和多余口号？",
+        "图形四周是否留足呼吸边距且在缩略图下线条依然清晰？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-041",
+      "version": 1,
+      "title": "多 SKU 建筑折角灰场与双色切面低成本搭景法",
+      "title_en": "Architectural Corner Neutral Matrix & Two-Tone Color-Block Staging",
+      "tags": [
+        "建筑折角灰场",
+        "多SKU目录",
+        "去白底化",
+        "双色垂直切面",
+        "材质冷暖对冲"
+      ],
+      "tags_en": [
+        "architectural corner",
+        "multi-sku matrix",
+        "anti-white-cutout",
+        "two-tone wall split",
+        "material contrast"
+      ],
+      "when_stuck": {
+        "zh": [
+          "多款多色产品做选型目录或矩阵图，全放纯白底抠图显得像呆板表格、毫无三维体积感",
+          "缺少豪华实景预算，想低成本搭出有建筑秩序感与触觉高级感的主视觉场景"
+        ],
+        "en": [
+          "Multi-SKU or multi-color catalog grids on flat white cutouts look sterile and lack 3D volume",
+          "Need high-end architectural spatial staging on a tight budget without fake AI luxury rooms"
+        ]
+      },
+      "channels": [
+        "catalog",
+        "pdp",
+        "ad_banner",
+        "print_collateral"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-hay-clara-zweigbergk-jseries",
+          "section": "3×5 two-wall corner chair matrix and isolated J110 spread"
+        },
+        {
+          "source_id": "S-montana-colour-protagonist-3daysofdesign",
+          "section": "Aubergine × sage-green vertical wall split with orange Panton Wire & linen"
+        }
+      ],
+      "rule": "解决多 SKU 选型枯燥与低成本空间搭景的两个建筑几何公式：1) **两面墙折角灰场矩阵**（HAY）：把同系列多款单品放进统一机位、左暖右冷灰调的两面墙建筑折角中，靠墙角明暗交界自然塑出体积，并在对页用冷灰折角孤立 1 款高饱和主推色；2) **垂直双色切面 + 材质对冲**（Montana）：不堆砌复杂软装，仅将背景墙垂直切成两种低饱和或对比纯色块，前景放高纯度主角单品，并搭配 1 种反差触感材质（如镀铬/烤漆金属 vs. 起皱天然亚麻）。",
+      "rule_en": "Break flat white-cutout monotony and stage low-cost spatial depth with two architectural geometry formulas: (1) **Two-Wall Neutral Corner Matrix** (HAY): place multi-SKU variants inside identical two-wall corners shaded in subtle cool/warm greys to sculpt 3D volume, paired with an isolated hero-color spread; (2) **Vertical Two-Tone Wall Split + Material Contrast** (Montana): divide the backdrop vertically into two flat color planes, place a high-chroma hero piece in front, and pair crisp hard surfaces (wire metal/lacquer) with soft tactile fabric (rumpled linen).",
+      "applies_when": "家居、消费电子多配色矩阵目录、选型画册、以及通道 4 棚拍搭景或通道 1 极简空间场景生成时。",
+      "limits": "多 SKU 矩阵内各格的机位高度、透视消失点与墙角光源方向必须严格一致；双色切面背景避免同时使用两块高饱和荧光色抢夺产品主角。",
+      "steps": [
+        "多款同系陈列时，统一设定两面墙折角角度与冷暖灰明暗差，按 3×5 等规则网格排布全系（M-017），对页单独放大主推色。",
+        "单品情景搭景时，用垂直双色纯色墙面替代繁杂家具背景，确保主品色相与两块墙面均有明度/色相差。",
+        "在前景刻意安排 1 组冷硬材质与柔软织物的物理触感对比，型号标题置于折角上方干净留白区。"
+      ],
+      "checks": [
+        "多 SKU 矩阵里每个格子的相机高度、地平线与墙角阴影方向是否完全统一？",
+        "前景主角产品与垂直双色切面墙之间是否有清晰的明度或色相分离？",
+        "是否靠两面墙折角明暗和材质对冲立住了空间感，而不是靠堆砌杂乱小摆件？"
+      ],
+      "validation_refs": []
+    },
+    {
+      "id": "M-042",
+      "version": 1,
+      "title": "损耗现场微型价签解围与空置主角叙事法",
+      "title_en": "Mishap-Scene Micro Price-Tag Relief & Empty-Product Narrative Framing",
+      "tags": [
+        "平价信任锚定",
+        "损耗现场",
+        "微型价签",
+        "空置主角",
+        "去促销感"
+      ],
+      "tags_en": [
+        "budget trust framing",
+        "mishap scene",
+        "micro price tag",
+        "empty product hero",
+        "anti-promo clutter"
+      ],
+      "when_stuck": {
+        "zh": [
+          "平价日用品或耗材想突出『买得起、坏了不心疼』或品牌温度，但一写大促低价标签就变廉价地摊广告",
+          "不想用红黄爆炸贴和感叹号喊低价，想体面幽默地建立平价好感"
+        ],
+        "en": [
+          "Affordable everyday goods want to communicate easy replaceability or brand warmth without looking like cheap discount flyers",
+          "Need dignified, memorable price framing without loud red/yellow promo starbursts"
+        ]
+      },
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "print_collateral",
+        "landing_page"
+      ],
+      "scope_layer": "universal_grammar",
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-ikea-guilty-pets-2019",
+          "section": "Shattered FÄRGRIK Mug Dhs 3 with innocent cat ('Don't worry, you can afford it.')"
+        },
+        {
+          "source_id": "S-ikea-proudly-second-best-2023",
+          "section": "Empty ANTILOP Highchair Dhs 99 beside father & toddler ('Proudly Second Best')"
+        }
+      ],
+      "rule": "为平价日常品建立体面、高好感度的两种叙事框架：1) **损耗现场微型价签解围**（Guilty Pets）：真实拍摄打碎/弄脏的日常小意外现场（如碎瓷杯与无辜宠物），在受损物旁平静悬浮极简小白字品名+低价标（如 `Mug Dhs 3`），底角配一句温和解围句（`Don't worry, you can afford it.`），把焦虑转为无负担信任；2) **空置主角叙事**（Proudly Second Best）：将待售商品空置在一侧并标出清晰价签，把中央主焦点让位给更温暖的人居瞬间（如父亲怀抱喂食），用谦逊底注赢取品牌善意。",
+      "rule_en": "Frame affordable everyday goods with warmth and dignity via two narrative moves: (1) **Mishap-Scene Micro Price-Tag Relief** (*Guilty Pets*): photograph an authentic domestic mishap (e.g., shattered mug + guilty pet), float a tiny calm white product-and-price tag above the mess (`FÄRGRIK Mug Dhs 3`), and close with one reassuring line (`Don't worry, you can afford it.`); (2) **Empty-Product Narrative Framing** (*Proudly Second Best*): leave the product empty on the side with its price anchor while letting a higher-order human moment occupy center frame, sealed with a humble tagline.",
+      "applies_when": "平价家居日用、餐厨耗材、宠物/母婴日常品在社媒种草封面或品牌态度海报中传达性价比与温度时。",
+      "limits": "严禁在高客单价耐用品、大家电、精密仪器或安全装备上使用“摔坏/损耗无所谓”幽默；场景抓拍必须自然真实，且产品识别与价格标必须清晰可辨。",
+      "steps": [
+        "判断产品属性：高频低价易耗品选『损耗现场解围』，高情感关联日用品选『空置主角让位』。",
+        "实拍自然、有生活气息的瞬间，确保产品实体清晰入画、不缩成模糊背景。",
+        "用极简无衬线小白字标出真实品名与低门槛售价，彻底删除促销爆炸贴和感叹号。",
+        "在底角用 4–6 词的温和幽默底注完成情绪闭环。"
+      ],
+      "checks": [
+        "画面是否彻底去除了红黄大促标签与咆哮感叹号，保持了克制体面的视觉质感？",
+        "所卖产品（哪怕处于空置或破损状态）在画面中是否依然一眼可辨？",
+        "品类是否真的适合『低负担可替换』或『情感让位』调性，而不会引发质量担忧？"
       ],
       "validation_refs": []
     }
@@ -6073,6 +6374,261 @@
         "exhibition",
         "social_feed"
       ]
+    },
+    {
+      "id": "C-ikea-tomorrow-starts-tonight-container-metaphor",
+      "version": 1,
+      "title": "IKEA《Tomorrow Starts Tonight》：跨品类高溢价容器嫁接与双联户外视觉双关",
+      "title_en": "IKEA \"Tomorrow Starts Tonight\": Cross-Category Container Grafting & OOH Diptych Double-Take",
+      "tags": [
+        "跨品类隐喻",
+        "容器嫁接",
+        "双联海报",
+        "Double-Take",
+        "宜家"
+      ],
+      "tags_en": [
+        "cross-category metaphor",
+        "container grafting",
+        "diptych poster",
+        "double-take",
+        "ikea"
+      ],
+      "when_stuck": {
+        "zh": [
+          "床单、被子等基础日用品功能同质化严重，直接拍整床精修图很容易被划走",
+          "不想靠粗暴打折标语吸睛，想用视觉双关让人停下来会心一笑"
+        ],
+        "en": [
+          "Everyday commodity goods look generic in feeds and OOH",
+          "Need a witty visual pun without loud discount banners"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "social_feed",
+        "print_collateral"
+      ],
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-ikea-tomorrow-starts-tonight-2024",
+          "section": "OOH diptych brick-wall installation and individual poster layouts"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-ikea-tomorrow-starts-tonight-container-metaphor.md",
+      "markdown_path_en": "library/cases/en/C-ikea-tomorrow-starts-tonight-container-metaphor.md",
+      "observations": [
+        "1. 左联海报在冷灰蓝棚拍底上放一只印有 SLEEP BOOSTS YOUR ENERGY 的红黄饮料罐，罐口流出的是一条挺括白色纯棉床单褶皱，旁标 £13。",
+        "2. 右联同背景放一只印有 SLEEP THE MOST EFFECTIVE ANTI-AGEING CREAM 的磨砂面霜罐，罐内塞满蓬松白色羽绒被，旁标 £16；两张底部均配白底横带 Tomorrow starts tonight. 与 IKEA 标。"
+      ],
+      "copy_visual_synergy": "画面劫持能量饮料与贵妇面霜的高溢价视觉符号，1.5 秒材质反转点明好睡眠才是最佳提神与抗老剂；极简 £13 / £16 价签瞬间拉回平价床品。",
+      "analysis": "把普通商品装入高溢价功能品类的容器，能零成本借用受众对提神、抗衰的既有认知锚点，再用极低价格形成强反差。",
+      "reusable_move": "找出与本品核心收益重叠的高溢价品类容器 → 让本品真实织物/材质从容器口溢出或填充其中 → 双联同机位并置放大记忆度 + 极简价签收口。",
+      "reusable_move_en": "Hijack a higher-markup category's iconic container -> render the commodity product's authentic material spilling from or packed inside it -> pair in a side-by-side diptych with micro price anchors.",
+      "asset_prerequisites": "容器轮廓与织物/材质物理过渡须写实可信，且旁附真实售价或品类锚点。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "2024 年 2 月 IKEA UK 户外双联海报（Mother London），公开页面未披露转化数据，提炼跨品类容器嫁接机制。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁硬套毫无功能因果联系的容器；不适合需要展示精确接口/尺寸的 B2B 选型图。"
+    },
+    {
+      "id": "C-louispoulsen-ph-centenary-ray-diagram",
+      "version": 1,
+      "title": "Louis Poulsen《PH Centenary Poster》：无形物理场的工程几何射线图解法",
+      "title_en": "Louis Poulsen \"PH Centenary Poster\": Engineering Geometric Ray-Path Diagramming for Invisible Physical Fields",
+      "tags": [
+        "光路射线图",
+        "无形物理场",
+        "通道2矢量",
+        "暗场留白",
+        "Louis Poulsen"
+      ],
+      "tags_en": [
+        "ray path diagram",
+        "invisible physics",
+        "channel 2 vector",
+        "dark negative space",
+        "louis poulsen"
+      ],
+      "when_stuck": {
+        "zh": [
+          "防眩光漫反射、声场、气流或散热等看不见的物理过程实拍拍不出来",
+          "画成粗大发光箭头或浮夸 3D 波纹显得像廉价地摊模板"
+        ],
+        "en": [
+          "Invisible physical phenomena cannot be photographed directly",
+          "Glowing arrows or 3D waves look like cheap template art"
+        ]
+      },
+      "channels": [
+        "ad_banner",
+        "pdp",
+        "catalog",
+        "print_collateral"
+      ],
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-louispoulsen-ph-centenary-2026",
+          "section": "PH Centenary Poster official page & collection"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-louispoulsen-ph-centenary-ray-diagram.md",
+      "markdown_path_en": "library/cases/en/C-louispoulsen-ph-centenary-ray-diagram.md",
+      "observations": [
+        "1. 哑光深黑底色四周留出极宽均匀内边距，顶部居中仅一行极小白色无衬线 louis poulsen，底部居中极小百年纪念标。",
+        "2. 画面正中以金色与白色细线精确绘制 PH 三层灯罩的对数螺旋光路折射截面图，并在 6 处反射交点处点亮克制微光晕。"
+      ],
+      "copy_visual_synergy": "几何光路直接用真实反射角证明“防眩光漫反射”，无需任何广告形容词；极简上下字标让出全部视线给中心工程图解。",
+      "analysis": "相比虚构特效箭头，基于真实硬件截面的精密矢量射线图能瞬间建立馆藏级的专业工程信任感，且天然适合通道 2 代码直出。",
+      "reusable_move": "核实真实结构截面 → 在纯暗/纯色场上绘制 1–2px 精密几何物理路径（仅交点给微光晕）→ 四周留足宽边距（M-018）并优先走通道 2 SVG/代码渲染。",
+      "reusable_move_en": "Plot verified cross-section geometry as 1–2px vector ray paths over a clean matte field with subtle intersection glows, isolate with wide perimeter margins (M-018), and render via Channel 2 vector code.",
+      "asset_prerequisites": "必须有真实产品结构截面或物理原理依据。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "基于 Louis Poulsen 官方 PH Centenary Poster 实图拆解，未公开转化数据。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁凭空编造假射线或假波形；不适合只看价格秒下单的纯促销图。"
+    },
+    {
+      "id": "C-hay-montana-architectural-corner-blocking",
+      "version": 1,
+      "title": "HAY × Montana：多 SKU 建筑折角灰场与双色切面低成本搭景法",
+      "title_en": "HAY × Montana: Architectural Corner Neutral Matrix & Two-Tone Color-Block Staging",
+      "tags": [
+        "建筑折角",
+        "多SKU目录",
+        "去白底",
+        "双色切面",
+        "材质对比"
+      ],
+      "tags_en": [
+        "architectural corner",
+        "multi-sku matrix",
+        "anti-white-cutout",
+        "two-tone split",
+        "material contrast"
+      ],
+      "when_stuck": {
+        "zh": [
+          "多款多色产品放白底抠图显得像呆板表格、缺少体积感",
+          "缺少豪华实景预算，想低成本搭出建筑感与材质触觉"
+        ],
+        "en": [
+          "Multi-SKU catalogs on white cutouts look flat and lifeless",
+          "Need architectural spatial depth on a tight staging budget"
+        ]
+      },
+      "channels": [
+        "catalog",
+        "pdp",
+        "ad_banner",
+        "print_collateral"
+      ],
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-hay-clara-zweigbergk-jseries",
+          "section": "3×5 two-wall corner chair matrix & J110 spread"
+        },
+        {
+          "source_id": "S-montana-colour-protagonist-3daysofdesign",
+          "section": "Vertical two-tone wall split vignette"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-hay-montana-architectural-corner-blocking.md",
+      "markdown_path_en": "library/cases/en/C-hay-montana-architectural-corner-blocking.md",
+      "observations": [
+        "1. HAY J-Series 左页以 3×5 矩阵将 15 把椅子分别置于完全一致的冷暖灰两面墙建筑折角内，右页将珊瑚红 J110 孤立于冷蓝灰折角中央。",
+        "2. Montana 海报将背景墙垂直切成深茄紫与鼠尾草绿两块纯色平面，前景放置亮橙 Panton Wire 金属边几与起皱燕麦色亚麻床品。"
+      ],
+      "copy_visual_synergy": "建筑折角与垂直双色切面直接解决空间深度与主次聚焦，型号文字极简锚定在留白边缘，零多余形容词。",
+      "analysis": "两面墙折角的微弱明暗差足以替代昂贵实景塑造 3D 体积；双色切面配硬金属×软亚麻的材质对冲能以最低布景成本产出画报级质感。",
+      "reusable_move": "多 SKU 矩阵统一放进同视角冷暖灰两面墙折角 + 对页孤立主推色；单品搭景采用垂直双色切面墙 + 冷硬/松软材质对冲。",
+      "reusable_move_en": "Unify multi-SKU grids inside identical cool/warm grey two-wall corners with an isolated hero spread; stage vignettes with a vertical two-tone wall split and hard-vs-soft material contrast.",
+      "asset_prerequisites": "矩阵各格机位视角与折角阴影方向须严格统一；前景单品与切面墙需有清晰明度/色相差。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "基于 HAY J-Series 画册与 Montana 3daysofdesign 战役实图拆解，未公开销售数据。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "矩阵内严禁混用高低不一的透视视角；双色背景避免双荧光色抢戏。"
+    },
+    {
+      "id": "C-ikea-price-relief-and-empty-product-narrative",
+      "version": 1,
+      "title": "IKEA《Guilty Pets》×《Proudly Second Best》：损耗现场微型价签解围与空置主角叙事法",
+      "title_en": "IKEA \"Guilty Pets\" × \"Proudly Second Best\": Mishap-Scene Micro Price-Tag Relief & Empty-Product Framing",
+      "tags": [
+        "微型价签",
+        "损耗现场",
+        "空置主角",
+        "去促销感",
+        "宜家"
+      ],
+      "tags_en": [
+        "micro price tag",
+        "mishap scene",
+        "empty product",
+        "anti-promo",
+        "ikea"
+      ],
+      "when_stuck": {
+        "zh": [
+          "平价日用品想传达买得起或品牌温度，但一放低价促销标就变廉价地摊广告",
+          "不想用红黄爆炸贴和感叹号喊低价"
+        ],
+        "en": [
+          "Budget everyday goods want to highlight affordability or warmth without cheap promo flyers",
+          "Need dignified price framing without starbursts or exclamation marks"
+        ]
+      },
+      "channels": [
+        "social_feed",
+        "ad_banner",
+        "print_collateral",
+        "landing_page"
+      ],
+      "status": "reference",
+      "learning_origin": "benchmark_study",
+      "source_refs": [
+        {
+          "source_id": "S-ikea-guilty-pets-2019",
+          "section": "FÄRGRIK Mug Dhs 3 shattered kitchen scene"
+        },
+        {
+          "source_id": "S-ikea-proudly-second-best-2023",
+          "section": "Empty ANTILOP Highchair Dhs 99 beside father & toddler"
+        }
+      ],
+      "case_type": "editorial_teardown",
+      "markdown_path": "library/cases/C-ikea-price-relief-and-empty-product-narrative.md",
+      "markdown_path_en": "library/cases/en/C-ikea-price-relief-and-empty-product-narrative.md",
+      "observations": [
+        "1. Guilty Pets 俯拍深灰地砖上打碎的咖啡杯与无辜英短蓝猫，碎瓷片上方悬浮极简白字 FÄRGRIK Mug Dhs 3，右下角印 Don't worry, you can afford it.。",
+        "2. Proudly Second Best 拍父亲抱幼儿喂食，白色 ANTILOP 餐椅空置在左侧标 Dhs 99，右下角印 Proudly Second Best。"
+      ],
+      "copy_visual_synergy": "真实生活意外与亲情瞬间承担情绪共鸣，克制微型价签锚定低门槛价格，底部一句话完成幽默或谦逊的善意收口。",
+      "analysis": "用微小克制的无衬线价签取代喧闹促销贴，既守住了平价品类的审美体面，又把生活中的小尴尬与亲情转化为强记忆点。",
+      "reusable_move": "平价易耗品拍真实损耗现场配碎物上方微型价签 + 温和解围句；高情感日用品将产品空置在旁标价，把主焦点让给真实人居情感。",
+      "reusable_move_en": "For affordable consumables, shoot a real mishap scene with a calm micro price tag and reassuring footer; for family goods, leave the product empty beside its price while human warmth takes center frame.",
+      "asset_prerequisites": "生活抓拍须自然可信，且价签金额为真实低门槛售价。",
+      "outcome_evidence": {
+        "evidence_type": "editorial_analysis",
+        "claim": "基于 Ads of the World 收录之宜家 Guilty Pets 与 Proudly Second Best 海报拆解，未公开销量数据。",
+        "verification_status": "source_verified"
+      },
+      "transfer_limits": "严禁在高客单价耐用品或安全器材上使用摔坏幽默；产品在画面中仍须清晰可辨。"
     }
   ],
   "feedback": [

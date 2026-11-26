@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_revision": 19,
+  "catalog_revision": 20,
   "updated_at": "2026-11-26",
   "language": "en",
   "verbatim_source_quotes_preserved": true,
@@ -312,6 +312,42 @@
       "markdown_path_en": "library/cases/en/C-coca-cola-recycle-me-deformation.md",
       "en_sha256": "84a881bd5d5f6db3121bfa0c056d3fe8bc855826bf97e3d407e514df480b5ef9",
       "hash_mode": "utf8-lf"
+    },
+    "C-ikea-tomorrow-starts-tonight-container-metaphor": {
+      "title": "IKEA《Tomorrow Starts Tonight》：跨品类高溢价容器嫁接与双联户外视觉双关",
+      "title_en": "IKEA \"Tomorrow Starts Tonight\": Cross-Category Container Grafting & OOH Diptych Double-Take",
+      "hash_mode": "utf8-lf",
+      "markdown_path": "library/cases/C-ikea-tomorrow-starts-tonight-container-metaphor.md",
+      "zh_sha256": "d8e86cde1fb8ae45c27717117face900de431202a9d84e4824b7222c339eb8b2",
+      "markdown_path_en": "library/cases/en/C-ikea-tomorrow-starts-tonight-container-metaphor.md",
+      "en_sha256": "991ab2dab0edefd6a3a32a5142c4cd0f498e238cf4b1a20029b9fbcc5a32383f"
+    },
+    "C-louispoulsen-ph-centenary-ray-diagram": {
+      "title": "Louis Poulsen《PH Centenary Poster》：无形物理场的工程几何射线图解法",
+      "title_en": "Louis Poulsen \"PH Centenary Poster\": Engineering Geometric Ray-Path Diagramming for Invisible Physical Fields",
+      "hash_mode": "utf8-lf",
+      "markdown_path": "library/cases/C-louispoulsen-ph-centenary-ray-diagram.md",
+      "zh_sha256": "4bfe3e602403d5afce872d240a0e5da1b5e7293c47af0c41d2ae3aa539c535dc",
+      "markdown_path_en": "library/cases/en/C-louispoulsen-ph-centenary-ray-diagram.md",
+      "en_sha256": "f0045a52a6ae4f316c7b37776af6c6f6825b97d8dfde034016a54ea7b150b6d1"
+    },
+    "C-hay-montana-architectural-corner-blocking": {
+      "title": "HAY × Montana：多 SKU 建筑折角灰场与双色切面低成本搭景法",
+      "title_en": "HAY × Montana: Architectural Corner Neutral Matrix & Two-Tone Color-Block Staging",
+      "hash_mode": "utf8-lf",
+      "markdown_path": "library/cases/C-hay-montana-architectural-corner-blocking.md",
+      "zh_sha256": "bb90c14200b4fb595df4af0eb0a23f5be033b9ed74738c2f7c17857268e924f7",
+      "markdown_path_en": "library/cases/en/C-hay-montana-architectural-corner-blocking.md",
+      "en_sha256": "9fba0df09dd6dd5c0ae9c9ce58bebe3d714618d5f9b467867a07869447df436c"
+    },
+    "C-ikea-price-relief-and-empty-product-narrative": {
+      "title": "IKEA《Guilty Pets》×《Proudly Second Best》：损耗现场微型价签解围与空置主角叙事法",
+      "title_en": "IKEA \"Guilty Pets\" × \"Proudly Second Best\": Mishap-Scene Micro Price-Tag Relief & Empty-Product Framing",
+      "hash_mode": "utf8-lf",
+      "markdown_path": "library/cases/C-ikea-price-relief-and-empty-product-narrative.md",
+      "zh_sha256": "950dd3d9ba0cb6f1563fe005302a1d91413d2a84451881ecb9599159305e6fd9",
+      "markdown_path_en": "library/cases/en/C-ikea-price-relief-and-empty-product-narrative.md",
+      "en_sha256": "d52c7250b6cbdeb07b99be88898dc3f1ad25bb1bf7736e324c8e73dd568e4e00"
     }
   },
   "hash_mode": "utf8-lf"
