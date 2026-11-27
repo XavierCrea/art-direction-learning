@@ -19,7 +19,7 @@ metadata:
 ## 资料入口与检索工具 (Library & CLI)
 
 - 资料库默认位置见 [library-location.json](references/library-location.json)；用户本轮指定的资料库优先。（以下命令在 Windows 无 `python3` 时可改用 `python`。）
-- 使用 `python3 scripts/library.py search "关键词或口语视觉卡点" --brief` 检索中英方法、案例与风格母版（支持中文自然口语 CJK bi-gram 与轻量同义词；默认输出紧凑首层，`--brief` 最精简，`--verbose` 出全量字段）。支持 `--kind styles`、`--channel`、`--origin`、`--status`（目录状态）与 `--evidence-stage`（证据阶段）独立筛选；无命中时在 `stderr` 返回回落提示。
+- 使用 `python3 scripts/library.py search "关键词或口语视觉卡点" --brief --limit 3` 检索中英方法、案例与风格母版（支持中文自然口语 CJK bi-gram 与轻量同义词；CLI 默认 `--limit 8`，常规检索加 `--brief --limit 3` 最省上下文，`--verbose` 出全量字段；若 [art-direction.md](references/art-direction.md) 症状表已给出明确 ID，可直接批量 `get` 省去检索）。支持 `--kind styles`、`--channel`、`--origin`、`--status`（目录状态）与 `--evidence-stage`（证据阶段）独立筛选；无命中时在 `stderr` 返回回落提示。
 - 使用 `python3 scripts/library.py get ID1 ID2 ...` 批量取记录（方法自动附 `linked_case_ids`，风格自动探测 `local_anchor_images`、`descriptor_image` 与 `anchor_tier`）。选用自定义库时，会使用该库的案例文件。
 - 使用 `python3 scripts/library.py summary` 查看资料库规模与锚点图覆盖；使用 `python3 scripts/library.py validate --check-files` 核对引用完整性（含 `cases.method_refs`）、中英案例卡指纹，并报告孤儿记录与缺失本地锚点图的 `warnings`。
 - 新增或修改记录时先写好中英文案例卡，再用 `python3 scripts/library.py apply-patch --file patch.json` 原子更新（仅保留最近 5 个回滚快照）；记录单次项目反馈可直接用 `python3 scripts/library.py feedback add ...`。
@@ -29,7 +29,10 @@ metadata:
 
 ### 1. 美术指导、分镜脚本与版面诊断（独立使用或搭配 `copywriting-learning`）
 
-读取 [实证美术指导指南](references/art-direction.md)。无论是从零统筹广告/详情页分镜/展会海报，还是诊断现有页面为什么留不住人，都按以下四步推进：
+**先按交付物轻重分流，不把小改稿拖进全套重流程**：
+- **局部微调 / 改字 / 换展位号 / 改尺寸（已有定稿图）**：直接修改并核对改动项、断行、发布尺寸可读性与（如涉及）二维码跳转即可，**不走完整四步、不查案例、不做多案比选**；
+- **纯诊断 / 评审（暂不重做整稿）**：只查必要症状记录并交付“客观病灶 + 方法依据 + 可执行修改动作”，不必读取构图骨架与出图分流表；
+- **从零构图 / 整页重构 / 方向未定**：读取 [实证美术指导指南](references/art-direction.md)，按以下四步推进：
 
 1. **按传播目的与现有素材决定起点（先答“记住什么 + 哪份素材能做到”）**：
    - 先明确希望读者看完**记住什么、产生什么感受或完成什么行动**，再盘点手头已有素材（官方场馆照、产品实拍、人物场景或纯文字信息）；

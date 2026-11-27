@@ -630,11 +630,22 @@ def chinese_phrase_score(item: dict[str, Any], full_query: str) -> int:
     return best
 
 
+def _prepare_query(full_query: str) -> tuple[list[str], list[str], list[str]]:
+    terms = [t for t in full_query.split() if t]
+    query_tokens = _extract_tokens(full_query, include_stopwords=False)
+    if not query_tokens:
+        query_tokens = _extract_tokens(full_query, include_stopwords=True)
+    unique_tokens = list(dict.fromkeys(query_tokens))
+    expanded_tokens = _expand_query_terms(full_query, unique_tokens)
+    return terms, unique_tokens, expanded_tokens
+
+
 def score_item(
     item: dict[str, Any],
     terms: list[str],
     full_query: str,
     idf_map: dict[str, float] | None = None,
+    prepared_query: tuple[list[str], list[str], list[str]] | None = None,
 ) -> float:
     score = 0.0
     high_blob = " ".join(_field_text(item.get(f)) for f in WEIGHT_HIGH_FIELDS)
@@ -644,12 +655,10 @@ def score_item(
     if full_query == str(item.get("id", "")).lower():
         return 100.0
 
-    query_tokens = _extract_tokens(full_query, include_stopwords=False)
-    if not query_tokens:
-        query_tokens = _extract_tokens(full_query, include_stopwords=True)
-    # Deduplicate while preserving order
-    unique_tokens = list(dict.fromkeys(query_tokens))
-    expanded_tokens = _expand_query_terms(full_query, unique_tokens)
+    if prepared_query is not None:
+        _, unique_tokens, expanded_tokens = prepared_query
+    else:
+        _, unique_tokens, expanded_tokens = _prepare_query(full_query)
 
     def _idf(tok: str) -> float:
         if idf_map is None:
@@ -981,7 +990,8 @@ def cmd_search(args: argparse.Namespace) -> int:
     sources_by_id = {s.get("id"): s for s in data.get("sources", []) if isinstance(s, dict) and s.get("id")}
     feedback_by_id = {f.get("id"): f for f in data.get("feedback", []) if isinstance(f, dict) and f.get("id")}
     full_query = args.query.strip().lower()
-    terms = [t for t in full_query.split() if t]
+    prepared_query = _prepare_query(full_query)
+    terms = prepared_query[0]
     search_styles = args.kind in {"all", "styles"}
     groups = [] if args.kind == "styles" else ([args.kind] if args.kind != "all" else list(GROUPS))
     styles = load_styles(root) if search_styles else []
@@ -1008,7 +1018,7 @@ def cmd_search(args: argparse.Namespace) -> int:
             ev_stage = infer_evidence_stage(profile)
             if evidence_stage_filter and ev_stage != evidence_stage_filter:
                 continue
-            score = score_item(item, terms, full_query, idf_map=idf_map)
+            score = score_item(item, terms, full_query, idf_map=idf_map, prepared_query=prepared_query)
             if score > 0 and score >= min_score:
                 summary_zh = item.get("rule") or item.get("reusable_move") or item.get("observation") or item.get("coverage_note")
                 if brief:
@@ -1068,7 +1078,7 @@ def cmd_search(args: argparse.Namespace) -> int:
         for style in styles:
             if evidence_stage_filter and style.get("evidence_stage") != evidence_stage_filter:
                 continue
-            score = score_item(style, terms, full_query, idf_map=idf_map)
+            score = score_item(style, terms, full_query, idf_map=idf_map, prepared_query=prepared_query)
             if score > 0 and score >= min_score:
                 style_entry: dict[str, Any] = {
                     "group": "styles",
@@ -1137,27 +1147,28 @@ def cmd_get(args: argparse.Namespace) -> int:
                         record["markdown_en_exists"] = md_en_path.exists()
                 found_map[item_id] = record
 
-    for style in load_styles(root):
-        style_id = style["id"]
-        if style_id in requested_ids and style_id not in found_map:
-            found_map[style_id] = {
-                "group": "styles",
-                "item": {
-                    "id": style["id"],
-                    "title": style["title"],
-                    "quadrant": style["quadrant"],
-                    "tags": style["tags"],
-                    "evidence_stage": style["evidence_stage"],
-                    "style_path": style["style_path"],
-                },
-                "style_resolved_path": style["style_resolved_path"],
-                "local_refs_dir": style["local_refs_dir"],
-                "has_local_anchors": style["has_local_anchors"],
-                "local_anchor_images": style["local_anchor_images"],
-                "has_descriptor": style["has_descriptor"],
-                "descriptor_image": style["descriptor_image"],
-                "anchor_tier": style["anchor_tier"],
-            }
+    if any(rid not in found_map for rid in requested_ids):
+        for style in load_styles(root):
+            style_id = style["id"]
+            if style_id in requested_ids and style_id not in found_map:
+                found_map[style_id] = {
+                    "group": "styles",
+                    "item": {
+                        "id": style["id"],
+                        "title": style["title"],
+                        "quadrant": style["quadrant"],
+                        "tags": style["tags"],
+                        "evidence_stage": style["evidence_stage"],
+                        "style_path": style["style_path"],
+                    },
+                    "style_resolved_path": style["style_resolved_path"],
+                    "local_refs_dir": style["local_refs_dir"],
+                    "has_local_anchors": style["has_local_anchors"],
+                    "local_anchor_images": style["local_anchor_images"],
+                    "has_descriptor": style["has_descriptor"],
+                    "descriptor_image": style["descriptor_image"],
+                    "anchor_tier": style["anchor_tier"],
+                }
 
     missing = [rid for rid in requested_ids if rid not in found_map]
     results = [found_map[rid] for rid in requested_ids if rid in found_map]
@@ -1390,38 +1401,37 @@ def cmd_feedback(args: argparse.Namespace) -> int:
         raise ValueError(f"unsupported feedback subcommand: {args.feedback_cmd}")
     root = resolve_library_root(args.library)
     try:
-        data, _ = load_catalog(root)
-        fb_id = args.id or _next_feedback_id(data)
-        entry: dict[str, Any] = {
-            "id": fb_id,
-            "version": 1,
-            "kind": "feedback",
-            "learning_origin": "task_feedback",
-            "title": args.title,
-            "evidence_type": args.evidence_type,
-            "source_locator": args.source_locator,
-            "observation": args.observation,
-            "verified": bool(args.verified),
-            "task_id": args.task_id,
-            "date": args.date or dt.date.today().isoformat(),
-        }
-        if args.title_en:
-            entry["title_en"] = args.title_en
-        if args.observation_en:
-            entry["observation_en"] = args.observation_en
-        if args.project_status:
-            entry["project_status"] = args.project_status
-        if args.methods:
-            entry["methods_used"] = args.methods
-        if args.cases:
-            entry["cases_used"] = args.cases
-        if args.lesson:
-            entry["reusable_lesson"] = args.lesson
-
         history = root / "history"
         history.mkdir(exist_ok=True)
         with (history / ".library.lock").open("a+b") as lock:
             lock_writer(lock)
+            data, _ = load_catalog(root)
+            fb_id = args.id or _next_feedback_id(data)
+            entry: dict[str, Any] = {
+                "id": fb_id,
+                "version": 1,
+                "kind": "feedback",
+                "learning_origin": "task_feedback",
+                "title": args.title,
+                "evidence_type": args.evidence_type,
+                "source_locator": args.source_locator,
+                "observation": args.observation,
+                "verified": bool(args.verified),
+                "task_id": args.task_id,
+                "date": args.date or dt.date.today().isoformat(),
+            }
+            if args.title_en:
+                entry["title_en"] = args.title_en
+            if args.observation_en:
+                entry["observation_en"] = args.observation_en
+            if args.project_status:
+                entry["project_status"] = args.project_status
+            if args.methods:
+                entry["methods_used"] = args.methods
+            if args.cases:
+                entry["cases_used"] = args.cases
+            if args.lesson:
+                entry["reusable_lesson"] = args.lesson
             result = apply_catalog_patch(root, {"feedback": [entry]}, check_files=False)
             result["feedback_id"] = fb_id
     except (OSError, ValueError) as exc:

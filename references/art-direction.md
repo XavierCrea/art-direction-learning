@@ -24,7 +24,7 @@
 
 ## 三、 第二步：常见视觉困境与用户原话的“症状诊断路由（Symptom-to-Case Routing）”
 
-将用户的自然描述或当前页面的卡点转成中英文检索词，运行 `python3 scripts/library.py search "关键词或口语句" --brief`（支持中文自然口语、CJK bi-gram 与轻量同义词召回；需完整字段时省略 `--brief` 或传 `--verbose`），再按需用 `get` 批量读取完整记录与关联案例：
+将用户的自然描述或当前页面的卡点转成中英文检索词，运行 `python3 scripts/library.py search "关键词或口语句" --brief --limit 3`（支持中文自然口语、CJK bi-gram 与轻量同义词召回；需扩展召回或完整字段时可省略 `--limit 3` / `--brief` 或传 `--verbose`）。**若下方症状表已直接给出对应的 `M-*` / `C-*` ID，可直接批量 `get`，无需再跑一次 `search`**：
 
 | 当遇到以下视觉痛点或用户原话（Symptom / `when_stuck`） | 推荐检索词 (`search`) | 优先调取的核心方法与案例 (`M-001`–`M-042`) |
 | :--- | :--- | :--- |

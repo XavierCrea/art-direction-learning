@@ -308,6 +308,43 @@ class LibraryTests(unittest.TestCase):
         self.assertTrue(fb_payload["applied"])
         self.assertTrue(fb_payload["feedback_id"].startswith("F-"))
 
+    def test_concurrent_feedback_add_assigns_distinct_ids(self):
+        base = [sys.executable, "-B", str(SCRIPT), "--library", str(self.root), "feedback", "add"]
+        procs = [
+            subprocess.Popen(
+                [
+                    *base,
+                    "--title", f"并发反馈 {idx}",
+                    "--observation", f"并发写入记录 {idx}",
+                    "--source-locator", f"ut-concurrent-{idx}",
+                    "--task-id", f"ut-task-{idx}",
+                    "--verified",
+                ],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
+            for idx in (1, 2)
+        ]
+        results = []
+        for proc in procs:
+            stdout, stderr = proc.communicate(timeout=15)
+            self.assertEqual(proc.returncode, 0, (stdout, stderr))
+            payload = json.loads(stdout)
+            self.assertTrue(payload["applied"], payload)
+            results.append(payload["feedback_id"])
+
+        self.assertEqual(len(set(results)), 2, f"Expected two distinct IDs, got {results}")
+        doc = LIBRARY["read_json"](self.catalog_path)
+        stored_ids = {fb["id"] for fb in doc["feedback"]}
+        self.assertTrue(set(results).issubset(stored_ids))
+
+    def test_get_catalog_record_skips_style_scan(self):
+        with patch.dict(LIBRARY, {"load_styles": lambda _root: (_ for _ in ()).throw(AssertionError("should not scan styles"))}):
+            args = LIBRARY["argparse"].Namespace(library=str(self.root), ids=["M-005"])
+            rc = LIBRARY["cmd_get"](args)
+            self.assertEqual(rc, 0)
+
     def test_qa_check_dimensions_overlay_and_qr_behavior(self):
         qa_script = ROOT / "scripts" / "qa_check.py"
         # Minimal valid 1080x1920 PNG header (IHDR chunk)
