@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <title>Style Descriptor Card — xiaomi-light-luxury-studio</title>
+  <rect width="1200" height="760" fill="#FFFFFF"/>
+  <g font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <!-- Header -->
+    <rect x="48" y="34" width="10" height="48" rx="3" fill="#B89B78"/>
+    <text x="72" y="58" fill="#191919" font-size="28" font-weight="700">Xiaomi Light Luxury White Studio</text>
+    <text x="72" y="82" fill="#666666" font-size="14">Clean Minimalist · Jewelry Softbox · Product-Derived Warm Gold Accent  ·  ID: xiaomi-light-luxury-studio</text>
+    <text x="1152" y="58" text-anchor="end" fill="#666666" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ZERO-COPYRIGHT DESCRIPTOR CARD</text>
+    <line x1="48" y1="104" x2="1152" y2="104" stroke="#E8E3D9" stroke-width="1"/>
+
+    <!-- Section 1: Color Ramp -->
+    <text x="48" y="128" fill="#666666" font-size="12" font-weight="700" letter-spacing="1.4">01 / VERIFIED COLOR RAMP &amp; PROPORTION</text>
+    
+        <g>
+          <rect x="48" y="140" width="172" height="68" rx="8" fill="#FFFFFF" stroke="#E8E3D9" stroke-width="1.2"/>
+          <text x="48" y="228" fill="#191919" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#FFFFFF</text>
+          <text x="48" y="246" fill="#666666" font-size="12">White Studio 58%</text>
+        </g>
+        <g>
+          <rect x="234" y="140" width="172" height="68" rx="8" fill="#F5F5F5" stroke="#E8E3D9" stroke-width="1.2"/>
+          <text x="234" y="228" fill="#191919" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#F5F5F5</text>
+          <text x="234" y="246" fill="#666666" font-size="12">Soft Card 34%</text>
+        </g>
+        <g>
+          <rect x="420" y="140" width="172" height="68" rx="8" fill="#191919" stroke="#E8E3D9" stroke-width="1.2"/>
+          <text x="420" y="228" fill="#191919" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#191919</text>
+          <text x="420" y="246" fill="#666666" font-size="12">Charcoal Ink</text>
+        </g>
+        <g>
+          <rect x="606" y="140" width="172" height="68" rx="8" fill="#666666" stroke="#E8E3D9" stroke-width="1.2"/>
+          <text x="606" y="228" fill="#191919" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#666666</text>
+          <text x="606" y="246" fill="#666666" font-size="12">Secondary Ink</text>
+        </g>
+        <g>
+          <rect x="792" y="140" width="172" height="68" rx="8" fill="#B89B78" stroke="#E8E3D9" stroke-width="1.2"/>
+          <text x="792" y="228" fill="#191919" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#B89B78</text>
+          <text x="792" y="246" fill="#666666" font-size="12">Satin Gold &lt;8%</text>
+        </g>
+        <g>
+          <rect x="978" y="140" width="172" height="68" rx="8" fill="#EAE3D5" stroke="#E8E3D9" stroke-width="1.2"/>
+          <text x="978" y="228" fill="#191919" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#EAE3D5</text>
+          <text x="978" y="246" fill="#666666" font-size="12">Watermark Tint</text>
+        </g>
+
+    <!-- Section 2: Left Typography & Atomic Moves -->
+    <rect x="48" y="274" width="560" height="270" rx="14" fill="#F5F5F5" stroke="#E8E3D9"/>
+    <text x="68" y="296" fill="#666666" font-size="12" font-weight="700" letter-spacing="1.4">02 / TYPOGRAPHY HIERARCHY</text>
+    
+        <text x="68" y="318" fill="#191919" font-size="30" font-weight="600">Studio Headline</text>
+        <text x="68" y="338" fill="#666666" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">2.5x–3x Body · Clean Modern Sans</text>
+        <text x="68" y="384" fill="#B89B78" font-size="22" font-weight="700">Hero KPI Metric</text>
+        <text x="68" y="404" fill="#666666" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">Oversized Bold #B89B78 (e.g. 9h / 38h)</text>
+        <text x="68" y="442" fill="#666666" font-size="14" font-weight="400">Spec Line</text>
+        <text x="68" y="462" fill="#666666" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">Quiet #666666 + 1px Champagne Callout Hairline</text>
+
+    <!-- Section 3: Right Layout & Lighting Wireframe -->
+    <rect x="628" y="274" width="524" height="270" rx="14" fill="#F5F5F5" stroke="#E8E3D9"/>
+    <text x="646" y="296" fill="#666666" font-size="12" font-weight="700" letter-spacing="1.4">03 / COMPOSITION WIREFRAME &amp; LIGHTING</text>
+    
+        <rect x="646" y="304" width="486" height="224" rx="12" fill="#FFFFFF" stroke="#E5E1D8"/>
+        <text x="889.0" y="429.44" text-anchor="middle" fill="#EAE3D5" font-size="52" font-weight="700" letter-spacing="8">DESIGN</text>
+        <rect x="666" y="328" width="155.52" height="11" rx="3" fill="#191919"/>
+        <rect x="666" y="347" width="126.36" height="7" rx="2" fill="#888888"/>
+        <circle cx="995.92" cy="420.48" r="49.28" fill="#F5F5F5" stroke="#B89B78" stroke-width="1.5"/>
+        <polyline points="889.0,420.48 850.12,474.24 752.92,474.24" fill="none" stroke="#B89B78" stroke-width="1.2"/>
+        <text x="752.92" y="465.28" fill="#B89B78" font-size="11" font-weight="700">9h / 38h</text>
+
+    <!-- Section 4: Bottom Atomic Moves & Lighting/Whitespace -->
+    <rect x="48" y="562" width="560" height="160" rx="14" fill="#F5F5F5" stroke="#E8E3D9"/>
+    <text x="68" y="580" fill="#666666" font-size="11" font-weight="700" letter-spacing="1.4">04 / ATOMIC MOVES (L2 BORROWABLE WITHOUT FULL CLONE)</text>
+    <text x="68" y="592" fill="#191919" font-size="14">• Zero loud brand orange — derive accent from product finish</text><text x="68" y="618" fill="#191919" font-size="14">• Giant low-contrast watermark behind chapter portrait</text><text x="68" y="644" fill="#191919" font-size="14">• Mid-gray #B7B8B7 contrast swap only for water-droplet screen</text>
+
+    <rect x="628" y="562" width="524" height="160" rx="14" fill="#F5F5F5" stroke="#E8E3D9"/>
+    <text x="648" y="584" fill="#666666" font-size="11" font-weight="700" letter-spacing="1.4">05 / WHITESPACE &amp; LIGHT DIRECTION</text>
+    <text x="648" y="616" fill="#191919" font-size="14" font-weight="600">Whitespace:</text>
+    <text x="648" y="638" fill="#666666" font-size="13">40%–55% High-Key White / Pale Warm Gray</text>
+    <text x="648" y="674" fill="#191919" font-size="14" font-weight="600">Lighting:</text>
+    <text x="648" y="696" fill="#666666" font-size="13">High-Key Jewelry Diffused Softbox + Soft Mirror Ground Bounce</text>
+  </g>
+</svg>

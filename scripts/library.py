@@ -8,6 +8,7 @@ import copy
 import datetime as dt
 import hashlib
 import json
+import math
 import os
 import re
 import stat
@@ -42,8 +43,39 @@ CHANNEL_VALUES = {
 CASE_HASH_MODE = "utf8-lf"
 CASE_FILES = (("markdown_path", "zh_sha256"), ("markdown_path_en", "en_sha256"))
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"}
+DESCRIPTOR_NAMES = ("descriptor.svg", "descriptor.png")
 MAX_HISTORY_REVISIONS = 5
-CHINESE_RUN = re.compile(r"[㐀-䶿一-鿿]{3,}")
+CHINESE_RUN = re.compile(r"[㐀-䶿一-鿿]{2,}")
+CHINESE_RUN_LONG = re.compile(r"[㐀-䶿一-鿿]{3,}")
+EN_TOKEN_RE = re.compile(r"[a-z0-9]+(?:[:.-][a-z0-9]+)*")
+EN_STOPWORDS = {
+    "a", "an", "the", "is", "are", "was", "were", "be", "to", "of", "in", "on", "at",
+    "for", "with", "by", "from", "as", "it", "its", "this", "that", "these", "those",
+    "and", "or", "not", "no", "but", "if", "so", "too", "very", "just", "how", "why",
+    "what", "when", "where", "who", "can", "do", "does", "did", "my", "our", "your",
+    "look", "looks", "looking", "feel", "feels", "make", "makes", "get", "gets",
+}
+ZH_STOP_BIGRAMS = {
+    "没有", "不是", "什么", "为什", "么在", "怎么", "怎样", "如何", "哪里", "哪些",
+    "可以", "一个", "一种", "这个", "那个", "这样", "那样", "这么", "那么", "起来",
+    "看起", "太多", "没人", "人看", "显得", "感觉", "非常", "有点", "应该", "需要",
+    "如果", "就是", "还是", "或者", "以及", "通过", "进行", "使用", "时候", "地方",
+    "东西", "问题", "意思", "因为", "所以", "但是", "不过", "而且", "并且", "虽然",
+    "可是", "已经", "正在", "根本", "实际", "来很", "多没", "寸没", "有参", "图看",
+    "品看", "很廉", "数太", "维尺", "的时", "候用", "来做",
+}
+SYNONYM_EXPANSIONS: tuple[tuple[tuple[str, ...], tuple[str, ...]], ...] = (
+    (("看不清", "不清", "模糊", "看不出", "看不懂", "辨认"), ("特写", "引线", "图注", "callout", "crop", "ambiguous")),
+    (("尺寸", "大小", "体积", "多大", "长宽高", "三维"), ("比例", "参照", "in-scale", "size", "scale")),
+    (("参数", "规格", "配置", "指标", "数据表"), ("参数表", "规格表", "扫描", "分组", "spec", "scannability", "table")),
+    (("廉价", "低端", "土气", "地摊", "low", "cheap", "budget"), ("层级", "边框", "降噪", "去促销", "促销", "价签", "hierarchy", "promo", "cluttered", "cramped")),
+    (("高价", "太贵", "显得贵", "定价", "套餐", "expensive", "pricing"), ("锚点", "梯度", "价签", "pricing", "tier", "price")),
+    (("太乱", "杂乱", "塞满", "堆砌", "拥挤", "clutter", "messy"), ("噪音", "亲密性", "对齐", "留白", "层级", "noise", "crap", "hierarchy")),
+    (("没人看", "没人点", "停滑", "划走", "点击率", "ctr"), ("扫视", "孤立", "停滑", "原生", "广告牌", "hook", "billboard", "native")),
+    (("遮挡", "裁切", "挡住", "竖屏"), ("安全区", "9:16", "safe", "zones")),
+    (("配件", "赠品", "送不送", "清单"), ("标配", "选配", "全家福", "accessories", "included")),
+    (("像模板", "模板", "呆板", "平庸"), ("层级", "边框", "非对称", "对比", "hierarchy", "grid")),
+)
 READING_STATUS_VALUES = {"registered", "metadata_only", "partial_review", "full_review"}
 LEARNING_ORIGINS = {"book_canon", "benchmark_study", "co_dissected_teardown", "task_feedback"}
 EVIDENCE_TYPES = {
@@ -159,6 +191,7 @@ ALLOWED_FIELDS = {
         "evidence_stage",
         "inquiry_chain",
         "learning_origin",
+        "method_refs",
         "validation_refs",
     },
     "feedback": REQUIRED["feedback"]
@@ -301,6 +334,7 @@ def validate_catalog(
 
     ids: dict[str, str] = {}
     sources_by_id: dict[str, dict[str, Any]] = {}
+    methods_by_id: dict[str, dict[str, Any]] = {}
     feedback_by_id: dict[str, dict[str, Any]] = {}
 
     for group in GROUPS:
@@ -324,6 +358,8 @@ def validate_catalog(
                 errors.append(f"{item_id or label} version must be a positive integer")
             if group == "sources" and isinstance(item_id, str):
                 sources_by_id[item_id] = item
+            if group == "methods" and isinstance(item_id, str):
+                methods_by_id[item_id] = item
             if group == "feedback" and isinstance(item_id, str):
                 feedback_by_id[item_id] = item
 
@@ -393,6 +429,14 @@ def validate_catalog(
                         errors.append(f"{item_id} validation_ref {feedback_id!r} is not verified")
 
             if group == "cases":
+                method_refs = item.get("method_refs")
+                if method_refs is not None:
+                    if not isinstance(method_refs, list) or not all(isinstance(mid, str) for mid in method_refs):
+                        errors.append(f"{item_id} method_refs must be a list of method IDs")
+                    else:
+                        for mid in method_refs:
+                            if mid not in methods_by_id:
+                                errors.append(f"{item_id} method_ref {mid!r} not found")
                 outcome = item.get("outcome_evidence")
                 if not isinstance(outcome, dict):
                     errors.append(f"{item_id} outcome_evidence must be an object")
@@ -476,6 +520,31 @@ def validate_catalog(
     return errors
 
 
+def collect_catalog_warnings(data: dict[str, Any], root: Path) -> list[str]:
+    warnings: list[str] = []
+    referenced_methods: set[str] = set()
+    for case in data.get("cases", []):
+        cid = case.get("id", "<case>")
+        mrefs = case.get("method_refs")
+        if not isinstance(mrefs, list) or not mrefs:
+            warnings.append(f"{cid} has no method_refs (cannot be joined automatically to methods)")
+        else:
+            referenced_methods.update(mid for mid in mrefs if isinstance(mid, str))
+
+    for method in data.get("methods", []):
+        mid = method.get("id")
+        if isinstance(mid, str) and mid not in referenced_methods:
+            warnings.append(f"{mid} is not referenced by any case method_refs (orphan method)")
+
+    for style in load_styles(root):
+        if not style["has_local_anchors"]:
+            fallback = "descriptor card available" if style["has_descriptor"] else "text-only fallback"
+            warnings.append(
+                f"style {style['id']} has 0 local anchor images in {style['local_refs_dir']} ({fallback})"
+            )
+    return warnings
+
+
 def _field_text(val: Any) -> str:
     if val is None:
         return ""
@@ -487,17 +556,64 @@ def _field_text(val: Any) -> str:
 
 
 
+def _extract_tokens(text: str, include_stopwords: bool = False) -> list[str]:
+    tokens: list[str] = []
+    lowered = text.lower()
+    for tok in EN_TOKEN_RE.findall(lowered):
+        if len(tok) < 2:
+            continue
+        if not include_stopwords and tok in EN_STOPWORDS:
+            continue
+        tokens.append(tok)
+    for run in CHINESE_RUN.findall(lowered):
+        if len(run) == 2:
+            if include_stopwords or run not in ZH_STOP_BIGRAMS:
+                tokens.append(run)
+        else:
+            for i in range(len(run) - 1):
+                bg = run[i : i + 2]
+                if include_stopwords or bg not in ZH_STOP_BIGRAMS:
+                    tokens.append(bg)
+    return tokens
+
+
+def _expand_query_terms(full_query: str, base_tokens: list[str]) -> list[str]:
+    expanded: list[str] = []
+    seen = set(base_tokens)
+    for triggers, synonyms in SYNONYM_EXPANSIONS:
+        if any(trig in full_query or trig in seen for trig in triggers):
+            for syn in synonyms:
+                if syn not in seen:
+                    seen.add(syn)
+                    expanded.append(syn)
+    return expanded
+
+
+def _build_idf(items: list[dict[str, Any]]) -> dict[str, float]:
+    n_docs = max(len(items), 1)
+    df: dict[str, int] = {}
+    for item in items:
+        blob = " ".join(
+            _field_text(item.get(f))
+            for f in (*WEIGHT_HIGH_FIELDS, *WEIGHT_MED_FIELDS, *WEIGHT_LOW_FIELDS)
+        )
+        doc_tokens = set(_extract_tokens(blob, include_stopwords=True))
+        for tok in doc_tokens:
+            df[tok] = df.get(tok, 0) + 1
+    return {tok: math.log((n_docs + 1.0) / (freq + 1.0)) + 1.0 for tok, freq in df.items()}
+
+
 def chinese_phrase_score(item: dict[str, Any], full_query: str) -> int:
-    clauses = CHINESE_RUN.findall(full_query)
+    clauses = CHINESE_RUN_LONG.findall(full_query)
     if not clauses:
         return 0
     symptoms = item.get("when_stuck")
     if isinstance(symptoms, dict):
         symptoms = symptoms.get("zh", [])
     labels = [*item.get("tags", []), *(symptoms if isinstance(symptoms, list) else [symptoms])]
-    short_labels = {label for label in labels if isinstance(label, str) and CHINESE_RUN.fullmatch(label)}
+    short_labels = {label for label in labels if isinstance(label, str) and CHINESE_RUN_LONG.fullmatch(label)}
     phrase_text = f"{_field_text(labels)} {_field_text(item.get('title'))}"
-    phrases = {part for part in CHINESE_RUN.findall(phrase_text) if len(part) >= 4 or part in short_labels}
+    phrases = {part for part in CHINESE_RUN_LONG.findall(phrase_text) if len(part) >= 4 or part in short_labels}
 
     best = 0
     for clause in clauses:
@@ -514,39 +630,92 @@ def chinese_phrase_score(item: dict[str, Any], full_query: str) -> int:
     return best
 
 
-def score_item(item: dict[str, Any], terms: list[str], full_query: str) -> int:
-    score = 0
+def score_item(
+    item: dict[str, Any],
+    terms: list[str],
+    full_query: str,
+    idf_map: dict[str, float] | None = None,
+) -> float:
+    score = 0.0
     high_blob = " ".join(_field_text(item.get(f)) for f in WEIGHT_HIGH_FIELDS)
     med_blob = " ".join(_field_text(item.get(f)) for f in WEIGHT_MED_FIELDS)
     low_blob = " ".join(_field_text(item.get(f)) for f in WEIGHT_LOW_FIELDS)
 
-    for term in terms:
-        if not term:
-            continue
-        score += (1 if term in high_blob else 0) * 3
-        score += (1 if term in med_blob else 0) * 2
-        score += (1 if term in low_blob else 0) * 1
+    if full_query == str(item.get("id", "")).lower():
+        return 100.0
 
-    score += chinese_phrase_score(item, full_query)
+    query_tokens = _extract_tokens(full_query, include_stopwords=False)
+    if not query_tokens:
+        query_tokens = _extract_tokens(full_query, include_stopwords=True)
+    # Deduplicate while preserving order
+    unique_tokens = list(dict.fromkeys(query_tokens))
+    expanded_tokens = _expand_query_terms(full_query, unique_tokens)
+
+    def _idf(tok: str) -> float:
+        if idf_map is None:
+            return 1.5
+        return idf_map.get(tok, 1.5)
+
+    # Space-separated raw terms (exact word/phrase hits get strong IDF-weighted score)
+    matched_primary = 0
+    for term in terms:
+        if not term or term in EN_STOPWORDS or term in ZH_STOP_BIGRAMS:
+            continue
+        hit_h = term in high_blob
+        hit_m = term in med_blob
+        hit_l = term in low_blob
+        if hit_h or hit_m or hit_l:
+            matched_primary += 1
+            w = _idf(term)
+            score += (3.0 if hit_h else 0.0) * w
+            score += (2.0 if hit_m else 0.0) * w
+            score += (1.0 if hit_l else 0.0) * w
+
+    # Tokenized English words & CJK bi-grams
+    matched_tokens = 0
+    for tok in unique_tokens:
+        hit_h = tok in high_blob
+        hit_m = tok in med_blob
+        hit_l = tok in low_blob
+        if hit_h or hit_m or hit_l:
+            matched_tokens += 1
+            w = _idf(tok)
+            # Avoid double-counting if identical to a space-separated term already scored
+            mult = 0.45 if tok in terms else 1.0
+            score += mult * w * ((2.6 if hit_h else 0.0) + (1.6 if hit_m else 0.0) + (0.7 if hit_l else 0.0))
+
+    # Mild synonym expansion (only contributes if query triggered a domain synonym)
+    for syn in expanded_tokens:
+        hit_h = syn in high_blob
+        hit_m = syn in med_blob
+        if hit_h or hit_m:
+            w = _idf(syn)
+            score += 0.55 * w * ((2.4 if hit_h else 0.0) + (1.2 if hit_m else 0.0))
+
+    phrase_bonus = chinese_phrase_score(item, full_query)
+    score += float(phrase_bonus)
+
     symptoms = item.get("when_stuck")
     labels = [*item.get("tags", []), *item.get("tags_en", [])]
     if isinstance(symptoms, dict):
         labels.extend([*symptoms.get("en", []), *symptoms.get("zh", [])])
     if full_query and full_query in {_field_text(label).strip() for label in labels}:
-        score += 8
+        score += 35.0
 
     if len(terms) > 1 and full_query:
         if full_query in high_blob:
-            score += 6
+            score += 20.0
         elif full_query in med_blob:
-            score += 4
+            score += 10.0
         elif full_query in low_blob:
-            score += 2
+            score += 4.0
 
-    if full_query == str(item.get("id", "")).lower():
-        score += 100
+    # Suppress stray single-low-weight noise hits on long irrelevant CJK queries
+    if phrase_bonus == 0 and matched_primary == 0 and not expanded_tokens:
+        if len(unique_tokens) >= 4 and matched_tokens <= 1 and score < 4.5:
+            return 0.0
 
-    return score
+    return round(score, 2)
 
 
 def infer_learning_origin(item: dict[str, Any], group: str, sources_by_id: dict[str, dict[str, Any]]) -> str:
@@ -584,6 +753,27 @@ def discover_local_anchors(root: Path, style_id: str) -> tuple[Path, list[str]]:
     return local_dir, images
 
 
+def discover_style_descriptor(root: Path, style_id: str) -> str | None:
+    ref_dir = (root / "style-refs" / style_id).resolve()
+    if not ref_dir.is_dir():
+        return None
+    for name in DESCRIPTOR_NAMES:
+        candidate = ref_dir / name
+        if candidate.is_file():
+            return str(candidate)
+    return None
+
+
+def _style_anchor_tier(anchors: list[str], descriptor: str | None) -> str:
+    if len(anchors) >= 2:
+        return "full_local_anchors"
+    if len(anchors) == 1:
+        return "partial_local_anchors"
+    if descriptor:
+        return "descriptor_only"
+    return "text_only"
+
+
 def _extract_bullet_value(text: str, label: str) -> str:
     match = re.search(rf"^- \*\*{re.escape(label)}\*\*[：:]\s*(.+)$", text, re.MULTILINE)
     return match.group(1).strip().strip("`") if match else ""
@@ -608,6 +798,7 @@ def load_styles(root: Path) -> list[dict[str, Any]]:
             tags.insert(0, quadrant)
         evidence_stage = _extract_bullet_value(content, "证据状态") or "source_verified"
         local_dir, anchors = discover_local_anchors(root, style_id)
+        descriptor = discover_style_descriptor(root, style_id)
         records.append({
             "id": style_id,
             "title": title,
@@ -622,6 +813,9 @@ def load_styles(root: Path) -> list[dict[str, Any]]:
             "local_refs_dir": str(local_dir),
             "local_anchor_images": anchors,
             "has_local_anchors": bool(anchors),
+            "descriptor_image": descriptor,
+            "has_descriptor": bool(descriptor),
+            "anchor_tier": _style_anchor_tier(anchors, descriptor),
             "observations": content[:1200],
             "rule": _extract_bullet_value(content, "光源设定") or title,
         })
@@ -651,6 +845,8 @@ def cmd_summary(args: argparse.Namespace) -> int:
         "bilingual_support": True,
         "counts": counts,
         "styles_with_local_anchors": sum(1 for style in styles if style["has_local_anchors"]),
+        "styles_with_descriptors": sum(1 for style in styles if style["has_descriptor"]),
+        "styles_missing_local_anchors": [style["id"] for style in styles if not style["has_local_anchors"]],
         "by_learning_origin": by_origin,
         "sources": [
             {
@@ -788,6 +984,15 @@ def cmd_search(args: argparse.Namespace) -> int:
     terms = [t for t in full_query.split() if t]
     search_styles = args.kind in {"all", "styles"}
     groups = [] if args.kind == "styles" else ([args.kind] if args.kind != "all" else list(GROUPS))
+    styles = load_styles(root) if search_styles else []
+    idf_corpus: list[dict[str, Any]] = [
+        item for g in GROUPS for item in data.get(g, []) if isinstance(item, dict)
+    ] + styles
+    idf_map = _build_idf(idf_corpus)
+    min_score = getattr(args, "min_score", 0.0) or 0.0
+    brief = bool(getattr(args, "brief", False))
+    verbose = bool(getattr(args, "verbose", False))
+    evidence_stage_filter = getattr(args, "evidence_stage", None)
     matches = []
 
     for group in groups:
@@ -799,65 +1004,107 @@ def cmd_search(args: argparse.Namespace) -> int:
                 continue
             if getattr(args, "origin", None) and origin != args.origin:
                 continue
-            score = score_item(item, terms, full_query)
-            if score > 0:
-                profile = build_evidence_profile(item, group, sources_by_id, feedback_by_id)
-                entry: dict[str, Any] = {
-                    "group": group,
-                    "id": item.get("id"),
-                    "version": item.get("version"),
-                    "learning_origin": origin,
-                    "evidence_stage": infer_evidence_stage(profile),
-                    "evidence_type": infer_evidence_type(item, group, origin, feedback_by_id),
-                    "evidence_profile": profile,
-                    "title": item.get("title"),
-                    "title_en": item.get("title_en"),
-                    "status": item.get("status", item.get("reading_status")),
-                    "score": score,
-                    "when_stuck": item.get("when_stuck"),
-                    "tags": item.get("tags", []),
-                    "tags_en": item.get("tags_en", []),
-                    "summary": item.get("rule") or item.get("reusable_move") or item.get("observation") or item.get("coverage_note"),
-                    "summary_en": item.get("rule_en") or item.get("reusable_move_en") or item.get("observation_en") or item.get("coverage_note_en"),
-                }
-                if group == "methods":
-                    entry["applies_when"] = item.get("applies_when")
-                    entry["limits"] = item.get("limits")
-                if group == "cases":
-                    entry["markdown_path"] = item.get("markdown_path")
-                    entry["markdown_path_en"] = item.get("markdown_path_en")
-                    entry["copy_visual_synergy"] = item.get("copy_visual_synergy")
-                    entry["asset_prerequisites"] = item.get("asset_prerequisites")
-                    entry["transfer_limits"] = item.get("transfer_limits")
+            profile = build_evidence_profile(item, group, sources_by_id, feedback_by_id)
+            ev_stage = infer_evidence_stage(profile)
+            if evidence_stage_filter and ev_stage != evidence_stage_filter:
+                continue
+            score = score_item(item, terms, full_query, idf_map=idf_map)
+            if score > 0 and score >= min_score:
+                summary_zh = item.get("rule") or item.get("reusable_move") or item.get("observation") or item.get("coverage_note")
+                if brief:
+                    when_stuck = item.get("when_stuck")
+                    when_zh = when_stuck.get("zh", []) if isinstance(when_stuck, dict) else when_stuck
+                    when_short = when_zh[:2] if isinstance(when_zh, list) else when_zh
+                    short_summary = summary_zh[:180] + ("…" if isinstance(summary_zh, str) and len(summary_zh) > 180 else "") if isinstance(summary_zh, str) else summary_zh
+                    entry: dict[str, Any] = {
+                        "group": group,
+                        "id": item.get("id"),
+                        "score": score,
+                        "evidence_stage": ev_stage,
+                        "title": item.get("title"),
+                        "when_stuck": when_short,
+                        "summary": short_summary,
+                    }
+                    if group == "methods":
+                        lim = item.get("limits")
+                        entry["limits"] = lim[:140] + ("…" if isinstance(lim, str) and len(lim) > 140 else "") if isinstance(lim, str) else lim
+                    elif group == "cases":
+                        entry["method_refs"] = item.get("method_refs", [])
+                        entry["markdown_path"] = item.get("markdown_path")
+                else:
+                    entry = {
+                        "group": group,
+                        "id": item.get("id"),
+                        "version": item.get("version"),
+                        "learning_origin": origin,
+                        "evidence_stage": ev_stage,
+                        "evidence_type": infer_evidence_type(item, group, origin, feedback_by_id),
+                        "evidence_profile": profile,
+                        "title": item.get("title"),
+                        "status": item.get("status", item.get("reading_status")),
+                        "score": score,
+                        "when_stuck": item.get("when_stuck"),
+                        "summary": summary_zh,
+                    }
+                    if group == "methods":
+                        entry["applies_when"] = item.get("applies_when")
+                        entry["limits"] = item.get("limits")
+                    if group == "cases":
+                        entry["method_refs"] = item.get("method_refs", [])
+                        entry["markdown_path"] = item.get("markdown_path")
+                        entry["markdown_path_en"] = item.get("markdown_path_en")
+                    if verbose:
+                        entry["title_en"] = item.get("title_en")
+                        entry["tags"] = item.get("tags", [])
+                        entry["tags_en"] = item.get("tags_en", [])
+                        entry["summary_en"] = item.get("rule_en") or item.get("reusable_move_en") or item.get("observation_en") or item.get("coverage_note_en")
+                        if group == "cases":
+                            entry["copy_visual_synergy"] = item.get("copy_visual_synergy")
+                            entry["asset_prerequisites"] = item.get("asset_prerequisites")
+                            entry["transfer_limits"] = item.get("transfer_limits")
                 matches.append(entry)
 
-    if search_styles and not args.channel and not getattr(args, "origin", None):
-        for style in load_styles(root):
-            if args.status and style.get("status") != args.status:
+    if search_styles and not args.channel and not getattr(args, "origin", None) and not args.status:
+        for style in styles:
+            if evidence_stage_filter and style.get("evidence_stage") != evidence_stage_filter:
                 continue
-            score = score_item(style, terms, full_query)
-            if score > 0:
-                matches.append({
+            score = score_item(style, terms, full_query, idf_map=idf_map)
+            if score > 0 and score >= min_score:
+                style_entry: dict[str, Any] = {
                     "group": "styles",
                     "id": style["id"],
                     "title": style["title"],
-                    "title_en": style["title_en"],
                     "quadrant": style["quadrant"],
-                    "status": style["status"],
                     "evidence_stage": style["evidence_stage"],
                     "score": score,
-                    "tags": style["tags"],
-                    "tags_en": style["tags_en"],
                     "summary": style["rule"],
                     "style_path": style["style_path"],
-                    "style_resolved_path": style["style_resolved_path"],
-                    "local_refs_dir": style["local_refs_dir"],
                     "has_local_anchors": style["has_local_anchors"],
-                    "local_anchor_images": style["local_anchor_images"],
-                })
+                    "has_descriptor": style["has_descriptor"],
+                    "anchor_tier": style["anchor_tier"],
+                }
+                if not brief:
+                    style_entry.update({
+                        "status": style["status"],
+                        "style_resolved_path": style["style_resolved_path"],
+                        "local_refs_dir": style["local_refs_dir"],
+                        "local_anchor_images": style["local_anchor_images"],
+                        "descriptor_image": style["descriptor_image"],
+                    })
+                if verbose:
+                    style_entry["title_en"] = style["title_en"]
+                    style_entry["tags"] = style["tags"]
+                    style_entry["tags_en"] = style["tags_en"]
+                matches.append(style_entry)
 
     matches.sort(key=lambda row: (-row["score"], row["id"] or ""))
-    print(json.dumps(matches[: args.limit], ensure_ascii=False, indent=2))
+    sliced = matches[: args.limit]
+    print(json.dumps(sliced, ensure_ascii=False, indent=2))
+    if not sliced:
+        print(
+            f'No matches for "{args.query}". Fallback: retry with shorter symptom words (e.g. "参数", "尺寸", "层级", "安全区"), add --kind styles, or check references/art-direction.md symptom routing table.',
+            file=sys.stderr,
+        )
     return 0
 
 
@@ -866,12 +1113,19 @@ def cmd_get(args: argparse.Namespace) -> int:
     data, _ = load_catalog(root)
     requested_ids: list[str] = args.ids
     found_map: dict[str, dict[str, Any]] = {}
+    cases_by_method: dict[str, list[str]] = {}
+    for case in data.get("cases", []):
+        cid = case.get("id")
+        for mid in case.get("method_refs", []) or []:
+            cases_by_method.setdefault(mid, []).append(cid)
 
     for group in GROUPS:
         for item in data.get(group, []):
             item_id = item.get("id")
             if item_id in requested_ids:
                 record = {"group": group, "item": copy.deepcopy(item)}
+                if group == "methods":
+                    record["linked_case_ids"] = cases_by_method.get(item_id, [])
                 if group == "cases":
                     if item.get("markdown_path"):
                         md_path = _resolve_md_path(root, item["markdown_path"])
@@ -900,6 +1154,9 @@ def cmd_get(args: argparse.Namespace) -> int:
                 "local_refs_dir": style["local_refs_dir"],
                 "has_local_anchors": style["has_local_anchors"],
                 "local_anchor_images": style["local_anchor_images"],
+                "has_descriptor": style["has_descriptor"],
+                "descriptor_image": style["descriptor_image"],
+                "anchor_tier": style["anchor_tier"],
             }
 
     missing = [rid for rid in requested_ids if rid not in found_map]
@@ -923,10 +1180,13 @@ def cmd_validate(args: argparse.Namespace) -> int:
     root = resolve_library_root(args.library)
     data, _ = load_catalog(root)
     errors = validate_catalog(data, root, check_files=args.check_files)
+    warnings = collect_catalog_warnings(data, root)
     result = {
         "valid": not errors,
         "error_count": len(errors),
         "errors": errors,
+        "warning_count": len(warnings),
+        "warnings": warnings,
         "catalog_revision": data.get("revision"),
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -1116,6 +1376,60 @@ def cmd_apply_patch(args: argparse.Namespace) -> int:
     return 0 if result["applied"] else 1
 
 
+def _next_feedback_id(data: dict[str, Any]) -> str:
+    nums = []
+    for fb in data.get("feedback", []):
+        m = re.fullmatch(r"F-(\d+)", str(fb.get("id", "")))
+        if m:
+            nums.append(int(m.group(1)))
+    return f"F-{(max(nums) if nums else 0) + 1:03d}"
+
+
+def cmd_feedback(args: argparse.Namespace) -> int:
+    if args.feedback_cmd != "add":
+        raise ValueError(f"unsupported feedback subcommand: {args.feedback_cmd}")
+    root = resolve_library_root(args.library)
+    try:
+        data, _ = load_catalog(root)
+        fb_id = args.id or _next_feedback_id(data)
+        entry: dict[str, Any] = {
+            "id": fb_id,
+            "version": 1,
+            "kind": "feedback",
+            "learning_origin": "task_feedback",
+            "title": args.title,
+            "evidence_type": args.evidence_type,
+            "source_locator": args.source_locator,
+            "observation": args.observation,
+            "verified": bool(args.verified),
+            "task_id": args.task_id,
+            "date": args.date or dt.date.today().isoformat(),
+        }
+        if args.title_en:
+            entry["title_en"] = args.title_en
+        if args.observation_en:
+            entry["observation_en"] = args.observation_en
+        if args.project_status:
+            entry["project_status"] = args.project_status
+        if args.methods:
+            entry["methods_used"] = args.methods
+        if args.cases:
+            entry["cases_used"] = args.cases
+        if args.lesson:
+            entry["reusable_lesson"] = args.lesson
+
+        history = root / "history"
+        history.mkdir(exist_ok=True)
+        with (history / ".library.lock").open("a+b") as lock:
+            lock_writer(lock)
+            result = apply_catalog_patch(root, {"feedback": [entry]}, check_files=False)
+            result["feedback_id"] = fb_id
+    except (OSError, ValueError) as exc:
+        result = {"applied": False, "error": str(exc)}
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["applied"] else 1
+
+
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -1129,11 +1443,15 @@ def main() -> int:
     sub.add_parser("summary", help="Show library counts and source status")
 
     search = sub.add_parser("search", help="Weighted bilingual & symptom search across methods, cases, sources, feedback, and styles")
-    search.add_argument("query", help="Search query (supports space-separated bilingual keywords & symptoms)")
+    search.add_argument("query", help="Search query (supports bilingual keywords, Chinese colloquial sentences & symptoms)")
     search.add_argument("--kind", choices=["all", *GROUPS, "styles"], default="all")
-    search.add_argument("--status", choices=sorted(STATUS_VALUES | EVIDENCE_STAGES))
+    search.add_argument("--status", choices=sorted(STATUS_VALUES), help="Filter methods/cases by catalog status (reference, candidate, validated, retired)")
+    search.add_argument("--evidence-stage", dest="evidence_stage", choices=sorted(EVIDENCE_STAGES), help="Filter records/styles by evidence stage (source_verified, user_endorsed, field_validated)")
     search.add_argument("--channel", choices=sorted(CHANNEL_VALUES), help="Filter by channel (e.g. pdp, landing_page, ad_banner, spec_sheet)")
     search.add_argument("--origin", choices=sorted(LEARNING_ORIGINS), help="Filter by learning origin (book_canon, benchmark_study, co_dissected_teardown, task_feedback)")
+    search.add_argument("--min-score", dest="min_score", type=float, default=0.0, help="Minimum relevance score threshold")
+    search.add_argument("--brief", action="store_true", help="Compact output (id, score, title, when_stuck, summary)")
+    search.add_argument("--verbose", action="store_true", help="Include full bilingual tags, English summaries, and case metadata")
     search.add_argument("--limit", type=int, default=8)
 
     get_p = sub.add_parser("get", help="Fetch one or more records or style archetypes by ID in a single batch call")
@@ -1147,6 +1465,24 @@ def main() -> int:
     patch.add_argument("--check-files", action="store_true", dest="check_files", default=True, help="Verify referenced files and refresh case digests (default: enabled)")
     patch.add_argument("--skip-file-checks", action="store_false", dest="check_files", help="Skip file existence and case digest checks (use only for metadata-only offline patches)")
 
+    fb_p = sub.add_parser("feedback", help="Record structured project/review feedback into the library")
+    fb_sub = fb_p.add_subparsers(dest="feedback_cmd", required=True)
+    fb_add = fb_sub.add_parser("add", help="Add a verified or unverified feedback record atomically")
+    fb_add.add_argument("--id", help="Optional explicit ID (defaults to next sequential F-###)")
+    fb_add.add_argument("--title", required=True, help="Short Chinese or bilingual feedback title")
+    fb_add.add_argument("--title-en", dest="title_en", help="Optional English title")
+    fb_add.add_argument("--observation", required=True, help="Concrete observation or user decision reason")
+    fb_add.add_argument("--observation-en", dest="observation_en", help="Optional English observation")
+    fb_add.add_argument("--source-locator", dest="source_locator", required=True, help="Session/project reference where feedback occurred")
+    fb_add.add_argument("--task-id", dest="task_id", required=True, help="Task or brief identifier")
+    fb_add.add_argument("--evidence-type", dest="evidence_type", choices=sorted(EVIDENCE_TYPES), default="editorial_feedback")
+    fb_add.add_argument("--project-status", dest="project_status", choices=sorted(PROJECT_STATUSES))
+    fb_add.add_argument("--methods", nargs="*", help="Method IDs used (e.g. M-001 M-019)")
+    fb_add.add_argument("--cases", nargs="*", help="Case IDs used")
+    fb_add.add_argument("--lesson", help="Reusable lesson extracted from this feedback")
+    fb_add.add_argument("--date", help="ISO date YYYY-MM-DD (defaults to today)")
+    fb_add.add_argument("--verified", action="store_true", help="Mark feedback as verified")
+
     args = parser.parse_args()
     commands = {
         "summary": cmd_summary,
@@ -1154,6 +1490,7 @@ def main() -> int:
         "get": cmd_get,
         "validate": cmd_validate,
         "apply-patch": cmd_apply_patch,
+        "feedback": cmd_feedback,
     }
     return commands[args.command](args)
 

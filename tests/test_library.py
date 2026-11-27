@@ -61,6 +61,11 @@ class LibraryTests(unittest.TestCase):
             "看不出这是什么": {"M-002", "C-baymard-descriptive-callouts"},
             "说是电芯，实际根本看不出来是什么": {"M-002", "C-baymard-descriptive-callouts"},
             "画面做完一眼看不出是什么部件": {"M-002", "C-baymard-descriptive-callouts"},
+            "图看不清": {"M-002", "C-baymard-descriptive-callouts"},
+            "三维尺寸没有参照": {"M-001", "C-baymard-in-scale-reference"},
+            "参数太多没人看": {"M-005", "C-baymard-spec-sheet-scannability", "C-refactoring-ui-data-labels-and-tables"},
+            "产品看起来很廉价": {"M-007", "M-042", "C-ikea-price-relief-and-empty-product-narrative", "C-refactoring-ui-hierarchy-tactics"},
+            "looks cheap": {"M-042", "C-ikea-price-relief-and-empty-product-narrative", "C-muller-brockmann-color-fields-and-posters", "M-007"},
             "像模板": {"M-007", "C-refactoring-ui-hierarchy-tactics"},
             "想让人再看一眼": {"M-036", "C-aotw-fnac-visual-subversion-light-cone"},
             "9:16 safe zones": {"M-033", "C-tiktok-9x16-safe-zones-and-2s-hook"},
@@ -69,7 +74,10 @@ class LibraryTests(unittest.TestCase):
                 self.assertIn(self.search(term)["id"], ids)
         for term in ("黑洞和宇宙为什么在膨胀", "晚饭想给猫做点什么好吃的"):
             with self.subTest(term=term):
-                self.assertEqual(self.listing(term), [])
+                proc = self.cli("search", term)
+                self.assertEqual(proc.returncode, 0)
+                self.assertEqual(json.loads(proc.stdout), [])
+                self.assertIn("Fallback:", proc.stderr)
 
     def test_endorsement_is_distinct_from_adoption_and_audience_results(self):
         for term in ("F-002", "M-028", "C-xiaomi-su7-2026-mall-billboard-teardown"):
@@ -237,22 +245,109 @@ class LibraryTests(unittest.TestCase):
         self.assertLessEqual(len(backups), LIBRARY["MAX_HISTORY_REVISIONS"])
 
     def test_style_search_get_and_local_anchor_detection(self):
+        local_dir = self.root / "style-refs" / "apple-dark-pro" / "local"
+        if local_dir.is_dir():
+            for img in local_dir.iterdir():
+                if img.name != ".gitkeep":
+                    img.unlink()
+
         empty_get = json.loads(self.cli("get", "apple-dark-pro").stdout)
         self.assertEqual(empty_get["group"], "styles")
         self.assertFalse(empty_get["has_local_anchors"])
         self.assertEqual(empty_get["local_anchor_images"], [])
 
-        anchor = self.root / "style-refs" / "apple-dark-pro" / "local" / "01-test-anchor.jpg"
+        val = json.loads(self.cli("validate", "--check-files").stdout)
+        self.assertTrue(val["valid"])
+        self.assertTrue(any("apple-dark-pro" in w and "0 local anchor images" in w for w in val["warnings"]))
+
+        anchor = local_dir / "01-test-anchor.jpg"
         anchor.parent.mkdir(parents=True, exist_ok=True)
         anchor.write_bytes(b"fake-jpg")
 
         populated_get = json.loads(self.cli("get", "apple-dark-pro").stdout)
         self.assertTrue(populated_get["has_local_anchors"])
         self.assertEqual(populated_get["local_anchor_images"], [str(anchor.resolve())])
+        self.assertEqual(populated_get["anchor_tier"], "partial_local_anchors")
 
         found = json.loads(self.cli("search", "apple dark pro", "--kind", "styles").stdout)
         self.assertEqual(found[0]["id"], "apple-dark-pro")
         self.assertTrue(found[0]["has_local_anchors"])
+
+    def test_status_and_evidence_stage_filters_and_brief_output(self):
+        brief_out = self.cli("search", "参数", "--kind", "methods", "--brief").stdout
+        verbose_out = self.cli("search", "参数", "--kind", "methods", "--verbose").stdout
+        self.assertLess(len(brief_out), len(verbose_out))
+        self.assertNotIn("evidence_profile", json.loads(brief_out)[0])
+
+        by_stage = json.loads(self.cli("search", "小米", "--evidence-stage", "user_endorsed").stdout)
+        self.assertTrue(any(row["id"] == "M-028" for row in by_stage))
+        bad_status = self.cli("search", "小米", "--status", "user_endorsed")
+        self.assertNotEqual(bad_status.returncode, 0)
+
+    def test_method_refs_validation_linkage_and_feedback_add(self):
+        got_m1 = json.loads(self.cli("get", "M-001").stdout)
+        self.assertIn("C-baymard-in-scale-reference", got_m1["linked_case_ids"])
+
+        bad_patch = self.write_patch({"cases": [{"id": CASE_ID, "method_refs": ["M-999"]}]})
+        rejected = self.cli("apply-patch", "--file", str(bad_patch))
+        self.assertNotEqual(rejected.returncode, 0)
+        self.assertIn("method_ref 'M-999' not found", rejected.stdout)
+
+        fb = self.cli(
+            "feedback", "add",
+            "--title", "测试反馈",
+            "--observation", "结构化反馈写入验证",
+            "--source-locator", "unit-test",
+            "--task-id", "ut-feedback",
+            "--project-status", "endorsed",
+            "--methods", "M-001",
+            "--verified",
+        )
+        self.assertEqual(fb.returncode, 0, fb.stdout)
+        fb_payload = json.loads(fb.stdout)
+        self.assertTrue(fb_payload["applied"])
+        self.assertTrue(fb_payload["feedback_id"].startswith("F-"))
+
+    def test_qa_check_dimensions_overlay_and_qr_behavior(self):
+        qa_script = ROOT / "scripts" / "qa_check.py"
+        # Minimal valid 1080x1920 PNG header (IHDR chunk)
+        import struct
+        import zlib
+
+        def make_png(w: int, h: int) -> bytes:
+            sig = b"\x89PNG\r\n\x1a\n"
+            ihdr_data = struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0)
+            ihdr = struct.pack(">I", len(ihdr_data)) + b"IHDR" + ihdr_data + struct.pack(">I", zlib.crc32(b"IHDR" + ihdr_data) & 0xFFFFFFFF)
+            iend = struct.pack(">I", 0) + b"IEND" + struct.pack(">I", zlib.crc32(b"IEND") & 0xFFFFFFFF)
+            return sig + ihdr + iend
+
+        img_path = Path(self.temp.name) / "sample_9x16.png"
+        img_path.write_bytes(make_png(1080, 1920))
+        overlay_path = Path(self.temp.name) / "overlay.svg"
+        proc = subprocess.run(
+            [
+                sys.executable, "-B", str(qa_script), str(img_path),
+                "--expected-ratio", "9:16",
+                "--min-width", "1080",
+                "--safe-zone-overlay", str(overlay_path),
+            ],
+            capture_output=True,
+            encoding="utf-8",
+        )
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        report = json.loads(proc.stdout)
+        self.assertEqual(report["overall_status"], "pass")
+        self.assertEqual(report["checks"]["dimensions"]["width"], 1080)
+        self.assertTrue(overlay_path.is_file())
+        self.assertIn("SAFE AREA:", overlay_path.read_text(encoding="utf-8"))
+
+        bad_ratio = subprocess.run(
+            [sys.executable, "-B", str(qa_script), str(img_path), "--expected-ratio", "16:9"],
+            capture_output=True,
+            encoding="utf-8",
+        )
+        self.assertEqual(bad_ratio.returncode, 1)
+        self.assertEqual(json.loads(bad_ratio.stdout)["overall_status"], "fail")
 
 
 if __name__ == "__main__":

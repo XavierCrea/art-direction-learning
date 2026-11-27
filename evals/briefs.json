@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "purpose": "Offline release regression benchmark for art-direction-learning (not required during routine production tasks).",
+  "briefs": [
+    {
+      "id": "E-01",
+      "genre": "pdp_spec_wall",
+      "aspect_ratio": "responsive_web",
+      "has_brand_colors": true,
+      "raw_brief": "我们这款 51.2V 200Ah 机架式储能电池有 34 项电气、通信、环境与认证参数，现在做成了一张超长双栏 JPG 塞在详情页横向 Tab 里，欧美工商业买家反馈看不清、找参数太累。请给重构方案。",
+      "expected_routing": ["通道 3"],
+      "key_methods_hint": ["M-005", "M-006", "M-020"],
+      "objective_checks": [
+        "Routes to Channel 3 (responsive HTML/CSS) instead of a flat tall JPEG",
+        "Removes horizontal tabs in favor of vertical sections + sticky navigation",
+        "Breaks 34 specs into single-column semantic groups with zebra striping and Key Specs summary"
+      ]
+    },
+    {
+      "id": "E-02",
+      "genre": "trade_show_invitation",
+      "aspect_ratio": "2:3",
+      "has_brand_colors": true,
+      "raw_brief": "做一张 2:3 竖版微信转发展会邀请函：Intersolar Europe 2026，6月23-25日，慕尼黑新国际博览中心，Hall B2 · Booth 418。品牌色深蓝 #0B2545 + 青蓝 #00A0E0。手头有一张高清官方展馆入口晴天照，还有一张展品白底图。扫码领预约通行证（https://example.com/intersolar-pass）。",
+      "expected_routing": ["通道 0", "通道 2A"],
+      "key_methods_hint": ["M-019", "F-001"],
+      "objective_checks": [
+        "Treats venue photo / event info as protagonist instead of forcing a white-bg product cutout with spec arrows",
+        "Preserves user-specified brand colors (#0B2545 / #00A0E0) in primary direction",
+        "Validates phone preview readability and QR URL closure at publish width"
+      ]
+    },
+    {
+      "id": "E-03",
+      "genre": "social_vertical_9x16",
+      "aspect_ratio": "9:16",
+      "has_brand_colors": false,
+      "raw_brief": "给一款便携户外折叠咖啡滤杯做 9:16 竖屏 TikTok/小红书静态种草图，核心卖点是折叠后只有 1.2cm 厚、直接塞进冲锋衣口袋，售价 $29。手头有露营桌面实拍和手拿滤杯折叠特写。",
+      "expected_routing": ["通道 0", "通道 1"],
+      "key_methods_hint": ["M-033", "M-034", "M-001"],
+      "objective_checks": [
+        "Keeps headline, price, and key visual strictly inside 9:16 platform safe zones (verifiable via qa_check.py)",
+        "Uses hand-held scale reference to make 1.2cm thickness immediately tangible",
+        "Avoids overly polished banner-ad look that triggers scroll-past"
+      ]
+    },
+    {
+      "id": "E-04",
+      "genre": "pricing_tier_anchor",
+      "aspect_ratio": "16:9",
+      "has_brand_colors": false,
+      "raw_brief": "精品手冲咖啡豆礼盒有 3 个档位：入门装 $38（1 罐 200g）、主力礼盒 $89（3 罐 + 手冲壶）、收藏箱 $168（5 罐 + 手冲壶 + 定制磨豆机 + 礼袋）。现在并排三个一样大的白底框，客户全买 $38 入门装，想提升 $89 主力礼盒转化。",
+      "expected_routing": ["通道 2A", "通道 3"],
+      "key_methods_hint": ["M-009", "M-035"],
+      "objective_checks": [
+        "Visually unpacks physical deliverables/volume across tiers rather than listing identical text bullets",
+        "Gives visual prominence/area hierarchy to the target $89 tier without misleading/hiding facts"
+      ]
+    },
+    {
+      "id": "E-05",
+      "genre": "dark_hardware_hero",
+      "aspect_ratio": "16:9",
+      "has_brand_colors": false,
+      "raw_brief": "给旗舰 200A 智能 BMS 保护板做一张 16:9 暗场影棚质感首屏海报，突出 CNC 阳极氧化铝散热外壳和 24 针高精度采样口。目前只有手机在办公室日光灯下拍的桌面实拍图，无专业暗场棚拍图。",
+      "expected_routing": ["通道 1"],
+      "key_methods_hint": ["M-002"],
+      "objective_checks": [
+        "Routes directly to Channel 1 (reference-based text-free redraw + vector typography) rather than pasting a daylight cutout onto a dark AI background",
+        "Explicitly requires preserving 24-pin port count, proportions, and original nameplate/silkscreen patch"
+      ]
+    },
+    {
+      "id": "E-06",
+      "genre": "product_free_typographic",
+      "aspect_ratio": "2:3",
+      "has_brand_colors": false,
+      "raw_brief": "一家 B2B 独立站合规与关税咨询团队办线下闭门沙龙，没有任何实体产品图，也没有场地照片，只有主题『2026 欧盟电池法案实操拆解』、时间 11 月 18 日 14:00、深圳南山、限 40 人及报名二维码。请设计 2:3 预告海报。",
+      "expected_routing": ["通道 2A"],
+      "key_methods_hint": ["M-019", "M-037"],
+      "objective_checks": [
+        "Uses pure typography / Swiss grid / high-contrast typographic hierarchy via Channel 2A instead of fabricating generic 3D AI illustrations",
+        "Keeps event topic, date, city, seat cap, and scannable QR clearly prioritized"
+      ]
+    },
+    {
+      "id": "E-07",
+      "genre": "accessories_and_evidence",
+      "aspect_ratio": "1:1",
+      "has_brand_colors": false,
+      "raw_brief": "工业便携热成像仪 1:1 电商主图组，经常遇到买家售后投诉：以为三脚架和微距镜头是送的（其实标配只有主机+充电线+收纳包，三脚架和微距镜头需另购），另外买家总嫌实物比想象中大。客户还想要一张『内部红外探测器芯片结构剖面图』但手里没有工程图。",
+      "expected_routing": ["通道 4", "通道 2B"],
+      "key_methods_hint": ["M-001", "M-002", "M-003"],
+      "objective_checks": [
+        "Plans an Included Accessories flat-lay separating standard items from Sold Separately optional items",
+        "Adds a 1:1 hand-held In-Scale shot to correct size misperception",
+        "Refuses to let AI fabricate the internal infrared detector cutaway without real CAD/engineering assets (routes to Channel 4)"
+      ]
+    }
+  ]
+}

@@ -10,7 +10,9 @@
    - `user_endorsed`：已在用户项目或对话中获用户认可/采用；
    - `field_validated`：不仅完成提炼与采用，且已有受众测试或真实投放结果验证。
 3. **风格、构图与行业三轴正交解耦（支持整体复刻或单手法借用）**：本目录只记录样本中的**典型视觉气质与光影语言**（而非死板硬边界）；**构图思路与多图编排**由 [poster-patterns.md](../../references/poster-patterns.md) 独立管理；**制作路线与客观验收**由 [output-qa-gate.md](../../references/output-qa-gate.md) 把关。调用时可**整体复刻参考气质**，也可**只单独借用其中某一手法**（例如保留客户品牌蓝，仅借某套母版的侧光纸张质感或留白节奏）。审核时，只有**用户明确指定的品牌规范**可作退稿依据，模型自行挑选的参考风格仅作设计建议。
-4. **配套本地视觉锚点**：每新增一个风格母版 `<style-id>.md`，同步在 `library/style-refs/<style-id>/local/` 放入 2–3 张对应的真实标杆海报原图（`local/` 已配置 `.gitignore` 忽略，本地开箱即用，推送 GitHub 零版权风险）。
+4. **配套可视化参考卡与本地锚点（三级降级）**：每个风格母版 `<style-id>.md` 配套两层视觉参考——
+   - **随包零版权可视化参考卡** `library/style-refs/<style-id>/descriptor.svg`（代码自绘的精确色板 HEX、字阶条、留白框图、网格线稿与光影示意，直接入库可跨机器开箱即用）；
+   - **本地商用标杆原图** `library/style-refs/<style-id>/local/`（已被 `.gitignore` 忽略，零版权风险）。按 `L1 整体复刻（≥2 张本地图）/ L2 原子借用（1 张图或 descriptor.svg）/ L3 纯数值规范` 三级调用，换机缺图时自动降级并标注“文字/示意图级参考”，详见 [output-qa-gate.md](../../references/output-qa-gate.md)。
 
 ---
 

@@ -6,7 +6,7 @@
 
 `art-direction-learning` 是用于广告、详情页和展会物料的美术指导技能。它从读者要完成的事和手头素材出发，用可追溯案例帮助决定画面演什么、文字说什么、视线怎样走；涉及产品主张时，用已核实的信息支撑。方向未定时，刻意保留 1 个**由干净子代理盲产的「原生自由对照位」**（完全不读本技能与风格库），不把前沿模型的审美框死在既有母版里；用户选中后再统一接入客观验收与“无字主视觉 + 矢量排字”工程落地。
 
-**v1.5.1 · `catalog.json` `r20` · 29 项核验信源 · 42 条可检索视觉方法（`M-001`–`M-042`） · 38 篇中英双语案例卡 · 7 套跨行业实证风格母版 + 6 组构图参考骨架 + 干净子代理原生对照位 + 客观验收门禁**
+**v1.6.0 · `catalog.json` `r21` · 29 项核验信源 · 42 条可检索视觉方法（`M-001`–`M-042`） · 38 篇中英双语案例卡（含 `method_refs` 外键） · 7 套跨行业实证风格母版（附零版权 `descriptor.svg` 可视化参考卡） + 6 组构图骨架 + 原始需求防污染原生对照位 + `qa_check.py` 客观验收门禁 + 7 题离线回归评测集**
 
 [浏览中文案例索引](library/README.md) · [English Library Index](library/README.en.md) · [实证风格库](library/styles/README.md) · [海报构图骨架](references/poster-patterns.md) · [出图审美门禁](references/output-qa-gate.md) · [搭配 `copywriting-learning` 联动](https://github.com/XavierCrea/copywriting-learning)
 

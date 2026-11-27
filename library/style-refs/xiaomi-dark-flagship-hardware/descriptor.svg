@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <title>Style Descriptor Card — xiaomi-dark-flagship-hardware</title>
+  <rect width="1200" height="760" fill="#080808"/>
+  <g font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <!-- Header -->
+    <rect x="48" y="34" width="10" height="48" rx="3" fill="#E0BB7D"/>
+    <text x="72" y="58" fill="#FFFFFF" font-size="28" font-weight="700">Xiaomi Dark Flagship Black-Gold Hardware</text>
+    <text x="72" y="82" fill="#999999" font-size="14">Dark Dramatic Hardware · Cool Silver Rim Light · Champagne Gold KPI  ·  ID: xiaomi-dark-flagship-hardware</text>
+    <text x="1152" y="58" text-anchor="end" fill="#999999" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ZERO-COPYRIGHT DESCRIPTOR CARD</text>
+    <line x1="48" y1="104" x2="1152" y2="104" stroke="#2B261D" stroke-width="1"/>
+
+    <!-- Section 1: Color Ramp -->
+    <text x="48" y="128" fill="#999999" font-size="12" font-weight="700" letter-spacing="1.4">01 / VERIFIED COLOR RAMP &amp; PROPORTION</text>
+    
+        <g>
+          <rect x="48" y="140" width="172" height="68" rx="8" fill="#000000" stroke="#2B261D" stroke-width="1.2"/>
+          <text x="48" y="228" fill="#FFFFFF" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#000000</text>
+          <text x="48" y="246" fill="#999999" font-size="12">Canvas 65%</text>
+        </g>
+        <g>
+          <rect x="234" y="140" width="172" height="68" rx="8" fill="#0F0F0F" stroke="#2B261D" stroke-width="1.2"/>
+          <text x="234" y="228" fill="#FFFFFF" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#0F0F0F</text>
+          <text x="234" y="246" fill="#999999" font-size="12">Dark Card 29%</text>
+        </g>
+        <g>
+          <rect x="420" y="140" width="172" height="68" rx="8" fill="#FFFFFF" stroke="#2B261D" stroke-width="1.2"/>
+          <text x="420" y="228" fill="#FFFFFF" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#FFFFFF</text>
+          <text x="420" y="246" fill="#999999" font-size="12">Headline</text>
+        </g>
+        <g>
+          <rect x="606" y="140" width="172" height="68" rx="8" fill="#999999" stroke="#2B261D" stroke-width="1.2"/>
+          <text x="606" y="228" fill="#FFFFFF" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#999999</text>
+          <text x="606" y="246" fill="#999999" font-size="12">Body Gray</text>
+        </g>
+        <g>
+          <rect x="792" y="140" width="172" height="68" rx="8" fill="#E9C993" stroke="#2B261D" stroke-width="1.2"/>
+          <text x="792" y="228" fill="#FFFFFF" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#E9C993</text>
+          <text x="792" y="246" fill="#999999" font-size="12">Gold High</text>
+        </g>
+        <g>
+          <rect x="978" y="140" width="172" height="68" rx="8" fill="#DBB472" stroke="#2B261D" stroke-width="1.2"/>
+          <text x="978" y="228" fill="#FFFFFF" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#DBB472</text>
+          <text x="978" y="246" fill="#999999" font-size="12">Gold Accent &lt;6%</text>
+        </g>
+
+    <!-- Section 2: Left Typography & Atomic Moves -->
+    <rect x="48" y="274" width="560" height="270" rx="14" fill="#111111" stroke="#2B261D"/>
+    <text x="68" y="296" fill="#999999" font-size="12" font-weight="700" letter-spacing="1.4">02 / TYPOGRAPHY HIERARCHY</text>
+    
+        <text x="68" y="318" fill="#FFFFFF" font-size="32" font-weight="600">Chapter Title</text>
+        <text x="68" y="338" fill="#999999" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">67.5px · Crisp Medium Sans</text>
+        <text x="68" y="386" fill="#E0BB7D" font-size="20" font-weight="600">Section / Eyebrow</text>
+        <text x="68" y="406" fill="#999999" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">34px White + 22px Champagne Gold Eyebrow</text>
+        <text x="68" y="442" fill="#999999" font-size="14" font-weight="400">Body &amp; Footnote</text>
+        <text x="68" y="462" fill="#999999" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">17px #999999 · Footnote 11px #666666</text>
+
+    <!-- Section 3: Right Layout & Lighting Wireframe -->
+    <rect x="628" y="274" width="524" height="270" rx="14" fill="#111111" stroke="#2B261D"/>
+    <text x="646" y="296" fill="#999999" font-size="12" font-weight="700" letter-spacing="1.4">03 / COMPOSITION WIREFRAME &amp; LIGHTING</text>
+    
+        <rect x="646" y="304" width="486" height="224" rx="12" fill="#000000" stroke="#332B1E"/>
+        <rect x="664" y="326" width="106.92" height="18" rx="9" fill="none" stroke="#E0BB7D" stroke-width="1.2"/>
+        <text x="717.46" y="339" text-anchor="middle" fill="#E0BB7D" font-size="9">SPEED</text>
+        <rect x="664" y="356" width="174.95999999999998" height="12" rx="3" fill="#FFFFFF"/>
+        <rect x="664" y="376" width="145.79999999999998" height="7" rx="2" fill="#777777"/>
+        <rect x="889.0" y="324" width="208.98" height="98.56" rx="8" fill="#161616" stroke="#3F3F46"/>
+        <line x1="889.0" y1="324" x2="889.0" y2="422.56" stroke="#D4D4D8" stroke-width="2"/>
+        <text x="993.49" y="377.76" text-anchor="middle" fill="#D4D4D8" font-size="11">RIM-LIT UNIT</text>
+        <rect x="664" y="460.79999999999995" width="450" height="49.28" rx="8" fill="#0F0F0F"/>
+        <text x="752.92" y="492.15999999999997" text-anchor="middle" fill="#E0BB7D" font-size="12" font-weight="700">3.6Gbps</text>
+        <text x="889.0" y="492.15999999999997" text-anchor="middle" fill="#E0BB7D" font-size="12" font-weight="700">220,000×</text>
+        <text x="1025.08" y="492.15999999999997" text-anchor="middle" fill="#E0BB7D" font-size="12" font-weight="700">715 Nodes</text>
+
+    <!-- Section 4: Bottom Atomic Moves & Lighting/Whitespace -->
+    <rect x="48" y="562" width="560" height="160" rx="14" fill="#111111" stroke="#2B261D"/>
+    <text x="68" y="580" fill="#999999" font-size="11" font-weight="700" letter-spacing="1.4">04 / ATOMIC MOVES (L2 BORROWABLE WITHOUT FULL CLONE)</text>
+    <text x="68" y="592" fill="#FFFFFF" font-size="14">• Borderless 3x2 Champagne-Gold test-metric matrix</text><text x="68" y="618" fill="#FFFFFF" font-size="14">• 1px hollow gold chapter pill (Speed / Smart)</text><text x="68" y="644" fill="#FFFFFF" font-size="14">• Smoked-glass cutaway instead of cyber neon</text>
+
+    <rect x="628" y="562" width="524" height="160" rx="14" fill="#111111" stroke="#2B261D"/>
+    <text x="648" y="584" fill="#999999" font-size="11" font-weight="700" letter-spacing="1.4">05 / WHITESPACE &amp; LIGHT DIRECTION</text>
+    <text x="648" y="616" fill="#FFFFFF" font-size="14" font-weight="600">Whitespace:</text>
+    <text x="648" y="638" fill="#999999" font-size="13">45%–55% Pure Black Stage · Copy Area &lt;= 20%</text>
+    <text x="648" y="674" fill="#FFFFFF" font-size="14" font-weight="600">Lighting:</text>
+    <text x="648" y="696" fill="#999999" font-size="13">Cool Silver Oblique Rim Light + Subtle Brushed-Stone Reflection</text>
+  </g>
+</svg>

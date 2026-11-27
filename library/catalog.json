@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 20,
-  "updated_at": "2026-11-26",
+  "revision": 21,
+  "updated_at": "2026-11-27",
   "sources": [
     {
       "id": "S-baymard-in-scale-2017",
@@ -3853,7 +3853,7 @@
   "cases": [
     {
       "id": "C-baymard-in-scale-reference",
-      "version": 3,
+      "version": 4,
       "title": "Baymard 比例参照实验：用已知尺寸参照物消除 42% 买家的体积误判",
       "tags": [
         "比例参照",
@@ -3909,11 +3909,14 @@
         "pdp",
         "catalog",
         "ad_banner"
+      ],
+      "method_refs": [
+        "M-001"
       ]
     },
     {
       "id": "C-baymard-descriptive-callouts",
-      "version": 4,
+      "version": 5,
       "title": "Baymard 图文引线标注实验：用图内结构引线与短标签弥合“只看图不读字”的断层",
       "tags": [
         "引线标注",
@@ -3976,11 +3979,14 @@
         "catalog",
         "ad_banner",
         "social_feed"
+      ],
+      "method_refs": [
+        "M-002"
       ]
     },
     {
       "id": "C-baymard-included-optional-accessories",
-      "version": 3,
+      "version": 4,
       "title": "Baymard 标配与选配附件图实验：用“标配全家福”与“单独出售”微文案消除价值误判",
       "tags": [
         "标配全家福",
@@ -4037,11 +4043,14 @@
         "pdp",
         "catalog",
         "packaging"
+      ],
+      "method_refs": [
+        "M-003"
       ]
     },
     {
       "id": "C-baymard-spec-sheet-scannability",
-      "version": 3,
+      "version": 4,
       "title": "Baymard 参数表视觉扫描实验：用单栏语义分组与斑马纹底色取代“参数墙”",
       "tags": [
         "参数表",
@@ -4097,11 +4106,14 @@
         "pdp",
         "spec_sheet",
         "catalog"
+      ],
+      "method_refs": [
+        "M-005"
       ]
     },
     {
       "id": "C-baymard-avoid-horizontal-tabs",
-      "version": 3,
+      "version": 4,
       "title": "Baymard 详情页导航实验：弃用隐藏核心内容的“横向 Tab”，改用纵向展开分节与吸顶目录",
       "tags": [
         "横向标签页",
@@ -4158,11 +4170,14 @@
         "pdp",
         "landing_page",
         "storefront"
+      ],
+      "method_refs": [
+        "M-006"
       ]
     },
     {
       "id": "C-me-above-the-fold-visual",
-      "version": 3,
+      "version": 4,
       "title": "Marketing Examples 首屏五要素视觉架构：用“产品运转实景”取代抽象插画",
       "tags": [
         "首屏五要素",
@@ -4217,11 +4232,14 @@
         "landing_page",
         "storefront",
         "pdp"
+      ],
+      "method_refs": [
+        "M-004"
       ]
     },
     {
       "id": "C-me-rows-live-product-hero",
-      "version": 3,
+      "version": 4,
       "title": "Rows 首屏实测与 Haako 视觉重塑：用“可直视/可交互的产品工作台”取代大段文字说明",
       "tags": [
         "首屏交互",
@@ -4276,11 +4294,14 @@
       "channels": [
         "landing_page",
         "storefront"
+      ],
+      "method_refs": [
+        "M-004"
       ]
     },
     {
       "id": "C-refactoring-ui-hierarchy-tactics",
-      "version": 5,
+      "version": 6,
       "title": "Refactoring UI 界面层级与降噪八法：用字重色阶、同色相浅字、粗重对比平衡与去边框重塑商业级质感",
       "tags": [
         "视觉层级",
@@ -4387,11 +4408,15 @@
         "pdp",
         "spec_sheet",
         "mobile_ui"
+      ],
+      "method_refs": [
+        "M-007",
+        "M-008"
       ]
     },
     {
       "id": "C-me-refactoring-ui-pricing-tier",
-      "version": 3,
+      "version": 4,
       "title": "Refactoring UI 与 Basecamp 定价视觉锚定：用版面面积、字号对比与交付物拆解重塑价格感知",
       "tags": [
         "定价版式",
@@ -4449,11 +4474,14 @@
         "landing_page",
         "pdp",
         "presentation"
+      ],
+      "method_refs": [
+        "M-009"
       ]
     },
     {
       "id": "C-me-tropicana-angostura-visual-assets",
-      "version": 3,
+      "version": 4,
       "title": "Tropicana 5500 万美元改版教训与 Angostura 超大酒标：守住“零思考识别”的视觉锤",
       "tags": [
         "视觉锤",
@@ -4509,11 +4537,14 @@
         "packaging",
         "pdp",
         "ad_banner"
+      ],
+      "method_refs": [
+        "M-010"
       ]
     },
     {
       "id": "C-williams-crap-layout-makeovers",
-      "version": 3,
+      "version": 4,
       "title": "Robin Williams 四大基本原则（CRAP）版式重构实录：从“视线停顿 5 次的业余名片与广告”到专业秩序感",
       "tags": [
         "四大基本原则",
@@ -4587,11 +4618,16 @@
         "print_collateral",
         "landing_page",
         "presentation"
+      ],
+      "method_refs": [
+        "M-011",
+        "M-012",
+        "M-013"
       ]
     },
     {
       "id": "C-williams-color-wheel-value-warmth",
-      "version": 4,
+      "version": 5,
       "title": "Robin Williams 色轮与视觉色感实验：用暗色/亮色、色质差与“冷退暖进”法则终结廉价配色",
       "tags": [
         "12色轮",
@@ -4668,11 +4704,14 @@
         "print_collateral",
         "pdp",
         "packaging"
+      ],
+      "method_refs": [
+        "M-014"
       ]
     },
     {
       "id": "C-williams-typography-conflict-vs-contrast",
-      "version": 4,
+      "version": 5,
       "title": "Robin Williams 字体冲突与六维对比实验：为什么“长得很像的两种字体”是版面大忌？",
       "tags": [
         "字体冲突",
@@ -4750,11 +4789,14 @@
         "print_collateral",
         "landing_page",
         "presentation"
+      ],
+      "method_refs": [
+        "M-015"
       ]
     },
     {
       "id": "C-muller-brockmann-modular-grid-construction",
-      "version": 3,
+      "version": 4,
       "title": "米勒-布罗克曼 8/20/32 格模数网格与基线对齐实验：以正文行高统领多图文版面",
       "tags": [
         "模数网格",
@@ -4826,11 +4868,15 @@
         "print_collateral",
         "presentation",
         "landing_page"
+      ],
+      "method_refs": [
+        "M-016",
+        "M-017"
       ]
     },
     {
       "id": "C-muller-brockmann-color-fields-and-posters",
-      "version": 3,
+      "version": 4,
       "title": "色块内边距四图实验与瑞士无产品构成海报：防贴边铁律与活动海报去单品化",
       "tags": [
         "色块内边距",
@@ -4902,11 +4948,15 @@
         "ad_banner",
         "print_collateral",
         "exhibition"
+      ],
+      "method_refs": [
+        "M-018",
+        "M-019"
       ]
     },
     {
       "id": "C-muller-brockmann-industrial-catalog-exhibition",
-      "version": 3,
+      "version": 4,
       "title": "B2B 工业品 30 格技术手册与三维展位 170cm 视平线网格：从复杂图纸册到实体展台",
       "tags": [
         "工业品手册",
@@ -4974,11 +5024,16 @@
         "spec_sheet",
         "exhibition",
         "print_collateral"
+      ],
+      "method_refs": [
+        "M-016",
+        "M-017",
+        "M-019"
       ]
     },
     {
       "id": "C-refactoring-ui-data-labels-and-tables",
-      "version": 3,
+      "version": 4,
       "title": "Refactoring UI 数据展示、参数表反强调与富表格重构：从呆板 Label: Value 到高密度可扫描界面",
       "tags": [
         "去标签化",
@@ -5059,11 +5114,14 @@
         "pdp",
         "mobile_ui",
         "catalog"
+      ],
+      "method_refs": [
+        "M-020"
       ]
     },
     {
       "id": "C-refactoring-ui-spacing-grid-and-typography",
-      "version": 3,
+      "version": 4,
       "title": "Refactoring UI 间距系统、反 12 栏教条与排版微操实验：25% 非线性步进、45–75 字符行宽与基线/行高反比法则",
       "tags": [
         "非线性间距尺",
@@ -5173,11 +5231,14 @@
         "pdp",
         "mobile_ui",
         "spec_sheet"
+      ],
+      "method_refs": [
+        "M-021"
       ]
     },
     {
       "id": "C-refactoring-ui-hsl-color-depth-and-images",
-      "version": 3,
+      "version": 4,
       "title": "Refactoring UI 9 阶 HSL 色板、感知亮度色相旋转与双层阴影/背景图控对比实验",
       "tags": [
         "HSL色板",
@@ -5287,11 +5348,15 @@
         "pdp",
         "mobile_ui",
         "ad_banner"
+      ],
+      "method_refs": [
+        "M-022",
+        "M-023"
       ]
     },
     {
       "id": "C-krug-billboard-scanning-and-visual-noise",
-      "version": 4,
+      "version": 5,
       "title": "Krug 60mph 广告牌扫视模型、视觉层级嵌套反例与三大视觉噪音（Shouting/Disorganization/Clutter）拆解",
       "tags": [
         "60mph扫视",
@@ -5381,11 +5446,14 @@
         "storefront",
         "pdp",
         "ad_banner"
+      ],
+      "method_refs": [
+        "M-024"
       ]
     },
     {
       "id": "C-krug-omit-words-and-trunk-test-navigation",
-      "version": 4,
+      "version": 5,
       "title": "Krug 第三定律（103 词→34 词双砍半实证）、路牌导航、物理连通 Tab 与 6 项后备箱测试（Trunk Test）",
       "tags": [
         "字数双砍半",
@@ -5480,11 +5548,15 @@
         "storefront",
         "pdp",
         "mobile_ui"
+      ],
+      "method_refs": [
+        "M-025",
+        "M-026"
       ]
     },
     {
       "id": "C-krug-homepage-big-bang-tagline-and-goodwill",
-      "version": 4,
+      "version": 5,
       "title": "Krug 首屏大爆炸（50ms 第一印象与 5 问）、Tagline vs. Motto 唯一性测试与买家善意储蓄罐水位计",
       "tags": [
         "首屏大爆炸",
@@ -5578,11 +5650,14 @@
         "landing_page",
         "storefront",
         "pdp"
+      ],
+      "method_refs": [
+        "M-027"
       ]
     },
     {
       "id": "C-xiaomi-su7-2026-mall-billboard-teardown",
-      "version": 3,
+      "version": 4,
       "learning_origin": "co_dissected_teardown",
       "title": "2026 新一代小米 SU7 × 舒淇「卡布里蓝」商圈巨幕 vs. 同行车企大屏正反对比：为什么顶级商圈外墙不谈参数，且纯色场完胜风景图？",
       "title_en": "2026 New Xiaomi SU7 × Shu Qi \"Capri Blue\" Mall Billboards vs. Competitor Outdoor LEDs: Why Prime Mall Facades Omit Specs and Pure Color Fields Beat Landscape KVs",
@@ -5670,11 +5745,14 @@
         "exhibition",
         "ad_banner",
         "print_collateral"
+      ],
+      "method_refs": [
+        "M-028"
       ]
     },
     {
       "id": "C-lawsofux-von-restorff-and-aesthetic-usability",
-      "version": 2,
+      "version": 3,
       "title": "Laws of UX 孤立效应与美感可用性边界：信息流破群突围与防“精修盲区”法则",
       "title_en": "Laws of UX Von Restorff Effect & Aesthetic-Usability Guardrails: Breaking Feed Homogeneity Without Triggering \"Polished Ad Blindness\"",
       "tags": [
@@ -5734,11 +5812,14 @@
         "social_carousel",
         "ad_banner",
         "pdp"
+      ],
+      "method_refs": [
+        "M-029"
       ]
     },
     {
       "id": "C-lawsofux-serial-position-and-peak-end",
-      "version": 2,
+      "version": 3,
       "title": "Laws of UX 系列位置效应与峰终定律：多图轮播与长详情页的首尾锚定及峰值分镜",
       "title_en": "Laws of UX Serial Position Effect & Peak-End Rule: Primacy-Recency Anchoring & Peak-End Storyboarding for Carousels and Long PDPs",
       "tags": [
@@ -5798,11 +5879,14 @@
         "pdp",
         "landing_page",
         "presentation"
+      ],
+      "method_refs": [
+        "M-030"
       ]
     },
     {
       "id": "C-lawsofux-zeigarnik-and-goal-gradient",
-      "version": 2,
+      "version": 3,
       "title": "Laws of UX 蔡格尼克效应与目标梯度效应：多图轮播翻页张力与进度牵引设计",
       "title_en": "Laws of UX Zeigarnik Effect & Goal-Gradient Effect: Unfinished-Loop Swipe Tension & Progress-Cue Momentum",
       "tags": [
@@ -5861,11 +5945,14 @@
         "social_carousel",
         "mobile_ui",
         "landing_page"
+      ],
+      "method_refs": [
+        "M-031"
       ]
     },
     {
       "id": "C-lawsofux-fitts-hick-and-jakob",
-      "version": 2,
+      "version": 3,
       "title": "Laws of UX 菲茨、席克与雅各布定律：移动端拇指热区、渐进披露与原生心智顺应",
       "title_en": "Laws of UX Fitts's Law, Hick's Law & Jakob's Law: Mobile Thumb Targets, Progressive Disclosure & Native Platform Conventions",
       "tags": [
@@ -5932,11 +6019,14 @@
         "landing_page",
         "pdp",
         "storefront"
+      ],
+      "method_refs": [
+        "M-032"
       ]
     },
     {
       "id": "C-tiktok-9x16-safe-zones-and-2s-hook",
-      "version": 3,
+      "version": 4,
       "title": "TikTok 竖屏案例：按投放位定安全区，按创意设计开场",
       "title_en": "TikTok Vertical Creative: Placement-Specific Safe Zones and Early Cues",
       "tags": [
@@ -5993,11 +6083,14 @@
         "social_feed",
         "ad_banner",
         "mobile_ui"
+      ],
+      "method_refs": [
+        "M-033"
       ]
     },
     {
       "id": "C-motion-native-statics-and-us-vs-them",
-      "version": 4,
+      "version": 5,
       "title": "Motion 创意诊断：用可比基线决定要测什么",
       "title_en": "Motion Creative Diagnosis: Use a Comparable Baseline to Choose What to Test",
       "tags": [
@@ -6056,11 +6149,14 @@
         "ad_banner",
         "social_carousel",
         "pdp"
+      ],
+      "method_refs": [
+        "M-034"
       ]
     },
     {
       "id": "C-aotw-three-seven-paris-price-scale",
-      "version": 2,
+      "version": 3,
       "title": "Three Seven Paris《How much do you love her?》：实体商品的“价格梯度 × 物理量感 × 情绪标尺”锚定",
       "title_en": "Three Seven Paris \"How much do you love her?\": Physical-Scale Price Ladder & Emotional-Gauge Framing",
       "tags": [
@@ -6119,11 +6215,14 @@
         "ad_banner",
         "print_collateral",
         "pdp"
+      ],
+      "method_refs": [
+        "M-035"
       ]
     },
     {
       "id": "C-aotw-fnac-visual-subversion-light-cone",
-      "version": 3,
+      "version": 4,
       "title": "Fnac《Another Addiction is Possible》：熟悉视觉代码反转（Double-Take）与暗场单光锥视线引导",
       "title_en": "Fnac \"Another Addiction is Possible\": Familiar Visual-Code Subversion (Double-Take) & Single Light-Cone Focal Path",
       "tags": [
@@ -6184,11 +6283,14 @@
         "ad_banner",
         "print_collateral",
         "social_feed"
+      ],
+      "method_refs": [
+        "M-036"
       ]
     },
     {
       "id": "C-aotw-muserk-typographic-wall-poster",
-      "version": 2,
+      "version": 3,
       "title": "Muserk《Get F'in Paid》：现代无图纯字体墙海报、三级字阶落差与底角二维码收口",
       "title_en": "Muserk \"Get F'in Paid\": Modern Typographic-Wall Poster, 3-Tier Scale Drop & Corner QR Close",
       "tags": [
@@ -6248,11 +6350,14 @@
         "print_collateral",
         "exhibition",
         "social_feed"
+      ],
+      "method_refs": [
+        "M-037"
       ]
     },
     {
       "id": "C-aotw-mercedes-rollover-sensor-state-sequence",
-      "version": 2,
+      "version": 3,
       "title": "Mercedes-Benz《Rollover Sensor》：符号逐帧演进法（Icon-as-Diagram）与静默底注揭晓",
       "title_en": "Mercedes-Benz \"Rollover Sensor\": Icon-as-Diagram Sequential State Repetition & Whisper Reveal",
       "tags": [
@@ -6312,11 +6417,14 @@
         "print_collateral",
         "pdp",
         "social_carousel"
+      ],
+      "method_refs": [
+        "M-038"
       ]
     },
     {
       "id": "C-coca-cola-recycle-me-deformation",
-      "version": 3,
+      "version": 4,
       "title": "可口可乐《Recycle Me》：用熟悉符号的真实形变表现动作",
       "title_en": "Coca-Cola ‘Recycle Me’: Making an Action Visible Through Real Deformation",
       "tags": [
@@ -6373,11 +6481,14 @@
         "print_collateral",
         "exhibition",
         "social_feed"
+      ],
+      "method_refs": [
+        "M-039"
       ]
     },
     {
       "id": "C-ikea-tomorrow-starts-tonight-container-metaphor",
-      "version": 1,
+      "version": 2,
       "title": "IKEA《Tomorrow Starts Tonight》：跨品类高溢价容器嫁接与双联户外视觉双关",
       "title_en": "IKEA \"Tomorrow Starts Tonight\": Cross-Category Container Grafting & OOH Diptych Double-Take",
       "tags": [
@@ -6434,11 +6545,14 @@
         "claim": "2024 年 2 月 IKEA UK 户外双联海报（Mother London），公开页面未披露转化数据，提炼跨品类容器嫁接机制。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁硬套毫无功能因果联系的容器；不适合需要展示精确接口/尺寸的 B2B 选型图。"
+      "transfer_limits": "严禁硬套毫无功能因果联系的容器；不适合需要展示精确接口/尺寸的 B2B 选型图。",
+      "method_refs": [
+        "M-036"
+      ]
     },
     {
       "id": "C-louispoulsen-ph-centenary-ray-diagram",
-      "version": 1,
+      "version": 2,
       "title": "Louis Poulsen《PH Centenary Poster》：无形物理场的工程几何射线图解法",
       "title_en": "Louis Poulsen \"PH Centenary Poster\": Engineering Geometric Ray-Path Diagramming for Invisible Physical Fields",
       "tags": [
@@ -6496,11 +6610,14 @@
         "claim": "基于 Louis Poulsen 官方 PH Centenary Poster 实图拆解，未公开转化数据。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁凭空编造假射线或假波形；不适合只看价格秒下单的纯促销图。"
+      "transfer_limits": "严禁凭空编造假射线或假波形；不适合只看价格秒下单的纯促销图。",
+      "method_refs": [
+        "M-040"
+      ]
     },
     {
       "id": "C-hay-montana-architectural-corner-blocking",
-      "version": 1,
+      "version": 2,
       "title": "HAY × Montana：多 SKU 建筑折角灰场与双色切面低成本搭景法",
       "title_en": "HAY × Montana: Architectural Corner Neutral Matrix & Two-Tone Color-Block Staging",
       "tags": [
@@ -6562,11 +6679,14 @@
         "claim": "基于 HAY J-Series 画册与 Montana 3daysofdesign 战役实图拆解，未公开销售数据。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "矩阵内严禁混用高低不一的透视视角；双色背景避免双荧光色抢戏。"
+      "transfer_limits": "矩阵内严禁混用高低不一的透视视角；双色背景避免双荧光色抢戏。",
+      "method_refs": [
+        "M-041"
+      ]
     },
     {
       "id": "C-ikea-price-relief-and-empty-product-narrative",
-      "version": 1,
+      "version": 2,
       "title": "IKEA《Guilty Pets》×《Proudly Second Best》：损耗现场微型价签解围与空置主角叙事法",
       "title_en": "IKEA \"Guilty Pets\" × \"Proudly Second Best\": Mishap-Scene Micro Price-Tag Relief & Empty-Product Framing",
       "tags": [
@@ -6628,7 +6748,10 @@
         "claim": "基于 Ads of the World 收录之宜家 Guilty Pets 与 Proudly Second Best 海报拆解，未公开销量数据。",
         "verification_status": "source_verified"
       },
-      "transfer_limits": "严禁在高客单价耐用品或安全器材上使用摔坏幽默；产品在画面中仍须清晰可辨。"
+      "transfer_limits": "严禁在高客单价耐用品或安全器材上使用摔坏幽默；产品在画面中仍须清晰可辨。",
+      "method_refs": [
+        "M-042"
+      ]
     }
   ],
   "feedback": [

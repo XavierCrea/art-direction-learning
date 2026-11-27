@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <title>Style Descriptor Card — outdoor-brutalist-technical</title>
+  <rect width="1200" height="760" fill="#EFECE4"/>
+  <g font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <!-- Header -->
+    <rect x="48" y="34" width="10" height="48" rx="3" fill="#C8F135"/>
+    <text x="72" y="58" fill="#0E0F10" font-size="28" font-weight="700">Outdoor Brutalist Hard-Light Technical</text>
+    <text x="72" y="82" fill="#525556" font-size="14">Brutalist Hard-Light Technical · Razor Sunlight Shadow · Acid-Lime Signal  ·  ID: outdoor-brutalist-technical</text>
+    <text x="1152" y="58" text-anchor="end" fill="#525556" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ZERO-COPYRIGHT DESCRIPTOR CARD</text>
+    <line x1="48" y1="104" x2="1152" y2="104" stroke="#BDB9AE" stroke-width="1"/>
+
+    <!-- Section 1: Color Ramp -->
+    <text x="48" y="128" fill="#525556" font-size="12" font-weight="700" letter-spacing="1.4">01 / VERIFIED COLOR RAMP &amp; PROPORTION</text>
+    
+        <g>
+          <rect x="48" y="140" width="172" height="68" rx="8" fill="#0E0F10" stroke="#BDB9AE" stroke-width="1.2"/>
+          <text x="48" y="228" fill="#0E0F10" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#0E0F10</text>
+          <text x="48" y="246" fill="#525556" font-size="12">Carbon Shadow 38%</text>
+        </g>
+        <g>
+          <rect x="234" y="140" width="172" height="68" rx="8" fill="#7A7D7E" stroke="#BDB9AE" stroke-width="1.2"/>
+          <text x="234" y="228" fill="#0E0F10" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#7A7D7E</text>
+          <text x="234" y="246" fill="#525556" font-size="12">Raw Concrete 30%</text>
+        </g>
+        <g>
+          <rect x="420" y="140" width="172" height="68" rx="8" fill="#EFECE4" stroke="#BDB9AE" stroke-width="1.2"/>
+          <text x="420" y="228" fill="#0E0F10" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#EFECE4</text>
+          <text x="420" y="246" fill="#525556" font-size="12">Warm Plaster 27%</text>
+        </g>
+        <g>
+          <rect x="606" y="140" width="172" height="68" rx="8" fill="#FFFFFF" stroke="#BDB9AE" stroke-width="1.2"/>
+          <text x="606" y="228" fill="#0E0F10" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#FFFFFF</text>
+          <text x="606" y="246" fill="#525556" font-size="12">Sharp White</text>
+        </g>
+        <g>
+          <rect x="792" y="140" width="172" height="68" rx="8" fill="#C8F135" stroke="#BDB9AE" stroke-width="1.2"/>
+          <text x="792" y="228" fill="#0E0F10" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">#C8F135</text>
+          <text x="792" y="246" fill="#525556" font-size="12">Acid Lime &lt;5%</text>
+        </g>
+
+    <!-- Section 2: Left Typography & Atomic Moves -->
+    <rect x="48" y="274" width="560" height="270" rx="14" fill="#E3DFD5" stroke="#BDB9AE"/>
+    <text x="68" y="296" fill="#525556" font-size="12" font-weight="700" letter-spacing="1.4">02 / TYPOGRAPHY HIERARCHY</text>
+    
+        <text x="68" y="318" fill="#0E0F10" font-size="30" font-weight="700">GEOMETRIC CAPS</text>
+        <text x="68" y="338" fill="#525556" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">Left-Aligned Sharp Sans · 1 Keyword in #C8F135</text>
+        <text x="68" y="384" fill="#525556" font-size="16" font-weight="600">06 / SWISS INDEX</text>
+        <text x="68" y="404" fill="#525556" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">Wide Tracking +0.20em · 2px Accent Rule</text>
+        <text x="68" y="436" fill="#525556" font-size="13" font-weight="400">Technical Micro</text>
+        <text x="68" y="456" fill="#525556" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">Monospace Spec Tag in Shadow Corner</text>
+
+    <!-- Section 3: Right Layout & Lighting Wireframe -->
+    <rect x="628" y="274" width="524" height="270" rx="14" fill="#E3DFD5" stroke="#BDB9AE"/>
+    <text x="646" y="296" fill="#525556" font-size="12" font-weight="700" letter-spacing="1.4">03 / COMPOSITION WIREFRAME &amp; LIGHTING</text>
+    
+        <rect x="646" y="304" width="486" height="224" rx="12" fill="#7A7D7E" stroke="#525556"/>
+        <rect x="646" y="304" width="136.08" height="224" rx="12" fill="#EFECE4"/>
+        <text x="660" y="334" fill="#0E0F10" font-size="11" font-weight="700" letter-spacing="1.5">06 /</text>
+        <rect x="660" y="344" width="26" height="3" fill="#C8F135"/>
+        <polygon points="782.08,304 1015.36,304 850.12,528 782.08,528" fill="#0E0F10" fill-opacity="0.92"/>
+        <text x="806.38" y="407.04" fill="#FFFFFF" font-size="14" font-weight="700">HARD SHADOW</text>
+        <text x="806.38" y="433.91999999999996" fill="#C8F135" font-size="14" font-weight="700">COPY ZONE.</text>
+
+    <!-- Section 4: Bottom Atomic Moves & Lighting/Whitespace -->
+    <rect x="48" y="562" width="560" height="160" rx="14" fill="#E3DFD5" stroke="#BDB9AE"/>
+    <text x="68" y="580" fill="#525556" font-size="11" font-weight="700" letter-spacing="1.4">04 / ATOMIC MOVES (L2 BORROWABLE WITHOUT FULL CLONE)</text>
+    <text x="68" y="592" fill="#0E0F10" font-size="14">• Use natural hard shadow as text field (no translucent box)</text><text x="68" y="618" fill="#0E0F10" font-size="14">• 25–30% warm plaster Swiss numbered sidebar (06 /)</text><text x="68" y="644" fill="#0E0F10" font-size="14">• Single-verb acid-lime highlight (&lt;5% total area)</text>
+
+    <rect x="628" y="562" width="524" height="160" rx="14" fill="#E3DFD5" stroke="#BDB9AE"/>
+    <text x="648" y="584" fill="#525556" font-size="11" font-weight="700" letter-spacing="1.4">05 / WHITESPACE &amp; LIGHT DIRECTION</text>
+    <text x="648" y="616" fill="#0E0F10" font-size="14" font-weight="600">Whitespace:</text>
+    <text x="648" y="638" fill="#525556" font-size="13">40%+ Hard Diagonal Shadow Copy Zone + 25–30% Plaster Sidebar</text>
+    <text x="648" y="674" fill="#0E0F10" font-size="14" font-weight="600">Lighting:</text>
+    <text x="648" y="696" fill="#525556" font-size="13">Unfiltered Hard Directional Sunlight · Razor-Edged Diagonal Shadows</text>
+  </g>
+</svg>
